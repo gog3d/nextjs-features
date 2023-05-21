@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  gap: 10px;
+  background: orange;
+}
+
+.header__link {
+  text-decoration: none;
+  color: white;
+}
+
