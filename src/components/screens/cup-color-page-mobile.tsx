@@ -22,7 +22,7 @@ const colors = [
       <Color>
         <ColorButtons>
         {
-          colors.map(color => <ColorRadio color={color}/>)
+          colors.map((color, index) => <ColorRadio color={color} key={index}/>)
         }
         </ColorButtons>
         <ColorApply />
