@@ -1,0 +1,15 @@
+.page {
+  background: #FDFDFD;
+  min-height: 100vh;
+  min-width: 360px;
+}
+
+.page_header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.page_constructor {
+  background: #F3F3F3;
+}

@@ -1,0 +1,8 @@
+.constructor {
+  padding: 16px 16px 24px 16px;
+  background: #F3F3F3;
+  min-height: 683px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

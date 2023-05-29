@@ -1,0 +1,36 @@
+.tool-bar {
+
+}
+
+.tool-bar__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tool-bar__item {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #FFFFFF;
+  background: #222222;
+  border-radius: 8px;
+}
+
+.tool-bar__item_link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 18px;
+}
+
+
+.tool-bar__item_span {
+
+}

@@ -1,0 +1,49 @@
+.send {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.send__title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+
+  color: #000000;
+}
+
+.send__label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  height: 47px;
+}
+
+.send__email {
+  border: none;
+  border-radius: 8px  0px 0px 8px;
+  width: 100%;
+}
+
+.send__button_email {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  color: #FFFFFF;
+
+  border: none;
+  border-radius: 0px  8px 8px 0px;
+  padding: 14px 27px 13px 13px;
+  
+  background: #000000;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+

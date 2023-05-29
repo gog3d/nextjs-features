@@ -1,0 +1,7 @@
+.color__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 4px;
+}

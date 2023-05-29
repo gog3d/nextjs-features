@@ -1,0 +1,44 @@
+.cup-type {
+  padding: 28px 16px 16px 16px;
+
+/*  background: purple;*/
+}
+
+.cup-type__title {
+  padding-bottom: 16px;
+  border-bottom: 2px solid #C3C4C5;
+
+}
+
+.cup-type__title_text {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+
+  color: #000000;
+}
+
+.cup-type__menu {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cup-type_summary-cup-1 {
+  background: #F2F1FC;
+}
+
+.cup-type_description-cup-1 {
+  background: rgba(197, 196, 207, 0.3);
+}
+
+.cup-type_summary-cup-2 {
+  background: #F6FCE2;
+}
+
+.cup-type_description-cup-2 {
+  background: rgba(246, 252, 226, 0.3);
+}
