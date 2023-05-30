@@ -8,7 +8,7 @@ interface TC {
 }
 
 
-const ToolBar: FC <TC> = ({children}) => {
+const ToolBar = () => {
   return (
     <nav className={styles['tool-bar']}>
       <ul className={styles['tool-bar__container']}>
