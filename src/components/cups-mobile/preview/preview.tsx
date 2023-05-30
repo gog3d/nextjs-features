@@ -2,7 +2,12 @@ import { FC, ReactNode } from 'react';
 import Link from 'next/link';
 import styles from './preview.module.css';
 
-const Preview: FC<string> = ({link}) => {
+interface TC {
+  link: string;
+}
+
+
+const Preview: FC<TC> = ({link}) => {
   return (
     <div className={styles['preview']}>
       <p className={styles['preview_text-top']}>Посмотрите, как будет выглядеть Ваш новый стаканчик!</p>

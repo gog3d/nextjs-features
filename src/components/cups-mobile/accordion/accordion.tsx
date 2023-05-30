@@ -2,7 +2,11 @@ import { FC, ReactNode } from 'react';
 import styles from './accordion.module.css';
 import AccordionArrowIcon from '../icons/accordion-arrow-icon';
 
-const Accordion: FC<ReactNode> = ({children}) => {
+interface TC {
+  children: ReactNode;
+}
+
+const Accordion: FC<TC> = ({children}) => {
   return (
         <div className={styles['accordion']}>
           <details className={styles['accordion__details']}>

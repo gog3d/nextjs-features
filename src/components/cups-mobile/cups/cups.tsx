@@ -1,7 +1,12 @@
 import { FC, ReactNode } from 'react';
 import styles from './cups.module.css';
 
-const Cups: FC <ReactNode> = ({children}) => {
+interface TC {
+  children: ReactNode;
+}
+
+
+const Cups: FC <TC> = ({children}) => {
   return (
     <main className={styles['cups']}>
       <div className={styles['cups__menu']}>

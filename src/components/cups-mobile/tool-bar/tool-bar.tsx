@@ -3,7 +3,12 @@ import styles from './tool-bar.module.css';
 import Link from 'next/link';
 import PlusIcon from '../icons/plus-icon';
 
-const ToolBar: FC <ReactNode> = ({children}) => {
+interface TC {
+  children: ReactNode;
+}
+
+
+const ToolBar: FC <TC> = ({children}) => {
   return (
     <nav className={styles['tool-bar']}>
       <ul className={styles['tool-bar__container']}>
