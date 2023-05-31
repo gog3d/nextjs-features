@@ -1,4 +1,6 @@
 import React from 'react';
+
+import ConstructorPage from '../cups-mobile/constructor-page/constructor-page';
 import CupPage from '../cups-mobile/cups-page/cups-page';
 import Header from '../cups-mobile/header-constructor/header';
 import Background from '../cups-mobile/background/background';
@@ -11,7 +13,7 @@ import ConstructorApply from '../cups-mobile/constructor-apply/constructor-apply
 const CupBackgroundPageMobile = () => {
 
   return (
-    <CupPage>
+    <ConstructorPage>
       <Header />
       <Background>
         <File />
@@ -19,7 +21,7 @@ const CupBackgroundPageMobile = () => {
         </BackgroundCanvas>
         <ConstructorApply />
       </Background>
-    </CupPage>
+    </ConstructorPage>
   )
 };
 

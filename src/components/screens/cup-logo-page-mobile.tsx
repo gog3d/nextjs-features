@@ -1,4 +1,6 @@
 import React from 'react';
+
+import ConstructorPage from '../cups-mobile/constructor-page/constructor-page';
 import CupPage from '../cups-mobile/cups-page/cups-page';
 import Header from '../cups-mobile/header-constructor/header';
 //import Color from '../cups-mobile/color/color';
@@ -10,10 +12,10 @@ import ConstructorApply from '../cups-mobile/constructor-apply/constructor-apply
 
 const CupLogoPageMobile = () => {
   return (
-    <CupPage>
+    <ConstructorPage>
       <Header />
       <ConstructorApply />
-    </CupPage>
+    </ConstructorPage>
   )
 };
 

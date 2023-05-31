@@ -1,5 +1,6 @@
 import React from 'react';
-import CupPage from '../cups-mobile/cups-page/cups-page';
+import ConstructorPage from '../cups-mobile/constructor-page/constructor-page';
+//import CupPage from '../cups-mobile/cups-page/cups-page';
 import Header from '../cups-mobile/header-constructor/header';
 import Color from '../cups-mobile/color/color';
 import ColorButtons from '../cups-mobile/color-buttons/color-buttons';
@@ -28,7 +29,7 @@ const colors = [
   ];
 
   return (
-    <CupPage>
+    <ConstructorPage>
       <Header />
       <Color>
         <ColorButtons>
@@ -44,7 +45,7 @@ const colors = [
         </ColorButtons>
         <ConstructorApply />
       </Color>
-    </CupPage>
+    </ConstructorPage>
   )
 };
 
