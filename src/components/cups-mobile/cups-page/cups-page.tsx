@@ -1,12 +1,12 @@
 import { FC, ReactNode } from 'react';
 import styles from './cups-page.module.css';
 
-interface TC {
+interface ICupsPageProps {
   children: ReactNode;
 }
 
 
-const CupsPage: FC <TC> = ({children}) => {
+const CupsPage: FC<ICupsPageProps> = ({children}) => {
   return (
     <div className={styles['page']}>
        {children}

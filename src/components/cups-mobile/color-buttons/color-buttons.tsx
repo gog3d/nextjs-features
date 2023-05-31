@@ -1,12 +1,12 @@
 import { FC, ReactNode } from 'react';
 import styles from './color-buttons.module.css';
 
-interface TC {
+interface IColorButtonsProps {
   children: ReactNode;
 }
 
 
-const ColorButtons: FC<TC> = ({children}) => {
+const ColorButtons: FC<IColorButtonsProps> = ({children}) => {
   return (
     <div className={styles['color__buttons']}>
       {children}

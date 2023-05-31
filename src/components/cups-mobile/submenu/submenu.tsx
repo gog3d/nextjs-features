@@ -4,13 +4,13 @@ import Link from 'next/link';
 
 import SubMenuLinkIcon from '../icons/submenu-link-icon';
 
-interface Tp {
+interface ISubMenuProps {
   title: string;
   link: string;
 }
 
 
-const SubMenu: FC <Tp> = ({title, link}) => {
+const SubMenu: FC<ISubMenuProps> = ({title, link}) => {
   return (
     <div className={styles['submenu']}>
       <p className={styles['submenu_title']}>{title}</p>

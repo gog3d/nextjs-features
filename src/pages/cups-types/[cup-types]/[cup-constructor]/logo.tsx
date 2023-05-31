@@ -1,16 +1,13 @@
-//import CupTypesPageMobile from '@/components/screens/cup-types-page-mobile';
+import CupLogoPageMobile from '@/components/screens/cup-logo-page-mobile';
 
-import { useRouter } from 'next/router';
+//import { useRouter } from 'next/router';
 
-const CupTypes = () => {
-
-  const {query} = useRouter();
-
-  console.log(query);
-
+const CupLogo = () => {
+//  const {query} = useRouter();
+//  console.log(query);
   return (
-    <>logo</>
+    <CupLogoPageMobile />
   );
 };
 
-export default CupTypes;
+export default CupLogo;

@@ -1,12 +1,12 @@
 import { FC, ReactNode } from 'react';
 import styles from './cups-types.module.css';
 
-interface TC {
+interface ICupsTypesProps {
   children: ReactNode;
 }
 
 
-const CupsTypes: FC <TC> = ({children}) => {
+const CupsTypes: FC<ICupsTypesProps> = ({children}) => {
   return (
     <main className={styles['cup-type']}>
       <div className={styles['cup-type__title']}>

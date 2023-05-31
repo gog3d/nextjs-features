@@ -1,16 +1,14 @@
-//import CupTypesPageMobile from '@/components/screens/cup-types-page-mobile';
+import CupBackgroundPageMobile from '@/components/screens/cup-background-page-mobile';
 
-import { useRouter } from 'next/router';
+//import { useRouter } from 'next/router';
 
-const CupTypes = () => {
-
-  const {query} = useRouter();
-
-  console.log(query);
+const CupBackground = () => {
+//  const {query} = useRouter();
+///  console.log(query);
 
   return (
-    <>background</>
+    <CupBackgroundPageMobile />
   );
 };
 
-export default CupTypes;
+export default CupBackground;

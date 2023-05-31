@@ -5,7 +5,7 @@ const Send = () => {
     <div className={styles['send']}>
       <p className={styles['send__title']}>Отправить макет на email</p>
       <label className={styles['send__label']}>
-        <input className={styles['send__email']} type="email"></input>
+        <input className={styles['send__email']} type="email" placeholder='E-mail'></input>
         <button className={styles['send__button_email']}>Отправить</button>
       </label>
     </div>

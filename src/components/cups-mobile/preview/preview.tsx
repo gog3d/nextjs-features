@@ -1,18 +1,23 @@
 import { FC, ReactNode } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './preview.module.css';
 
-interface TC {
+interface IPreviewProps {
   link: string;
 }
 
-
-const Preview: FC<TC> = ({link}) => {
+const Preview: FC<IPreviewProps> = ({link}) => {
   return (
     <div className={styles['preview']}>
       <p className={styles['preview_text-top']}>Посмотрите, как будет выглядеть Ваш новый стаканчик!</p>
       <div className={styles['preview__img-container']}>
-        <img src="/cups-mobile/media/cup.png" alt="cup image"></img>
+        <Image
+           src='/cups-mobile/media/cup.png'
+           alt='cup image'
+           width={152}
+           height={202}
+        />
       </div>
       <p className={styles['preview_text']}>Выберите файл изображения дизайна вашего стакана.</p>
       <p className={styles['preview_text']}>Допустимые форматы: jpg, gif, png, ai, cdr, pdf.</p>

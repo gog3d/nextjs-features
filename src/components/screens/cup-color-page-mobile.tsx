@@ -4,8 +4,8 @@ import Header from '../cups-mobile/header-constructor/header';
 import Color from '../cups-mobile/color/color';
 import ColorButtons from '../cups-mobile/color-buttons/color-buttons';
 import ColorRadio from '../cups-mobile/color-radio/color-radio';
-import ColorApply from '../cups-mobile/color-apply/color-apply';
-
+//import ColorApply from '../cups-mobile/color-apply/color-apply';
+import ConstructorApply from '../cups-mobile/constructor-apply/constructor-apply';
 
 
 const CupColorPageMobile = () => {
@@ -42,7 +42,7 @@ const colors = [
           )
         }
         </ColorButtons>
-        <ColorApply />
+        <ConstructorApply />
       </Color>
     </CupPage>
   )

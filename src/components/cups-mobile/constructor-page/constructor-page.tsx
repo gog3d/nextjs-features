@@ -1,12 +1,12 @@
 import { FC, ReactNode } from 'react';
 import styles from './constructor-page.module.css';
 
-interface TC {
+interface IConstructorPageProps {
   children: ReactNode;
 }
 
 
-const ConstructorPage: FC<TC> = ({children}) => {
+const ConstructorPage: FC<IConstructorPageProps> = ({children}) => {
 
   return (
     <div className={styles['page_constructor']}>

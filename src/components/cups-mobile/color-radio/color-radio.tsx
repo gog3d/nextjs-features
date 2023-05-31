@@ -1,12 +1,12 @@
 import { FC, ReactNode } from 'react';
 import styles from './color-radio.module.css';
 
-interface TC {
+interface IColorRadioProps {
   color: string;
 }
 
 
-const ColorRadio:FC <TC> = ({color}) => {
+const ColorRadio: FC<IColorRadioProps> = ({color}) => {
   const style = {
     backgroundColor: color
   };
