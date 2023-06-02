@@ -1,20 +1,30 @@
 import React from 'react';
 
 import ConstructorPage from '../cups-mobile/constructor-page/constructor-page';
-import CupPage from '../cups-mobile/cups-page/cups-page';
-import Header from '../cups-mobile/header-constructor/header';
-//import Color from '../cups-mobile/color/color';
-//import ColorButtons from '../cups-mobile/color-buttons/color-buttons';
-//import ColorRadio from '../cups-mobile/color-radio/color-radio';
-//import ColorApply from '../cups-mobile/color-apply/color-apply';
+import HeaderConstructor from '../cups-mobile/header/header-constructor';
+import ImageCropping from '../cups-mobile/image-cropping/image-cropping';
+import File from '../cups-mobile/file/file';
+import Radio from '../cups-mobile/radio/radio';
+import LogoRadio from '../cups-mobile/logo-radio/logo-radio';
+import ConstructorCanvas from '../cups-mobile/constructor-canvas/constructor-canvas';
 import ConstructorApply from '../cups-mobile/constructor-apply/constructor-apply';
 
 
 const CupLogoPageMobile = () => {
+
   return (
     <ConstructorPage>
-      <Header />
-      <ConstructorApply />
+      <HeaderConstructor />
+      <ImageCropping>
+        <File />
+        <LogoRadio>
+          <Radio title={'Квадратная'} name={'logo'} />
+          <Radio title={'Круглая'} name={'logo'} />
+        </LogoRadio>
+        <ConstructorCanvas>
+        </ConstructorCanvas>
+        <ConstructorApply />
+      </ImageCropping>
     </ConstructorPage>
   )
 };

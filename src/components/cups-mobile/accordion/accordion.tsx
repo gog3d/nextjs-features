@@ -4,14 +4,19 @@ import AccordionArrowIcon from '../icons/accordion-arrow-icon';
 
 interface IAccordionProps {
   children: ReactNode;
+  color: number;
 }
 
-const Accordion: FC<IAccordionProps> = ({children}) => {
+const Accordion: FC<IAccordionProps> = ({children, color}) => {
+  console.log(color);
+  const summaryColor = styles[`cup-type_summary-cup-${color}`];
+  const descriptionColor = styles[`cup-type_description-cup-${color}`];
   return (
         <div className={styles['accordion']}>
           <details className={styles['accordion__details']}>
             <summary className={styles['accordion__summary']}>
-              <div className={`${styles['accordion__summary_container']} ${styles['cup-type_summary-cup-1']}`}>
+              <div 
+                className={`${styles['accordion__summary_container']} ${summaryColor}`}>
                 <p className={styles['accordion__title']}>
                   Стакан 170-210 мм
                 </p>
@@ -19,10 +24,10 @@ const Accordion: FC<IAccordionProps> = ({children}) => {
                   <AccordionArrowIcon />
                 </div>
               </div>
-              <div className={`${styles['accordion__summary_overlay']} ${styles['cup-type_description-cup-1']}`}></div>
+              <div className={`${styles['accordion__summary_overlay']} ${descriptionColor}`}></div>
             </summary>
             <div className={styles['accordion__container']}>
-              <div className={`${styles['accordion__description']} ${styles['cup-type_description-cup-1']}`}>
+              <div className={`${styles['accordion__description']} ${descriptionColor}`}>
                 <div className={styles['accordion__description_text-container']}>
                   <p className={styles['accordion__description_text']}>Ø горлышка</p>
                   <p className={styles['accordion__description_text']}>90</p>

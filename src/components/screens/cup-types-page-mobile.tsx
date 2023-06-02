@@ -5,7 +5,6 @@ import Header from '../cups-mobile/header/header';
 import CupsTypes from '../cups-mobile/cups-types/cups-types';
 import SubMenu from '../cups-mobile/submenu/submenu';
 import Accordion from '../cups-mobile/accordion/accordion';
-import Accordion2 from '../cups-mobile/accordion2/accordion2';
 import Preview from '../cups-mobile/preview/preview';
 
 const CupTypesPageMobile = () => {
@@ -18,12 +17,21 @@ const CupTypesPageMobile = () => {
     <CupPage>
       <Header />
       <CupsTypes>
-        <Accordion>
-          <Preview link={`${asPath}/1`}/>
-        </Accordion>
-        <Accordion2>
+        <Accordion color={1}>
           <Preview link={`${asPath}/2`}/>
-        </Accordion2>
+        </Accordion>
+        <Accordion color={2}>
+          <Preview link={`${asPath}/2`}/>
+        </Accordion>
+        <Accordion color={3}>
+          <Preview link={`${asPath}/3`}/>
+        </Accordion>
+        <Accordion color={4}>
+          <Preview link={`${asPath}/4`}/>
+        </Accordion>
+        <Accordion color={5}>
+          <Preview link={`${asPath}/5`}/>
+        </Accordion>
       </CupsTypes>
     </CupPage>
   )

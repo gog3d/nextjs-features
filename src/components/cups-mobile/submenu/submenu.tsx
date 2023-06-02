@@ -12,12 +12,12 @@ interface ISubMenuProps {
 
 const SubMenu: FC<ISubMenuProps> = ({title, link}) => {
   return (
-    <div className={styles['submenu']}>
+    <Link className={styles['submenu']} href={link}>
       <p className={styles['submenu_title']}>{title}</p>
-      <Link className={styles['submenu_link']} href={link}>
+      <div className={styles['submenu_link']}>
         <SubMenuLinkIcon />
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

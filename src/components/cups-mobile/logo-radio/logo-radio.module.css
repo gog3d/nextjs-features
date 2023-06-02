@@ -1,0 +1,6 @@
+.logo__radio {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+
