@@ -1,3 +1,4 @@
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import CupConstructorPageMobile from '@/components/screens/cup-constructor-page-mobile';
 
 import { useRouter } from 'next/router';
@@ -6,7 +7,7 @@ const CupConstructor = () => {
 
   const {query} = useRouter();
 
-  console.log(query);
+//  console.log(query);
 
   return (
     <CupConstructorPageMobile />
@@ -14,3 +15,4 @@ const CupConstructor = () => {
 };
 
 export default CupConstructor;
+

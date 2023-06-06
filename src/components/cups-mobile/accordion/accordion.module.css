@@ -116,43 +116,42 @@
 
 }
 
-.cup-type_summary-cup-1 {
+.cup-type_summary-cup-100-120 {
+  background: #FAEEFC;
+}
+
+.cup-type_description-cup-100-120 {
+  background: rgba(250, 238, 252, 0.3);
+}
+
+.cup-type_summary-cup-170-210 {
   background: #F2F1FC;
 }
 
-.cup-type_description-cup-1 {
+.cup-type_description-cup-170-210 {
   background: rgba(197, 196, 207, 0.3);
 }
 
-.cup-type_summary-cup-2 {
+.cup-type_summary-cup-250-270 {
   background: #F6FCE2;
 }
 
-.cup-type_description-cup-2 {
+.cup-type_description-cup-250-270 {
   background: rgba(246, 252, 226, 0.3);
 }
 
-.cup-type_summary-cup-3 {
+.cup-type_summary-cup-370-420 {
   background: #E7E7E7;
 }
 
-.cup-type_description-cup-3 {
+.cup-type_description-cup-370-420 {
   background: rgba(231, 231, 231, 0.3);
 }
 
-.cup-type_summary-cup-4 {
+.cup-type_summary-cup-500-530 {
   background: #C5C4CF;
 }
 
-.cup-type_description-cup-4 {
+.cup-type_description-cup-500-530 {
   background: rgba(197, 196, 207, 0.3);
 }
-
-.cup-type_summary-cup-5 {
-  background: #F2F1FC;
-}
-
-.cup-type_description-cup-5 {
-  background: rgba(197, 196, 207, 0.3);
-}
-

@@ -1,14 +1,16 @@
 import { FC, ReactNode } from 'react';
 import styles from './accordion.module.css';
 import AccordionArrowIcon from '../icons/accordion-arrow-icon';
+import { TCup, TCupTypes, TData } from '../../../types/cups-data-types';
 
 interface IAccordionProps {
   children: ReactNode;
-  color: number;
+  type: TCup;
 }
 
-const Accordion: FC<IAccordionProps> = ({children, color}) => {
-  console.log(color);
+const Accordion: FC<IAccordionProps> = ({children, type}) => {
+//  console.log(color);
+  const color = type.name;
   const summaryColor = styles[`cup-type_summary-cup-${color}`];
   const descriptionColor = styles[`cup-type_description-cup-${color}`];
   return (
@@ -18,7 +20,7 @@ const Accordion: FC<IAccordionProps> = ({children, color}) => {
               <div 
                 className={`${styles['accordion__summary_container']} ${summaryColor}`}>
                 <p className={styles['accordion__title']}>
-                  Стакан 170-210 мм
+                  {type.title}
                 </p>
                 <div className={styles['accordion__arrow']}>
                   <AccordionArrowIcon />
@@ -28,22 +30,15 @@ const Accordion: FC<IAccordionProps> = ({children, color}) => {
             </summary>
             <div className={styles['accordion__container']}>
               <div className={`${styles['accordion__description']} ${descriptionColor}`}>
-                <div className={styles['accordion__description_text-container']}>
-                  <p className={styles['accordion__description_text']}>Ø горлышка</p>
-                  <p className={styles['accordion__description_text']}>90</p>
-                </div>
-                <div className={styles['accordion__description_text-container']}>
-                  <p className={styles['accordion__description_text']}>Ø донышка</p>
-                  <p className={styles['accordion__description_text']}>62</p>
-                </div>
-                <div className={styles['accordion__description_text-container']}>
-                  <p className={styles['accordion__description_text']}>Высота</p>
-                  <p className={styles['accordion__description_text']}>135</p>
-                </div>
-                <div className={styles['accordion__description_text-container']}>
-                  <p className={styles['accordion__description_text']}>Минимальный тираж</p>
-                  <p className={styles['accordion__description_text']}>5000</p>
-                </div>
+                {
+                  type.parameters.map((parameter, index) => {
+                    return (
+                      <div className={styles['accordion__description_text-container']} key={index}>
+                        <p className={styles['accordion__description_text']}>{parameter.name}</p>
+                        <p className={styles['accordion__description_text']}>{parameter.value}</p>
+                      </div>
+                    )})
+                }
               </div>
               {children}
             </div>

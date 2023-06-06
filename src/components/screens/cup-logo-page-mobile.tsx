@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 import ConstructorPage from '../cups-mobile/constructor-page/constructor-page';
 import HeaderConstructor from '../cups-mobile/header/header-constructor';
@@ -11,6 +11,15 @@ import ConstructorApply from '../cups-mobile/constructor-apply/constructor-apply
 
 
 const CupLogoPageMobile = () => {
+  const [rounded, setRounded] = useState(false);
+
+  const toggleRadio = () => {
+    if (rounded) {
+      setRounded(false);
+    } else {
+      setRounded(true);
+    }
+  };
 
   return (
     <ConstructorPage>
@@ -18,8 +27,18 @@ const CupLogoPageMobile = () => {
       <ImageCropping>
         <File />
         <LogoRadio>
-          <Radio title={'Квадратная'} name={'logo'} />
-          <Radio title={'Круглая'} name={'logo'} />
+          <Radio 
+            title={'Квадратная'} 
+            name={'logo'} 
+            checked={!rounded} 
+            toggleRadio={toggleRadio}
+          />
+          <Radio 
+            title={'Круглая'} 
+            name={'logo'} 
+            checked={rounded} 
+            toggleRadio={toggleRadio} 
+          />
         </LogoRadio>
         <ConstructorCanvas>
         </ConstructorCanvas>

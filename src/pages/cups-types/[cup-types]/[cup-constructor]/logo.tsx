@@ -1,3 +1,4 @@
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import CupLogoPageMobile from '@/components/screens/cup-logo-page-mobile';
 
 //import { useRouter } from 'next/router';
@@ -11,3 +12,4 @@ const CupLogo = () => {
 };
 
 export default CupLogo;
+

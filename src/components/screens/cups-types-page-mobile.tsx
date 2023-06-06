@@ -1,20 +1,32 @@
+import { FC } from 'react';
 import CupPage from '../cups-mobile/cups-page/cups-page';
 import Header from '../cups-mobile/header/header';
 import Cups from '../cups-mobile/cups/cups';
 import SubMenu from '../cups-mobile/submenu/submenu';
+import { TCupTypes } from '../../types/cups-data-types';
 
-//import  from '../cups-mobile//';
+interface ICupsTypesPageMobileProps {
+  cups: Array<TCupTypes>;
+};
 
-const CupsPageMobile = () => {
+const CupsTypesPageMobile: FC<ICupsTypesPageMobileProps> = ({ cups }) => {
+
   return (
     <CupPage>
       <Header />
       <Cups>
-        <SubMenu title={'Однослойные'} link={'/cups-types/single-layer'}/>
-        <SubMenu title={'Двуслойные'} link={'/cups-types/double-layer'}/>
+      {
+        cups.map((cup, index) => 
+        <SubMenu 
+          key={index}
+          title={cup.title} 
+          link={`/cups-types/${cup.name}`}
+        />)
+      }
       </Cups>
     </CupPage>
   )
 };
 
-export default CupsPageMobile;
+export default CupsTypesPageMobile;
+

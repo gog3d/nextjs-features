@@ -14,14 +14,12 @@
 
 .radio__state {
   position: relative;
-
 }
 
 .radio__control {
   height: 16px;
   width: 16px;
   background: #FFF500;
-/*  border: 1px solid var(--grey-2);*/
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -34,9 +32,7 @@
   width: 8px;
   background: #222222;
   border-radius: 50%;
-
 }
-
 .radio__title {
   font-family: 'Open Sans';
   font-style: normal;
@@ -48,7 +44,7 @@
 }
 
 .radio__input:checked ~ .radio__state .radio__control {
-/*  border: 2px solid var(--button-default-primary);*/
+/*  border: 4px solid #FFF500;*/
 }
 
 .radio__input:checked ~ .radio__state .radio__icon {

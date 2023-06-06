@@ -1,3 +1,4 @@
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import CupColorPageMobile from '@/components/screens/cup-color-page-mobile';
 
 //import { useRouter } from 'next/router';
@@ -11,3 +12,4 @@ const CupColor = () => {
 };
 
 export default CupColor;
+
