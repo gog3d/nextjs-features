@@ -13,7 +13,7 @@ const Preview: FC<IPreviewProps> = ({link}) => {
       <p className={styles['preview_text-top']}>Посмотрите, как будет выглядеть Ваш новый стаканчик!</p>
       <div className={styles['preview__img-container']}>
         <Image
-           src='/cups-mobile/media/cup.png'
+           src='/cups/media/cup.png'
            alt='cup image'
            width={152}
            height={202}

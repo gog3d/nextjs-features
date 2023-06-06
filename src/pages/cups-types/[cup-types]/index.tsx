@@ -42,15 +42,11 @@ export const getServerSideProps: GetServerSideProps<Props, Params>  = async (con
   const params = context.params!;
   const name = params['cup-types'];
 //  console.log(name);
-  const filePath = path.join(process.cwd(), 'cups-data.json');
+  const filePath = path.join(process.cwd(), 'public/cups/data/cups-data.json');
   const data: Buffer = await readFile(filePath);
   const jsonData: TData  = await JSON.parse(data.toString());
   const types: TCupTypes | undefined = jsonData.cups.find((cup) => cup.name === name);
   const cupTypes = types ? types : null;
-//  if (cupTypes) {
-    return { props: { cupTypes } };
-//  } else {
-//    return { redirect: {destination: '/'} };
-//  }
+  return { props: { cupTypes } };
 };
 

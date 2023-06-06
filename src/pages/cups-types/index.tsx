@@ -23,7 +23,7 @@ import path from 'path';
 
 export const getStaticProps: GetServerSideProps<{cups: Array<TCupTypes>}>  = async ({params}) => {
   console.log(params);
-  const filePath = path.join(process.cwd(), 'cups-data.json');
+  const filePath = path.join(process.cwd(), 'public/cups/data/cups-data.json');
   const data: Buffer = await readFile(filePath);
   const jsonData: TData  = await JSON.parse(data.toString());
   const cups: Array<TCupTypes> = jsonData.cups;

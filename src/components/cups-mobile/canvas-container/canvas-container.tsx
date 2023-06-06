@@ -6,7 +6,7 @@ const CanvasContainer = () => {
   return (
     <div className={styles['canvas-container']}>
       <Image 
-        src="/cups-mobile/media/constructor-cup.png" 
+        src="/cups/media/constructor-cup.png" 
         alt="constructor-cup"
         width={328}
         height={486}
