@@ -24,7 +24,7 @@ const CupLogoPageMobile = () => {
   return (
     <ConstructorPage>
       <HeaderConstructor />
-      <ImageCropping>
+      <ImageCropping title={'Загрузить лого'}>
         <File />
         <LogoRadio>
           <Radio 

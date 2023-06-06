@@ -14,7 +14,7 @@ const CupBackgroundPageMobile = () => {
   return (
     <ConstructorPage>
       <HeaderConstructor />
-      <ImageCropping>
+      <ImageCropping title={'Загрузить фон'}>
         <File />
         <ConstructorCanvas>
         </ConstructorCanvas>

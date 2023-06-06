@@ -46,3 +46,12 @@
 
   color: #222222;
 }
+
+.file_delete-button {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import CupPage from '../cups-mobile/cups-page/cups-page';
 import Header from '../cups-mobile/header/header';
-import CupsTypes from '../cups-mobile/cups-types/cups-types';
+import CupTypes from '../cups-mobile/cup-types/cup-types';
 import SubMenu from '../cups-mobile/submenu/submenu';
 import Accordion from '../cups-mobile/accordion/accordion';
 
@@ -22,7 +22,7 @@ const CupTypesPageMobile: FC<ICupTypesProps> = ({cupTypes}) => {
   return (
     <CupPage>
       <Header />
-      <CupsTypes>
+      <CupTypes title={cupTypes ? cupTypes.title : ''}>
         {
           cupTypes ? cupTypes.types.map((type, index) => {
             return (
@@ -31,7 +31,7 @@ const CupTypesPageMobile: FC<ICupTypesProps> = ({cupTypes}) => {
               </Accordion>
             )}) : <Error />
         }
-      </CupsTypes>
+      </CupTypes>
     </CupPage>
   )
 };

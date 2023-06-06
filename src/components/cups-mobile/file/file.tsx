@@ -19,7 +19,7 @@ const File = () => {
           <input className={styles['file__input']} type="file"></input>
         </label>
       </div>
-      <button className={styles['button background__file_delete-button']}>
+      <button className={styles['file_delete-button']}>
         <BasketIcon />
       </button>
     </div>
