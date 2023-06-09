@@ -27,7 +27,7 @@ const CupTypesPageMobile: FC<ICupTypesProps> = ({cupTypes}) => {
           cupTypes ? cupTypes.types.map((type, index) => {
             return (
               <Accordion type={type} key={index}>
-                <Preview link={`${asPath}/2`}/>
+                <Preview link={`${asPath}/${type.name}`}/>
               </Accordion>
             )}) : <Error />
         }

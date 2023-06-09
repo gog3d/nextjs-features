@@ -1,16 +1,16 @@
+import { FC, ReactNode } from 'react';
 import Image from 'next/image';
 import styles from './canvas-container.module.css';
-// className={styles['canvas-container__image']}
 
-const CanvasContainer = () => {
+interface ICanvasContainerProps {
+  children: ReactNode;
+};
+
+const CanvasContainer: FC<ICanvasContainerProps> = ({children}) => {
+
   return (
     <div className={styles['canvas-container']}>
-      <Image 
-        src="/cups/media/constructor-cup.png" 
-        alt="constructor-cup"
-        width={328}
-        height={486}
-        />
+      {children}
     </div>
   );
 };
