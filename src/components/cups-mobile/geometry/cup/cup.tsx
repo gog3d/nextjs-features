@@ -1,4 +1,5 @@
-import * as THREE from 'three'
+///<reference path="../node_modules/@types/three/index.d.ts" />
+//import * as THREE from 'three'
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
