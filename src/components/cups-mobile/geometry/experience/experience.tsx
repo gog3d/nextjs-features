@@ -1,3 +1,4 @@
+'use client'
 import { FC, ReactNode } from 'react';
 
 import { 
@@ -8,6 +9,17 @@ import {
 interface IExperienceProps {
   children: ReactNode;
 };
+/*
+      <Stage shadows={false}>
+        { children }
+      </Stage>
+      <OrbitControls
+        makeDefault
+        autoRotate={true}
+        autoRotateSpeed={-3}
+      />
+
+*/
 
 const Experience: FC<IExperienceProps> = ({ children }) => {
 

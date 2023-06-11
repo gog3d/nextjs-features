@@ -1,3 +1,4 @@
+"use client"
 import ConstructorPage from '../cups-mobile/constructor-page/constructor-page';
 import HeaderConstructor from '../cups-mobile/header/header-constructor';
 //import Header from '../cups-mobile/header-constructor/header';
@@ -19,6 +20,7 @@ import Experience from '../cups-mobile/geometry/experience/experience';
     width={328}
     height={486}
   />
+
 */
 
 

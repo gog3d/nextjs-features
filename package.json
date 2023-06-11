@@ -10,8 +10,8 @@
         "prepare": "husky install"
     },
     "dependencies": {
-        "@react-three/drei": "^9.74.8",
-        "@react-three/fiber": "^8.13.1",
+        "@react-three/drei": "^9.74.6",
+        "@react-three/fiber": "^8.13.0",
         "@types/node": "18.15.11",
         "@types/react": "18.0.37",
         "@types/react-dom": "18.0.11",
