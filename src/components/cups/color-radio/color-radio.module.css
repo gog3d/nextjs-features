@@ -20,6 +20,13 @@
   clip: rect(0, 0, 0, 0);
 }
 
+
 .color__radio_input:checked~ .color__button-container {
   border: 1px solid #3F51B4;
 }
+
+/*
+.color__button-container_active {
+  border: 1px solid #3F51B4;
+}
+*/

@@ -9,17 +9,6 @@ import {
 interface IExperienceProps {
   children: ReactNode;
 };
-/*
-      <Stage shadows={false}>
-        { children }
-      </Stage>
-      <OrbitControls
-        makeDefault
-        autoRotate={true}
-        autoRotateSpeed={-3}
-      />
-
-*/
 
 const Experience: FC<IExperienceProps> = ({ children }) => {
 

@@ -23,3 +23,23 @@ export type TData = {
   caps: Array<any>
 };
 
+export type TColor = {
+  color: string,
+  id: string
+};
+
+export type TCustomization = {
+  colors: Array<TColor>,
+  checkedColor: string,
+  setCheckedColor: (arg0: string) => void,
+  cupColor: string,
+  setCupColor: (arg0: string) => void,
+  constructorView: boolean,
+  setConstructorView: (arg0: boolean) => void,
+  colorView: boolean ,
+  setColorView: (arg0:boolean) => void,
+  backgroundView: boolean,
+  setBackgroundView: (arg0:boolean) => void,
+  logoView: boolean,
+  setLogoView: (arg0:boolean) => void
+};

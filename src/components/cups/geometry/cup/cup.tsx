@@ -1,10 +1,9 @@
 ///<reference path="../../../../../node_modules/@types/three/index.d.ts" />
 
-/**/
-
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
+import { useCustomization } from '@/context/customization';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -17,8 +16,16 @@ type GLTFResult = GLTF & {
   }
 }
 
-
+//color={'rgba(210, 219, 225, 1)'}
 const Cup = (props: JSX.IntrinsicElements['group']) => {
+
+  const {
+    colors,
+    checkedColor,
+    setCheckedColor,
+    cupColor,
+    setCupColor
+  } = useCustomization();
 
   const { nodes, materials } = useGLTF('/cups/models/cup_1.glb') as GLTFResult
 
@@ -27,7 +34,7 @@ const Cup = (props: JSX.IntrinsicElements['group']) => {
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.1} >
         <mesh geometry={nodes.coffee_with_sugar_1.geometry} dispose={null}>
           <meshStandardMaterial
-            color={'rgba(210, 219, 225, 1)'}
+            color={cupColor}
           />
         </mesh>
         <mesh geometry={nodes.coffee_with_sugar_2.geometry} visible={true}>

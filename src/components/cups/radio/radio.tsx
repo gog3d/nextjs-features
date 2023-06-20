@@ -8,9 +8,6 @@ interface IRadioProps {
   toggleRadio: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
-//          <div className={styles['radio__icon']}></div>
-
-
 const Radio: FC<IRadioProps> = ({title, name, checked, toggleRadio}) => {
   return (
     <label className={styles['radio']}>

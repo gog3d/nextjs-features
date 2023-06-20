@@ -1,16 +1,40 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
-import ConstructorPage from '../cups-mobile/constructor-page/constructor-page';
-import HeaderConstructor from '../cups-mobile/header/header-constructor';
-import ImageCropping from '../cups-mobile/image-cropping/image-cropping';
-import File from '../cups-mobile/file/file';
-import Radio from '../cups-mobile/radio/radio';
-import LogoRadio from '../cups-mobile/logo-radio/logo-radio';
-import ConstructorCanvas from '../cups-mobile/constructor-canvas/constructor-canvas';
-import ConstructorApply from '../cups-mobile/constructor-apply/constructor-apply';
+import ConstructorPage from '../cups/constructor-page/constructor-page';
+//import HeaderConstructor from '../cups/header/header-constructor';
+import HeaderConstructorItem from '../cups/header/header-constructor-item';
+import ImageCropping from '../cups/image-cropping/image-cropping';
+import File from '../cups/file/file';
+import Radio from '../cups/radio/radio';
+import LogoRadio from '../cups/logo-radio/logo-radio';
+import ConstructorCanvas from '../cups/constructor-canvas/constructor-canvas';
+import ConstructorApply from '../cups/constructor-apply/constructor-apply';
+import { useCustomization } from '@/context/customization';
+
 
 
 const CupLogoPageMobile = () => {
+
+  const {
+    colors,
+    checkedColor,
+    setCheckedColor,
+    cupColor,
+    setCupColor,
+    setConstructorView,
+    setColorView,
+    setBackgroundView,
+    setLogoView
+  } = useCustomization();
+
+  const apply = useCallback(() => {
+    setCupColor(checkedColor);
+    setConstructorView(true);
+    setColorView(false);
+    setBackgroundView(false);
+    setLogoView(false);
+  }, [checkedColor]);
+
   const [rounded, setRounded] = useState(false);
 
   const toggleRadio = () => {
@@ -23,7 +47,7 @@ const CupLogoPageMobile = () => {
 
   return (
     <ConstructorPage>
-      <HeaderConstructor />
+      <HeaderConstructorItem />
       <ImageCropping title={'Загрузить лого'}>
         <File />
         <LogoRadio>
@@ -42,7 +66,7 @@ const CupLogoPageMobile = () => {
         </LogoRadio>
         <ConstructorCanvas>
         </ConstructorCanvas>
-        <ConstructorApply />
+        <ConstructorApply apply={apply}/>
       </ImageCropping>
     </ConstructorPage>
   )

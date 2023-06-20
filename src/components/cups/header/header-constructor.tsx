@@ -1,3 +1,4 @@
+import React, { FC } from 'react';
 import styles from './header-constructor.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

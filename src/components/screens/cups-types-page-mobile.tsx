@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import CupPage from '../cups-mobile/cups-page/cups-page';
-import Header from '../cups-mobile/header/header';
-import Cups from '../cups-mobile/cups/cups';
-import SubMenu from '../cups-mobile/submenu/submenu';
+
+import CupPage from '../cups/cups-page/cups-page';
+import Header from '../cups/header/header';
+import Cups from '../cups/cups/cups';
+import SubMenu from '../cups/submenu/submenu';
 import { TCupTypes } from '../../types/cups-data-types';
 
 interface ICupsTypesPageMobileProps {

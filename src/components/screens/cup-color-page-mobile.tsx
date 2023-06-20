@@ -1,37 +1,39 @@
-import React from 'react';
-import ConstructorPage from '../cups-mobile/constructor-page/constructor-page';
-//import CupPage from '../cups-mobile/cups-page/cups-page';
-//import Header from '../cups-mobile/header-constructor/header';
-import HeaderConstructor from '../cups-mobile/header/header-constructor';
-import Color from '../cups-mobile/color/color';
-import ColorButtons from '../cups-mobile/color-buttons/color-buttons';
-import ColorRadio from '../cups-mobile/color-radio/color-radio';
-//import ColorApply from '../cups-mobile/color-apply/color-apply';
-import ConstructorApply from '../cups-mobile/constructor-apply/constructor-apply';
+import React, { useCallback } from 'react';
+import ConstructorPage from '../cups/constructor-page/constructor-page';
+//import HeaderConstructorItem from '../cups/header/header-constructor-item';
+import HeaderConstructorItem from '../cups/header/header-constructor-item';
+import Color from '../cups/color/color';
+import ColorButtons from '../cups/color-buttons/color-buttons';
+import ColorRadio from '../cups/color-radio/color-radio';
+import ConstructorApply from '../cups/constructor-apply/constructor-apply';
 
+import { useCustomization } from '@/context/customization';
 
 const CupColorPageMobile = () => {
-const colors = [
-  {color: '#222222', id: '1'},
-  {color: '#3603FF', id: '2'},
-  {color: '#1A5E1A', id: '3'},
-  {color: '#FFF500', id: '4'},
-  {color: '#FF0000', id: '5'},
-  {color: '#00D0FE', id: '6'},
-  {color: '#9B27AF', id: '7'}, 
-  {color: '#B181FF', id: '8'}, 
-  {color: '#FF00C7', id: '9'},
-  {color: '#FCEBCD', id: '10'}, 
-  {color: '#FF6B00', id: '11'}, 
-  {color: '#FC006A', id: '12'},
-  {color: '#939597', id: '13'}, 
-  {color: '#8BC34A', id: '14'}, 
-  {color: '#FFFFFF', id: '15'},
-  ];
+
+  const {
+    colors,
+    checkedColor,
+    setCheckedColor,
+    cupColor,
+    setCupColor,
+    setConstructorView,
+    setColorView,
+    setBackgroundView,
+    setLogoView
+  } = useCustomization();
+
+  const apply = useCallback(() => {
+    setCupColor(checkedColor);
+    setConstructorView(true);
+    setColorView(false);
+    setBackgroundView(false);
+    setLogoView(false);
+  }, [checkedColor]);
 
   return (
     <ConstructorPage>
-      <HeaderConstructor />
+      <HeaderConstructorItem />
       <Color>
         <ColorButtons>
         {
@@ -44,7 +46,7 @@ const colors = [
           )
         }
         </ColorButtons>
-        <ConstructorApply />
+        <ConstructorApply apply={apply} />
       </Color>
     </ConstructorPage>
   )
