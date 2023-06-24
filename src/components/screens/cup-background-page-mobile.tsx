@@ -52,6 +52,7 @@ const CupBackgroundPageMobile = () => {
             objectFit={'horizontal-cover'}
             onCropChange={setCrop}
             restrictPosition={false}
+            zoomWithScroll={true}
             onCropComplete = {onCropComplete}
           />
         </ConstructorCanvas>
