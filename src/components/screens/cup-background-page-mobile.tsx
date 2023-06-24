@@ -48,6 +48,7 @@ const CupBackgroundPageMobile = () => {
             image={sourceImage}
             crop={crop}
             zoom={zoom}
+            minZoom={0.2}
             aspect={16 / 9}
             objectFit={'horizontal-cover'}
             onCropChange={setCrop}
