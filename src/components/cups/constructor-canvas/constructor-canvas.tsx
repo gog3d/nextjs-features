@@ -13,13 +13,13 @@ const ConstructorCanvas: FC<IConstructorCanvasProps> = ({children, zoom, setZoom
   
   const zoomIn = useCallback(()=>{
     if(zoom && setZoom){
-      setZoom(zoom + 0.01);
+      setZoom(zoom + 0.03);
     }
   }, [zoom, setZoom]);
 
   const zoomOut = useCallback(()=>{
     if(setZoom && zoom && zoom > 0.2) {
-      setZoom(zoom - 0.01);
+      setZoom(zoom - 0.03);
     }
   }, [zoom, setZoom]);
 
