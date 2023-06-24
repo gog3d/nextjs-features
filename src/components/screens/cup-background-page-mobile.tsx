@@ -17,12 +17,21 @@ import { Point, Area } from "react-easy-crop/types";
 const CupBackgroundPageMobile = () => {
 
   const {
+    backgroundImageSource,
+    setBackgroundImageSource,
+    backgroundImageCrop,
+    setBackgroundImageCrop,
+    backgroundImageZoom,
+    setBackgroundImageZoom,
+    backgroundImageXY,
+    setBackgroundImageXY,
+
     setConstructorView,
     setColorView,
     setBackgroundView,
     setLogoView
   } = useCustomization();
-  
+
   const apply = useCallback(() => {
     setConstructorView(true);
     setColorView(false);
@@ -30,22 +39,32 @@ const CupBackgroundPageMobile = () => {
     setLogoView(false);
   }, [setConstructorView, setColorView, setBackgroundView, setLogoView]);
 
-  const [crop, setCrop] = useState<Point>({ x: 0, y: 0 });
-  const [zoom, setZoom  ] = useState(1);
-  const [sourceImage, setSourceImage] = useState('');
+  const [crop, setCrop] = useState<Point>({...backgroundImageXY});
+  const [zoom, setZoom] = useState(backgroundImageZoom);
+//  const [sourceImage, setSourceImage] = useState('');
 
   const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
-    console.log(croppedArea, croppedAreaPixels)
-  }, []);
+    setBackgroundImageZoom(zoom);
+    setBackgroundImageXY({...crop});
+//    console.log(croppedArea, croppedAreaPixels)
+  }, [crop, zoom]);
+  
+  const deleteImage = () => {
+    setZoom(1);
+    setCrop({x: 0, y: 0});
+    setBackgroundImageZoom(1);
+    setBackgroundImageXY({x: 0, y: 0});
+    setBackgroundImageSource('');
+  };
 
   return (
     <ConstructorPage>
       <HeaderConstructorItem />
       <ImageCropping title={'Загрузить фон'}>
-        <File setSource={setSourceImage} />
+        <File setSource={setBackgroundImageSource} deleteImage={deleteImage} />
         <ConstructorCanvas zoom={zoom} setZoom={setZoom}>
           <Cropper
-            image={sourceImage}
+            image={backgroundImageSource}
             crop={crop}
             zoom={zoom}
             minZoom={0.2}

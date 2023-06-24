@@ -44,21 +44,29 @@ const CupLogoPageMobile = () => {
     }
   };
 
-
   const [crop, setCrop] = useState<Point>({ x: 0, y: 0 });
   const [zoom, setZoom  ] = useState(1);
   const [sourceImage, setSourceImage] = useState('');
 
   const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
-    console.log(croppedArea, croppedAreaPixels)
+//    console.log(croppedArea, croppedAreaPixels)
   }, []);
+
+  const deleteImage = () => {
+    setZoom(1);
+    setCrop({x: 0, y: 0});
+    setSourceImage('');
+//    setBackgroundImageZoom(1);
+//    setBackgroundImageXY({x: 0, y: 0});
+//    setBackgroundImageSource('');
+  };
 
 
   return (
     <ConstructorPage>
       <HeaderConstructorItem />
       <ImageCropping title={'Загрузить лого'}>
-        <File setSource={setSourceImage} />
+        <File setSource={setSourceImage} deleteImage={deleteImage}/>
         <LogoRadio>
           <Radio 
             title={'Квадратная'} 

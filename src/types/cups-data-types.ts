@@ -1,3 +1,6 @@
+import { Point, Area } from "react-easy-crop/types";
+import React, { SetStateAction } from 'react';
+
 export type TParameters ={
   name: string,
   value: string
@@ -34,6 +37,16 @@ export type TCustomization = {
   setCheckedColor: (arg0: string) => void,
   cupColor: string,
   setCupColor: (arg0: string) => void,
+
+  backgroundImageSource: string,
+  setBackgroundImageSource: React.Dispatch<SetStateAction<string>>
+  backgroundImageCrop: string,
+  setBackgroundImageCrop:  React.Dispatch<SetStateAction<string>>,
+  backgroundImageZoom: number,
+  setBackgroundImageZoom: React.Dispatch<SetStateAction<number>>,
+  backgroundImageXY: Point,
+  setBackgroundImageXY:  React.Dispatch<SetStateAction<Point>>,
+
   constructorView: boolean,
   setConstructorView: (arg0: boolean) => void,
   colorView: boolean ,

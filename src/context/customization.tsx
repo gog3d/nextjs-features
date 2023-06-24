@@ -36,15 +36,30 @@ export const CustomizationProvider: FC<ICustomizationProviderProps> = ({children
   const [cupColor, setCupColor] = useState('#FFFFFF');
   const [checkedColor, setCheckedColor] = useState('#FFFFFF');
 
+  const [backgroundImageSource, setBackgroundImageSource] = useState('');
+  const [backgroundImageCrop, setBackgroundImageCrop] = useState('');
+  const [backgroundImageZoom, setBackgroundImageZoom] = useState(1);
+  const [backgroundImageXY, setBackgroundImageXY] = useState({x: 0, y: 0});
+
+
 
   return (
-    <CustomizationContext.Provider 
+    <CustomizationContext.Provider
       value={{
         colors: colors,
-        checkedColor: checkedColor, 
+        checkedColor: checkedColor,
         setCheckedColor: setCheckedColor,
         cupColor: cupColor,
         setCupColor: setCupColor,
+        backgroundImageSource: backgroundImageSource,
+        setBackgroundImageSource: setBackgroundImageSource,
+        backgroundImageCrop: backgroundImageCrop,
+        setBackgroundImageCrop: setBackgroundImageCrop,
+        backgroundImageZoom: backgroundImageZoom,
+        setBackgroundImageZoom: setBackgroundImageZoom,
+        backgroundImageXY: backgroundImageXY,
+        setBackgroundImageXY: setBackgroundImageXY,
+
         constructorView: constructorView, 
         setConstructorView: setConstructorView,
         colorView: colorView, 

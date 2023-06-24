@@ -5,15 +5,17 @@ import BasketIcon from '../icons/basket-icon';
 
 interface IFileProps {
   setSource:  React.Dispatch<SetStateAction<string>>;
+  deleteImage: () => void;
 }
 
-const File: FC<IFileProps> = ({setSource}) => {
+const File: FC<IFileProps> = ({setSource, deleteImage}) => {
 
   const onFileChange = async (e:  React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0]
 //      let imageDataUrl = await readFile(file)
-      setSource( URL.createObjectURL(file))
+      deleteImage();
+      setSource(URL.createObjectURL(file))
     }
   }
 
@@ -34,7 +36,7 @@ const File: FC<IFileProps> = ({setSource}) => {
       </div>
       <button 
         className={styles['file_delete-button']}
-        onClick={() => setSource('')}
+        onClick={deleteImage}
       >
         <BasketIcon />
       </button>
