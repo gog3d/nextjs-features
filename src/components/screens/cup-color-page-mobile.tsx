@@ -29,7 +29,14 @@ const CupColorPageMobile = () => {
     setColorView(false);
     setBackgroundView(false);
     setLogoView(false);
-  }, [checkedColor]);
+  }, [
+      checkedColor, 
+      setCupColor, 
+      setConstructorView, 
+      setColorView, 
+      setBackgroundView, 
+      setLogoView
+]);
 
   return (
     <ConstructorPage>

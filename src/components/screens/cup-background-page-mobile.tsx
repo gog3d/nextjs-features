@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import ConstructorPage from '../cups/constructor-page/constructor-page';
 import CupPage from '../cups/cups-page/cups-page';
@@ -8,37 +8,52 @@ import ImageCropping from '../cups/image-cropping/image-cropping';
 import File from '../cups/file/file';
 import ConstructorCanvas from '../cups/constructor-canvas/constructor-canvas';
 import ConstructorApply from '../cups/constructor-apply/constructor-apply';
+
 import { useCustomization } from '@/context/customization';
+
+import Cropper from 'react-easy-crop';
+import { Point, Area } from "react-easy-crop/types";
 
 const CupBackgroundPageMobile = () => {
 
   const {
-    colors,
-    checkedColor,
-    setCheckedColor,
-    cupColor,
-    setCupColor,
     setConstructorView,
     setColorView,
     setBackgroundView,
     setLogoView
   } = useCustomization();
-
+  
   const apply = useCallback(() => {
- //   setCupColor(checkedColor);
     setConstructorView(true);
     setColorView(false);
     setBackgroundView(false);
     setLogoView(false);
-  }, [checkedColor]);
+  }, [setConstructorView, setColorView, setBackgroundView, setLogoView]);
 
+  const [crop, setCrop] = useState<Point>({ x: 0, y: 0 });
+  const [zoom, setZoom  ] = useState(1);
+  const [sourceImage, setSourceImage] = useState('');
+
+  const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
+    console.log(croppedArea, croppedAreaPixels)
+  }, []);
 
   return (
     <ConstructorPage>
       <HeaderConstructorItem />
       <ImageCropping title={'Загрузить фон'}>
-        <File />
-        <ConstructorCanvas>
+        <File setSource={setSourceImage} />
+        <ConstructorCanvas zoom={zoom} setZoom={setZoom}>
+          <Cropper
+            image={sourceImage}
+            crop={crop}
+            zoom={zoom}
+            aspect={16 / 9}
+            objectFit={'horizontal-cover'}
+            onCropChange={setCrop}
+            restrictPosition={false}
+            onCropComplete = {onCropComplete}
+          />
         </ConstructorCanvas>
         <ConstructorApply apply={apply}/>
       </ImageCropping>

@@ -22,7 +22,7 @@ const ColorRadio: FC<IColorRadioProps> = ({color}) => {
 
   useEffect(()=>{
     setCheckedColor(cupColor);
-  }, [cupColor]);
+  }, [cupColor, setCheckedColor]);
 
   return (
     <label>
