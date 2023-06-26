@@ -9,6 +9,7 @@ import CanvasContainer from '../cups/canvas-container/canvas-container';
 import Send from '../cups/send/send';
 
 import Cup from '../cups/geometry/cup/cup';
+import CupWrapper from '../cups/geometry/cup-wrapper/cup-wrapper';
 import Experience from '../cups/geometry/experience/experience';
 
 const CupConstructorPageMobile = () => {
@@ -21,6 +22,7 @@ const CupConstructorPageMobile = () => {
           <Canvas>
             <Experience>
               <Cup />
+              <CupWrapper />
             </Experience>
           </Canvas>
         </CanvasContainer>

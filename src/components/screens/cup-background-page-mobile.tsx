@@ -9,6 +9,8 @@ import File from '../cups/file/file';
 import ConstructorCanvas from '../cups/constructor-canvas/constructor-canvas';
 import ConstructorApply from '../cups/constructor-apply/constructor-apply';
 
+import getCroppedImg from '../../services/cropImage'
+
 import { useCustomization } from '@/context/customization';
 
 import Cropper from 'react-easy-crop';
@@ -32,23 +34,47 @@ const CupBackgroundPageMobile = () => {
     setLogoView
   } = useCustomization();
 
-  const apply = useCallback(() => {
-    setConstructorView(true);
-    setColorView(false);
-    setBackgroundView(false);
-    setLogoView(false);
-  }, [setConstructorView, setColorView, setBackgroundView, setLogoView]);
 
   const [crop, setCrop] = useState<Point>({...backgroundImageXY});
   const [zoom, setZoom] = useState(backgroundImageZoom);
-//  const [sourceImage, setSourceImage] = useState('');
+  const [rotation, setRotation] = useState(0);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState({height: 0, width: 0, x: 0, y: 0});
 
   const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
     setBackgroundImageZoom(zoom);
     setBackgroundImageXY({...crop});
-//    console.log(croppedArea, croppedAreaPixels)
+//    console.log({croppedAreaPixels})
+    setCroppedAreaPixels(croppedAreaPixels);
   }, [crop, zoom]);
-  
+
+  const apply = useCallback(async () => {
+    try {
+//      console.log({backgroundImageSource});
+      if (backgroundImageSource !== '') {
+        const croppedImage: string = await getCroppedImg(
+          backgroundImageSource,
+          croppedAreaPixels,
+          rotation
+        )
+        setBackgroundImageCrop(croppedImage);
+        setConstructorView(true);
+        setColorView(false);
+        setBackgroundView(false);
+        setLogoView(false);
+
+      } else {
+        setBackgroundImageCrop('');
+        setBackgroundImageSource('');
+        setConstructorView(true);
+        setColorView(false);
+        setBackgroundView(false);
+        setLogoView(false);
+      }
+    } catch (e) {
+      console.error(e)
+    }
+  }, [backgroundImageSource, croppedAreaPixels, rotation, setCroppedAreaPixels, setConstructorView, setColorView, setBackgroundView, setLogoView])
+
   const deleteImage = () => {
     setZoom(1);
     setCrop({x: 0, y: 0});
@@ -66,11 +92,13 @@ const CupBackgroundPageMobile = () => {
           <Cropper
             image={backgroundImageSource}
             crop={crop}
+            rotation={rotation}
             zoom={zoom}
             minZoom={0.2}
             maxZoom={5}
             aspect={16 / 9}
             objectFit={'horizontal-cover'}
+            onRotationChange={setRotation}
             onCropChange={setCrop}
             restrictPosition={false}
             onZoomChange={setZoom}
