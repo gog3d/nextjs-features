@@ -3,7 +3,8 @@ import styles from './constructor-apply.module.css';
 import { useCustomization } from '@/context/customization';
 
 interface IConstructorApplyProps {
-  apply: () => void | null;
+//  apply: () => void | null;
+  apply: () => void | Promise<void>;
 };
 
 const ConstructorApply: FC<IConstructorApplyProps> = ({apply}) => {
