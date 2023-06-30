@@ -39,13 +39,22 @@ export type TCustomization = {
   setCupColor: (arg0: string) => void,
 
   backgroundImageSource: string,
-  setBackgroundImageSource: React.Dispatch<SetStateAction<string>>
+  setBackgroundImageSource: React.Dispatch<SetStateAction<string>>,
   backgroundImageCrop: string,
   setBackgroundImageCrop:  React.Dispatch<SetStateAction<string>>,
   backgroundImageZoom: number,
   setBackgroundImageZoom: React.Dispatch<SetStateAction<number>>,
   backgroundImageXY: Point,
   setBackgroundImageXY:  React.Dispatch<SetStateAction<Point>>,
+
+  logoImageSource: string,
+  setLogoImageSource: React.Dispatch<SetStateAction<string>>,
+  logoImageCrop: string,
+  setLogoImageCrop: React.Dispatch<SetStateAction<string>>,
+  logoImageZoom: number,
+  setLogoImageZoom: React.Dispatch<SetStateAction<number>>,
+  logoImageXY: Point,
+  setLogoImageXY: React.Dispatch<SetStateAction<Point>>,
 
   constructorView: boolean,
   setConstructorView: (arg0: boolean) => void,
