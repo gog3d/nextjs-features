@@ -46,6 +46,11 @@ export const CustomizationProvider: FC<ICustomizationProviderProps> = ({children
   const [logoImageZoom, setLogoImageZoom] = useState(1);
   const [logoImageXY, setLogoImageXY] = useState({x: 0, y: 0});
 
+  const [logoCoverImageSource, setLogoCoverImageSource] = useState('');
+  const [logoCoverImageCrop, setLogoCoverImageCrop] = useState('');
+  const [logoCoverImageZoom, setLogoCoverImageZoom] = useState(1);
+  const [logoCoverImageXY, setLogoCoverImageXY] = useState({x: 0, y: 0});
+
 
 
   return (
@@ -74,6 +79,15 @@ export const CustomizationProvider: FC<ICustomizationProviderProps> = ({children
         setLogoImageZoom: setLogoImageZoom,
         logoImageXY: logoImageXY,
         setLogoImageXY: setLogoImageXY,
+
+        logoCoverImageSource: logoCoverImageSource,
+        setLogoCoverImageSource: setLogoCoverImageSource,
+        logoCoverImageCrop: logoCoverImageCrop,
+        setLogoCoverImageCrop: setLogoCoverImageCrop,
+        logoCoverImageZoom: logoCoverImageZoom,
+        setLogoCoverImageZoom: setLogoCoverImageZoom,
+        logoCoverImageXY: logoCoverImageXY,
+        setLogoCoverImageXY: setLogoCoverImageXY,
 
         constructorView: constructorView, 
         setConstructorView: setConstructorView,

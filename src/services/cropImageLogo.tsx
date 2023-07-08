@@ -30,11 +30,15 @@ export function rotateSize(width: number, height: number, rotation: number) {
 /**
  * This function was adapted from the one in the ReadMe of https://github.com/DominicTobias/react-image-crop
  */
-export default async function getCroppedImg(
+export default async function getCroppedImgLogo(
   imageSrc: string,
   pixelCrop: Area,
   rotation = 0,
-  flip = { horizontal: false, vertical: false }
+  flip = { horizontal: false, vertical: false },
+  shape='rect',
+  m = 4,
+  aspect = 16 / 9
+
 ) {
   const image = await createImage(imageSrc)
   const canvas = document.createElement('canvas')
@@ -76,20 +80,38 @@ export default async function getCroppedImg(
   }
 
   // Set the size of the cropped canvas
-  croppedCanvas.width = pixelCrop.width
-  croppedCanvas.height = pixelCrop.height
+//  croppedCanvas.width = pixelCrop.width
+//  croppedCanvas.height = pixelCrop.height
+
+//  const m = 4;
+
+//  const aspect = 16 / 9;
+
+  const h1 = pixelCrop.height;
+  const w1 = pixelCrop.width;
+
+  const h2 = m * h1;
+  const w2 = h2 * aspect;
+
+  const dx = (w2 - w1) / 2;
+  const dy = (h2- h1) / 2;
+
+  croppedCanvas.width = w2;
+  croppedCanvas.height = h2;
+
+//  console.log({m, aspect, h1, w1, h2, w2, dx, dy});
 
   // Draw the cropped image onto the new canvas
   croppedCtx.drawImage(
     canvas,
     pixelCrop.x,
     pixelCrop.y,
-    pixelCrop.width,
-    pixelCrop.height,
-    0,
-    0,
-    pixelCrop.width,
-    pixelCrop.height
+    w1,
+    h1,
+    dx,
+    dy,
+    w1,
+    h1
   )
 
   // As Base64 string
@@ -98,6 +120,7 @@ export default async function getCroppedImg(
   // As a blob
   return new Promise<string | null>((resolve, reject) => {
     croppedCanvas.toBlob((file) => {
+//    logoCoverCanvas.toBlob((file) => {
       resolve(URL.createObjectURL(file!))
     }, 'image/png')
   })

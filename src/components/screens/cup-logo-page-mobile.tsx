@@ -1,5 +1,7 @@
 import { useState, useCallback } from 'react';
 
+import Image from 'next/image';
+
 import ConstructorPage from '../cups/constructor-page/constructor-page';
 
 import HeaderConstructor from '../cups/header/header-constructor';
@@ -13,6 +15,8 @@ import ConstructorCanvas from '../cups/constructor-canvas/constructor-canvas';
 import ConstructorApply from '../cups/constructor-apply/constructor-apply';
 
 import getCroppedImg from '../../services/cropImage'
+import getCroppedImgLogo from '../../services/cropImageLogo'
+
 
 import { useCustomization } from '@/context/customization';
 
@@ -23,14 +27,10 @@ const CupLogoPageMobile = () => {
 
   const {
 
-    logoImageSource,
-    setLogoImageSource,
-    logoImageCrop,
-    setLogoImageCrop,
-    logoImageZoom,
-    setLogoImageZoom,
-    logoImageXY,
-    setLogoImageXY,
+    logoImageSource, setLogoImageSource,
+    logoImageCrop, setLogoImageCrop,
+    logoImageZoom, setLogoImageZoom,
+    logoImageXY, setLogoImageXY,
 
     setConstructorView,
     setColorView,
@@ -42,6 +42,7 @@ const CupLogoPageMobile = () => {
   const [crop, setCrop] = useState<Point>(logoImageXY);
   const [zoom, setZoom] = useState(logoImageZoom);
   const [rotation, setRotation] = useState(0);
+  const [shape, setShape] = useState('rect');
   const [croppedAreaPixels, setCroppedAreaPixels] = useState({height: 0, width: 0, x: 0, y: 0});
 
   const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
@@ -53,12 +54,16 @@ const CupLogoPageMobile = () => {
   const apply = useCallback(async () => {
     try {
       if (logoImageSource !== '') {
-        console.log({croppedAreaPixels});
-        const croppedImage = await getCroppedImg(
+        const croppedImage = await getCroppedImgLogo(
           logoImageSource,
           croppedAreaPixels,
-          rotation
+          rotation,
+          /*flip = */{ horizontal: false, vertical: false },
+          /*shape=*/'rect',
+          /*m = */4,
+          /*aspect = */16 / 9
         )
+
         setLogoImageCrop(croppedImage!);
         setConstructorView(true);
         setColorView(false);
@@ -90,8 +95,10 @@ const CupLogoPageMobile = () => {
   const toggleRadio = () => {
     if (rounded) {
       setRounded(false);
+      setShape('react');
     } else {
       setRounded(true);
+      setShape('round');
     }
   };
 
@@ -123,14 +130,14 @@ const CupLogoPageMobile = () => {
             zoom={zoom}
             minZoom={0.2}
             maxZoom={5}
-            aspect={16 / 9}
+            aspect={4 / 4}
             objectFit={'horizontal-cover'}
             onRotationChange={setRotation}
             onCropChange={setCrop}
             restrictPosition={false}
             onZoomChange={setZoom}
             zoomWithScroll={true}
-
+            cropShape={'rect'}
             onCropComplete ={onCropComplete}
           />
 

@@ -51,7 +51,7 @@ const CupBackgroundPageMobile = () => {
     try {
 //      console.log({backgroundImageSource});
       if (backgroundImageSource !== '') {
-        console.log({croppedAreaPixels});
+//        console.log({croppedAreaPixels});
         const croppedImage = await getCroppedImg(
           backgroundImageSource,
           croppedAreaPixels,

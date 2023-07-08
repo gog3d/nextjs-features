@@ -8,7 +8,8 @@ const CupWrapper = () => {
   const {
     checkedColor,
     backgroundImageCrop,
-    logoImageCrop
+    logoImageCrop,
+    logoCoverImageCrop,
   } = useCustomization();
 
 //  console.log({backgroundImageCrop, checkedColor});
@@ -17,7 +18,7 @@ const CupWrapper = () => {
 //  const [tR, bR, h] = [5, 3.6, 11.2];
   const backgroundTexture = useTexture(backgroundImageCrop === '' ? '/cups/media/default.png' : backgroundImageCrop);
   const logoTexture = useTexture(logoImageCrop === '' ? '/cups/media/default.png' : logoImageCrop);
-
+  const logoCoverTexture = useTexture(logoCoverImageCrop === '' ? '/cups/media/default.png' : logoCoverImageCrop);
 
   return (
     <group rotation={[0, Math.PI, 0]}>

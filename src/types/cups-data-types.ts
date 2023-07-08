@@ -56,6 +56,15 @@ export type TCustomization = {
   logoImageXY: Point,
   setLogoImageXY: React.Dispatch<SetStateAction<Point>>,
 
+  logoCoverImageSource: string,
+  setLogoCoverImageSource: React.Dispatch<SetStateAction<string>>,
+  logoCoverImageCrop: string,
+  setLogoCoverImageCrop: React.Dispatch<SetStateAction<string>>,
+  logoCoverImageZoom: number,
+  setLogoCoverImageZoom: React.Dispatch<SetStateAction<number>>,
+  logoCoverImageXY: Point,
+  setLogoCoverImageXY: React.Dispatch<SetStateAction<Point>>,
+
   constructorView: boolean,
   setConstructorView: (arg0: boolean) => void,
   colorView: boolean ,
