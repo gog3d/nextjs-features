@@ -82,7 +82,7 @@ export default async function getCroppedImg(
 
   const m = pixelCrop.width / pixelCrop.height;
 
-  const h1 = 720;
+  const h1 = 1080;
   const w1 = h1 * 16 / 9;
 
   croppedCanvas.width = w1;
