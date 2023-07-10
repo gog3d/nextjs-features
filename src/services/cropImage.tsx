@@ -76,8 +76,18 @@ export default async function getCroppedImg(
   }
 
   // Set the size of the cropped canvas
-  croppedCanvas.width = pixelCrop.width
-  croppedCanvas.height = pixelCrop.height
+
+//  croppedCanvas.width = pixelCrop.width
+//  croppedCanvas.height = pixelCrop.height
+
+  const m = pixelCrop.width / pixelCrop.height;
+
+  const h1 = 720;
+  const w1 = h1 * 16 / 9;
+
+  croppedCanvas.width = w1;
+  croppedCanvas.height = h1;
+
 
   // Draw the cropped image onto the new canvas
   croppedCtx.drawImage(
@@ -88,8 +98,10 @@ export default async function getCroppedImg(
     pixelCrop.height,
     0,
     0,
-    pixelCrop.width,
-    pixelCrop.height
+//    pixelCrop.width,
+    w1,
+//    pixelCrop.height
+    h1
   )
 
   // As Base64 string
