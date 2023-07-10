@@ -87,11 +87,19 @@ export default async function getCroppedImgLogo(
 
 //  const aspect = 16 / 9;
 
-  const h1 = pixelCrop.height;
-  const w1 = pixelCrop.width;
+//  const h1 = pixelCrop.height;
+//  const w1 = pixelCrop.width;
 
-  const h2 = m * h1;
+  const h = 720;
+  const m1 = pixelCrop.width / pixelCrop.height;
+
+//  const h2 = m * h1;
+  const h2 = h;
   const w2 = h2 * aspect;
+
+  const h1 = h2 / m;
+  const w1 = h1 * m1;
+
 
   const dx = (w2 - w1) / 2;
   const dy = (h2- h1) / 2;
@@ -99,15 +107,15 @@ export default async function getCroppedImgLogo(
   croppedCanvas.width = w2;
   croppedCanvas.height = h2;
 
-//  console.log({m, aspect, h1, w1, h2, w2, dx, dy});
+  console.log({m, aspect, h1, w1, h2, w2, dx, dy});
 
   // Draw the cropped image onto the new canvas
   croppedCtx.drawImage(
     canvas,
     pixelCrop.x,
     pixelCrop.y,
-    w1,
-    h1,
+    pixelCrop.width,
+    pixelCrop.height,
     dx,
     dy,
     w1,
