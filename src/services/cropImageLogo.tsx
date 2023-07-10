@@ -37,7 +37,8 @@ export default async function getCroppedImgLogo(
   flip = { horizontal: false, vertical: false },
   shape='rect',
   m = 4,
-  aspect = 16 / 9
+  aspect = 16 / 9,
+  rounded = false
 
 ) {
   const image = await createImage(imageSrc)
@@ -104,10 +105,23 @@ export default async function getCroppedImgLogo(
   const dx = (w2 - w1) / 2;
   const dy = (h2- h1) / 2;
 
+  const dxC = w2 / 2;
+  const dyC = h2 / 2;
+  const radiusC = h1 / 2;
+
   croppedCanvas.width = w2;
   croppedCanvas.height = h2;
 
-  console.log({m, aspect, h1, w1, h2, w2, dx, dy});
+//  console.log({m, aspect, h1, w1, h2, w2, dx, dy});
+  if (rounded) {
+    //console.log('round');
+    croppedCtx.fillStyle='blue';
+    croppedCtx.beginPath();
+    croppedCtx.arc(dxC, dyC, radiusC, 0, 2 * Math.PI);
+    croppedCtx.fill();
+    croppedCtx.fillStyle='blue';
+    croppedCtx.globalCompositeOperation='source-in';
+  }
 
   // Draw the cropped image onto the new canvas
   croppedCtx.drawImage(
@@ -121,6 +135,8 @@ export default async function getCroppedImgLogo(
     w1,
     h1
   )
+
+ //croppedCtx.globalCompositeOperation = "destination-in";
 
   // As Base64 string
   // return croppedCanvas.toDataURL('image/jpeg');

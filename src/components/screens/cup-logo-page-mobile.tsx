@@ -42,8 +42,19 @@ const CupLogoPageMobile = () => {
   const [crop, setCrop] = useState<Point>(logoImageXY);
   const [zoom, setZoom] = useState(logoImageZoom);
   const [rotation, setRotation] = useState(0);
-  const [shape, setShape] = useState('rect');
+//  const [shape, setShape] = useState('rect');
   const [croppedAreaPixels, setCroppedAreaPixels] = useState({height: 0, width: 0, x: 0, y: 0});
+  const [rounded, setRounded] = useState(false);
+
+  const toggleRadio = () => {
+    if (rounded) {
+      setRounded(false);
+//      setShape('react');
+    } else {
+      setRounded(true);
+//      setShape('round');
+    }
+  };
 
   const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
     setLogoImageZoom(zoom);
@@ -61,7 +72,8 @@ const CupLogoPageMobile = () => {
           /*flip = */{ horizontal: false, vertical: false },
           /*shape=*/'rect',
           /*m = */4,
-          /*aspect = */16 / 9
+          /*aspect = */16 / 9,
+          rounded
         )
 
         setLogoImageCrop(croppedImage!);
@@ -81,7 +93,7 @@ const CupLogoPageMobile = () => {
     } catch (e) {
       console.error(e)
     }
-  }, [logoImageSource, croppedAreaPixels, rotation, setCroppedAreaPixels, setConstructorView, setColorView, setBackgroundView, setLogoView])
+  }, [logoImageSource, croppedAreaPixels, rotation, setCroppedAreaPixels, setConstructorView, setColorView, setBackgroundView, setLogoView, rounded])
 
   const deleteImage = () => {
     setZoom(1);
@@ -90,18 +102,6 @@ const CupLogoPageMobile = () => {
     setLogoImageXY({x: 0, y: 0});
     setLogoImageSource('');
   };
-
-  const [rounded, setRounded] = useState(false);
-  const toggleRadio = () => {
-    if (rounded) {
-      setRounded(false);
-      setShape('react');
-    } else {
-      setRounded(true);
-      setShape('round');
-    }
-  };
-
 
   return (
     <ConstructorPage>
@@ -137,7 +137,7 @@ const CupLogoPageMobile = () => {
             restrictPosition={false}
             onZoomChange={setZoom}
             zoomWithScroll={true}
-            cropShape={'rect'}
+            cropShape={rounded ? 'round' : 'rect'}
             onCropComplete ={onCropComplete}
           />
 
