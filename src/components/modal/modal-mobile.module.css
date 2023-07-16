@@ -1,0 +1,41 @@
+.modal-visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-window {
+  min-width: var(--mobile-min-width);
+  max-width: var(--mobile-max-width);
+  min-height: 100vh;
+  margin: 0 auto;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  transition: all 0.3s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.modal-wrapper {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.modal-background {
+  background-color: rgba(196, 196, 196, 0.8);
+  min-height: 100vh;
+  width: 100%;
+}

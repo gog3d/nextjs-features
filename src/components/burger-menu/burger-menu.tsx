@@ -1,0 +1,69 @@
+import { FC, ReactNode } from 'react';
+import styles from './burger-menu.module.css';
+
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+
+import HeaderWrapperMobile from '@/components/header-wrapper/header-wrapper-mobile';
+import PageMobile from '@/components/page/page-mobile';
+import PageContentMobile from '@/components/page-content/page-content-mobile';
+import LogoMainMobileIcon from '@/components/icons/logo-main-mobile-icon';
+import CloseIcon from '@/components/icons/close-icon';
+
+interface IBurgerMenuProps {
+  onClose: () => void;
+}
+
+const BurgerMenu: FC<IBurgerMenuProps> = ({onClose}) => {
+
+  const { asPath } = useRouter();
+
+  return (
+    <div className={styles['burger-menu']}>
+      <HeaderWrapperMobile>
+        <LogoMainMobileIcon />
+        <button onClick={onClose}>
+          <CloseIcon />
+        </button>
+      </HeaderWrapperMobile>
+      <PageContentMobile>
+        <ul className={styles['menu']}>
+          <li 
+            className={
+              asPath === '/' ? `${styles['menu-item']} ${styles['menu-item-selected']}` : styles['menu-item']}
+          >
+            <Link href={'/'}>
+              Главная
+            </Link>
+          </li>
+          <li 
+            className={
+              asPath === '/cataloge' ? `${styles['menu-item']} ${styles['menu-item-selected']}` : styles['menu-item']}
+          >
+            <Link href={'/cataloge'}>
+              Каталог
+            </Link>
+          </li>
+          <li 
+            className={
+              asPath === '/about-us' ? `${styles['menu-item']} ${styles['menu-item-selected']}` : styles['menu-item']}
+          >
+            <Link href={'/about-us'}>
+              О нас
+            </Link>
+          </li>
+          <li 
+            className={
+              asPath === '/contacts' ? `${styles['menu-item']} ${styles['menu-item-selected']}` : styles['menu-item']}
+          >
+            <Link href={'/contacts'}>
+              Контакты
+            </Link>
+          </li>
+        </ul>
+      </PageContentMobile>
+    </div>
+  );
+};
+
+export default BurgerMenu;

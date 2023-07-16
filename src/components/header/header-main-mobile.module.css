@@ -1,0 +1,5 @@
+.left-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 21px;
+}
