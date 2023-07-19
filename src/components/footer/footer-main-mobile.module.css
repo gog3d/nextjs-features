@@ -1,0 +1,47 @@
+.footer {
+}
+
+.communication-wrapper {
+  padding: 0px 16px;
+}
+
+.title {
+  color: #000000;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  padding-top: 18px;
+}
+
+.adress {
+  color: #000000;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  padding-top: 16px;
+}
+.tel {
+  color: #000000;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  padding-top: 8px;
+}
+
+.communication {
+  display: flex;
+  gap: 40px;
+  padding-top: 21px;
+  padding-bottom: 23px;
+}
+
+.creators {
+  background: #C3C4C5;
+  padding: 13px 16px;
+}

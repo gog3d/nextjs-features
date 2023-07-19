@@ -8,7 +8,7 @@ import HeaderWrapperMobile from '@/components/header-wrapper/header-wrapper-mobi
 import PageMobile from '@/components/page/page-mobile';
 import PageContentMobile from '@/components/page-content/page-content-mobile';
 import LogoMainMobileIcon from '@/components/icons/logo-main-mobile-icon';
-import CloseIcon from '@/components/icons/close-icon';
+import CloseMobileIcon from '@/components/icons/close-mobile-icon';
 
 interface IBurgerMenuProps {
   onClose: () => void;
@@ -23,7 +23,7 @@ const BurgerMenu: FC<IBurgerMenuProps> = ({onClose}) => {
       <HeaderWrapperMobile>
         <LogoMainMobileIcon />
         <button onClick={onClose}>
-          <CloseIcon />
+          <CloseMobileIcon />
         </button>
       </HeaderWrapperMobile>
       <PageContentMobile>

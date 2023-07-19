@@ -6,7 +6,7 @@ import Link from 'next/link';
 import HeaderWrapperMobile from '@/components/header-wrapper/header-wrapper-mobile';
 import LogoMainMobileIcon from '@/components/icons/logo-main-mobile-icon';
 import BurgerMenuIcon from '@/components/icons/burger-menu-icon';
-import SearchIcon from '@/components/icons/search-icon';
+import SearchMobileIcon from '@/components/icons/search-mobile-icon';
 
 import BurgerMenu from '@/components/burger-menu/burger-menu';
 import ModalMobile from '@/components/modal/modal-mobile';
@@ -28,7 +28,7 @@ const HeaderMainMobile = () => {
       </Link>
       <div className={styles['left-icons']}>
         <Link href={'/serach'}>
-          <SearchIcon />
+          <SearchMobileIcon />
         </Link>
         <button onClick={burgerMenuClick}>
           <BurgerMenuIcon />
