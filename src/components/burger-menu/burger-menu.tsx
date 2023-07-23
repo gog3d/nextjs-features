@@ -38,9 +38,9 @@ const BurgerMenu: FC<IBurgerMenuProps> = ({onClose}) => {
           </li>
           <li 
             className={
-              asPath === '/cataloge' ? `${styles['menu-item']} ${styles['menu-item-selected']}` : styles['menu-item']}
+              asPath === '/catalog' ? `${styles['menu-item']} ${styles['menu-item-selected']}` : styles['menu-item']}
           >
-            <Link href={'/cataloge'}>
+            <Link href={'/catalog'}>
               Каталог
             </Link>
           </li>
