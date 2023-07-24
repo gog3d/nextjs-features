@@ -1,14 +1,24 @@
 .scroll-container {
  /* border: 3px solid black;*/
   overflow: hidden;
-    display: flex;
-    white-space: nowrap;
-
-  margin: 4px 20px 17px 20px;
+  display: flex;
+  white-space: nowrap;
+  margin: 8px 0px;
 }
 
 .scroll-text {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
   color: #000000;
+  font-family: Inter;
+  /*font-family: Noto Sans;*/
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal; 
+  
   /* animation properties */
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);

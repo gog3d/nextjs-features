@@ -12,9 +12,9 @@ const CatalogPageMobile = () => {
       <HeaderMainMobile />
         <PageContentMobile>
           <HorizontalScrolling>
-            <span> Произведем в любом размере </span>
+            <span>Произведем в любом размере</span>
             <SrollingTextElips />
-            <span> Дизайн нарисуем </span>
+            <span>Дизайн нарисуем</span>
             <SrollingTextElips />
             <span> Макет разработаем </span>
             <SrollingTextElips />
