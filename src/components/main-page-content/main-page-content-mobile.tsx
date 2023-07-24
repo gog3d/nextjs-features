@@ -3,6 +3,7 @@ import styles from './main-page-content-mobile.module.css';
 
 import ButtonMobile from '../button/button-mobile';
 import ButtonLinkMobile from '../button/button-link-mobile';
+import ButtonConnectMobile from '../button/button-connect-mobile';
 
 
 interface IMainPageContentMobileProps {
@@ -66,11 +67,7 @@ const MainPageContentMobile = () => {
           и каждое лишнее действие. Если вы дочитали до этого пункта, то мы уже на полпути к тому, чтобы реализовать ваш запрос с минимальными затратами времени и нервов. 
         </div>
         <div className={styles['card-6__button-connect']}>
-          <ButtonLinkMobile link={'/feedback'}>
-            <div className={styles['button-connect']}>
-              {'Связаться с нами'}
-            </div>
-          </ButtonLinkMobile>
+          <ButtonConnectMobile link={'/feedback'} text={'Связаться с нами'} />
         </div>
       </div>
       <div className={styles['card-7']}>
@@ -86,11 +83,7 @@ const MainPageContentMobile = () => {
           (нажми меня) — открывается фича с визуализацией
         </div>
         <div className={styles['card-8__button-connect']}>
-          <ButtonLinkMobile link={'/feedback'}>
-            <div className={styles['button-connect']}>
-              {'Связаться с нами'}
-            </div>
-          </ButtonLinkMobile>
+          <ButtonConnectMobile link={'/feedback'} text={'Связаться с нами'} />
         </div>
       </div>
       <div className={styles['card-9']}>
