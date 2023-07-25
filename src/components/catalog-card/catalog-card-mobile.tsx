@@ -4,14 +4,15 @@ import styles from './catalog-card-mobile.module.css';
 
 
 interface ICatalogCardMobileProps {
+  name: string;
   text: string;
   link: string;
   children: ReactNode;
 }
 
-const CatalogCardMobile: FC<ICatalogCardMobileProps> = ({text, link, children}) => {
+const CatalogCardMobile: FC<ICatalogCardMobileProps> = ({name, text, link, children}) => {
   return (
-    <Link className={styles['card']} href={link}>
+    <Link className={`${styles['card']} ${styles[name]}`} href={link}>
       {children}
       <div className={styles['card-text']}>
         {text}

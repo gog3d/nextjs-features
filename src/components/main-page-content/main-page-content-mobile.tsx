@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 import styles from './main-page-content-mobile.module.css';
 
 import ButtonMobile from '../button/button-mobile';
-import ButtonLinkMobile from '../button/button-link-mobile';
+//import ButtonLinkMobile from '../button/button-link-mobile';
 import ButtonConnectMobile from '../button/button-connect-mobile';
 
 

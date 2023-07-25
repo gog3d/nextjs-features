@@ -1,9 +1,19 @@
+.scroll {
+  width: 100%;
+}
 .scroll-container {
  /* border: 3px solid black;*/
-  overflow: hidden;
   display: flex;
   white-space: nowrap;
+  overflow: hidden;
   margin: 8px 0px;
+}
+
+.scroll-text-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
 .scroll-text {

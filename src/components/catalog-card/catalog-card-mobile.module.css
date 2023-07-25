@@ -9,9 +9,8 @@
   background: #CFF3FC;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 
-  padding: 16px 33px 45px 33px;
+  padding: 16px 0px 45px 0px;
 }
-
 
 .card-text {
   color: #000000;
@@ -23,4 +22,65 @@
   line-height: 24px; /* 120% */ 
 
   height: 43px;
+  width: 155px;
+}
+
+.cups {
+  border-radius: 24px;
+  background: #CFF3FC;
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+}
+
+.paper {
+  border-radius: 24px;
+  background: #EBF7BD;
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+}
+
+.lids {
+  border-radius: 24px;
+  background: #FCE1CF;
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+}
+
+.carton {
+  border-radius: 24px;
+  background: #E2DFF7;
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+}
+
+.plastic {
+  border-radius: 24px;
+  background: #D8F9E5;
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+}
+
+.unifom {
+  border-radius: 24px;
+  background: #FCEBCD;
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+}
+
+.mayonnaise {
+  border-radius: 24px;
+  background: #E7E7E7;
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+}
+
+.space {
+  border-radius: 24px;
+  background: rgba(247, 198, 255, 0.56);
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+}
+
+.consulting {
+  border-radius: 24px;
+  background: #F9FFE0;
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+}
+
+.design {
+  border-radius: 24px;
+  background: #CFDEFD;
+  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
