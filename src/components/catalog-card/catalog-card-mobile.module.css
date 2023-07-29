@@ -31,7 +31,7 @@
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
-.paper {
+.paper-packaging {
   border-radius: 24px;
   background: #EBF7BD;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
@@ -49,25 +49,25 @@
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
-.plastic {
+.plastic-box {
   border-radius: 24px;
   background: #D8F9E5;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
-.unifom {
+.uniform {
   border-radius: 24px;
   background: #FCEBCD;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
-.mayonnaise {
+.mayonnaise-sauce {
   border-radius: 24px;
   background: #E7E7E7;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
-.space {
+.space-decoration {
   border-radius: 24px;
   background: rgba(247, 198, 255, 0.56);
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);

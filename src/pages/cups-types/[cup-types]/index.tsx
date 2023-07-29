@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import { TCup, TCupTypes, TData } from '../../../types/cups-data-types';
+import { TDataTypes, TCatalogItemsTypes, TCupTypes } from '@/types/data-types';
 
 import CupTypesPageMobile from '@/components/screens/cup-types-page-mobile';
 
@@ -15,8 +15,6 @@ const CupTypes: FC<ICupProps> = ({cupTypes}) => {
 };
 
 export default CupTypes;
-
-//read data.json
 
 import {readFile} from 'fs/promises';
 import path from 'path';
@@ -38,15 +36,17 @@ interface Errors {
 
 
 export const getServerSideProps: GetServerSideProps<Props, Params>  = async (context) => {
-//  console.log(params);
   const params = context.params!;
   const name = params['cup-types'];
-//  console.log(name);
-  const filePath = path.join(process.cwd(), 'public/cups/data/cups-data.json');
+  const filePath = path.join(process.cwd(), 'public/data/data.json');
   const data: Buffer = await readFile(filePath);
-  const jsonData: TData  = await JSON.parse(data.toString());
-  const types: TCupTypes | undefined = jsonData.cups.find((cup) => cup.name === name);
-  const cupTypes = types ? types : null;
+
+  const jsonData: TDataTypes  = await JSON.parse(data.toString());
+  const cups_items: TCatalogItemsTypes | undefined = jsonData.catalog.find(item => item.type === 'cups');
+  const cups: Array<TCupTypes> | null = cups_items ? cups_items.items : null;
+
+  const types: TCupTypes | undefined  = cups ? cups.find((cup) => cup.name === name) : undefined;
+  const cupTypes: TCupTypes | null = types ? types : null;
   return { props: { cupTypes } };
 };
 

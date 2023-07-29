@@ -16,9 +16,16 @@ const CupWrapper = () => {
 
   const [tR, bR, h] = [4, 2.6, 11.2];
 //  const [tR, bR, h] = [5, 3.6, 11.2];
+
+
   const backgroundTexture = useTexture(backgroundImageCrop === '' ? '/cups/media/default.png' : backgroundImageCrop);
   const logoTexture = useTexture(logoImageCrop === '' ? '/cups/media/default.png' : logoImageCrop);
   const logoCoverTexture = useTexture(logoCoverImageCrop === '' ? '/cups/media/default.png' : logoCoverImageCrop);
+
+///  const backgroundTexture = useTexture('/cups/media/default.png');
+//  const logoTexture = useTexture('/cups/media/default.png');
+//  const logoCoverTexture = useTexture('/cups/media/default.png');
+  
 
   return (
     <group rotation={[0, Math.PI, 0]}>

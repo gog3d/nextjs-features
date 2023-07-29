@@ -1,4 +1,7 @@
-//import Link from 'next/link';
+import {FC} from 'react';
+
+import Link from 'next/link';
+import Image from 'next/image';
 
 import PageMobile from '../page/page-mobile';
 import HeaderMainMobile from '../header/header-main-mobile';
@@ -22,75 +25,22 @@ import CatalogSpaceDecorationMobileIcon from '../icons/catalog-space-decoration-
 import CatalogConsultingMobileIcon from '../icons/catalog-consulting-mobile-icon';
 import CatalogDesignMobileIcon from '../icons/catalog-design-mobile-icon';
 
-const scrollText = [
-  'Произведем в любом размере', 'Дизайн нарисуем', 'Макет разработаем',
-  'Решение подберем', 'Рекламу оформим', 'Процессы подскажем', 'Рецептуру придумаем'
-];
+import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 
-const catalogItems = [
-  {
-    name: 'cups',
-    text: 'Стаканы',
-    link: '/cups-types',
-    icon: <CatalogCupMobileIcon />,
-  },
-  {
-    name: 'paper',
-    text: 'Бумажная упаковка',
-    link: '/paper-packaging',
-    icon: <CatalogPaperPackagingMobileIcon />,
-  },
-  {
-    name: 'lids',
-    text: 'Крышки',
-    link: '/lids',
-    icon: <CatalogLidsMobileIcon />,
-  },
-  {
-    name: 'carton',
-    text: 'Картонная упаковка',
-    link: '/carton-packaging',
-    icon: <CatalogCartonPackagingMobileIcon />,
-  },
-  {
-    name: 'plastic',
-    text: 'Пластиковая упаковка',
-    link: '/plastic-box',
-    icon: <CatalogPlasticBoxMobileIcon />,
-  },
-  {
-    name: 'unifom',
-    text: 'Униформа',
-    link: '/uniform',
-    icon: <CatalogUniformMobileIcon />,
-  },
-  {
-    name: 'mayonnaise',
-    text: 'Майонезный соус',
-    link: '/mayonnaise-sauce',
-    icon: <CatalogMayonnaiseSauceMobileIcon />,
-  },
-  {
-    name: 'space',
-    text: 'Оформление пространства',
-    link: '/space-decoration',
-    icon: <CatalogSpaceDecorationMobileIcon />,
-  },
-  {
-    name: 'consulting',
-    text: 'Консалтинг',
-    link: '/consulting',
-    icon: <CatalogConsultingMobileIcon />,
-  },
-  {
-    name: 'design',
-    text: 'Дизайн',
-    link: '/design',
-    icon: <CatalogDesignMobileIcon />,
-  }
-];
+interface ICatalogPageProps {
+  catalog: Array<TCatalogItemsTypes>;
+}
 
-const CatalogPageMobile = () => {
+const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
+
+  const scrollText = [
+    'Произведем в любом размере', 'Дизайн нарисуем', 'Макет разработаем',
+    'Решение подберем', 'Рекламу оформим', 'Процессы подскажем', 'Рецептуру придумаем'
+  ];
+
+//  console.log(catalog);
+
+//  const catalogItems = catalog.map(item => item);
 
   return (
     <PageMobile>
@@ -99,9 +49,16 @@ const CatalogPageMobile = () => {
           <HorizontalScrolling textArray={scrollText} />
           <CatalogCardsMobile>
           {
-            catalogItems.map((item, index) => 
-              <CatalogCardMobile text={item.text} link={item.link} name={item.name} key={index}>
-                {item.icon}
+            catalog.map((item, index) => 
+              <CatalogCardMobile title={item.title} link={item.link} type={item.type} key={index}>
+                {
+                  <Image 
+                    src={`/media/${item.logo.mobile}`}
+                    alt='item-icon'
+                    width='90'
+                    height='90'
+                  />
+                }
               </CatalogCardMobile>
             )
           }

@@ -1,7 +1,7 @@
 'use client';
 import { FC, ReactNode } from 'react';
 import { createContext, useContext, useState } from 'react';
-import { TCustomization } from '@/types/cups-data-types';
+import { TCustomization } from '@/types/data-types';
 
 const CustomizationContext = createContext<TCustomization | null>(null);
 
@@ -9,10 +9,13 @@ interface ICustomizationProviderProps {
   children: ReactNode;
 };
 
-
+interface IColors {
+  color: string;
+  id: string;
+};
 
 export const CustomizationProvider: FC<ICustomizationProviderProps> = ({children}) => {
-  const colors = [
+  const colors: Array<IColors> = [
     {color: '#222222', id: '1'},
     {color: '#3603FF', id: '2'},
     {color: '#1A5E1A', id: '3'},
@@ -50,8 +53,6 @@ export const CustomizationProvider: FC<ICustomizationProviderProps> = ({children
   const [logoCoverImageCrop, setLogoCoverImageCrop] = useState('');
   const [logoCoverImageZoom, setLogoCoverImageZoom] = useState(1);
   const [logoCoverImageXY, setLogoCoverImageXY] = useState({x: 0, y: 0});
-
-
 
   return (
     <CustomizationContext.Provider

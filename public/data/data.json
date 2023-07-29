@@ -1,0 +1,314 @@
+{
+  "catalog": [
+    {
+      "id": "1",
+      "type": "cups",
+      "title": "Стаканы",
+      "link": "/cups-types",
+      "logo": {
+        "mobile": "catalog-cup-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": [
+        {
+          "id": "1",
+          "name": "single-layer",
+          "title": "Однослойные",
+          "types": [
+            {
+              "id": "1",
+              "name": "100-120",
+              "title": "Стакан 100-120 мм",
+              "parameters": [
+                {
+                  "name": "Ø горлышка",
+                  "value": "63"
+                },
+                {
+                  "name": "Ø донышка",
+                  "value": "46"
+                },
+                {
+                  "name": "Высота",
+                  "value": "65"
+                },
+                {
+                  "name": "Минимальный тираж",
+                  "value": "5000"
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "name": "170-210",
+              "title": "Стакан 170-210 мм",
+              "parameters": [
+                {
+                  "name": "Ø горлышка",
+                  "value": "73"
+    
+                },
+                {
+                  "name": "Ø донышка",
+                  "value": "50"
+                },
+                {
+                  "name": "Высота",
+                  "value": "80"
+                },
+                {
+                  "name": "Минимальный тираж",
+                  "value": "5000"
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "name": "250-270",
+              "title": "Стакан 250-270 мм",
+              "parameters": [
+                {
+                  "name": "Ø горлышка",
+                  "value": "80"
+                },
+                {
+                  "name": "Ø донышка",
+                  "value": "55"
+                },
+                {
+                  "name": "Высота",
+                  "value": "90"
+                },
+                {
+                  "name": "Минимальный тираж",
+                  "value": "5000"
+                }
+              ]
+            },
+            {
+              "id": "4",
+              "name": "370-420",
+              "title": "Стакан 370-420 мм",
+              "parameters": [
+                {
+                  "name": "Ø горлышка",
+                  "value": "90"
+                },
+                {
+                  "name": "Ø донышка",
+                  "value": "62"
+                },
+                {
+                  "name": "Высота",
+                  "value": "112"
+                },
+                {
+                  "name": "Минимальный тираж",
+                  "value": "5000"
+                }
+              ]
+            },
+            {
+              "id": "5",
+              "name": "500-530",
+              "title": "Стакан 500-530 мм",
+              "parameters": [
+                {
+                  "name": "Ø горлышка",
+                  "value": "90"
+                },
+                {
+                  "name": "Ø донышка",
+                  "value": "62"
+                },
+                {
+                  "name": "Высота",
+                  "value": "135"
+                },
+                {
+                  "name": "Минимальный тираж",
+                  "value": "5000"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "double-layer",
+          "title": "Двуслойные",
+          "types": [
+            {
+              "id": "1",
+              "name": "250-270",
+              "title": "Стакан 250-270 мм",
+              "parameters": [
+                {
+                  "name": "Ø горлышка",
+                  "value": "80"
+                },
+                {
+                  "name": "Ø донышка",
+                  "value": "55"
+                },
+                {
+                  "name": "Высота",
+                  "value": "90"
+                },
+                {
+                  "name": "Минимальный тираж",
+                  "value": "5000"
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "name": "370-420",
+              "title": "Стакан 370-420 мм",
+              "parameters": [
+                {
+                  "name": "Ø горлышка",
+                  "value": "90"
+                },
+                {
+                  "name": "Ø донышка",
+                  "value": "62"
+                },
+                {
+                  "name": "Высота",
+                  "value": "112"
+                },
+                {
+                  "name": "Минимальный тираж",
+                  "value": "5000"
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "name": "500-530",
+              "title": "Стакан 500-530 мм",
+              "parameters": [
+                {
+                  "name": "Ø горлышка",
+                  "value": "90"
+                },
+                {
+                  "name": "Ø донышка",
+                  "value": "62"
+                },
+                {
+                  "name": "Высота",
+                  "value": "135"
+                },
+                {
+                  "name": "Минимальный тираж",
+                  "value": "5000"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "type": "paper-packaging",
+      "title": "Бумажная упаковка",
+      "link": "/paper-packaging",
+      "logo": {
+        "mobile": "catalog-paper-packaging-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": []
+    },
+    {
+      "id": "3",
+      "type": "lids",
+      "title": "Крышки",
+      "link": "/lids",
+      "logo": {
+        "mobile": "catalog-lids-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": []
+    },
+    {
+      "id": "4",
+      "type": "carton",
+      "title": "Картонная упаковка",
+      "link": "/carton-packaging",
+      "logo": {
+        "mobile": "catalog-carton-packaging-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": []
+    },
+    {
+      "id": "5",
+      "type": "plastic-box",
+      "title": "Пластиковая упаковка",
+      "link": "/plastic-box",
+      "logo": {
+        "mobile": "catalog-plastic-box-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": []
+    },
+    {
+      "id": "6",
+      "type": "uniform",
+      "title": "Униформа",
+      "link": "/uniform",
+      "logo": {
+        "mobile": "catalog-uniform-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": []
+    },
+    {
+      "id": "7",
+      "type": "mayonnaise-sauce",
+      "title": "Майонезный соус",
+      "link": "/mayonnaise-sauce",
+      "logo": {
+        "mobile": "catalog-mayonnaise-sauce-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": []
+    },
+    {
+      "id": "8",
+      "type": "space-decoration",
+      "title": "Оформление пространства",
+      "link": "/space-decoration",
+      "logo": {
+        "mobile": "catalog-space-decoration-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": []
+    },
+    {
+      "id": "9",
+      "type": "consulting",
+      "title": "Консалтинг",
+      "link": "/consulting",
+      "logo": {
+        "mobile": "catalog-consulting-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": []
+    },
+    {
+      "id": "10",
+      "type": "design",
+      "title": "Дизайн",
+      "link": "/design",
+      "logo": {
+        "mobile": "catalog-design-mobile-icon.svg",
+        "desctop": ""
+      },
+      "items": []
+    }
+  ]
+}

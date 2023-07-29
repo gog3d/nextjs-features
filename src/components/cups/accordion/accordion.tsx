@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 import styles from './accordion.module.css';
 import AccordionArrowIcon from '../icons/accordion-arrow-icon';
-import { TCup, TCupTypes, TData } from '../../../types/cups-data-types';
+import { TCup } from '../../../types/data-types';
 
 interface IAccordionProps {
   children: ReactNode;

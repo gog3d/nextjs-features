@@ -9,6 +9,12 @@ import ConstructorApply from '../cups/constructor-apply/constructor-apply';
 
 import { useCustomization } from '@/context/customization';
 
+interface IColors {
+  color: string;
+  id: string;
+};
+
+
 const CupColorPageMobile = () => {
 
   const {
@@ -44,7 +50,7 @@ const CupColorPageMobile = () => {
       <Color>
         <ColorButtons>
         {
-          colors.map(color => {
+          colors.map((color: IColors) => {
             return (
             <React.Fragment key={color.id}>
               <ColorRadio color={color.color} />

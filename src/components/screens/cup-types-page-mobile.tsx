@@ -9,7 +9,7 @@ import Accordion from '../cups/accordion/accordion';
 
 import Preview from '../cups/preview/preview';
 import Error from '../cups/error/error';
-import { TCup, TCupTypes, TData } from '../../types/cups-data-types';
+import { TCup, TCupTypes } from '../../types/data-types';
 
 interface ICupTypesProps {
   cupTypes: TCupTypes | null;

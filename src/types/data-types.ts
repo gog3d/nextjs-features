@@ -20,12 +20,28 @@ export type TCupTypes = {
   types: Array<TCup>
 };
 
+export type TCatalogItemsTypes = {
+  id: number,
+  type: string,
+  title: string,
+  link: string,
+  logo: {
+    mobile: string,
+    desctop: string
+  },
+  items: Array<any>
+}
+
+export type TDataTypes = {
+  catalog: Array<TCatalogItemsTypes>
+}
+/*
 export type TData = {
   cups: Array<TCupTypes>,
   tShirts: Array<any>,
   caps: Array<any>
 };
-
+*/
 export type TColor = {
   color: string,
   id: string
