@@ -27,7 +27,7 @@ const HeaderMainMobile = () => {
         <LogoMainMobileIcon />
       </Link>
       <div className={styles['left-icons']}>
-        <Link href={'/serach'}>
+        <Link href={'/search'}>
           <SearchMobileIcon />
         </Link>
         <button onClick={burgerMenuClick}>

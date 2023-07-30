@@ -1,0 +1,11 @@
+.header {
+  padding: 9px 16px;
+}
+
+.header-wrapper {
+  display: flex;
+/*  justify-content: space-between;*/
+  align-items: center;
+  gap: 28px;
+  border-bottom: 2px solid #D9D9D9;
+}

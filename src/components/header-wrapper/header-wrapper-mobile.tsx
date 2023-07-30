@@ -7,9 +7,9 @@ interface IHeaderWrapperMobileProps {
 
 const HeaderWrapperMobile: FC<IHeaderWrapperMobileProps> = ({children}) => {
   return (
-    <div className={styles['header']}>
+    <header className={styles['header']}>
       {children}
-    </div>
+    </header>
   );
 };
 
