@@ -1,5 +1,5 @@
 .header {
-  padding: 9px 16px;
+  padding: 9px 16px 0px 16px;
 }
 
 .header-wrapper {
@@ -8,4 +8,5 @@
   align-items: center;
   gap: 28px;
   border-bottom: 2px solid #D9D9D9;
+  padding-bottom: 9px;
 }
