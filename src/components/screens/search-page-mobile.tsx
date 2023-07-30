@@ -36,7 +36,7 @@ const SearchPageMobile: FC<ISearchPageProps> = ({ catalog }) => {
         />
       </HeaderSearchWrapperMobile>
       <PageContentMobile>
-        <div>
+        <div style={{color: '#000000'}}>
           {searchText}
         </div>
       </PageContentMobile>
