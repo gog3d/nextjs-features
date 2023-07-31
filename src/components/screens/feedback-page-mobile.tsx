@@ -8,8 +8,11 @@ import HeaderWrapperMobile from '@/components/header-wrapper/header-wrapper-mobi
 import BackLinkMobileIcon from '@/components/icons/back-link-mobile-icon';
 import EmptyMobileIcon from '@/components/icons/empty-mobile-icon';
 
-import InputFormMobile from '@/components/input/input-form-mobile';
+
 import FormWrapperMobile from '@/components/form/form-wrapper-mobile';
+import InputFormMobile from '@/components/input/input-form-mobile';
+import AccordionMobile from '@/components/accordion/accordion-mobile';
+
 
 const FeedbackPageMobile = () => {
 
@@ -36,6 +39,13 @@ const FeedbackPageMobile = () => {
           <InputFormMobile placeholder={'Телефон'} type={'tel'}  handleChange={handleChange}/>
           <InputFormMobile placeholder={'Имя'} type={'text'}  handleChange={handleChange}/>
           <InputFormMobile placeholder={'E-mail'} type={'email'}  handleChange={handleChange}/>
+          <AccordionMobile title={'Наименование'}>
+           <p>Cups</p>
+           <p>Cups</p>
+           <p>Cups</p>
+           <p>Cups</p>
+
+          </AccordionMobile>
         </FormWrapperMobile>
       </PageContentMobile>
     </PageMobile>
