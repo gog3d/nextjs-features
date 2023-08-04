@@ -1,0 +1,16 @@
+.input {
+  all: unset;
+}
+
+.input {
+  display: inline-block;
+  color: #767676;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+
+  width: 100%;
+}
+

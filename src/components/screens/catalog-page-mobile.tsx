@@ -38,9 +38,6 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
     'Решение подберем', 'Рекламу оформим', 'Процессы подскажем', 'Рецептуру придумаем'
   ];
 
-//  console.log(catalog);
-
-//  const catalogItems = catalog.map(item => item);
 
   return (
     <PageMobile>
