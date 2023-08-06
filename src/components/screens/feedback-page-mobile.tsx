@@ -92,7 +92,7 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
         <EmptyMobileIcon />
       </HeaderWrapperMobile>
       <PageContentMobile>
-        <FormWrapperMobile action={''}>
+        <FormWrapperMobile action={'/success'}>
           <InputFormMobile placeholder={'Наименование компании'} type={'text'} handleChange={handleChangeCompanyName}/>
           <InputFormMobile placeholder={'Телефон'} type={'tel'}  handleChange={handleChangeTel}/>
           <InputFormMobile placeholder={'Имя'} type={'text'}  handleChange={handleChangeName}/>
