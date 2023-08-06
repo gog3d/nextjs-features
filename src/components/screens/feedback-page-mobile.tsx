@@ -92,13 +92,11 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
         <EmptyMobileIcon />
       </HeaderWrapperMobile>
       <PageContentMobile>
-        <FormWrapperMobile>
+        <FormWrapperMobile action={''}>
           <InputFormMobile placeholder={'Наименование компании'} type={'text'} handleChange={handleChangeCompanyName}/>
           <InputFormMobile placeholder={'Телефон'} type={'tel'}  handleChange={handleChangeTel}/>
           <InputFormMobile placeholder={'Имя'} type={'text'}  handleChange={handleChangeName}/>
           <InputFormMobile placeholder={'E-mail'} type={'email'}  handleChange={handleChangeEmail}/>
-
-
           <AccordionMobile title={'Наименование'}>
             <AccordionWrapperFeedbackMobile>
               {
@@ -129,7 +127,7 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
           <ButtonWrapperFeedbackMobile>
             <ButtonMobile 
               text={'Отправить'} 
-              onClickHandler={()=> console.log('hello')}
+              onClickHandler={()=> router.push('/success')}
             />
           </ButtonWrapperFeedbackMobile>
         </FormWrapperMobile>
