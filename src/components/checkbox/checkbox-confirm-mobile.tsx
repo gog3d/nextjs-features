@@ -1,15 +1,16 @@
 import React, { FC, ReactNode } from 'react';
-import styles from './checkbox-mobile.module.css';
+import styles from './checkbox-confirm-mobile.module.css';
 
 import CheckboxMobileIcon from '@/components/icons/checkbox-mobile-icon';
 
-interface ICheckboxMobileProps {
+
+interface ICheckboxConfirmMobileProps {
   title: string;
   name: string;
   toggleCheckbox: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
-const CheckboxMobile: FC<ICheckboxMobileProps> = ({title, name, toggleCheckbox}) => {
+const CheckboxConfirmMobile: FC<ICheckboxConfirmMobileProps> = ({title, name, toggleCheckbox}) => {
 
   return (
     <label className={styles['checkbox']}>
@@ -30,4 +31,4 @@ const CheckboxMobile: FC<ICheckboxMobileProps> = ({title, name, toggleCheckbox})
   );
 };
 
-export default CheckboxMobile;
+export default CheckboxConfirmMobile;

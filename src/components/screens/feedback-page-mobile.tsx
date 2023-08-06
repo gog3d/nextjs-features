@@ -13,12 +13,14 @@ import FormWrapperMobile from '@/components/form/form-wrapper-mobile';
 
 import InputFormMobile from '@/components/input/input-form-mobile';
 import InputFormTextAreaMobile from '@/components/input/input-form-text-area-mobile';
-
+import InputFormWrapperTextAreaMobile from '@/components/input/input-form-wrapper-text-area-mobile';
 
 import AccordionMobile from '@/components/accordion/accordion-mobile';
 import AccordionWrapperFeedbackMobile from '@/components/accordion/accordion-wrapper-feedback-mobile';
 
 import CheckboxMobile from '@/components/checkbox/checkbox-mobile';
+import CheckboxConfirmMobile from '@/components/checkbox/checkbox-confirm-mobile';
+
 import ButtonMobile from '@/components/button/button-mobile';
 import ButtonWrapperFeedbackMobile from '@/components/button/button-wrapper-feedback-mobile';
 
@@ -41,8 +43,8 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
   const [tel, setTel] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [textArea, setTextArea] = useState('Сообщение');
-
+  const [textArea, setTextArea] = useState('');
+  const [confirm, setConfirm] = useState(false);
 
   const handleChangeCompanyName = (e:  React.ChangeEvent<HTMLInputElement>) => {
     setCompanyName(e.target.value);
@@ -60,6 +62,11 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
 
   const handleChangeTextArea = (e:  React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextArea(e.target.value);
+  };
+
+  const confirmData = () => {
+    confirm ? setConfirm(false) : setConfirm(true);
+//    console.log(confirm);
   };
 
 
@@ -91,7 +98,6 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
           <InputFormMobile placeholder={'Имя'} type={'text'}  handleChange={handleChangeName}/>
           <InputFormMobile placeholder={'E-mail'} type={'email'}  handleChange={handleChangeEmail}/>
 
-          <InputFormTextAreaMobile value={textArea} handleChange={handleChangeTextArea}/>
 
           <AccordionMobile title={'Наименование'}>
             <AccordionWrapperFeedbackMobile>
@@ -101,14 +107,25 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
                     <CheckboxMobile 
                       title={item.title} 
                       name={item.type}
-                      toggleCheckbox={()=> setCheckboxValue(item.title)}
+                      toggleCheckbox={() => setCheckboxValue(item.title)}
                     />
                   </div>
                 )
               }
             </AccordionWrapperFeedbackMobile>
           </AccordionMobile>
-
+          <InputFormWrapperTextAreaMobile>
+            <InputFormTextAreaMobile 
+              value={textArea} 
+              placeholder={'Сообщение'}
+              handleChange={handleChangeTextArea}
+            />
+          </InputFormWrapperTextAreaMobile>
+          <CheckboxConfirmMobile 
+            title={'Соглашаюсь с условиями обработки данных'} 
+            name={'confirm'}
+            toggleCheckbox={()=> confirmData()}
+          />
           <ButtonWrapperFeedbackMobile>
             <ButtonMobile 
               text={'Отправить'} 
