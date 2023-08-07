@@ -4,7 +4,7 @@ import styles from './button-mobile.module.css';
 interface IButtonMobileProps {
 //  children: ReactNode;
   text: string;
-  onClickHandler: () => void;
+  onClickHandler: () => void | undefined;
 }
 
 const ButtonMobile: FC<IButtonMobileProps> = ({text, onClickHandler}) => {

@@ -21,7 +21,7 @@ import AccordionWrapperFeedbackMobile from '@/components/accordion/accordion-wra
 import CheckboxMobile from '@/components/checkbox/checkbox-mobile';
 import CheckboxConfirmMobile from '@/components/checkbox/checkbox-confirm-mobile';
 
-import ButtonMobile from '@/components/button/button-mobile';
+import ButtonFormMobile from '@/components/button/button-form-mobile';
 import ButtonWrapperFeedbackMobile from '@/components/button/button-wrapper-feedback-mobile';
 
 //import ButtonConnectMobile from '@/components/button/button-connect-mobile';
@@ -36,7 +36,6 @@ interface IFeedbackPageProps {
 const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
 
   const router = useRouter();
-
   const [checkboxItems, setCheckboxItems] = useState(['']);
 
   const [companyName, setCompanyName] = useState('');
@@ -66,11 +65,7 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
 
   const confirmData = () => {
     confirm ? setConfirm(false) : setConfirm(true);
-//    console.log(confirm);
   };
-
-
-//      console.log(checkboxItems);
 
   const setCheckboxValue = (name: string) => {
     const checkItem = checkboxItems && checkboxItems.find((item) => item === name) ? checkboxItems.find((item) => item === name) : false;
@@ -80,6 +75,11 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
      checkboxItems.push(name)
      setCheckboxItems(checkboxItems);
     }
+  }
+
+  const onSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    router.push('/success')
   }
 
   return (
@@ -92,7 +92,7 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
         <EmptyMobileIcon />
       </HeaderWrapperMobile>
       <PageContentMobile>
-        <FormWrapperMobile action={'/success'}>
+        <FormWrapperMobile onSubmit={onSubmit}>
           <InputFormMobile placeholder={'Наименование компании'} type={'text'} handleChange={handleChangeCompanyName}/>
           <InputFormMobile placeholder={'Телефон'} type={'tel'}  handleChange={handleChangeTel}/>
           <InputFormMobile placeholder={'Имя'} type={'text'}  handleChange={handleChangeName}/>
@@ -122,12 +122,11 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
           <CheckboxConfirmMobile 
             title={'Соглашаюсь с условиями обработки данных'} 
             name={'confirm'}
-            toggleCheckbox={()=> confirmData()}
+            toggleCheckbox={()=>confirmData()}
           />
           <ButtonWrapperFeedbackMobile>
-            <ButtonMobile 
-              text={'Отправить'} 
-              onClickHandler={()=> router.push('/success')}
+            <ButtonFormMobile 
+              text={'Отправить'}
             />
           </ButtonWrapperFeedbackMobile>
         </FormWrapperMobile>

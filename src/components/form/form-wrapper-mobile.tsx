@@ -3,12 +3,13 @@ import styles from './form-wrapper-mobile.module.css';
 
 interface IFormWrapperMobileProps {
   children: ReactNode;
-  action: string;
+//  action: string;
+  onSubmit: (e: React.SyntheticEvent) => void;
 }
 
-const FormWrapperMobile: FC<IFormWrapperMobileProps> = ({children, action}) => {
+const FormWrapperMobile: FC<IFormWrapperMobileProps> = ({children, onSubmit}) => {
   return (
-    <form action={action} className={styles['form-wrapper']}>
+    <form onSubmit={onSubmit} className={styles['form-wrapper']}>
       {children}
     </form>
   );

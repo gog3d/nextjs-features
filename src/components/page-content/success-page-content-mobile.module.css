@@ -1,4 +1,6 @@
 .main-page-content {
+  min-height: 100vh;
+  min-width: var(--mobile-min-width);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +22,7 @@
 
 .title_bold {
   color: #DE073D;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .text {
