@@ -220,6 +220,14 @@
         "mobile": "catalog-paper-packaging-mobile-icon.svg",
         "desctop": ""
       },
+      "description": {
+        "title": "Все изделия могут быть произведены по вашим индивидуальным размерам.",
+        "subtitles": [
+          "Варианты материалов изготовления:",
+          "ЖВС,подпергамент, пергамент, парафинированный слой.",
+          "Плотность бумаги зависит от ваших потребностей"
+        ]
+      },
       "items": []
     },
     {
@@ -231,16 +239,28 @@
         "mobile": "catalog-lids-mobile-icon.svg",
         "desctop": ""
       },
+      "description": {
+        "title": "Пластиковые крышки с клапаном для бумажных стаканов",
+        "subtitles": [
+          "крышка для одноразового стаканчика из полипропиленового материала, может быть изготовлена в любом цвете"
+        ]
+      },
       "items": []
     },
     {
       "id": "4",
-      "type": "carton",
+      "type": "carton-packaging",
       "title": "Картонная упаковка",
       "link": "/carton-packaging",
       "logo": {
         "mobile": "catalog-carton-packaging-mobile-icon.svg",
         "desctop": ""
+      },
+      "description": {
+        "title": "Все изделия могут быть произведены по вашим индивидуальынм размерам.",
+        "subtitles": [
+          "Плотность картона и варианты технологии сборки обсуждаются индивидуально."
+        ]
       },
       "items": []
     },
@@ -253,6 +273,12 @@
         "mobile": "catalog-plastic-box-mobile-icon.svg",
         "desctop": ""
       },
+      "description": {
+        "title": "Произволится из полипропиленового материала, оптимально для горячей и холодной подачи",
+        "subtitles": [
+          ""
+        ]
+      },
       "items": []
     },
     {
@@ -263,6 +289,12 @@
       "logo": {
         "mobile": "catalog-uniform-mobile-icon.svg",
         "desctop": ""
+      },
+      "description": {
+        "title": "Материалы изготовления подбираются индивидально.",
+        "subtitles": [
+          "На все представленные позиции может быть нанесена вышивка или флексопечать."
+        ]
       },
       "items": []
     },
@@ -275,6 +307,12 @@
         "mobile": "catalog-mayonnaise-sauce-mobile-icon.svg",
         "desctop": ""
       },
+      "description": {
+        "title": "Соуса для Horeca/FastFood/StreetFood. Сформируем соус по индивидуальной рецептуре",
+        "subtitles": [
+          ""
+        ]
+      },
       "items": []
     },
     {
@@ -285,6 +323,12 @@
       "logo": {
         "mobile": "catalog-space-decoration-mobile-icon.svg",
         "desctop": ""
+      },
+      "description": {
+        "title": "Комлексное рекламное оформление",
+        "subtitles": [
+          ""
+        ]
       },
       "items": []
     },
@@ -297,6 +341,12 @@
         "mobile": "catalog-consulting-mobile-icon.svg",
         "desctop": ""
       },
+      "description": {
+        "title": "Поделимся нашим опытом.",
+        "subtitles": [
+          ""
+        ]
+      },
       "items": []
     },
     {
@@ -307,6 +357,11 @@
       "logo": {
         "mobile": "catalog-design-mobile-icon.svg",
         "desctop": ""
+      },
+      "description": {
+        "title": "Поделимся нашим опытом.",
+        "subtitles": [
+        ]
       },
       "items": []
     }

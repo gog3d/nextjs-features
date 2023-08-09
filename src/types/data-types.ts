@@ -29,6 +29,10 @@ export type TCatalogItemsTypes = {
     mobile: string,
     desctop: string
   },
+  description: {
+    title: string,
+    subtitles: Array<string>
+  },
   items: Array<any>
 }
 

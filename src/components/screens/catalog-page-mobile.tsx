@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+
 
 import PageMobile from '../page/page-mobile';
 import HeaderMainMobile from '../header/header-main-mobile';
@@ -32,7 +34,9 @@ interface ICatalogPageProps {
 }
 
 const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
-
+  
+  const { asPath } = useRouter();
+//  console.log(router.asPath);
   const scrollText = [
     'Произведем в любом размере', 'Дизайн нарисуем', 'Макет разработаем',
     'Решение подберем', 'Рекламу оформим', 'Процессы подскажем', 'Рецептуру придумаем'
@@ -47,10 +51,10 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
           <CatalogCardsMobile>
           {
             catalog.map((item, index) => 
-              <CatalogCardMobile title={item.title} link={item.link} type={item.type} key={index}>
+              <CatalogCardMobile title={item.title} link={`${asPath}${item.link}`} type={item.type} key={index}>
                 {
                   <Image 
-                    src={`/media/${item.logo.mobile}`}
+                    src={`media/${item.logo.mobile}`}
                     alt='item-icon'
                     width='90'
                     height='90'

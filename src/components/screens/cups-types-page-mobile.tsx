@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import { useRouter } from 'next/router';
+
 import CupPage from '../cups/cups-page/cups-page';
 import Header from '../cups/header/header';
 import Cups from '../cups/cups/cups';
@@ -12,7 +14,7 @@ interface ICupsTypesPageMobileProps {
 };
 
 const CupsTypesPageMobile: FC<ICupsTypesPageMobileProps> = ({ cups }) => {
-
+  const { asPath } = useRouter();
   return (
     <CupPage>
       <Header />
@@ -22,7 +24,7 @@ const CupsTypesPageMobile: FC<ICupsTypesPageMobileProps> = ({ cups }) => {
         <SubMenu 
           key={index}
           title={cup.title} 
-          link={`/cups-types/${cup.name}`}
+          link={`${asPath}/${cup.name}`}
         />) : <Error />
       }
       </Cups>
