@@ -7,9 +7,9 @@ interface IPageContentMobileProps {
 
 const PageContentMobile: FC<IPageContentMobileProps> = ({children}) => {
   return (
-    <div className={styles['page-content']}>
+    <main className={styles['page-content']}>
       {children}
-    </div>
+    </main>
   );
 };
 

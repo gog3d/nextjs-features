@@ -228,7 +228,90 @@
           "Плотность бумаги зависит от ваших потребностей"
         ]
       },
-      "items": []
+      "items": [
+        {
+          "id": "1",
+          "name": "takeaway-package",
+          "title": "Пакет на вынос",
+          "parameters": [
+            {
+              "name": "",
+              "value": "220х120х290мм"
+            },
+            {
+              "name": "",
+              "value": "180х120х290мм"
+            }
+          ],
+          "background": {
+            "color_1": "#F1F0FB",
+            "color_2": "#F1F0FB"
+          }
+        },
+        {
+          "id": "2",
+          "name": "tray-pad",
+          "title": "Подложка на поднос",
+          "parameters": [
+            {
+              "name": "",
+              "value": "230x300мм "
+            },
+            {
+              "name": "",
+              "value": "420х300мм"
+            }
+
+          ],
+          "background": {
+            "color_1": "#F5FBE1",
+            "color_2": "#F5FBE1"
+          }
+        },
+        {
+          "id": "3",
+          "name": "wrapping-paper-in-sheets",
+          "title": "Оберточная бумага в листах",
+          "parameters": [
+            {
+              "name": "",
+              "value": "280х320мм"
+            },
+            {
+              "name": "",
+              "value": "320х320мм"
+            },
+            {
+              "name": "",
+              "value": "280х380мм"
+            }
+          ],
+          "background": {
+            "color_1": "#FAEEFC",
+            "color_2": "#FAEEFC"
+          }
+        },
+        {
+          "id": "4",
+          "name": "Fries/snacks package",
+          "title": "Пакет под фри/снеки",
+          "parameters": [
+            {
+              "name": "",
+              "value": "110х115мм"
+            },
+            {
+              "name": "",
+              "value": "110х30х115мм(с боковой складкой)"
+            }
+          ],
+          "background": {
+            "color_1": "#E6E6E6",
+            "color_2": "#E6E6E6"
+          }
+        }
+      ]
+
     },
     {
       "id": "3",
@@ -245,7 +328,8 @@
           "крышка для одноразового стаканчика из полипропиленового материала, может быть изготовлена в любом цвете"
         ]
       },
-      "items": []
+      "items": [
+      ]
     },
     {
       "id": "4",
@@ -262,7 +346,118 @@
           "Плотность картона и варианты технологии сборки обсуждаются индивидуально."
         ]
       },
-      "items": []
+      "items": [
+        {
+          "id": "1",
+          "name": "burger-box",
+          "title": "Коробка для бургера",
+          "parameters": [
+            {
+              "name": "",
+              "value": "130х130х85"
+            }
+          ],
+          "background": {
+            "color_1": "#F1F0FB",
+            "color_2": "#F1F0FB"
+          }
+        },
+        {
+          "id": "2",
+          "name": "lanch-box",
+          "title": "Ланч бокс",
+          "parameters": [
+            {
+              "name": "",
+              "value": "10х75х45"
+            },
+            {
+              "name": "",
+              "value": "140х90х50"
+            }
+          ],
+          "background": {
+            "color_1": "#F4F4F4",
+            "color_2": "#F4F4F4"
+          }
+        },
+        {
+          "id": "3",
+          "name": "roll-tortilla-shawarma-boxes",
+          "title": "Коробки для роллов/тортильи/шавермы",
+          "parameters": [
+            {
+              "name": "",
+              "value": "270x110x50мм"
+            },
+            {
+              "name": "",
+              "value": "210х110х50мм"
+            }
+          ],
+          "background": {
+            "color_1": "#F6FCE2",
+            "color_2": "#F6FCE2"
+          }
+        },
+        {
+          "id": "4",
+          "name": "wok-box",
+          "title": "коробка под вок",
+          "parameters": [
+            {
+              "name": "Диаметр верх",
+              "value": "90х90"
+            },
+            {
+              "name": "Диаметр низ",
+              "value": "75х75"
+            },
+            {
+              "name": "Высота",
+              "value": "88"
+            }
+          ],
+          "background": {
+            "color_1": "#FEF6E9",
+            "color_2": "#FEF6E9"
+          }
+        },
+        {
+          "id": "5",
+          "name": "burger-ring",
+          "title": "кольцо для бургеров",
+          "parameters": [
+            {
+              "name": "",
+              "value": "356x52мм"
+            },
+            {
+              "name": "",
+              "value": "215x50мм"
+            }
+          ],
+          "background": {
+            "color_1": "#FAEEFC",
+            "color_2": "#FAEEFC"
+          }
+        },
+        {
+          "id": "6",
+          "name": "fry-packaging",
+          "title": "Упаковка для фри",
+          "parameters": [
+            {
+              "name": "",
+              "value": "120х54х150мм"
+            }
+          ],
+          "background": {
+            "color_1": "#F2F1FC",
+            "color_2": "#F2F1FC"
+          }
+        }
+      ]
     },
     {
       "id": "5",
@@ -279,7 +474,47 @@
           ""
         ]
       },
-      "items": []
+      "items": [
+        {
+          "id": "1",
+          "name": "Soup-salad-packaging-lid",
+          "title": "Упаковка для супа/салата+крышка",
+          "parameters": [
+            {
+              "name": "",
+              "value": "500мл"
+            },
+            {
+              "name": "",
+              "value": "750мл"
+            }
+          ],
+          "background": {
+            "color_1": "#FAEEFC",
+            "color_2": "#FAEEFC"
+          }
+        },
+        {
+          "id": "2",
+          "name": "lunch-box-with-divider-lid",
+          "title": "Ланч бокс с разделителем(+крышка)",
+          "parameters": [
+            {
+              "name": "",
+              "value": "187х133х54"
+            },
+            {
+              "name": "",
+              "value": "239х168х54"
+            }
+
+          ],
+          "background": {
+            "color_1": "#F1F0FB",
+            "color_2": "#F1F0FB"
+          }
+        }
+      ]
     },
     {
       "id": "6",
@@ -296,7 +531,114 @@
           "На все представленные позиции может быть нанесена вышивка или флексопечать."
         ]
       },
-      "items": []
+      "items": [
+        {
+          "id": "1",
+          "name": "polo-shirts",
+          "title": "футболки поло",
+          "parameters": [
+            {
+              "name": "",
+              "value": "МЖ"
+            },
+            {
+              "name": "",
+              "value": "XS/S/M/L/Xl/XLL"
+            }
+          ],
+          "background": {
+            "color_1": "#F1F0FB",
+            "color_2": "#F1F0FB"
+          }
+        },
+        {
+          "id": "2",
+          "name": "sweatshirts",
+          "title": "кофты",
+          "parameters": [
+            {
+              "name": "",
+              "value": "МЖ"
+            },
+            {
+              "name": "",
+              "value": "XS/S/M/L/Xl/XLL"
+            }
+          ],
+          "background": {
+            "color_1": "#FAEEFC",
+            "color_2": "#FAEEFC"
+          }
+        },
+        {
+          "id": "3",
+          "name": "baseball-caps",
+          "title": "бейсболки",
+          "parameters": [
+            {
+              "name": "",
+              "value": "Универсальная "
+            }
+          ],
+          "background": {
+            "color_1": "#E6E6E6",
+            "color_2": "#E6E6E6"
+          }
+        },
+        {
+          "id": "4",
+          "name": "aprons",
+          "title": "фартуки",
+          "parameters": [
+            {
+              "name": "",
+              "value": "80х75х24"
+            }
+          ],
+          "background": {
+            "color_1": "#F5FBE1",
+            "color_2": "#F5FBE1"
+          }
+        },
+        {
+          "id": "5",
+          "name": "long-sleeve",
+          "title": "лонгслив",
+          "parameters": [
+            {
+              "name": "",
+              "value": "МЖ"
+            },
+            {
+              "name": "",
+              "value": "XS/S/M/L/Xl/XLL"
+            }
+          ],
+          "background": {
+            "color_1": "#FDF5E8",
+            "color_2": "#FDF5E8"
+          }
+        },
+        {
+          "id": "6",
+          "name": "shirts",
+          "title": "рубашки",
+          "parameters": [
+            {
+              "name": "",
+              "value": "МЖ"
+            },
+            {
+              "name": "",
+              "value": "XS/S/M/L/Xl/XLL"
+            }
+          ],
+          "background": {
+            "color_1": "#FDF5E8",
+            "color_2": "#FDF5E8"
+          }
+        }
+      ]
     },
     {
       "id": "7",

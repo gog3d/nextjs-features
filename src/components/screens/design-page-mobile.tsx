@@ -8,6 +8,8 @@ import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mob
 
 import DescriptionItemMobile from '@/components/description/description-item-mobile';
 
+import AccordionCatalogItemMobile from '@/components/accordion/accordion-catalog-item-mobile';
+
 
 import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 

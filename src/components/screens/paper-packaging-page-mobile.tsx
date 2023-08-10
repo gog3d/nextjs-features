@@ -3,11 +3,12 @@ import { FC } from 'react';
 import { useRouter } from 'next/router';
 
 import PageMobile from '../page/page-mobile';
-import PageContentMobile from '@/components/page-content//page-content-mobile';
+import PageContentCatalogItemMobile from '@/components/page-content//page-content-catalog-item-mobile';
 import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mobile';
 
 import DescriptionItemMobile from '@/components/description/description-item-mobile';
 
+import AccordionCatalogItemMobile from '@/components/accordion/accordion-catalog-item-mobile';
 
 import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 
@@ -23,12 +24,24 @@ const PaperPackagingPageMobile: FC<IPaperPackagingPageMobileProps> = ({catalog})
   return (
     <PageMobile>
       <HeaderCatalogItemMobile title={catalogItem?.title}/>
-      <PageContentMobile>
+ 
+      <PageContentCatalogItemMobile>
       <DescriptionItemMobile
         title={catalogItem?.description.title}
         subtitles={catalogItem?.description.subtitles}
       />
-      </PageContentMobile>
+      {
+        catalogItem?.items.map((item, index) => 
+          <AccordionCatalogItemMobile
+            title={item.title}
+            parameters={item.parameters}
+            background={item.background}
+            key={index}
+          />
+        )
+      }
+      </PageContentCatalogItemMobile>
+ 
     </PageMobile>
   );
 };
