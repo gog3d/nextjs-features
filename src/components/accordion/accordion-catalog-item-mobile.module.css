@@ -51,6 +51,7 @@
 
 .accordion__details_parameters {
   display: flex;
+  gap: 4px;
 }
 
 

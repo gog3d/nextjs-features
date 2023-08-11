@@ -329,6 +329,56 @@
         ]
       },
       "items": [
+        {
+          "id": "1",
+          "name": "lids-73-with-valve",
+          "title": "Крышка Ø73 с клапаном",
+          "parameters": [
+            {
+              "name": "Подходит для:",
+              "value": "170 — 210 мл. (Ø 73)"
+            }
+          ],
+          "background": {
+            "color_1": "#F6FCE2",
+            "color_2": "#F6FCE2"
+          }
+        },
+        {
+          "id": "2",
+          "name": "lids-80-with-valve",
+          "title": "Крышка Ø80 с клапаном",
+          "parameters": [
+            {
+              "name": "Подходит для:",
+              "value": "250 — 270 мл. (Ø 80)"
+            }
+          ],
+          "background": {
+            "color_1": "#F2F1FC",
+            "color_2": "#F2F1FC"
+          }
+        },
+        {
+          "id": "4",
+          "name": "lids-90-with-valve",
+          "title": "Крышка Ø90 с клапаном",
+          "parameters": [
+            {
+              "name": "Подходит для:",
+              "value": "370 — 420 мл. (Ø 80)"
+            },
+            {
+              "name": "Подходит для:",
+              "value": "500 — 530 мл. (Ø 90)"
+            }
+          ],
+          "background": {
+            "color_1": "#FAEEFC",
+            "color_2": "#FAEEFC"
+          }
+        }
+
       ]
     },
     {

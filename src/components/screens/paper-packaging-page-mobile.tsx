@@ -3,12 +3,13 @@ import { FC } from 'react';
 import { useRouter } from 'next/router';
 
 import PageMobile from '../page/page-mobile';
-import PageContentCatalogItemMobile from '@/components/page-content//page-content-catalog-item-mobile';
+import PageContentCatalogItemMobile from '@/components/page-content/page-content-catalog-item-mobile';
 import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mobile';
 
 import DescriptionItemMobile from '@/components/description/description-item-mobile';
 
 import AccordionCatalogItemMobile from '@/components/accordion/accordion-catalog-item-mobile';
+import PreviewMobile from '@/components/preview/preview-mobile';
 
 import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 
@@ -40,8 +41,8 @@ const PaperPackagingPageMobile: FC<IPaperPackagingPageMobileProps> = ({catalog})
           />
         )
       }
+      <PreviewMobile link={'/'} />
       </PageContentCatalogItemMobile>
- 
     </PageMobile>
   );
 };
