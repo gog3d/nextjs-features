@@ -41,7 +41,13 @@ const PaperPackagingPageMobile: FC<IPaperPackagingPageMobileProps> = ({catalog})
           />
         )
       }
-      <PreviewMobile link={'/'} />
+      <PreviewMobile 
+        textTop={'Ваша новая подложка на поднос!'}
+        textBottom={'Вашей подложки на поднос.'}
+        imagePath={catalogItem?.image.mobile}
+        imageAlt={catalogItem?.type}
+        constructorHref={''}
+      />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

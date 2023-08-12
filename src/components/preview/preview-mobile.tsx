@@ -4,26 +4,32 @@ import Link from 'next/link';
 import styles from './preview-mobile.module.css';
 
 interface IPreviewMobileProps {
-  link: string;
+  textTop: string | undefined;
+  textBottom: string | undefined;
+  imagePath: string | undefined;
+  imageAlt: string | undefined;
+  constructorHref: string;
 }
 
-const PreviewMobile: FC<IPreviewMobileProps> = ({link}) => {
+const PreviewMobile: FC<IPreviewMobileProps> = ({textTop, textBottom, imagePath, imageAlt='image', constructorHref='/'}) => {
   return (
     <div className={styles['preview']}>
-      <p className={styles['preview_text-top']}>Посмотрите, как будет выглядеть Ваш новый стаканчик!</p>
+      <p className={styles['preview_text-top']}>{'Посмотритеб как будее выглядеть'}</p>
+      <p className={styles['preview_text-top']}>{textTop}</p>
       <div className={styles['preview__img-container']}>
         <Image
-           src='/cups/media/cup.png'
-           alt='cup image'
-           width={152}
-           height={202}
+           src={`/media/${imagePath}`}
+           alt={imageAlt}
+           width={270}
+           height={210}
         />
       </div>
-      <p className={styles['preview_text']}>Выберите файл изображения дизайна вашего стакана.</p>
+      <p className={styles['preview_text']}>{'Выберите файл изображения дизайна'}</p>
+      <p className={styles['preview_text']}>{textBottom}</p>
       <p className={styles['preview_text']}>Допустимые форматы: jpg, gif, png, ai, cdr, pdf.</p>
       <p className={styles['preview_text']}>Максимальный размер: 10 МБ.</p>
       <div className={styles['preview__button-container']}>
-        <Link href={link}>
+        <Link href={constructorHref}>
           <button className={styles['preview_button']}>
             Попробовать
           </button>

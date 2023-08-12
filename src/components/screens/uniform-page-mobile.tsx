@@ -40,7 +40,13 @@ const UniformPageMobile: FC<IUniformPageMobileProps> = ({catalog}) => {
           />
         )
       }
-      <PreviewMobile link={'/'} />
+      <PreviewMobile 
+        textTop={'Ваша новая униформа!'}
+        textBottom={'Вашей униформы.'}
+        imagePath={catalogItem?.image.mobile}
+        imageAlt={catalogItem?.type}
+        constructorHref={''}
+      />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

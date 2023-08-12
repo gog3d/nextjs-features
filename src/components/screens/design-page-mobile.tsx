@@ -40,7 +40,6 @@ const DesignPageMobile: FC<IDesignPageMobileProps> = ({catalog}) => {
           />
         )
       }
-      <PreviewMobile link={'/'} />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

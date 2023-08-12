@@ -40,7 +40,6 @@ const PlasticBoxPageMobile: FC<IPlasticBoxPageMobileProps> = ({catalog}) => {
           />
         )
       }
-      <PreviewMobile link={'/'} />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

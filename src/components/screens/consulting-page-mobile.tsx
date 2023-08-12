@@ -40,7 +40,6 @@ const ConsultingPageMobile: FC<IConsultingPageMobileProps> = ({catalog}) => {
           />
         )
       }
-      <PreviewMobile link={'/'} />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

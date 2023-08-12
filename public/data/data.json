@@ -46,7 +46,6 @@
                 {
                   "name": "Ø горлышка",
                   "value": "73"
-    
                 },
                 {
                   "name": "Ø донышка",
@@ -220,6 +219,9 @@
         "mobile": "catalog-paper-packaging-mobile-icon.svg",
         "desctop": ""
       },
+      "image": {
+        "mobile": "paper-packaging-catalog-image-mobile.png"
+      },
       "description": {
         "title": "Все изделия могут быть произведены по вашим индивидуальным размерам.",
         "subtitles": [
@@ -322,6 +324,9 @@
         "mobile": "catalog-lids-mobile-icon.svg",
         "desctop": ""
       },
+      "image": {
+        "mobile": "lids-catalog-image-mobile.png"
+      },
       "description": {
         "title": "Пластиковые крышки с клапаном для бумажных стаканов",
         "subtitles": [
@@ -389,6 +394,9 @@
       "logo": {
         "mobile": "catalog-carton-packaging-mobile-icon.svg",
         "desctop": ""
+      },
+      "image": {
+        "mobile": "carton-packaging-catalog-image-mobile.png"
       },
       "description": {
         "title": "Все изделия могут быть произведены по вашим индивидуальынм размерам.",
@@ -518,6 +526,9 @@
         "mobile": "catalog-plastic-box-mobile-icon.svg",
         "desctop": ""
       },
+      "image": {
+        "mobile": "plastic-box-catalog-image-mobile.png"
+      },
       "description": {
         "title": "Произволится из полипропиленового материала, оптимально для горячей и холодной подачи",
         "subtitles": [
@@ -574,6 +585,9 @@
       "logo": {
         "mobile": "catalog-uniform-mobile-icon.svg",
         "desctop": ""
+      },
+      "image": {
+        "mobile": "uniform-catalog-image-mobile.png"
       },
       "description": {
         "title": "Материалы изготовления подбираются индивидально.",
@@ -699,6 +713,9 @@
         "mobile": "catalog-mayonnaise-sauce-mobile-icon.svg",
         "desctop": ""
       },
+      "image": {
+        "mobile": "mayonnaise-sauce-catalog-image-mobile.png"
+      },
       "description": {
         "title": "Соуса для Horeca/FastFood/StreetFood. Сформируем соус по индивидуальной рецептуре",
         "subtitles": [
@@ -715,6 +732,9 @@
       "logo": {
         "mobile": "catalog-space-decoration-mobile-icon.svg",
         "desctop": ""
+      },
+      "image": {
+        "mobile": "space-decoration-catalog-image-mobile.png"
       },
       "description": {
         "title": "Комлексное рекламное оформление",
@@ -733,6 +753,9 @@
         "mobile": "catalog-consulting-mobile-icon.svg",
         "desctop": ""
       },
+      "image": {
+        "mobile": "consulting-catalog-image-mobile.png"
+      },
       "description": {
         "title": "Поделимся нашим опытом.",
         "subtitles": [
@@ -749,6 +772,9 @@
       "logo": {
         "mobile": "catalog-design-mobile-icon.svg",
         "desctop": ""
+      },
+      "image": {
+        "mobile": "design-catalog-image-mobile.png"
       },
       "description": {
         "title": "Поделимся нашим опытом.",

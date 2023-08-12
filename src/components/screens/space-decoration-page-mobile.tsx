@@ -41,7 +41,6 @@ const SpaceDecorationPageMobile: FC<ISpaceDecorationPageMobileProps> = ({catalog
           />
         )
       }
-      <PreviewMobile link={'/'} />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

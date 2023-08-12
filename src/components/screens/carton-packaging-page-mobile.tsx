@@ -40,7 +40,13 @@ const CartonPackagingPageMobile: FC<ICartonPackagingPageMobileProps> = ({catalog
           />
         )
       }
-      <PreviewMobile link={'/'} />
+      <PreviewMobile 
+        textTop={'Ваша новая картонная упаковка!'}
+        textBottom={'Вашей картонной упаковки.'}
+        imagePath={catalogItem?.image.mobile}
+        imageAlt={catalogItem?.type}
+        constructorHref={''}
+      />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

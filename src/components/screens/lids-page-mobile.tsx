@@ -40,7 +40,6 @@ const LidsPageMobile: FC<ILidsPageMobileProps> = ({catalog}) => {
           />
         )
       }
-      <PreviewMobile link={'/'} />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

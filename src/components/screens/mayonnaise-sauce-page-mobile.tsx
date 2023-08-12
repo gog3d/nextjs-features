@@ -40,7 +40,6 @@ const MayonnaiseSaucePageMobile: FC<IMayonnaiseSaucePageMobileProps> = ({catalog
           />
         )
       }
-      <PreviewMobile link={'/'} />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );
