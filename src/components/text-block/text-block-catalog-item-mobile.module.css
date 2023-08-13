@@ -1,0 +1,15 @@
+.text-block {
+  border-radius: 8px;
+  background: #E6E6E6;
+}
+
+.text-block__text{
+  color: #000000;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 20px 16px;
+
+}

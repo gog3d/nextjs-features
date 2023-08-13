@@ -8,7 +8,7 @@ import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mob
 
 import DescriptionItemMobile from '@/components/description/description-item-mobile';
 
-import AccordionCatalogItemMobile from '@/components/accordion/accordion-catalog-item-mobile';
+import AccordionCatalogItemMarkedListMobile from '@/components/accordion/accordion-catalog-item-marked-list-mobile';
 import PreviewMobile from '@/components/preview/preview-mobile';
 
 import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
@@ -26,20 +26,20 @@ const ConsultingPageMobile: FC<IConsultingPageMobileProps> = ({catalog}) => {
     <PageMobile>
       <HeaderCatalogItemMobile title={catalogItem?.title}/>
       <PageContentCatalogItemMobile>
-      <DescriptionItemMobile
-        title={catalogItem?.description.title}
-        subtitles={catalogItem?.description.subtitles}
-      />
-      {
-        catalogItem?.items.map((item, index) => 
-          <AccordionCatalogItemMobile
-            title={item.title}
-            parameters={item.parameters}
-            background={item.background}
-            key={index}
-          />
-        )
-      }
+        <DescriptionItemMobile
+          title={catalogItem?.description.title}
+          subtitles={catalogItem?.description.subtitles}
+        />
+        {
+          catalogItem?.items.map((item, index) => 
+            <AccordionCatalogItemMarkedListMobile
+              title={item.title}
+              parameters={item.parameters}
+              background={item.background}
+              key={index}
+            />
+          )
+        }
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

@@ -27,27 +27,27 @@ const PaperPackagingPageMobile: FC<IPaperPackagingPageMobileProps> = ({catalog})
       <HeaderCatalogItemMobile title={catalogItem?.title}/>
  
       <PageContentCatalogItemMobile>
-      <DescriptionItemMobile
-        title={catalogItem?.description.title}
-        subtitles={catalogItem?.description.subtitles}
-      />
-      {
-        catalogItem?.items.map((item, index) => 
-          <AccordionCatalogItemMobile
-            title={item.title}
-            parameters={item.parameters}
-            background={item.background}
-            key={index}
-          />
-        )
-      }
-      <PreviewMobile 
-        textTop={'Ваша новая подложка на поднос!'}
-        textBottom={'Вашей подложки на поднос.'}
-        imagePath={catalogItem?.image.mobile}
-        imageAlt={catalogItem?.type}
-        constructorHref={''}
-      />
+        <DescriptionItemMobile
+          title={catalogItem?.description.title}
+          subtitles={catalogItem?.description.subtitles}
+        />
+        {
+          catalogItem?.items.map((item, index) => 
+            <AccordionCatalogItemMobile
+              title={item.title}
+              parameters={item.parameters}
+              background={item.background}
+              key={index}
+            />
+          )
+        }
+        <PreviewMobile 
+          textTop={'Ваша новая подложка на поднос!'}
+          textBottom={'Вашей подложки на поднос.'}
+          imagePath={catalogItem?.image.mobile}
+          imageAlt={catalogItem?.type}
+          constructorHref={''}
+        />
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 //import Link from 'next/link';
-import styles from './accordion-catalog-item-mobile.module.css';
+import styles from './accordion-catalog-item-marked-list-mobile.module.css';
 import DownChevronMobileIcon from '@/components/icons/down-chevron-mobile-icon';
 
 interface IPatameters {
@@ -8,7 +8,7 @@ interface IPatameters {
   value: string;
 }
 
-interface IAccordionCatalogItemMobileProps {
+interface IAccordionCatalogItemMarkedListMobileProps {
   title: string;
   parameters: Array<IPatameters>;
   background: {
@@ -18,7 +18,7 @@ interface IAccordionCatalogItemMobileProps {
 //  children: ReactNode;
 }
 
-const AccordionCatalogItemMobile: FC<IAccordionCatalogItemMobileProps> = ({title, parameters, background}) => {
+const AccordionCatalogItemMarkedListMobile: FC<IAccordionCatalogItemMarkedListMobileProps> = ({title, parameters, background}) => {
   return (
     <div className={styles['accordion']}>
       <details className={styles['accordion__details']} style={{background: `${background.color_2}`}}>
@@ -35,7 +35,9 @@ const AccordionCatalogItemMobile: FC<IAccordionCatalogItemMobileProps> = ({title
             parameters.map((parameter, index) => {
             return (
               <div key={index} className={styles['accordion__details_parameters']}>
-                <p>{parameter.name}</p>
+                {
+                  parameter.name === 'marked-list' ? <div className={styles['accordion__details_marked-list']}></div> : <p>{parameter.name}</p>
+                }
                 <p>{parameter.value}</p>
               </div>
             )
@@ -47,4 +49,4 @@ const AccordionCatalogItemMobile: FC<IAccordionCatalogItemMobileProps> = ({title
   );
 };
 
-export default AccordionCatalogItemMobile;
+export default AccordionCatalogItemMarkedListMobile;

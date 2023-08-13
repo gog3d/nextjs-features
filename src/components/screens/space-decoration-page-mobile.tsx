@@ -27,20 +27,20 @@ const SpaceDecorationPageMobile: FC<ISpaceDecorationPageMobileProps> = ({catalog
     <PageMobile>
       <HeaderCatalogItemMobile title={catalogItem?.title}/>
       <PageContentCatalogItemMobile>
-      <DescriptionItemMobile
-        title={catalogItem?.description.title}
-        subtitles={catalogItem?.description.subtitles}
-      />
-      {
-        catalogItem?.items.map((item, index) => 
-          <AccordionCatalogItemMobile
-            title={item.title}
-            parameters={item.parameters}
-            background={item.background}
-            key={index}
-          />
-        )
-      }
+        <DescriptionItemMobile
+          title={catalogItem?.description.title}
+          subtitles={catalogItem?.description.subtitles}
+        />
+        {
+          catalogItem?.items.map((item, index) => 
+            <AccordionCatalogItemMobile
+              title={item.title}
+              parameters={item.parameters}
+              background={item.background}
+              key={index}
+            />
+          )
+        }
       </PageContentCatalogItemMobile>
     </PageMobile>
   );

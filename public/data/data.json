@@ -722,7 +722,113 @@
           ""
         ]
       },
-      "items": []
+      "items": [
+        {
+          "id": "1",
+          "name": "Paprika-exclusive",
+          "title": "Папричный (эксклюзив)",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#E6E6E6",
+            "color_2": "#E6E6E6"
+          }
+        },
+        {
+          "id": "2",
+          "name": "cucumber-exclusive",
+          "title": "Огуречный (эксклюзив)",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#FDF5E8",
+            "color_2": "#FDF5E8"
+          }
+        },
+        {
+          "id": "3",
+          "name": "chile-exclusive",
+          "title": "Чили (эксклюзив)",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#FCFEF1",
+            "color_2": "#FCFEF1"
+          }
+        },
+        {
+          "id": "4",
+          "name": "tartarus",
+          "title": "Тар-тар",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#E7E7E7",
+            "color_2": "#E7E7E7"
+          }
+        },
+        {
+          "id": "5",
+          "name": "mushroom",
+          "title": "Грибной",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#FBEFFD",
+            "color_2": "#FBEFFD"
+          }
+        },
+        {
+          "id": "6",
+          "name": "mayonnaise",
+          "title": "Майонезный",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#F2F1FC",
+            "color_2": "#F2F1FC"
+          }
+        },
+        {
+          "id": "7",
+          "name": "cheesy",
+          "title": "Сырный",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#FCFEF1",
+            "color_2": "#FCFEF1"
+          }
+        }
+      ]
     },
     {
       "id": "8",
@@ -742,7 +848,135 @@
           ""
         ]
       },
-      "items": []
+      "items": [
+        {
+          "id": "1",
+          "name": "outdoor-advertising",
+          "title": "Наружная реклама",
+          "parameters": [
+            {
+              "name": "",
+              "value": "Вывески"
+            },
+            {
+              "name": "",
+              "value": "Световые консоли"
+            },
+            {
+              "name": "",
+              "value": "Информационные блоки"
+            }
+          ],
+          "background": {
+            "color_1": "#FAEEFC",
+            "color_2": "#FAEEFC"
+          }
+        },
+        {
+          "id": "2",
+          "name": "entry-group",
+          "title": "Входная группа",
+          "parameters": [
+            {
+              "name": "",
+              "value": "Таблички"
+            },
+            {
+              "name": "",
+              "value": "Наклейки"
+            },
+            {
+              "name": "",
+              "value": "Световое оформление"
+            },
+            {
+              "name": "",
+              "value": "Оформление стен и окон"
+            },
+            {
+              "name": "",
+              "value": "Элементы навигации"
+            }
+          ],
+          "background": {
+            "color_1": "#F6FCE2",
+            "color_2": "#F6FCE2"
+          }
+        },
+        {
+          "id": "3",
+          "name": "branding",
+          "title": "Брендирование",
+          "parameters": [
+            {
+              "name": "",
+              "value": "ПВХ панели"
+            },
+            {
+              "name": "",
+              "value": "Аплекация пленкой(ПВХ/архитектурная)"
+            },
+            {
+              "name": "",
+              "value": "Световые эелементы"
+            }
+          ],
+          "background": {
+            "color_1": "#FBEFFD",
+            "color_2": "#FBEFFD"
+          }
+        },
+        {
+          "id": "4",
+          "name": "wall-decoration",
+          "title": "Настенное оформление",
+          "parameters": [
+            {
+              "name": "",
+              "value": "Наклейки"
+            },
+            {
+              "name": "",
+              "value": "Таблички"
+            },
+            {
+              "name": "",
+              "value": "Стенды"
+            },
+            {
+              "name": "",
+              "value": "Шелфтокеры"
+            },
+            {
+              "name": "",
+              "value": "Менюхолдеры"
+            }
+          ],
+          "background": {
+            "color_1": "#E7E7E7",
+            "color_2": "#E7E7E7"
+          }
+        },
+        {
+          "id": "5",
+          "name": "interior",
+          "title": "Интерьер",
+          "parameters": [
+            {
+              "name": "",
+              "value": "Оформление внутренних зоны"
+            },
+            {
+              "name": "",
+              "value": "Инкрустация логотипа в мебельные поверхности"
+            }
+          ],
+          "background": {
+            "color_1": "#FEF6E9",
+            "color_2": "#FEF6E9"
+          }
+        }
+      ]
     },
     {
       "id": "9",
@@ -762,7 +996,125 @@
           ""
         ]
       },
-      "items": []
+      "items": [
+        {
+          "id": "1",
+          "name": "start-up",
+          "title": "StartUp",
+          "parameters": [
+            {
+              "name": "marked-list",
+              "value": "Открытие ресторана 'с нуля'"
+            },
+            {
+              "name": "marked-list",
+              "value": "Разработка бизнес-плана индивидуально для вашего заведения"
+            },
+            {
+              "name": "marked-list",
+              "value": " Рассмотрение основных аспектов предпринимательской деятельности"
+            },
+            {
+              "name": "marked-list",
+              "value": "Анализ главных проблем зон и способы их решения"
+            },
+            {
+              "name": "marked-list",
+              "value": " Постановка целей и задач проекта"
+            },
+            {
+              "name": "marked-list",
+              "value": "Составление описание компании"
+            },
+            {
+              "name": "marked-list",
+              "value": " Анализ отрасли и тенденции ее развития"
+            },
+            {
+              "name": "marked-list",
+              "value": "Оценка целевого рынка"
+            },
+            {
+              "name": "marked-list",
+              "value": "Оценка конкуренция"
+            },
+            {
+              "name": "marked-list",
+              "value": "Стратегическое позиционирование и оценка рисков"
+            },
+            {
+              "name": "marked-list",
+              "value": "Разработка маркетингового плана и стратегия продаж"
+            }
+          ],
+          "background": {
+            "color_1": "#F1F0FB",
+            "color_2": "rgba(235, 233, 250, 0.30)"
+          }
+        },
+        {
+          "id": "2",
+          "name": "concept",
+          "title": "Концепция",
+          "parameters": [
+            {
+              "name": "",
+              "value": "Выбор и разработка концепции заведения  в соответствии со спросом и покупной способностью ваших потенциальных покупателей. Выбор оптимального направления"
+            }
+          ],
+          "background": {
+            "color_1": "#F2FAD9",
+            "color_2": "#FAFDF1"
+          }
+        },
+        {
+          "id": "3",
+          "name": "menu",
+          "title": "Меню",
+          "parameters": [
+            {
+              "name": "",
+              "value": "Разработка и проработка меню с вашим шеф-поваром предоставление готового типового меню со всей необходимой нормативной документацией технологический, технико-технологические и калькуляционные карты, акты контрольных проработок, расчет калорийности готовых блюд."
+            }
+          ],
+          "background": {
+            "color_1": "rgba(245, 218, 250, 0.44)",
+            "color_2": "rgba(249, 230, 252, 0.30)"
+          }
+        },
+        {
+          "id": "4",
+          "name": "operating-activities",
+          "title": "Операционная деятельность",
+          "parameters": [
+            {
+              "name": "marked-list",
+              "value": "Выбор и запуск системы внутреннего учета предприятия."
+            },
+            {
+              "name": "marked-list",
+              "value": "Автоматизация предприятия, обучение работе персонала в выбранной системе учета."
+            },
+            {
+              "name": "marked-list",
+              "value": "Подбор персонала, расстановка по рабочим местам."
+            },
+            {
+              "name": "marked-list",
+              "value": "Мониторинг цен, просчет себестоимости."
+            },
+            {
+              "name": "marked-list",
+              "value": "Анализ деятельности предприятия за определенный период времени проведение инвентаризации, расчет рентабельности, определение чистой прибыли и на основании этих данных коррекция направления деятельности."
+            }
+          ],
+          "background": {
+            "color_1": "rgba(200, 200, 200, 0.44)",
+            "color_2": "rgba(218, 218, 218, 0.30)"
+          }
+        }
+
+      ]
     },
     {
       "id": "10",
@@ -781,7 +1133,143 @@
         "subtitles": [
         ]
       },
-      "items": []
+      "items": [
+        {
+          "id": "1",
+          "name": "printed-products",
+          "title": "Печатная продукция",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#FAEEFC",
+            "color_2": "#FAEEFC"
+          }
+        },
+        {
+          "id": "2",
+          "name": "printing-products",
+          "title": "Полиграфические изделия",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#F6FCE2",
+            "color_2": "#F6FCE2"
+          }
+        },
+        {
+          "id": "3",
+          "name": "logo-design",
+          "title": "Дизайн логотипа",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#FAEEFC",
+            "color_2": "#FAEEFC"
+          }
+        },
+        {
+          "id": "4",
+          "name": "form-style",
+          "title": "Фирменный стиль",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#E7E7E7",
+            "color_2": "#E7E7E7"
+          }
+        },
+        {
+          "id": "5",
+          "name": "brandbook",
+          "title": "Брендбук",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#EDECFA",
+            "color_2": "#EDECFA"
+          }
+        },
+        {
+          "id": "6",
+          "name": "web-design",
+          "title": "Веб дизайн",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#FDF5E8",
+            "color_2": "#FDF5E8"
+          }
+        },
+        {
+          "id": "7",
+          "name": "illustrations",
+          "title": "Иллюстрации",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#F6FCE2",
+            "color_2": "#F6FCE2"
+          }
+        },
+        {
+          "id": "8",
+          "name": "layout-development",
+          "title": "Разработка макета",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#FAEEFC",
+            "color_2": "#FAEEFC"
+          }
+        },
+        {
+          "id": "9",
+          "name": "artistic-and-technical-design",
+          "title": "Художественное и техническое оформление",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "#F6FCE2",
+            "color_2": "#F6FCE2"
+          }
+        }
+      ]
     }
   ]
 }
