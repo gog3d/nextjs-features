@@ -35,7 +35,9 @@ const AccordionCatalogItemMobile: FC<IAccordionCatalogItemMobileProps> = ({title
             parameters.map((parameter, index) => {
             return (
               <div key={index} className={styles['accordion__details_parameters']}>
-                <p>{parameter.name}</p>
+                {
+                  parameter.name === '' ? null : <p>{parameter.name}</p>
+                }
                 <p>{parameter.value}</p>
               </div>
             )

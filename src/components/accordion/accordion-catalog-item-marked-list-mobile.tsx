@@ -36,7 +36,9 @@ const AccordionCatalogItemMarkedListMobile: FC<IAccordionCatalogItemMarkedListMo
             return (
               <div key={index} className={styles['accordion__details_parameters']}>
                 {
-                  parameter.name === 'marked-list' ? <div className={styles['accordion__details_marked-list']}></div> : <p>{parameter.name}</p>
+                  parameter.name === 'marked-list' ? <div className={styles['accordion__details_marked-list']}></div>
+                    :
+                  parameter.name === '' ? null : <p>{parameter.name}</p>
                 }
                 <p>{parameter.value}</p>
               </div>
