@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 
-import PageContentMobile from '@/components/page-content//page-content-mobile';
+import PageContentWrapperMobile from '@/components/page/page-content-wrapper-mobile';
 import HeaderSearchWrapperMobile from '@/components/header-wrapper/header-search-wrapper-mobile';
 import BackLinkMobileIcon from '@/components/icons/back-link-mobile-icon';
 import InputTextMobile from '@/components/input/input-text-mobile';
@@ -35,11 +35,11 @@ const SearchPageMobile: FC<ISearchPageProps> = ({ catalog }) => {
           handleChange={handleChange}
         />
       </HeaderSearchWrapperMobile>
-      <PageContentMobile>
+      <PageContentWrapperMobile>
         <div style={{color: '#000000'}}>
           {searchText}
         </div>
-      </PageContentMobile>
+      </PageContentWrapperMobile>
     </PageMobile>
   );
 };

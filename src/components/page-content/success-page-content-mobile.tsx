@@ -11,7 +11,7 @@ const SuccessPageContentMobile = () => {
   const catalog = '/catalog';
 
   return (
-    <main className={styles['main-page-content']}>
+    <div className={styles['main-page-content']}>
       <div className={styles['logo']}>
         <LogoMainBigMobile />
       </div>
@@ -42,7 +42,7 @@ const SuccessPageContentMobile = () => {
         </div>
       </div>
       <ButtonConnectMobile text={'Вернуться в каталог'} link={catalog}/>
-    </main>
+    </div>
   );
 };
 

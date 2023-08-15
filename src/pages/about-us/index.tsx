@@ -1,7 +1,7 @@
-import HomePage from "@/components/screens/home-page";
 
-import HomePageMobile from "@/components/screens/home-page-mobile";
+import AboutUsPageMobile from "@/components/screens/about-us-page-mobile";
 
-export default function Home() {
-    return <HomePageMobile />;
+const  AboutUsPage = () => {
+  return < AboutUsPageMobile />;
 }
+export default AboutUsPage;

@@ -3,7 +3,8 @@ import { FC } from 'react';
 import { useRouter } from 'next/router';
 
 import PageMobile from '../page/page-mobile';
-import PageContentCatalogItemMobile from '@/components/page-content/page-content-catalog-item-mobile';
+
+import PageContentWrapperCatalogItemMobile from '@/components/page/page-content-wrapper-catalog-item-mobile';
 import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mobile';
 
 import DescriptionItemMobile from '@/components/description/description-item-mobile';
@@ -25,7 +26,7 @@ const CartonPackagingPageMobile: FC<ICartonPackagingPageMobileProps> = ({catalog
   return (
     <PageMobile>
       <HeaderCatalogItemMobile title={catalogItem?.title}/>
-      <PageContentCatalogItemMobile>
+      <PageContentWrapperCatalogItemMobile>
         <DescriptionItemMobile
           title={catalogItem?.description.title}
           subtitles={catalogItem?.description.subtitles}
@@ -47,7 +48,7 @@ const CartonPackagingPageMobile: FC<ICartonPackagingPageMobileProps> = ({catalog
           imageAlt={catalogItem?.type}
           constructorHref={''}
         />
-      </PageContentCatalogItemMobile>
+      </PageContentWrapperCatalogItemMobile>
     </PageMobile>
   );
 };

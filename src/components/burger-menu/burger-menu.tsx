@@ -6,7 +6,7 @@ import {useRouter} from 'next/router';
 
 import HeaderWrapperMobile from '@/components/header-wrapper/header-wrapper-mobile';
 import PageMobile from '@/components/page/page-mobile';
-import PageContentMobile from '@/components/page-content/page-content-mobile';
+import PageContentWrapperMobile from '@/components/page/page-content-wrapper-mobile';
 import LogoMainMobileIcon from '@/components/icons/logo-main-mobile-icon';
 import CloseMobileIcon from '@/components/icons/close-mobile-icon';
 
@@ -26,7 +26,7 @@ const BurgerMenu: FC<IBurgerMenuProps> = ({onClose}) => {
           <CloseMobileIcon />
         </button>
       </HeaderWrapperMobile>
-      <PageContentMobile>
+      <PageContentWrapperMobile>
         <ul className={styles['menu']}>
           <li 
             className={
@@ -61,7 +61,7 @@ const BurgerMenu: FC<IBurgerMenuProps> = ({onClose}) => {
             </Link>
           </li>
         </ul>
-      </PageContentMobile>
+      </PageContentWrapperMobile>
     </div>
   );
 };

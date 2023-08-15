@@ -3,7 +3,7 @@ import PageMobile from '../page/page-mobile';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import PageContentMobile from '@/components/page-content//page-content-mobile';
+import PageContentWrapperMobile from '@/components/page/page-content-wrapper-mobile';
 import HeaderWrapperMobile from '@/components/header-wrapper/header-wrapper-mobile';
 import BackLinkMobileIcon from '@/components/icons/back-link-mobile-icon';
 import EmptyMobileIcon from '@/components/icons/empty-mobile-icon';
@@ -91,7 +91,7 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
         <p>Связаться с нами</p>
         <EmptyMobileIcon />
       </HeaderWrapperMobile>
-      <PageContentMobile>
+      <PageContentWrapperMobile>
         <FormWrapperMobile onSubmit={onSubmit}>
           <InputFormMobile placeholder={'Наименование компании'} type={'text'} handleChange={handleChangeCompanyName}/>
           <InputFormMobile placeholder={'Телефон'} type={'tel'}  handleChange={handleChangeTel}/>
@@ -130,7 +130,7 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
             />
           </ButtonWrapperFeedbackMobile>
         </FormWrapperMobile>
-      </PageContentMobile>
+      </PageContentWrapperMobile>
     </PageMobile>
   );
 };

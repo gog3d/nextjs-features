@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import PageMobile from '../page/page-mobile';
 import HeaderMainMobile from '../header/header-main-mobile';
 import FooterMainMobile from '../footer/footer-main-mobile';
-import PageContentCatalogMobile from '../page-content/page-content-catalog-mobile';
+import PageContentWrapperCatalogMobile from '../page/page-content-wrapper-catalog-mobile';
 import HorizontalScrolling from '../horizontal-scrolling/horizontal-scrolling';
 
 import CatalogCardsMobile from '../catalog-cards/catalog-cards-mobile';
@@ -46,7 +46,7 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
   return (
     <PageMobile>
       <HeaderMainMobile />
-        <PageContentCatalogMobile>
+        <PageContentWrapperCatalogMobile>
           <HorizontalScrolling textArray={scrollText} />
           <CatalogCardsMobile>
           {
@@ -65,7 +65,7 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
           }
           </CatalogCardsMobile>
           <ButtonConnectMobile link={'/feedback'} text={'Связаться с нами'} />
-        </PageContentCatalogMobile>
+        </PageContentWrapperCatalogMobile>
       <FooterMainMobile />
     </PageMobile>
   );

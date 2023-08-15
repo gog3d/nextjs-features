@@ -1,34 +1,97 @@
-import PageMobile from '@/components/page/page-mobile';
-import HeaderMainMobile from '@/components/header/header-main-mobile';
-import FooterMainMobile from '@/components/footer/footer-main-mobile';
-import ImageWrapperMainMobile from '@/components/image/image-wrapper-main-mobile';
+import { FC, ReactNode } from 'react';
+import styles from './main-page-content-mobile.module.css';
+
+import ButtonMobile from '../button/button-mobile';
+//import ButtonLinkMobile from '../button/button-link-mobile';
+import ButtonConnectMobile from '../button/button-connect-mobile';
 
 
-import Image from 'next/image';
+const AboutUsPageContentMobile = () => {
 
-import MainPageContentMobile from '../page-content/main-page-content-mobile';
+  const feedback = '/feedback';
 
-const HomePageMobile = () => {
   return (
-    <PageMobile>
-      <HeaderMainMobile />
-      <MainPageContentMobile />
-      <ImageWrapperMainMobile>
-        <Image
-          src={'/media/main-page-mobile-image.png'}
-          alt='main-page-mobile-image'
-          width='328'
-          height='338'
-        />
-      </ImageWrapperMainMobile>
-      <FooterMainMobile />
-    </PageMobile>
-  );
-};
-
-export default HomePageMobile;
-
-/*
+    <div className={styles['main-page-content']}>
+      <div className={styles['card-1']}>
+        Комплексные решения в сфере ресторанного бизнеса и сегмента HoReCa
+      </div>
+      <div className={styles['card-2']}>
+        <div className={styles['card-2__title']}>
+          Что мы делаем?
+        </div>
+        <div>
+          Если честно, мы делаем всё, что душе угодно, но только то, в чем действительно хорошо разбираемся, а именно:
+          упаковка для фастфуда, кофеин, пекарен, рекламное оформление, униформу еще мы варим соус и оказываем услугу консалтинга, 
+          да-да, напоминаю, делаем, что душе угодно 
+        </div>
+      </div>
+      <div className={styles['card-3']}>
+        <div className={styles['card-3__title']}>
+          Хотим сразу сказать, что мы не интернет-магазин.
+        </div>
+        <div className={styles['card-3__text']}>
+          Вы вряд ли получите от нас общее КП (для всех) и единый прайс на все позиции. 
+          На вопрос: «А сколько стоит 1 шт?» — скорее всего, мы тоже не ответим. 
+          Все потому, что..
+        </div>
+      </div>
+      <div className={styles['card-4']}>
+        <div>
+          <span className={styles['card-4__title']}>Наша сильная сторона</span> — это углубленный маркетинговый подход и поиск индивидуальных решений для каждого клиента 
+          с полным погружением в рабочий процесс. 
+          Поэтому дизайн/макети штамп - это бесплатно.
+        </div>
+        <div className={styles['card-4__text']}>
+          Ведь каждый выполненный заказ — это монетка счастья в копилочку нашей радости!
+        </div>
+      </div>
+      <div className={styles['card-5']}>
+        Мы понимаем как влияют на бизнес узнаваемость, бренд, реклама, маркетинг, формирование цен, а также реализация этих задач. 
+        Поэтому сделали сервис, который упростит все решения и даст желаемый результат.
+      </div>
+      <div className={styles['card-6']}>
+        <div className={styles['card-6__text-1']}>
+          Что это для нас и почему это важно?
+        </div>
+        <div className={styles['card-6__text-2']}>
+          Френдли — бизнес
+        </div>
+        <div className={styles['card-6__text-3']}>
+          Хотим, чтобы наши взаимодействия были выстроены на доверии, а не на счетах за дополнительные услуги 
+          и каждое лишнее действие. Если вы дочитали до этого пункта, то мы уже на полпути к тому, чтобы реализовать ваш запрос с минимальными затратами времени и нервов. 
+        </div>
+        <div className={styles['card-6__button-connect']}>
+          <ButtonConnectMobile link={'/feedback'} text={'Связаться с нами'} />
+        </div>
+      </div>
+      <div className={styles['card-7']}>
+        Если у вас есть свой дизайнер, маркетолог и технолог, мы внимательно изучим все их пожелания, ТЗ и комментарии. 
+        Если нет — то все сделаем сами.
+      </div>
+      <div className={styles['card-8']}>
+        <div className={styles['card-8__title']}>
+          Конечно же лучше один раз увидеть, чем сто раз представить!
+        </div>
+        <div className={styles['card-8__text']}>
+          Воспользуйтесь опцией и визуализируйте свой бренд на представленных упаковочных решениях
+          (нажми меня) — открывается фича с визуализацией
+        </div>
+        <div className={styles['card-8__button-connect']}>
+          <ButtonConnectMobile link={'/feedback'} text={'Связаться с нами'} />
+        </div>
+      </div>
+      <div className={styles['card-9']}>
+        Если вы не нашли то, что искали, это не означает, что мы этого не можем, не делаем или не предоставляем. 
+        Готовы обсудуть новые предложения. Нам всегда можно позвонить или написать. Отвечаем быстро и почти в любое время, а не после «дождичка в четверг»
+      </div>
+      <div className={styles['card-10']}>
+        <div>
+         <span className={styles['card-10__color']}>Ес</span>ли после прочитанного вам ничего не понятно, но очень интересно
+        </div>
+        <div>
+          (гипер ссылка на вкладку как мы работаем в подробностях)
+        </div>
+      </div>
       <svg width="328" height="338" viewBox="0 0 328 338" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="165.509" cy="185.364" rx="154.442" ry="152.636" fill="#CFDEFD"/>
         <path d="M255.774 178.882C212.446 138.316 155.191 159.454 131.979 175.093C105.673 189.082 93.5084 214.339 90.7144 225.218C57.7025 213.328 31.1812 226.481 22.047 234.544C2.4462 251.33 -0.73463 272.624 0.125056 281.172C4.25155 325.469 43.3242 337.514 62.3448 338L274.795 336.543C305.485 334.814 319.073 321.158 324.106 310.688C343.733 261.073 284.359 250.184 253.195 256.692C272.108 247.658 299.102 219.448 255.774 178.882Z" fill="#4547EA"/>
@@ -52,5 +115,8 @@ export default HomePageMobile;
         <rect x="203.368" y="56.2512" width="11.1444" height="10.9425" rx="2.2" stroke="#939597" strokeWidth="1.6"/>
         <rect x="253.74" y="1.2" width="15.7104" height="15.4236" rx="1.8" stroke="#939597" strokeWidth="2.4"/>
       </svg>
+    </div>
+  );
+};
 
-*/
+export default AboutUsPageContentMobile;
