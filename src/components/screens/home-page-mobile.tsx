@@ -1,4 +1,6 @@
 import PageMobile from '@/components/page/page-mobile';
+import PageContentWrapperMainMobile from '@/components/page/page-content-wrapper-main-mobile';
+
 import HeaderMainMobile from '@/components/header/header-main-mobile';
 import FooterMainMobile from '@/components/footer/footer-main-mobile';
 import ImageWrapperMainMobile from '@/components/image/image-wrapper-main-mobile';
@@ -12,15 +14,17 @@ const HomePageMobile = () => {
   return (
     <PageMobile>
       <HeaderMainMobile />
-      <MainPageContentMobile />
-      <ImageWrapperMainMobile>
-        <Image
-          src={'/media/main-page-mobile-image.png'}
-          alt='main-page-mobile-image'
-          width='328'
-          height='338'
-        />
-      </ImageWrapperMainMobile>
+      <PageContentWrapperMainMobile>
+        <MainPageContentMobile />
+        </PageContentWrapperMainMobile>
+        <ImageWrapperMainMobile>
+          <Image
+            src={'/media/main-page-mobile-image.png'}
+            alt='main-page-mobile-image'
+            width='328'
+            height='338'
+          />
+        </ImageWrapperMainMobile>
       <FooterMainMobile />
     </PageMobile>
   );
