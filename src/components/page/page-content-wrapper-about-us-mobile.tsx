@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import styles from './page-content-wrapper-main-mobile.module.css';
+import styles from './page-content-wrapper-about-us-mobile.module.css';
 
 interface IPageContentWrapperMainMobileProps {
   children: ReactNode;
