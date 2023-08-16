@@ -5,18 +5,20 @@ import HeaderMainMobile from '@/components/header/header-main-mobile';
 import FooterMainMobile from '@/components/footer/footer-main-mobile';
 import ImageWrapperAboutUsMobile from '@/components/image/image-wrapper-about-us-mobile';
 
+import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
 
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
-//import MainPageContentMobile from '../page-content/main-page-content-mobile';
 import AboutUsPageContentMobile from '../page-content/about-us-page-content-mobile';
 
-
 const AboutUsPageMobile = () => {
+  const { asPath } = useRouter();
   return (
     <PageMobile>
       <HeaderMainMobile />
       <PageContentWrapperAboutUsMobile>
+        <BreadCrumbsMobile routerPath={asPath}/>
         <AboutUsPageContentMobile />
       </PageContentWrapperAboutUsMobile>
       <ImageWrapperAboutUsMobile>

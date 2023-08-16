@@ -27,6 +27,9 @@ import CatalogSpaceDecorationMobileIcon from '../icons/catalog-space-decoration-
 import CatalogConsultingMobileIcon from '../icons/catalog-consulting-mobile-icon';
 import CatalogDesignMobileIcon from '../icons/catalog-design-mobile-icon';
 
+import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
+
+
 import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 
 interface ICatalogPageProps {
@@ -46,9 +49,10 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
   return (
     <PageMobile>
       <HeaderMainMobile />
-        <PageContentWrapperCatalogMobile>
-          <HorizontalScrolling textArray={scrollText} />
-          <CatalogCardsMobile>
+      <PageContentWrapperCatalogMobile>
+        <BreadCrumbsMobile routerPath={asPath}/>
+        <HorizontalScrolling textArray={scrollText} />
+        <CatalogCardsMobile>
           {
             catalog.map((item, index) => 
               <CatalogCardMobile title={item.title} link={`${asPath}${item.link}`} type={item.type} key={index}>
@@ -63,9 +67,9 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
               </CatalogCardMobile>
             )
           }
-          </CatalogCardsMobile>
-          <ButtonConnectMobile link={'/feedback'} text={'Связаться с нами'} />
-        </PageContentWrapperCatalogMobile>
+        </CatalogCardsMobile>
+        <ButtonConnectMobile link={'/feedback'} text={'Связаться с нами'} />
+      </PageContentWrapperCatalogMobile>
       <FooterMainMobile />
     </PageMobile>
   );

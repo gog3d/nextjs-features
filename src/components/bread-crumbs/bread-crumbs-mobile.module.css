@@ -1,0 +1,27 @@
+.bread-crumbs {
+  color: #D9D9D9;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+  align-self: flex-start;
+}
+
+.bread-crumbs-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed rgba(188, 195, 208, 0.50);
+}
+
+.bread-crumbs_current {
+  color: #000000;
+}
