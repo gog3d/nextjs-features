@@ -22,10 +22,10 @@ const FooterMainMobile = () => {
           <a href='mailto:info@perfafore.ru'>
             <MailMobileIcon />
           </a>
-          <Link href='https://www.wa.me/+79062287887'>
+          <Link href='https://wa.me/79062287887'>
             <WhatsAppMobileIcon />
           </Link>
-          <a href='https://www.t.me/+79062287887'>
+          <a href='https://t.me/+79062287887'>
             <TelegramMobileIcon />
           </a>
         </div>
