@@ -19,13 +19,13 @@ const FooterMainMobile = () => {
         <div className={styles['adress']}>100000, г. С.Петербург, ул. Крыленко 3Б</div>
         <div className={styles['tel']}>тел: (812) 703 4282</div>
         <div className={styles['communication']}>
-          <a href='mailto:gog3dgluhov@yandex.ru'>
+          <a href='mailto:info@perfafore.ru'>
             <MailMobileIcon />
           </a>
-          <Link href='/'>
+          <Link href='https://www.wa.me/+79062287887'>
             <WhatsAppMobileIcon />
           </Link>
-          <a href='https://www.telegram.me/Perfavore / WCDE'>
+          <a href='https://www.t.me/+79062287887'>
             <TelegramMobileIcon />
           </a>
         </div>
