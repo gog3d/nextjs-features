@@ -77,8 +77,19 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
     }
   }
 
-  const onSubmit = (e: React.SyntheticEvent) => {
+  const onSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
+    try {
+      const res = await fetch(`api/send-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 'companyName': companyName, 'tel': tel, 'name': name, 'textArea': textArea, 'confirm': confirm })
+      })
+    } catch (error) {
+      return
+    }
     router.push('/success')
   }
 
