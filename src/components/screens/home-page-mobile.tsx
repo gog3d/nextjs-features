@@ -16,15 +16,15 @@ const HomePageMobile = () => {
       <HeaderMainMobile />
       <PageContentWrapperMainMobile>
         <MainPageContentMobile />
-        </PageContentWrapperMainMobile>
-        <ImageWrapperMainMobile>
-          <Image
-            src={'/media/main-page-mobile-image.png'}
-            alt='main-page-mobile-image'
-            width='328'
-            height='338'
-          />
-        </ImageWrapperMainMobile>
+      </PageContentWrapperMainMobile>
+      <ImageWrapperMainMobile>
+        <Image
+          src={'/media/main-page-mobile-image.png'}
+          alt='main-page-mobile-image'
+          width='328'
+          height='338'
+        />
+      </ImageWrapperMainMobile>
       <FooterMainMobile />
     </PageMobile>
   );
