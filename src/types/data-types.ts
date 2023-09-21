@@ -39,9 +39,13 @@ export type TCatalogItemsTypes = {
   items: Array<any>
 }
 
+export type TContactsTypes = string
+
 export type TDataTypes = {
-  catalog: Array<TCatalogItemsTypes>
+  catalog: Array<TCatalogItemsTypes>,
+  contacts: Array<TContactsTypes>
 }
+
 /*
 export type TData = {
   cups: Array<TCupTypes>,
