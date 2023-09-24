@@ -6,7 +6,7 @@ import { TDataTypes, TContactsTypes } from '@/types/data-types';
 import ContactsPageMobile from "@/components/screens/contacts-page-mobile";
 
 interface IContactsProps {
-  contacts: Array<TContactsTypes>;
+  contacts: TContactsTypes;
 }
 
 const Contacts: FC <IContactsProps> = ({ contacts }) => {
@@ -19,7 +19,7 @@ import {readFile} from 'fs/promises';
 import path from 'path';
 
 interface Props {
-  contacts: Array<TContactsTypes>;
+  contacts: TContactsTypes;
 };
 
 interface Errors {
@@ -33,7 +33,7 @@ export const getServerSideProps: GetServerSideProps<Props>  = async () => {
   const filePath = path.join(process.cwd(), 'public/data/data.json');
   const data: Buffer = await readFile(filePath);
   const jsonData: TDataTypes  = await JSON.parse(data.toString());
-  const contacts: Array<TContactsTypes> = jsonData.contacts;
+  const contacts: TContactsTypes = jsonData.contacts;
 //  const cups: Array<TCupTypes> | null = cups_items ? cups_items.items : null;
   return { props: { contacts } };
 };

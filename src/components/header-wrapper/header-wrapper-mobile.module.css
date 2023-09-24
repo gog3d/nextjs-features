@@ -11,5 +11,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 9px 16px;
+/*  padding: 5px 16px;*/
+
+  padding: 0px 16px;
+  height: 60px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+/*
+  width: 100%;*/
 }

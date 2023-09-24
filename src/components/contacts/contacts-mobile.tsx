@@ -10,25 +10,26 @@ import TelegramMobileIcon from '@/components/icons/telegram-mobile-icon';
 import { TContactsTypes } from '../../types/data-types';
 
 interface IContactsMobileProps {
-  contacts: Array<TContactsTypes> | null
+  contacts: TContactsTypes | null
 }
 
 const ContactsMobile:FC<IContactsMobileProps> = ({contacts}) => {
   return (
     <div className={styles['contacts-wrapper']}>
       <div className={styles['contacts']}>
+        <div className={styles['title']}>{contacts?.adress}</div>
       {
-        contacts?.map((item, index) => <div className={styles['title']} key={index}>{item}</div>)
+        contacts?.tel.map((item, index) => <div className={styles['title']} key={index}>{item}</div>)
       }
       </div>
       <div className={styles['communication']}>
-        <a href='mailto:info@perfafore.ru'>
+        <a href={`mailto:${contacts?.mail}`}>
           <MailMobileIcon />
         </a>
-        <Link href='https://wa.me/79062287887'>
+        <Link href={`https://wa.me/${contacts?.whatsapp}`}>
           <WhatsAppMobileIcon />
         </Link>
-        <a href='https://t.me/+79062287887'>
+        <a href={`https://t.me/${contacts?.telegram}`}>
           <TelegramMobileIcon />
         </a>
       </div>

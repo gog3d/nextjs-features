@@ -1,7 +1,9 @@
 .footer {
 }
 
-.communication-wrapper {
+.contacts-wrapper {
+  display: flex;
+  flex-direction: column;
   padding: 0px 16px;
 }
 
@@ -11,34 +13,29 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
-  padding-top: 18px;
+  line-height: 18px; /* 128.571% */
+  padding: 24px 16px 24px 16px;
 }
 
-.adress {
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   color: #000000;
   font-family: Noto Sans;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
-  padding-top: 16px;
+  line-height: 18px; /* 128.571% */
 }
-.tel {
-  color: #000000;
-  font-family: Noto Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-  padding-top: 8px;
+
+.contacts-item {
 }
 
 .communication {
   display: flex;
   gap: 40px;
-  padding-top: 21px;
-  padding-bottom: 23px;
+  padding: 24px 0px;;
 }
 
 .creators {

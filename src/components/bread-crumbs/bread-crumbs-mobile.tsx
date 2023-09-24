@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+//import { v4 } from 'uuid';
 import Link from 'next/link';
 import styles from './bread-crumbs-mobile.module.css';
 
@@ -32,21 +33,23 @@ const BreadCrumbsMobile: FC<IBreadCrumbsMobileProps> = ({routerPath}) => {
   const links = routerPath?.split('/');
   if (links) links[0] = '/';
 
+//  console.log(v4());
+
   const currentPath = links?.pop();
 
   return (
     <div className={styles['bread-crumbs']}>
-      <div className={styles['bread-crumbs-wrapper']}>
+      <div className={styles['bread-crumbs-wrapper']} >
         {
           links?.map((item, index) =>
-          <>
-            <Link href={paths[item as keyof IPaths]['link' as keyof IPathsItem]}>
-              <div>
-                {paths[item as keyof IPaths]['title' as keyof IPathsItem]}
-              </div>
-            </Link>
-            <RightChevronMobileIcon />
-          </>
+            <div className={styles['link-wrapper']} key={index}>
+              <Link href={paths[item as keyof IPaths]['link' as keyof IPathsItem]}>
+                <div>
+                  {paths[item as keyof IPaths]['title' as keyof IPathsItem]}
+                </div>
+              </Link>
+              <RightChevronMobileIcon />
+            </div>
           )
         }
         <div className={styles['bread-crumbs_current']}>

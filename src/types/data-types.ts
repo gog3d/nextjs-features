@@ -39,11 +39,17 @@ export type TCatalogItemsTypes = {
   items: Array<any>
 }
 
-export type TContactsTypes = string
+export type TContactsTypes = {
+  adress: string,
+  tel: Array<string>,
+  mail: string,
+  whatsapp: string,
+  telegram: string
+}
 
 export type TDataTypes = {
   catalog: Array<TCatalogItemsTypes>,
-  contacts: Array<TContactsTypes>
+  contacts: TContactsTypes
 }
 
 /*

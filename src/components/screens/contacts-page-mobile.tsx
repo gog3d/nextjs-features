@@ -15,7 +15,7 @@ import Error from '../cups/error/error';
 import { YMaps, Map } from 'react-yandex-maps';
 
 interface IContactsTypesPageMobileProps {
-  contacts: Array<TContactsTypes> | null;
+  contacts: TContactsTypes | null;
 };
 
 

@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import PageMobile from '@/components/page/page-mobile';
 import PageContentWrapperMainMobile from '@/components/page/page-content-wrapper-main-mobile';
 
@@ -5,12 +7,18 @@ import HeaderMainMobile from '@/components/header/header-main-mobile';
 import FooterMainMobile from '@/components/footer/footer-main-mobile';
 import ImageWrapperMainMobile from '@/components/image/image-wrapper-main-mobile';
 
-
 import Image from 'next/image';
 
 import MainPageContentMobile from '../page-content/main-page-content-mobile';
 
-const HomePageMobile = () => {
+import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
+
+interface IHomePageProps {
+  catalog: Array<TCatalogItemsTypes>;
+  contacts: TContactsTypes | null;
+}
+
+const HomePageMobile: FC<IHomePageProps> = ({catalog, contacts}) => {
   return (
     <PageMobile>
       <HeaderMainMobile />
@@ -25,7 +33,7 @@ const HomePageMobile = () => {
           height='338'
         />
       </ImageWrapperMainMobile>
-      <FooterMainMobile />
+      <FooterMainMobile contacts={contacts}/>
     </PageMobile>
   );
 };

@@ -1,3 +1,5 @@
+import { FC, ReactNode } from 'react';
+
 import PageMobile from '@/components/page/page-mobile';
 import PageContentWrapperAboutUsMobile from '@/components/page/page-content-wrapper-about-us-mobile';
 
@@ -12,7 +14,14 @@ import { useRouter } from 'next/router';
 
 import AboutUsPageContentMobile from '../page-content/about-us-page-content-mobile';
 
-const AboutUsPageMobile = () => {
+import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
+
+interface IAboutUsPageProps {
+  catalog: Array<TCatalogItemsTypes>;
+  contacts: TContactsTypes | null;
+}
+
+const AboutUsPageMobile: FC<IAboutUsPageProps> = ({catalog, contacts}) => {
   const { asPath } = useRouter();
   return (
     <PageMobile>
@@ -29,7 +38,7 @@ const AboutUsPageMobile = () => {
           height='338'
         />
       </ImageWrapperAboutUsMobile>
-      <FooterMainMobile />
+      <FooterMainMobile contacts={contacts}/>
     </PageMobile>
   );
 };

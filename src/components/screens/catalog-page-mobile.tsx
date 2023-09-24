@@ -30,21 +30,23 @@ import CatalogDesignMobileIcon from '../icons/catalog-design-mobile-icon';
 import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
 
 
-import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
+import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
 interface ICatalogPageProps {
   catalog: Array<TCatalogItemsTypes>;
+  contacts: TContactsTypes | null;
 }
 
-const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
+const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog, contacts}) => {
   
   const { asPath } = useRouter();
-//  console.log(router.asPath);
+
+ // console.log(contacts);
+
   const scrollText = [
     'Произведем в любом размере', 'Дизайн нарисуем', 'Макет разработаем',
     'Решение подберем', 'Рекламу оформим', 'Процессы подскажем', 'Рецептуру придумаем'
   ];
-
 
   return (
     <PageMobile>
@@ -56,21 +58,19 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog}) => {
           {
             catalog.map((item, index) => 
               <CatalogCardMobile title={item.title} link={`${asPath}${item.link}`} type={item.type} key={index}>
-                {
-                  <Image 
-                    src={`media/${item.logo.mobile}`}
-                    alt='item-icon'
-                    width='90'
-                    height='90'
-                  />
-                }
+                <Image 
+                  src={`media/${item.logo.mobile}`}
+                  alt='item-icon'
+                  width='90'
+                  height='90'
+                />
               </CatalogCardMobile>
             )
           }
         </CatalogCardsMobile>
         <ButtonConnectMobile link={'/feedback'} text={'Связаться с нами'} />
       </PageContentWrapperCatalogMobile>
-      <FooterMainMobile />
+      <FooterMainMobile contacts={contacts}/>
     </PageMobile>
   );
 };

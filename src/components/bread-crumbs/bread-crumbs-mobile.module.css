@@ -13,6 +13,17 @@
   align-self: flex-start;
 }
 
+.link-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  gap: 8px;
+/*  padding-bottom: 16px;
+  border-bottom: 1px dashed rgba(188, 195, 208, 0.50);*/
+}
+
+
+
 .bread-crumbs-wrapper {
   display: flex;
   flex-direction: row;
