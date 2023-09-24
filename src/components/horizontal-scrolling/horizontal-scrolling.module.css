@@ -1,5 +1,6 @@
 .scroll {
   width: 100%;
+  z-index: 0;
 }
 .scroll-container {
  /* border: 3px solid black;*/
@@ -28,12 +29,12 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal; 
-  
+
   /* animation properties */
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  
+
   -moz-animation: my-animation 15s linear infinite;
   -webkit-animation: my-animation 15s linear infinite;
   animation: my-animation 15s linear infinite;

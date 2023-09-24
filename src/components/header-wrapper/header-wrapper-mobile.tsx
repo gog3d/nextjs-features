@@ -10,16 +10,10 @@ const HeaderWrapperMobile: FC<IHeaderWrapperMobileProps> = ({children}) => {
   const [y, setY] = useState(0);
   const [scrollUp, setScrollUp] = useState(false);
  
-  const handleNavigation = useCallback(
-//    (e: React.UIEvent<HTMLElement>): void => {
-  ( ) => {
-//      const window = e.currentTarget;
-      console.log(window?.pageYOffset)
+  const handleNavigation = useCallback(() => {
       if (y > window?.pageYOffset) {
-        console.log("scrolling up");
         setScrollUp(true);
       } else if (y < window?.pageYOffset) {
-        console.log("scrolling down");
         setScrollUp(false);
       }
       setY(window?.pageYOffset);
@@ -33,9 +27,11 @@ const HeaderWrapperMobile: FC<IHeaderWrapperMobileProps> = ({children}) => {
       window.removeEventListener('scroll', handleNavigation);
     };
   }, [handleNavigation]);
-  
+//   <header className={`${styles['header']} ${scrollUp ? styles['sticky'] : ''}`}>
+//    <header className={`${scrollUp ? styles['header-sticky']: styles['header']}`}>
+
   return (
-    <header className={`${styles['header']} ${scrollUp ? styles['sticky'] : ''}`}>
+   <header className={`${styles['header']} ${scrollUp ? styles['sticky'] : ''}`}>
       {children}
     </header>
   );
