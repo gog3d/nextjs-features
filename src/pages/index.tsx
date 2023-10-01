@@ -4,6 +4,7 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
 import HomePageMobile from "@/components/screens/home-page-mobile";
+import HomePage from "@/components/screens/home-page";
 
 interface IHomeProps {
   catalog: Array<TCatalogItemsTypes>;
@@ -11,7 +12,7 @@ interface IHomeProps {
 }
 
 const Home: FC <IHomeProps> = ({ catalog, contacts }) => {
-  return <HomePageMobile catalog={catalog} contacts={contacts} />;
+  return <HomePage catalog={catalog} contacts={contacts} />;
 }
 export default Home;
 

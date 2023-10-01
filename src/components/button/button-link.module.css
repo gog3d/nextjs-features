@@ -1,0 +1,8 @@
+.button-connect {
+  display: inline-block;
+
+  border-radius: 8px;
+  background: #000000;
+  cursor: pointer;
+  padding: 0px 0px;
+}

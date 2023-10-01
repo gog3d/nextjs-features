@@ -1,13 +1,68 @@
-const HomePage = () => {
+import { FC } from 'react';
+
+//import PageMobile from '@/components/page/page-mobile';
+import Page from '@/components/page/page';
+
+//import PageContentWrapperMainMobile from '@/components/page/page-content-wrapper-main-mobile';
+//import ContainerPage from '@/components/container/container-page';
+
+//import HeaderMainMobile from '@/components/header/header-main-mobile';
+import HeaderMain from '@/components/header/header-main';
+
+//import FooterMainMobile from '@/components/footer/footer-main-mobile';
+import FooterMain from '@/components/footer/footer-main';
+
+//import ImageWrapperMainMobile from '@/components/image/image-wrapper-main-mobile';
+
+//import Image from 'next/image';
+
+//import MainPageContentMobile from '../page-content/main-page-content-mobile';
+import MainPageContent from '../page-content/main-page-content';
+
+import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
+
+interface IHomePageProps {
+  catalog: Array<TCatalogItemsTypes>;
+  contacts: TContactsTypes | null;
+}
+
+const HomePage: FC<IHomePageProps> = ({catalog, contacts}) => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <h1 className="flex text-center justify-center text-3xl font-semibold">
-          Привет! Здесь команда WCDE разработает web приложение Perfavore
-        </h1>
-      </div>
-    </main>
+    <Page>
+      <HeaderMain />
+      <MainPageContent />
+      <FooterMain contacts={contacts}/>
+    </Page>
   );
 };
 
 export default HomePage;
+
+/*
+      <HeaderMainMobile />
+      <PageContentWrapperMainMobile>
+        <MainPageContentMobile />
+      </PageContentWrapperMainMobile>
+      <ImageWrapperMainMobile>
+        <Image
+          src={'/media/main-page-mobile-image.png'}
+          alt='main-page-mobile-image'
+          width='328'
+          height='338'
+        />
+      </ImageWrapperMainMobile>
+      <FooterMainMobile contacts={contacts}/>
+      <div style={{border: '1px blue solid', 
+        maxWidth: '1172px', 
+        width: '100%', 
+        margin: '0 auto',
+        padding: '0px 8px',
+        minHeight: '500px'
+        }}>
+        <PageContentWrapperMain>
+          <MainPageContentMobile />
+        </PageContentWrapperMain>
+      </div>
+
+*/
+

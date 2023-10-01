@@ -1,0 +1,9 @@
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: #FFFFFF;
+  min-height: 100vh;
+/*  min-width: var(--mobile-max-width);
+  max-width: var(--desctop-max-width);
+*/
+}
