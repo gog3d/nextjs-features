@@ -27,6 +27,9 @@ interface IHomePageProps {
 }
 
 const HomePage: FC<IHomePageProps> = ({catalog, contacts}) => {
+
+//  console.log(window.innerWidth);
+
   return (
     <Page>
       <HeaderMain />

@@ -10,11 +10,13 @@ interface IButtonLinkProps {
 
 const ButtonLink: FC<IButtonLinkProps> = ({children, link}) => {
   return (
+  <div  className={styles['button-link']}>
     <Link href={link}>
       <div className={styles['button-connect']}>
         {children}
       </div>
     </Link>
+  </div>
   );
 };
 
