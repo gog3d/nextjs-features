@@ -20,7 +20,7 @@ interface IHomeProps {
 const Home: FC <IHomeProps> = ({ catalog, contacts}) => {
   return (
     <>
-      <MediaQuery minWidth={700}>
+      <MediaQuery minWidth={800}>
         {
           (matches) => matches ? 
             <HomePage catalog={catalog} contacts={contacts} />
