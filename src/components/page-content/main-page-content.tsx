@@ -81,19 +81,21 @@ const MainPageContentMobile = () => {
           <div className={styles['card-3__title']}>
             Хотим сразу сказать, что мы не интернет-магазин.
           </div>
-          <div className={styles['card-3__text-container']}>
-            <div className={styles['card-3__text-1']}>
-              Вы вряд ли получите от нас общее КП (для всех) и единый прайс на все позиции.
-              <br></br>
-              На вопрос: «А сколько стоит 1 шт?» — скорее всего, мы тоже не ответим. 
-              Все потому, что..
-            </div>
-            <div className={styles['card-3__text-2']}>
-              Если у вас есть свой дизайнер, маркетолог и технолог, мы внимательно изучим все их пожелания, ТЗ и комментарии. 
-              Если нет — то все сделаем сами.
+          <div className={styles['card-3__text-container-1']}>
+            <div className={styles['card-3__text-wrapper']}>
+              <div className={styles['card-3__text-1']}>
+                Вы вряд ли получите от нас общее КП (для всех) и единый прайс на все позиции.
+                <br></br>
+                На вопрос: «А сколько стоит 1 шт?» — скорее всего, мы тоже не ответим. 
+                Все потому, что..
+              </div>
+              <div className={styles['card-3__text-2']}>
+                Если у вас есть свой дизайнер, маркетолог и технолог, мы внимательно изучим все их пожелания, ТЗ и комментарии. 
+                Если нет — то все сделаем сами.
+              </div>
             </div>
           </div>
-          </div>
+        </div>
         <div className={styles['container-row']}>
           <div className={styles['container-row-1']}>
             <svg width="246" height="242" viewBox="0 0 246 242" fill="none" xmlns="http://www.w3.org/2000/svg">

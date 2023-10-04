@@ -204,12 +204,10 @@
   padding: 24px 0px;
 }
 
-.card-3__text-container {
+.card-3__text-container-1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-
 }
 
 .card-3__text-1 {
@@ -220,7 +218,7 @@
   font-weight: 400;
   line-height: 24px; /* 150% */
   
-  max-width: 804px;
+/*  max-width: 804px;*/
   padding-top: 19px;
 
 }
@@ -233,9 +231,18 @@
   font-weight: 400;
   line-height: 24px; /* 150% */
   
-  max-width: 804px;
+/*  max-width: 804px;*/
   padding-bottom: 35px;
 }
+
+.card-3__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 804px;
+  gap: 16px;
+}
+
 
 /*
 .card-7 {
