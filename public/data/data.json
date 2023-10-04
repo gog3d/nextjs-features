@@ -7,7 +7,7 @@
       "link": "/cups-types",
       "logo": {
         "mobile": "catalog-cup-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-cup-icon.svg"
       },
       "items": [
         {
@@ -217,7 +217,7 @@
       "link": "/paper-packaging",
       "logo": {
         "mobile": "catalog-paper-packaging-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-paper-packaging-icon.svg"
       },
       "image": {
         "mobile": "paper-packaging-catalog-image-mobile.png"
@@ -322,7 +322,7 @@
       "link": "/lids",
       "logo": {
         "mobile": "catalog-lids-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-lids-icon.svg"
       },
       "image": {
         "mobile": "lids-catalog-image-mobile.png"
@@ -393,7 +393,7 @@
       "link": "/carton-packaging",
       "logo": {
         "mobile": "catalog-carton-packaging-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-carton-packaging-icon.svg"
       },
       "image": {
         "mobile": "carton-packaging-catalog-image-mobile.png"
@@ -524,7 +524,7 @@
       "link": "/plastic-box",
       "logo": {
         "mobile": "catalog-plastic-box-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-plastic-box-icon.svg"
       },
       "image": {
         "mobile": "plastic-box-catalog-image-mobile.png"
@@ -584,7 +584,7 @@
       "link": "/uniform",
       "logo": {
         "mobile": "catalog-uniform-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-uniform-icon.svg"
       },
       "image": {
         "mobile": "uniform-catalog-image-mobile.png"
@@ -711,7 +711,7 @@
       "link": "/mayonnaise-sauce",
       "logo": {
         "mobile": "catalog-mayonnaise-sauce-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-mayonnaise-sauce-icon.svg"
       },
       "image": {
         "mobile": "mayonnaise-sauce-catalog-image-mobile.png"
@@ -837,7 +837,7 @@
       "link": "/space-decoration",
       "logo": {
         "mobile": "catalog-space-decoration-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-space-decoration-icon.svg"
       },
       "image": {
         "mobile": "space-decoration-catalog-image-mobile.png"
@@ -985,7 +985,7 @@
       "link": "/consulting",
       "logo": {
         "mobile": "catalog-consulting-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-consulting-icon.svg"
       },
       "image": {
         "mobile": "consulting-catalog-image-mobile.png"
@@ -1123,7 +1123,7 @@
       "link": "/design",
       "logo": {
         "mobile": "catalog-design-mobile-icon.svg",
-        "desctop": ""
+        "desctop": "catalog-design-icon.svg"
       },
       "image": {
         "mobile": "design-catalog-image-mobile.png"
