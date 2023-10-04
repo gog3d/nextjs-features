@@ -21,19 +21,6 @@ import CatalogCardMobile from '@/components/catalog-card/catalog-card-mobile';
 
 import ButtonConnectMobile from '@/components/button/button-connect-mobile';
 
-import CatalogCupMobileIcon from '@/components/icons/catalog-cup-mobile-icon';
-import CatalogCupIcon from '@/components/icons/catalog-cup-icon';
-
-import CatalogPaperPackagingIcon from '@/components/icons/catalog-paper-packaging-icon';
-import CatalogLidsIcon from '@/components/icons/catalog-lids-icon';
-import CatalogCartonPackagingIcon from '@/components/icons/catalog-carton-packaging-icon';
-import CatalogPlasticBoxIcon from '@/components/icons/catalog-plastic-box-icon';
-import CatalogUniformIcon from '@/components/icons/catalog-uniform-icon';
-import CatalogMayonnaiseSauceIcon from '@/components/icons/catalog-mayonnaise-sauce-icon';
-import CatalogSpaceDecorationIcon from '@/components/icons/catalog-space-decoration-icon';
-import CatalogConsultingIcon from '@/components/icons/catalog-consulting-icon';
-import CatalogDesignIcon from '@/components/icons/catalog-design-icon';
-
 import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
 
 import ContainerPage from '@/components/container/container-page';
