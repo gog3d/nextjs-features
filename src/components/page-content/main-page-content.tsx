@@ -26,7 +26,6 @@ const MainPageContentMobile = () => {
         <div className={styles['container-row']}>
           <div className={styles['card-6']}>
             <div className={styles['card-6__text-1']}>
-              hello
               Что это для нас и почему это важно?
             </div>
             <div className={styles['card-6__text-2']}>
