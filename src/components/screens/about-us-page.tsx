@@ -3,8 +3,12 @@ import { FC, ReactNode } from 'react';
 import PageMobile from '@/components/page/page-mobile';
 import PageContentWrapperAboutUsMobile from '@/components/page/page-content-wrapper-about-us-mobile';
 
-import HeaderMainMobile from '@/components/header/header-main-mobile';
-import FooterMainMobile from '@/components/footer/footer-main-mobile';
+//import HeaderMainMobile from '@/components/header/header-main-mobile';
+import HeaderMain from '@/components/header/header-main';
+//import FooterMainMobile from '@/components/footer/footer-main-mobile';
+import FooterMain from '@/components/footer/footer-main';
+
+
 import ImageWrapperAboutUsMobile from '@/components/image/image-wrapper-about-us-mobile';
 
 import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
@@ -14,6 +18,10 @@ import { useRouter } from 'next/router';
 
 import AboutUsPageContentMobile from '@/components/page-content/about-us-page-content-mobile';
 
+
+import ContainerPage from '@/components/container/container-page';
+
+
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
 interface IAboutUsPageProps {
@@ -21,11 +29,12 @@ interface IAboutUsPageProps {
   contacts: TContactsTypes | null;
 }
 
-const AboutUsPageMobile: FC<IAboutUsPageProps> = ({catalog, contacts}) => {
+const AboutUsPage: FC<IAboutUsPageProps> = ({catalog, contacts}) => {
   const { asPath } = useRouter();
   return (
     <PageMobile>
-      <HeaderMainMobile />
+      <HeaderMain />
+      <ContainerPage>
       <PageContentWrapperAboutUsMobile>
         <BreadCrumbsMobile routerPath={asPath}/>
         <AboutUsPageContentMobile />
@@ -38,9 +47,10 @@ const AboutUsPageMobile: FC<IAboutUsPageProps> = ({catalog, contacts}) => {
           height='338'
         />
       </ImageWrapperAboutUsMobile>
-      <FooterMainMobile contacts={contacts}/>
+      </ContainerPage>
+      <FooterMain contacts={contacts}/>
     </PageMobile>
   );
 };
 
-export default AboutUsPageMobile;
+export default AboutUsPage;

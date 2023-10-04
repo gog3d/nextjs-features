@@ -5,8 +5,14 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import PageMobile from '@/components/page/page-mobile';
+
 import HeaderMainMobile from '@/components/header/header-main-mobile';
+import HeaderMain from '@/components/header/header-main';
+
 import FooterMainMobile from '@/components/footer/footer-main-mobile';
+import FooterMain from '@/components/footer/footer-main';
+
+
 import PageContentWrapperCatalogMobile from '@/components/page/page-content-wrapper-catalog-mobile';
 import HorizontalScrolling from '@/components/horizontal-scrolling/horizontal-scrolling';
 
@@ -28,6 +34,8 @@ import CatalogDesignMobileIcon from '@/components/icons/catalog-design-mobile-ic
 
 import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
 
+import ContainerPage from '@/components/container/container-page';
+
 
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
@@ -36,11 +44,9 @@ interface ICatalogPageProps {
   contacts: TContactsTypes | null;
 }
 
-const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog, contacts}) => {
-  
-  const { asPath } = useRouter();
+const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts}) => {
 
- // console.log(contacts);
+  const { asPath } = useRouter();
 
   const scrollText = [
     'Произведем в любом размере', 'Дизайн нарисуем', 'Макет разработаем',
@@ -49,7 +55,9 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog, contacts}) => {
 
   return (
     <PageMobile>
-      <HeaderMainMobile />
+      <HeaderMain />
+      <ContainerPage>
+
       <PageContentWrapperCatalogMobile>
         <BreadCrumbsMobile routerPath={asPath}/>
         <HorizontalScrolling textArray={scrollText} />
@@ -69,9 +77,13 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog, contacts}) => {
         </CatalogCardsMobile>
         <ButtonConnectMobile link={'/feedback'} text={'Связаться с нами'} />
       </PageContentWrapperCatalogMobile>
-      <FooterMainMobile contacts={contacts}/>
+
+      </ContainerPage>
+
+      <FooterMain contacts={contacts}/>
+
     </PageMobile>
   );
 };
 
-export default CatalogPageMobile;
+export default CatalogPage;

@@ -4,13 +4,34 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { TDataTypes, TContactsTypes } from '@/types/data-types';
 
 import ContactsPageMobile from "@/components/screens/contacts-page-mobile";
+import ContactsPage from "@/components/screens/contacts-page";
+
+import dynamic from "next/dynamic"
+
+const MediaQuery = dynamic(() => import("react-responsive"), {
+  ssr: false
+})
+
 
 interface IContactsProps {
   contacts: TContactsTypes;
 }
 
 const Contacts: FC <IContactsProps> = ({ contacts }) => {
-    return <ContactsPageMobile contacts={contacts} />;
+  return (
+    <>
+      <MediaQuery minWidth={800}>
+        {
+          (matches) => matches ? 
+            <ContactsPage contacts={contacts} />
+             :
+            <ContactsPageMobile contacts={contacts} />
+        }
+      </MediaQuery>
+    </>
+  )
+
+  
 }
 
 export default Contacts;
@@ -28,13 +49,11 @@ interface Errors {
   };
 };
 
-//export const getStaticProps: GetServerSideProps<{cups  = async ({params}) => {
 export const getServerSideProps: GetServerSideProps<Props>  = async () => {
   const filePath = path.join(process.cwd(), 'public/data/data.json');
   const data: Buffer = await readFile(filePath);
   const jsonData: TDataTypes  = await JSON.parse(data.toString());
   const contacts: TContactsTypes = jsonData.contacts;
-//  const cups: Array<TCupTypes> | null = cups_items ? cups_items.items : null;
   return { props: { contacts } };
 };
 

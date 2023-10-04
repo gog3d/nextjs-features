@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState, useCallback } from 'react';
+import { FC, ReactNode } from 'react';
 
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
@@ -6,7 +6,6 @@ import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-typ
 import HomePageMobile from "@/components/screens/home-page-mobile";
 import HomePage from "@/components/screens/home-page";
 import dynamic from "next/dynamic"
-
 
 const MediaQuery = dynamic(() => import("react-responsive"), {
   ssr: false

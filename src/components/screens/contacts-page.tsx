@@ -1,12 +1,17 @@
 import {FC, ReactNode} from 'react';
+import { useRouter } from 'next/router';
+
 import PageMobile from '@/components/page/page-mobile';
 import PageContentWrapperContactsMobile from '@/components/page/page-content-wrapper-contacts-mobile';
 
-import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mobile';
+//import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mobile';
+import HeaderMain from '@/components/header/header-main';
 import ContactsMobile from '@/components/contacts/contacts-mobile';
 import MapMobile from '@/components/map/map-mobile';
 
-import { useRouter } from 'next/router';
+
+import ContainerPage from '@/components/container/container-page';
+
 
 import { TContactsTypes } from '@/types/data-types';
 import Error from '@/components/cups/error/error';
@@ -18,18 +23,20 @@ interface IContactsTypesPageMobileProps {
 };
 
 
-const ContactsPageMobile: FC<IContactsTypesPageMobileProps> = ({ contacts }) => {
+const ContactsPage: FC<IContactsTypesPageMobileProps> = ({ contacts }) => {
 //  console.log(contacts);
   const { asPath } = useRouter();
   return (
     <PageMobile>
-      <HeaderCatalogItemMobile title={'Контакты'}/>
+      <ContainerPage>
+      <HeaderMain />
       <PageContentWrapperContactsMobile>
         <ContactsMobile contacts={contacts} />
         <MapMobile points={['']}/>
       </PageContentWrapperContactsMobile>
+      </ContainerPage>
     </PageMobile>
   );
 };
 
-export default ContactsPageMobile;
+export default ContactsPage;
