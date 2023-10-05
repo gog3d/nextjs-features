@@ -3,74 +3,87 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 14px;
+  gap: 6px;
   border-radius: 24px;
+/*  max-width: 100px;*/
+  padding: 14px 0px 30px 0px;
 
-  background: #CFF3FC;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
-
-  padding: 16px 0px 45px 0px;
 }
 
 .card-text {
+  align-items: center;
   color: #000000;
   text-align: center;
   font-family: Open Sans;
-  font-size: 20px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 120% */ 
+  line-height: 24px; /* 109.091% */
 
+  max-width: 274px;
+
+/*
   height: 43px;
   width: 155px;
+  */
 }
 
 .cups {
+  min-width: 274px;
   background: #CFF3FC;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
 .paper-packaging {
+  min-width: 568px;
   background: #EBF7BD;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
 .lids {
+  min-width: 274px;
   background: #FCE1CF;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
 .carton-packaging {
+  min-width: 372px;
   background: #E2DFF7;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
 .plastic-box {
+  min-width: 372px;
   background: #D8F9E5;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
 .uniform {
+  min-width: 372px;
   background: #FCEBCD;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
 .mayonnaise-sauce {
+  min-width: 274px;
   background: #E7E7E7;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
 .space-decoration {
+  min-width: 274px;
   background: rgba(247, 198, 255, 0.56);
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
 .consulting {
+  min-width: 274px;
   background: #F9FFE0;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
 
 .design {
+  min-width: 274px;
   background: #CFDEFD;
   box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
 }
