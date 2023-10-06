@@ -1,0 +1,16 @@
+.button-connect {
+  width: 100%;
+  border-radius: 8px;
+  background: #000000;
+  cursor: pointer;
+
+  color:  #FFFFFF;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  padding: 11px 96px;
+}

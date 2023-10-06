@@ -8,7 +8,7 @@ import PageMobile from '@/components/page/page-mobile';
 import HeaderMainMobile from '@/components/header/header-main-mobile';
 import FooterMainMobile from '@/components/footer/footer-main-mobile';
 import PageContentWrapperCatalogMobile from '@/components/page/page-content-wrapper-catalog-mobile';
-import HorizontalScrolling from '@/components/horizontal-scrolling/horizontal-scrolling';
+import HorizontalScrollingMobile from '@/components/horizontal-scrolling/horizontal-scrolling-mobile';
 
 import CatalogCardsMobile from '@/components/catalog-cards/catalog-cards-mobile';
 import CatalogCardMobile from '@/components/catalog-card/catalog-card-mobile';
@@ -41,7 +41,7 @@ const CatalogPageMobile: FC<ICatalogPageProps> = ({catalog, contacts}) => {
       <HeaderMainMobile />
       <PageContentWrapperCatalogMobile>
         <BreadCrumbsMobile routerPath={asPath}/>
-        <HorizontalScrolling textArray={scrollText} />
+        <HorizontalScrollingMobile textArray={scrollText} />
         <CatalogCardsMobile>
           {
             catalog.map((item, index) => 
