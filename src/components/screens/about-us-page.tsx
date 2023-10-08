@@ -1,22 +1,20 @@
 import { FC, ReactNode } from 'react';
 
-import PageMobile from '@/components/page/page-mobile';
-import PageContentWrapperAboutUsMobile from '@/components/page/page-content-wrapper-about-us-mobile';
-
-//import HeaderMainMobile from '@/components/header/header-main-mobile';
+//import PageMobile from '@/components/page/page-mobile';
+import Page from '@/components/page/page';
+import PageContentWrapperAboutUs from '@/components/page/page-content-wrapper-about-us';
+//import PageContentWrapperAboutUsMobile from '@/components/page/page-content-wrapper-about-us-mobile';
 import HeaderMain from '@/components/header/header-main';
-//import FooterMainMobile from '@/components/footer/footer-main-mobile';
 import FooterMain from '@/components/footer/footer-main';
 
 
 import ImageWrapperAboutUsMobile from '@/components/image/image-wrapper-about-us-mobile';
-
 import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
 
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-import AboutUsPageContentMobile from '@/components/page-content/about-us-page-content-mobile';
+import AboutUsPageContent from '@/components/page-content/about-us-page-content';
 
 
 import ContainerPage from '@/components/container/container-page';
@@ -32,24 +30,16 @@ interface IAboutUsPageProps {
 const AboutUsPage: FC<IAboutUsPageProps> = ({catalog, contacts}) => {
   const { asPath } = useRouter();
   return (
-    <PageMobile>
+    <Page>
       <HeaderMain />
       <ContainerPage>
-      <PageContentWrapperAboutUsMobile>
-        <BreadCrumbsMobile routerPath={asPath}/>
-        <AboutUsPageContentMobile />
-      </PageContentWrapperAboutUsMobile>
-      <ImageWrapperAboutUsMobile>
-        <Image
-          src={'/media/about-us-page-mobile-image.png'}
-          alt='main-page-mobile-image'
-          width='328'
-          height='338'
-        />
-      </ImageWrapperAboutUsMobile>
-      </ContainerPage>
+        <PageContentWrapperAboutUs>
+          <BreadCrumbsMobile routerPath={asPath}/>
+          <AboutUsPageContent />
+        </PageContentWrapperAboutUs>
+        </ContainerPage>
       <FooterMain contacts={contacts}/>
-    </PageMobile>
+    </Page>
   );
 };
 
