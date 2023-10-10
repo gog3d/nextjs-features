@@ -1,41 +1,45 @@
 import {FC, ReactNode} from 'react';
 import { useRouter } from 'next/router';
 
-import PageMobile from '@/components/page/page-mobile';
-import PageContentWrapperContactsMobile from '@/components/page/page-content-wrapper-contacts-mobile';
+import Page from '@/components/page/page';
 
-//import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mobile';
+
+import PageContentWrapperContacts from '@/components/page/page-content-wrapper-contacts';
+
 import HeaderMain from '@/components/header/header-main';
-import ContactsMobile from '@/components/contacts/contacts-mobile';
-import MapMobile from '@/components/map/map-mobile';
+import FooterMain from '@/components/footer/footer-main';
+import Contacts from '@/components/contacts/contacts';
 
-
+//import MapMobile from '@/components/map/map-mobile';
+import MapDesctop from '@/components/map/map-desctop';
 import ContainerPage from '@/components/container/container-page';
-
+import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
 
 import { TContactsTypes } from '@/types/data-types';
 import Error from '@/components/cups/error/error';
 
 import { YMaps, Map } from 'react-yandex-maps';
 
-interface IContactsTypesPageMobileProps {
+interface IContactsTypesPageProps {
   contacts: TContactsTypes | null;
 };
 
 
-const ContactsPage: FC<IContactsTypesPageMobileProps> = ({ contacts }) => {
-//  console.log(contacts);
+const ContactsPage: FC<IContactsTypesPageProps> = ({ contacts }) => {
   const { asPath } = useRouter();
   return (
-    <PageMobile>
-      <ContainerPage>
+    <Page>
       <HeaderMain />
-      <PageContentWrapperContactsMobile>
-        <ContactsMobile contacts={contacts} />
-        <MapMobile points={['']}/>
-      </PageContentWrapperContactsMobile>
+      <ContainerPage>
+        <PageContentWrapperContacts>
+          <BreadCrumbsMobile routerPath={asPath}/>
+          <Contacts contacts={contacts}>
+            <MapDesctop points={['']}/>
+          </Contacts>
+        </PageContentWrapperContacts>
       </ContainerPage>
-    </PageMobile>
+      <FooterMain contacts={contacts} />
+    </Page>
   );
 };
 

@@ -18,13 +18,15 @@ interface IPaths {
   '/': IPathsItem;
   'about-us': IPathsItem;
   'catalog': IPathsItem;
+  'contacts': IPathsItem;
 }
 
 
 const paths: IPaths = {
   '/': {title: 'Главная', link: '/'},
   'about-us': {title: 'О нас', link: '/about-us'},
-  'catalog': {title: 'Каталог', link: '/catalog'}
+  'catalog': {title: 'Каталог', link: '/catalog'},
+  'contacts': {title: 'Контакты', link: '/contacts'}
 };
 
 
