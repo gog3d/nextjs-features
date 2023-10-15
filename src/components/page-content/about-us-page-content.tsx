@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import styles from './about-us-page-content.module.css';
 
 import Image from 'next/image';
@@ -7,19 +7,35 @@ import ButtonMobile from '../button/button-mobile';
 //import ButtonLinkMobile from '../button/button-link-mobile';
 import ButtonConnectMobile from '../button/button-connect-mobile';
 import ButtonLink from '../button/button-link';
+import Modal from '@/components/modal/modal';
 
+import FormFeedback from '@/components/form/form-feedback';
+import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 
-const AboutUsPageContent = () => {
+interface IAboutUsPageContentProps {
+  catalog: Array<TCatalogItemsTypes>;
+}
 
+const AboutUsPageContent: FC<IAboutUsPageContentProps> = ({catalog}) => {
   const feedback = '/feedback';
+
+  const [modalOn, setModalOn] = useState(false)
+  const modalOpen = () => {
+    setModalOn(true);
+  };
+  const modalClose = () => {
+    setModalOn(false);
+  };
 
   return (
     <div className={styles['about-us-page-content']}>
+      <Modal modalOn={modalOn} modalClick={modalClose}>
+        <FormFeedback catalog={catalog} modalOn={modalOn}/>
+      </Modal>
       <div className={styles['card-1']}>
         <b>PERFAVORE</b>
         <span> — это творческо-производственное объединение из Санкт-Петербурга.</span>
       </div>
-
       <div className={styles['container-row']}>
         <div className={styles['card-6']}>
           <div className={styles['card-6__title']}>
@@ -34,11 +50,11 @@ const AboutUsPageContent = () => {
             Формируем бюджет;
             Фиксируем полученную информацию.
           </div>
-          <ButtonLink link={'/feedback'}>
+          <button onClick={modalOpen}>
             <div className={styles['card-6__button-connect']}>
               {'Связаться с нами'}
             </div>
-          </ButtonLink>
+          </button>
         </div>
         <div className={styles['container-column']}>
           <div className={styles['card-2']}>

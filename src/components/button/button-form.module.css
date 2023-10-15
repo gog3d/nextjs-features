@@ -1,0 +1,16 @@
+.button {
+  color: #FFFFFF;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+
+  border-radius: 8px;
+  background: #222222;
+  text-align: center;
+  padding: 12px 53px 11px 41px;
+
+  min-width: 328px;
+  cursor: pointer;
+}

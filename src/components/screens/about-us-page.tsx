@@ -25,7 +25,7 @@ const AboutUsPage: FC<IAboutUsPageProps> = ({catalog, contacts}) => {
       <ContainerPage>
         <PageContentWrapperAboutUs>
           <BreadCrumbsMobile routerPath={asPath}/>
-          <AboutUsPageContent />
+          <AboutUsPageContent catalog={catalog}/>
         </PageContentWrapperAboutUs>
         </ContainerPage>
       <FooterMain contacts={contacts}/>

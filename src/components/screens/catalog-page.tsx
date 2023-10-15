@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -18,6 +18,8 @@ import ButtonConnect from '@/components/button/button-connect';
 import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
 import ContainerPage from '@/components/container/container-page';
 
+import Modal from '@/components/modal/modal';
+import FormFeedback from '@/components/form/form-feedback';
 
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
@@ -32,15 +34,31 @@ const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts}) => {
     'Произведем в любом размере', 'Дизайн нарисуем', 'Макет разработаем',
     'Решение подберем', 'Рекламу оформим', 'Процессы подскажем', 'Рецептуру придумаем'
   ];
+
+  const [modalOn, setModalOn] = useState(false)
+
+  const modalOpen = () => {
+    setModalOn(true);
+  };
+  const modalClose = () => {
+    setModalOn(false);
+  };
+
+
   return (
     <Page>
       <HeaderMain />
       <ContainerPage>
+        <Modal modalOn={modalOn} modalClick={modalClose}>
+          <FormFeedback catalog={catalog} modalOn={modalOn}/>
+        </Modal>
         <PageContentWrapperCatalog>
           <BreadCrumbsMobile routerPath={asPath}/>
           <ContainerHorizontalScrolling>
             <HorizontalScrolling textArray={scrollText} />
-            <ButtonConnect link={'/feedback'} text={'Связаться с нами'} />
+            <div onClick={modalOpen}>
+              <ButtonConnect link={''} text={'Связаться с нами'}/>
+            </div>
           </ContainerHorizontalScrolling>
           <CatalogCards>
             {

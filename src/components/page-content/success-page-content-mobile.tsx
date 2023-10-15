@@ -2,9 +2,7 @@ import { FC, ReactNode } from 'react';
 import styles from './success-page-content-mobile.module.css';
 
 import LogoMainBigMobile from '@/components/icons/logo-main-big-mobile-icon';
-
 import ButtonConnectMobile from '@/components/button/button-connect-mobile';
-
 
 const SuccessPageContentMobile = () => {
 

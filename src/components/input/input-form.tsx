@@ -1,14 +1,14 @@
 import { FC, ReactNode } from 'react';
-import styles from './input-form-mobile.module.css';
+import styles from './input-form.module.css';
 
-interface IInputFormMobileProps {
+interface IInputFormProps {
   value: string;
   type: string | undefined;
   placeholder: string;
   handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
 };
 
-const InputFormMobile: FC<IInputFormMobileProps> = ({ placeholder, handleChange, type='text', value='' }) => {
+const InputForm: FC<IInputFormProps> = ({ placeholder, handleChange, type='text', value='' }) => {
   return (
     <div  className={styles['input-wrapper']}>
       <input 
@@ -22,4 +22,4 @@ const InputFormMobile: FC<IInputFormMobileProps> = ({ placeholder, handleChange,
   );
 }
 
-export default InputFormMobile;
+export default InputForm;

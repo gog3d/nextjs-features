@@ -36,8 +36,8 @@ interface IFeedbackPageProps {
 const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
 
   const router = useRouter();
-  const [checkboxItems, setCheckboxItems] = useState(['']);
 
+  const [checkboxItems, setCheckboxItems] = useState(['']);
   const [companyName, setCompanyName] = useState('');
   const [tel, setTel] = useState('');
   const [name, setName] = useState('');
@@ -104,10 +104,10 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
       </HeaderWrapperMobile>
       <PageContentWrapperMobile>
         <FormWrapperMobile onSubmit={onSubmit}>
-          <InputFormMobile placeholder={'Наименование компании'} type={'text'} handleChange={handleChangeCompanyName}/>
-          <InputFormMobile placeholder={'Телефон'} type={'tel'}  handleChange={handleChangeTel}/>
-          <InputFormMobile placeholder={'Имя'} type={'text'}  handleChange={handleChangeName}/>
-          <InputFormMobile placeholder={'E-mail'} type={'email'}  handleChange={handleChangeEmail}/>
+          <InputFormMobile placeholder={'Наименование компании'} type={'text'} handleChange={handleChangeCompanyName} value={companyName}/>
+          <InputFormMobile placeholder={'Телефон'} type={'tel'}  handleChange={handleChangeTel} value={tel}/>
+          <InputFormMobile placeholder={'Имя'} type={'text'}  handleChange={handleChangeName} value={name}/>
+          <InputFormMobile placeholder={'E-mail'} type={'email'}  handleChange={handleChangeEmail} value={email}/>
           <AccordionMobile title={'Наименование'}>
             <AccordionWrapperFeedbackMobile>
               {
@@ -117,6 +117,7 @@ const FeedbackPageMobile: FC<IFeedbackPageProps> = ({catalog}) => {
                       title={item.title} 
                       name={item.type}
                       toggleCheckbox={() => setCheckboxValue(item.title)}
+                      checked={checkboxItems.find(a => a===item.title)}
                     />
                   </div>
                 )

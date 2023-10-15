@@ -1,24 +1,38 @@
-import { FC, ReactNode } from 'react';
+import { FC, useState, useCallback } from 'react';
 import Link from 'next/link';
 
 import styles from './main-page-content.module.css';
 
 import ContainerPage from '@/components/container/container-page';
-//
 import ButtonMobile from '@/components/button/button-mobile';
 import ButtonConnectMobile from '@/components/button/button-connect-mobile';
-//
 import ButtonLink from '@/components/button/button-link';
 import RightChevronIcon from '@/components/icons/right-chevron-icon';
+import Modal from '@/components/modal/modal';
 
+import FormFeedback from '@/components/form/form-feedback';
+import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 
+interface IMainPageContentProps {
+  catalog: Array<TCatalogItemsTypes>;
+}
 
-const MainPageContentMobile = () => {
-
+const MainPageContent: FC<IMainPageContentProps> = ({catalog}) => {
   const feedback = '/feedback';
+
+  const [modalOn, setModalOn] = useState(false)
+  const modalOpen = () => {
+    setModalOn(true);
+  };
+  const modalClose = () => {
+    setModalOn(false);
+  };
 
   return (
     <ContainerPage>
+      <Modal modalOn={modalOn} modalClick={modalClose}>
+        <FormFeedback catalog={catalog} modalOn={modalOn}/>
+      </Modal>
       <div className={styles['main-page-content']}>
         <div className={styles['card-1']}>
           Комплексные решения в сфере ресторанного бизнеса и сегмента HoReCa
@@ -35,11 +49,11 @@ const MainPageContentMobile = () => {
               Хотим, чтобы наши взаимодействия были выстроены на доверии, а не на счетах за дополнительные услуги 
               и каждое лишнее действие. Если вы дочитали до этого пункта, то мы уже на полпути к тому, чтобы реализовать ваш запрос с минимальными затратами времени и нервов. 
             </div>
-            <ButtonLink link={'/feedback'}>
+            <button onClick={modalOpen}>
               <div className={styles['card-6__button-connect']}>
                {'Связаться с нами'}
               </div>
-            </ButtonLink>
+            </button>
           </div>
           <div className={styles['container-column']}>
             <div className={styles['card-2']}>
@@ -146,11 +160,11 @@ const MainPageContentMobile = () => {
                 (нажми меня) — открывается фича с визуализацией
               </div>
               <div className={styles['card-8__button-container']}>
-                <ButtonLink link={'/feedback'}>
+                <button onClick={modalOpen}>
                   <div className={styles['card-8__button-connect']}>
                    {'Связаться с нами'}
                   </div>
-                </ButtonLink>
+                </button>
               </div>
             </div>
           </div>
@@ -160,4 +174,4 @@ const MainPageContentMobile = () => {
   );
 };
 
-export default MainPageContentMobile;
+export default MainPageContent;

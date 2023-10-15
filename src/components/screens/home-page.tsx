@@ -1,18 +1,9 @@
 import { FC } from 'react';
 
-//import PageMobile from '@/components/page/page-mobile';
 import Page from '@/components/page/page';
-//import PageContentWrapperMainMobile from '@/components/page/page-content-wrapper-main-mobile';
-//import ContainerPage from '@/components/container/container-page';
-//import HeaderMainMobile from '@/components/header/header-main-mobile';
 import HeaderMain from '@/components/header/header-main';
-//import FooterMainMobile from '@/components/footer/footer-main-mobile';
 import FooterMain from '@/components/footer/footer-main';
-//import ImageWrapperMainMobile from '@/components/image/image-wrapper-main-mobile';
-//import Image from 'next/image';
-//import MainPageContentMobile from '../page-content/main-page-content-mobile';
-import MainPageContent from '../page-content/main-page-content';
-
+import MainPageContent from '@/components/page-content/main-page-content';
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
 interface IHomePageProps {
@@ -25,7 +16,7 @@ const HomePage: FC<IHomePageProps> = ({catalog, contacts}) => {
   return (
     <Page>
       <HeaderMain />
-      <MainPageContent />
+      <MainPageContent catalog={catalog}/>
       <FooterMain contacts={contacts}/>
     </Page>
   );
