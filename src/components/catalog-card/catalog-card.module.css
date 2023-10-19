@@ -31,59 +31,73 @@
 .cups {
   min-width: 274px;
   background: #CFF3FC;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+  /* Тень 3 */
+/*  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05), 0px 0px 0px 0px rgba(61, 62, 87, 0.11), 0px 6px 15px 0px rgba(61, 62, 87, 0.11), 0px 10px 47px 0px rgba(61, 62, 87, 0.09), 0px 45px 45px 0px rgba(61, 62, 87, 0.05), 0px 5px 45px 0px rgba(61, 62, 87, 0.02), 0px 296px 30px 0px rgba(61, 62, 87, 0.00);
+*/
+  /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
 
 .paper-packaging {
   min-width: 568px;
   background: #EBF7BD;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+  /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
+
 
 .lids {
   min-width: 274px;
   background: #FCE1CF;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+  /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
 
 .carton-packaging {
   min-width: 372px;
   background: #E2DFF7;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+    /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
 
 .plastic-box {
   min-width: 372px;
   background: #D8F9E5;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+    /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
 
 .uniform {
   min-width: 372px;
   background: #FCEBCD;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+    /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
 
 .mayonnaise-sauce {
   min-width: 274px;
   background: #E7E7E7;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+    /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
 
 .space-decoration {
   min-width: 274px;
   background: rgba(247, 198, 255, 0.56);
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+    /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
 
 .consulting {
   min-width: 274px;
   background: #F9FFE0;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+    /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
 
 .design {
   min-width: 274px;
   background: #CFDEFD;
-  box-shadow: 6px 3px 20px 0px rgba(255, 239, 152, 0.05);
+    /* Тень1 */
+  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.10);
 }
