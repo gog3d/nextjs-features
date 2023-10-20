@@ -1,3 +1,4 @@
+"use client";
 import { FC, ReactNode, useEffect, useState } from 'react';
 import styles from './horizontal-scrolling.module.css';
 import SrollingTextElips from '../icons/scrolling-text-elips';
@@ -13,18 +14,20 @@ const HorizontalScrolling: FC<IHorizontalScrollingProps> = ({textArray}) => {
   const [scrollWidth, setScrollWidth] = useState(maxScrollWidth);
 
   const updateDimensions = () => {
+    const maxScrollWidth = 808;
+    const maxPageWidth = 1172;
     const width = window.innerWidth;
     width < maxPageWidth ? setScrollWidth(maxScrollWidth - maxPageWidth  + width) : '';
   }
 
   useEffect(() => {
-    const width = window.innerWidth;
-    width < maxPageWidth ? setScrollWidth(maxScrollWidth - maxPageWidth  + width) : '';
+    updateDimensions();
+  }, []);
 
+  useEffect(() => {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
-
 
   return (
     <div className={styles['scroll']}>
