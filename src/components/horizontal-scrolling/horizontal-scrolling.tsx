@@ -18,6 +18,9 @@ const HorizontalScrolling: FC<IHorizontalScrollingProps> = ({textArray}) => {
   }
 
   useEffect(() => {
+    const width = window.innerWidth;
+    width < maxPageWidth ? setScrollWidth(maxScrollWidth - maxPageWidth  + width) : '';
+
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
