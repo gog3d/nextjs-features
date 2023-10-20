@@ -13,7 +13,7 @@ interface ICheckboxMobileProps {
 const CheckboxMobile: FC<ICheckboxMobileProps> = ({title, name, toggleCheckbox, checked}) => {
 
   useEffect(() => {
-    console.log(checked);
+//    console.log(checked);
   }, [checked]);
 
   return (

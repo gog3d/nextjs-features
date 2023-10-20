@@ -1,5 +1,5 @@
 "use client";
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useState, useCallback } from 'react';
 import styles from './horizontal-scrolling.module.css';
 import SrollingTextElips from '../icons/scrolling-text-elips';
 
@@ -11,18 +11,20 @@ interface IHorizontalScrollingProps {
 const HorizontalScrolling: FC<IHorizontalScrollingProps> = ({textArray}) => {
   const maxScrollWidth = 808;
   const maxPageWidth = 1172;
-  const [scrollWidth, setScrollWidth] = useState(maxScrollWidth);
+  const [scrollWidth, setScrollWidth] = useState(null);
 
-  const updateDimensions = () => {
+  const updateDimensions = useCallback(() => {
+    "use client";
     const maxScrollWidth = 808;
     const maxPageWidth = 1172;
     const width = window.innerWidth;
-    width < maxPageWidth ? setScrollWidth(maxScrollWidth - maxPageWidth  + width) : '';
-  }
+    Number(width) < maxPageWidth ? setScrollWidth(maxScrollWidth - maxPageWidth  + width) : '';
+  }, [])
 
   useEffect(() => {
-    updateDimensions();
-  }, []);
+    const width = window.innerWidth;
+    updateDimensions()
+  }, [scrollWidth]);
 
   useEffect(() => {
     window.addEventListener("resize", updateDimensions);
@@ -30,7 +32,8 @@ const HorizontalScrolling: FC<IHorizontalScrollingProps> = ({textArray}) => {
   }, []);
 
   return (
-    <div className={styles['scroll']}>
+  <>
+  { !!scrollWidth && <div className={styles['scroll']}>
       <div className={styles['scroll-container']} style={{width: `${scrollWidth}px`}}>
         <div className={styles['scroll-text']}>
 
@@ -44,6 +47,8 @@ const HorizontalScrolling: FC<IHorizontalScrollingProps> = ({textArray}) => {
         </div>
       </div>
     </div>
+    }
+  </>
   );
 };
 

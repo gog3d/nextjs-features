@@ -21,7 +21,6 @@ const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
     <div className={styles['cards']}>
       {
         catalog.map((item, index) => 
-       <>
           <div 
             key={index} 
             className={`${styles['card']} ${styles[item.type]}`}
@@ -36,10 +35,6 @@ const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
               {item.title}
             </div>
           </div>
-          <div className={styles[`${item.type}-description`]}>
-            {'hello'}
-          </div>
-        </>
         )
       }
 
