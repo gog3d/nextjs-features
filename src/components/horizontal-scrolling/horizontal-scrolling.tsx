@@ -11,14 +11,14 @@ interface IHorizontalScrollingProps {
 const HorizontalScrolling: FC<IHorizontalScrollingProps> = ({textArray}) => {
   const maxScrollWidth = 808;
   const maxPageWidth = 1172;
-  const [scrollWidth, setScrollWidth] = useState(null);
+  const [scrollWidth, setScrollWidth] = useState(0);
 
   const updateDimensions = useCallback(() => {
     "use client";
     const maxScrollWidth = 808;
     const maxPageWidth = 1172;
     const width = window.innerWidth;
-    Number(width) < maxPageWidth ? setScrollWidth(maxScrollWidth - maxPageWidth  + width) : '';
+    width < maxPageWidth ? setScrollWidth(maxScrollWidth - maxPageWidth  + width) : '';
   }, [])
 
   useEffect(() => {
@@ -35,9 +35,7 @@ const HorizontalScrolling: FC<IHorizontalScrollingProps> = ({textArray}) => {
   <>
   { !!scrollWidth && <div className={styles['scroll']}>
       <div className={styles['scroll-container']} style={{width: `${scrollWidth}px`}}>
-          {'hello'}
         <div className={styles['scroll-text']}>
-
           {
             textArray.map((text, index) => 
               <div key={index} className={styles['scroll-text-container']}>
