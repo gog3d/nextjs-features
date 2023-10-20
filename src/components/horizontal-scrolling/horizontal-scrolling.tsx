@@ -35,6 +35,7 @@ const HorizontalScrolling: FC<IHorizontalScrollingProps> = ({textArray}) => {
   <>
   { !!scrollWidth && <div className={styles['scroll']}>
       <div className={styles['scroll-container']} style={{width: `${scrollWidth}px`}}>
+          {'hello'}
         <div className={styles['scroll-text']}>
 
           {
