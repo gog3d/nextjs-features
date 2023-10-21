@@ -3,7 +3,6 @@
   z-index: 0;
 }
 .scroll-container {
- /* border: 3px solid black;*/
   display: flex;
   white-space: nowrap;
   overflow: hidden;

@@ -47,7 +47,6 @@ const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts}) => {
     setModalOn(false);
   };
 
-
   return (
     <Page>
       <HeaderMain />
