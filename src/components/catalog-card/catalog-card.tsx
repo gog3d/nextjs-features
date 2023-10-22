@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useState,useContext } from 'react';
 import Link from 'next/link';
 import styles from './catalog-card.module.css';
 
@@ -10,7 +10,7 @@ interface ICatalogCardProps {
   children: ReactNode;
 }
 
-const CatalogCard: FC<ICatalogCardProps> = ({type, title, link, children}) => {
+const CatalogCard: FC<ICatalogCardProps> = ({ children, type, title, link,}) => {
   return (
     <Link className={`${styles['card']} ${styles[type]}`} href={link}>
       {children}
