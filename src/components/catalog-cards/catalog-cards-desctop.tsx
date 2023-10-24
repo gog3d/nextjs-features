@@ -12,19 +12,15 @@ import CatalogCard from '@/components/catalog-card/catalog-card';
 import CatalogCards from '@/components/catalog-cards/catalog-cards';
 
 interface ICatalogCardsDesctopProps {
-//  children: ReactNode;
   catalog: Array<TCatalogItemsTypes>;
-  initialValue: string;
 }
 
-const CatalogCardsDesctopContext = React.createContext(false);
-
-const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog, initialType}) => {
+const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
   const { asPath } = useRouter();
   const colors = catalog.map((item, index) => `${item.type}__color`);
 //  console.log(colors);
   return (
-    <CatalogCards initialType={false}>
+    <CatalogCards initialType={''}>
       <div className={styles['cards']}>
       {
         catalog.map((item, index) => 

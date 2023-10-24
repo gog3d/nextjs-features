@@ -1,29 +1,22 @@
 "use client";
-import React, { FC, ReactNode, useState, useCallback, useContext } from 'react';
+import React, { FC, ReactNode, useState, useCallback, useContext, ComponentType } from 'react';
 import styles from './catalog-cards.module.css';
 
-interface ICatalogCardsProps {
+interface ICardProps {
   children: ReactNode;
-  initialType: string;
+  type: string | undefined;
 }
 
-const CatalogCardsContext = React.createContext(false);
+interface ICardsContext {
+  activeCard: string | undefined;
+  switchCard: (type: string | undefined) => void;
+}
 
-const CatalogCards: FC<ICatalogCardsProps> = ({children, initialType}) => {
-  const [activeCard, setActiveCard] = useState(initialType);
+const CatalogCardsContext = React.createContext<ICardsContext>({
+  activeCard: undefined, switchCard: (type: string | undefined) => {}
+});
 
-  const switchCard = useCallback((type) => {
-    setActiveCard((activeCard) => activeCard === type ? undefined : type);
-  }, []);
-
-  return (
-    <CatalogCardsContext.Provider value={{activeCard, switchCard}}>
-      {children}
-    </CatalogCardsContext.Provider>
-  );
-};
-
-CatalogCards.Card = function Card ({children, type}) {
+const Card: FC<ICardProps> = ({children, type}) => {
   const {activeCard, switchCard} = useContext(CatalogCardsContext);
   return (
     <div 
@@ -35,7 +28,13 @@ CatalogCards.Card = function Card ({children, type}) {
   );
 };
 
-CatalogCards.Tooltip = function Tooltip ({children, type}) {
+interface ITooltipProps {
+  children: ReactNode;
+  type: string | undefined;
+}
+
+
+const Tooltip: FC<ITooltipProps> = ({children, type}) => {
   const {activeCard} = useContext(CatalogCardsContext);
   return (
     <>
@@ -44,7 +43,14 @@ CatalogCards.Tooltip = function Tooltip ({children, type}) {
   );
 };
 
-CatalogCards.Discription = function Discription ({children, type}) {
+
+interface IDiscriptionProps {
+  children: ReactNode;
+  type: string | undefined;
+}
+
+
+const Discription: FC<IDiscriptionProps> = ({children, type}) => {
   const {activeCard, switchCard} = useContext(CatalogCardsContext);
   return (
     <>
@@ -52,5 +58,36 @@ CatalogCards.Discription = function Discription ({children, type}) {
     </>
   );
 };
+
+interface ICatalogCardsProps {
+  children: ReactNode;
+  initialType: string | undefined;
+}
+
+interface ICatalogCards {
+  Card: FC<ICardProps>;
+  Tooltip: FC<ITooltipProps>;
+  Discription: FC<IDiscriptionProps>;
+}
+
+const CatalogCards: FC<ICatalogCardsProps> & ICatalogCards = ({children, initialType}) => {
+
+  const [activeCard, setActiveCard] = useState(initialType);
+
+  const switchCard = useCallback((type: string | undefined) => {
+   // setActiveCard((activeCard: string | undefined) => activeCard === type ? undefined : type);
+    setActiveCard((activeCard: string | undefined) => activeCard === type ? undefined : type);
+  }, []);
+
+  return (
+    <CatalogCardsContext.Provider value={{activeCard, switchCard}}>
+      {children}
+    </CatalogCardsContext.Provider>
+  );
+};
+
+CatalogCards.Card = Card;
+CatalogCards.Tooltip = Tooltip;
+CatalogCards.Discription = Discription;
 
 export default CatalogCards;
