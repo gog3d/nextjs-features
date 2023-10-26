@@ -11,6 +11,10 @@ export type TCup = {
   name: string,
   title: string,
   parameters: Array<TParameters>
+  background: {
+    color_1: string,
+    color_2: string
+  }
 };
 
 export type TCupTypes = {
@@ -20,8 +24,35 @@ export type TCupTypes = {
   types: Array<TCup>
 };
 
+export type CatalogItemsItemsParametersTypes = {
+  name:  string,
+  value: string
+};
+
+export type TCatalogItemsItemsBackgroundTypes = {
+  color_1: string,
+  color_2: string
+}
+
+export type CatalogItemsItemsTypesTypes = {
+  id: string,
+  name: string,
+  title: string,
+  parameters: string,
+  background: TCatalogItemsItemsBackgroundTypes
+}
+
+export type TCatalogItemsItemsTypes = {
+  id: string,
+  name: string,
+  title: string,
+  parameters: Array<CatalogItemsItemsParametersTypes>,
+  background: TCatalogItemsItemsBackgroundTypes,
+  types?: Array<CatalogItemsItemsTypesTypes> | null;
+}
+
 export type TCatalogItemsTypes = {
-  id: number,
+  id: string,
   type: string,
   title: string,
   link: string,
@@ -30,7 +61,8 @@ export type TCatalogItemsTypes = {
     desctop: string
   },
   image: {
-    mobile: string
+    mobile: string,
+    desctop: string
   },
   description: {
     title: string,

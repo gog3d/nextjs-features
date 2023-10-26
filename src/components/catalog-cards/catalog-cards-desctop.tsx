@@ -6,16 +6,19 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
-
 import CatalogCard from '@/components/catalog-card/catalog-card';
 import CatalogCards from '@/components/catalog-cards/catalog-cards';
+import DescriptionCatalogCardCups from '@/components/description/description-catalog-card-cups';
+
+
+import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
 interface ICatalogCardsDesctopProps {
   catalog: Array<TCatalogItemsTypes>;
 }
 
 const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
+//  console.log({catalog});
   const { asPath } = useRouter();
   const colors = catalog.map((item, index) => `${item.type}__color`);
 //  console.log(colors);
@@ -43,7 +46,7 @@ const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
             <CatalogCards.Tooltip type={item.type}>
               <div className={styles['card-tooltip']}>
                 <svg width="82" height="23" viewBox="0 0 82 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M41.0005 0.158203L81.1662 22.3315H0.834755L41.0005 0.158203Z" fill="white"/>
+                  <path d="M41.0005 0.158203L81.1662 24.315H0.834755L41.0005 0.158203Z" fill="white"/>
                 </svg>
               </div>
             </CatalogCards.Tooltip>
@@ -51,7 +54,9 @@ const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
         )
       }
       <div className={`${styles['cards-row']} ${styles['cards-row-1']}`}>
-        <CatalogCards.Discription type={'cups'}>cups discription</CatalogCards.Discription>
+        <CatalogCards.Discription type={'cups'}>
+          <DescriptionCatalogCardCups catalog={catalog} />
+        </CatalogCards.Discription>
         <CatalogCards.Discription type={'paper-packaging'}>paper-packaging discription</CatalogCards.Discription>
         <CatalogCards.Discription type={'lids'}>lids discription</CatalogCards.Discription>
       </div>

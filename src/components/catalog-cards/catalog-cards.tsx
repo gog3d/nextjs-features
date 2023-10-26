@@ -19,12 +19,12 @@ const CatalogCardsContext = React.createContext<ICardsContext>({
 const Card: FC<ICardProps> = ({children, type}) => {
   const {activeCard, switchCard} = useContext(CatalogCardsContext);
   return (
-    <div 
+    <button 
       className={`${styles['card']} ${activeCard === type && styles['card-shadow']}`}
       onClick={() => switchCard(type)}
     >
       {children}
-    </div>
+    </button>
   );
 };
 

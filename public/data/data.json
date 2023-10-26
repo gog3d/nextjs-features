@@ -9,11 +9,31 @@
         "mobile": "catalog-cup-mobile-icon.svg",
         "desctop": "catalog-cup-icon.svg"
       },
+      "image": {
+        "mobile": "cup-catalog-image-mobile.png",
+        "desctop": "cup-catalog-image-desctop.png"
+      },
+      "description": {
+        "title": "",
+        "subtitles": [
+          ""
+        ]
+      },
       "items": [
         {
           "id": "1",
           "name": "single-layer",
           "title": "Однослойные",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "",
+            "color_2": ""
+          },          
           "types": [
             {
               "id": "1",
@@ -36,7 +56,11 @@
                   "name": "Минимальный тираж",
                   "value": "5000"
                 }
-              ]
+              ],
+              "background": {
+                "color_1": "#FAEEFC",
+                "color_2": "rgba(250, 238, 252, 0.30)"
+              }
             },
             {
               "id": "2",
@@ -59,7 +83,11 @@
                   "name": "Минимальный тираж",
                   "value": "5000"
                 }
-              ]
+              ],
+              "background": {
+                "color_1": "#FAEEFC",
+                "color_2": "#FAEEFC"
+              }
             },
             {
               "id": "3",
@@ -82,7 +110,11 @@
                   "name": "Минимальный тираж",
                   "value": "5000"
                 }
-              ]
+              ],
+              "background": {
+                "color_1": "#FAEEFC",
+                "color_2": "#FAEEFC"
+              }
             },
             {
               "id": "4",
@@ -105,7 +137,11 @@
                   "name": "Минимальный тираж",
                   "value": "5000"
                 }
-              ]
+              ],
+              "background": {
+                "color_1": "#FAEEFC",
+                "color_2": "#FAEEFC"
+              }
             },
             {
               "id": "5",
@@ -128,7 +164,11 @@
                   "name": "Минимальный тираж",
                   "value": "5000"
                 }
-              ]
+              ],
+              "background": {
+                "color_1": "#FAEEFC",
+                "color_2": "#FAEEFC"
+              }
             }
           ]
         },
@@ -136,6 +176,16 @@
           "id": "2",
           "name": "double-layer",
           "title": "Двуслойные",
+          "parameters": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ],
+          "background": {
+            "color_1": "",
+            "color_2": ""
+          },
           "types": [
             {
               "id": "1",
@@ -158,7 +208,11 @@
                   "name": "Минимальный тираж",
                   "value": "5000"
                 }
-              ]
+              ],
+              "background": {
+                "color_1": "#FAEEFC",
+                "color_2": "#FAEEFC"
+              }
             },
             {
               "id": "2",
@@ -181,7 +235,11 @@
                   "name": "Минимальный тираж",
                   "value": "5000"
                 }
-              ]
+              ],
+              "background": {
+                "color_1": "#FAEEFC",
+                "color_2": "#FAEEFC"
+              }
             },
             {
               "id": "3",
@@ -204,7 +262,11 @@
                   "name": "Минимальный тираж",
                   "value": "5000"
                 }
-              ]
+              ],
+              "background": {
+                "color_1": "#FAEEFC",
+                "color_2": "#FAEEFC"
+              }
             }
           ]
         }
@@ -248,7 +310,8 @@
           "background": {
             "color_1": "#F1F0FB",
             "color_2": "#F1F0FB"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "2",
@@ -268,7 +331,8 @@
           "background": {
             "color_1": "#F5FBE1",
             "color_2": "#F5FBE1"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "3",
@@ -291,7 +355,8 @@
           "background": {
             "color_1": "#FAEEFC",
             "color_2": "#FAEEFC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "4",
@@ -310,10 +375,10 @@
           "background": {
             "color_1": "#E6E6E6",
             "color_2": "#E6E6E6"
-          }
+          },
+          "types": [""]
         }
       ]
-
     },
     {
       "id": "3",
@@ -347,7 +412,8 @@
           "background": {
             "color_1": "#F6FCE2",
             "color_2": "#F6FCE2"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "2",
@@ -362,7 +428,8 @@
           "background": {
             "color_1": "#F2F1FC",
             "color_2": "#F2F1FC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "4",
@@ -381,7 +448,8 @@
           "background": {
             "color_1": "#FAEEFC",
             "color_2": "#FAEEFC"
-          }
+          },
+          "types": [""]
         }
 
       ]
@@ -418,7 +486,8 @@
           "background": {
             "color_1": "#F1F0FB",
             "color_2": "#F1F0FB"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "2",
@@ -437,7 +506,8 @@
           "background": {
             "color_1": "#F4F4F4",
             "color_2": "#F4F4F4"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "3",
@@ -456,7 +526,8 @@
           "background": {
             "color_1": "#F6FCE2",
             "color_2": "#F6FCE2"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "4",
@@ -479,7 +550,8 @@
           "background": {
             "color_1": "#FEF6E9",
             "color_2": "#FEF6E9"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "5",
@@ -498,7 +570,8 @@
           "background": {
             "color_1": "#FAEEFC",
             "color_2": "#FAEEFC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "6",
@@ -513,7 +586,8 @@
           "background": {
             "color_1": "#F2F1FC",
             "color_2": "#F2F1FC"
-          }
+          },
+          "types": [""]
         }
       ]
     },
@@ -553,7 +627,8 @@
           "background": {
             "color_1": "#FAEEFC",
             "color_2": "#FAEEFC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "2",
@@ -573,7 +648,8 @@
           "background": {
             "color_1": "#F1F0FB",
             "color_2": "#F1F0FB"
-          }
+          },
+          "types": [""]
         }
       ]
     },
@@ -613,7 +689,8 @@
           "background": {
             "color_1": "#F1F0FB",
             "color_2": "#F1F0FB"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "2",
@@ -632,7 +709,8 @@
           "background": {
             "color_1": "#FAEEFC",
             "color_2": "#FAEEFC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "3",
@@ -647,7 +725,8 @@
           "background": {
             "color_1": "#E6E6E6",
             "color_2": "#E6E6E6"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "4",
@@ -662,7 +741,8 @@
           "background": {
             "color_1": "#F5FBE1",
             "color_2": "#F5FBE1"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "5",
@@ -681,7 +761,8 @@
           "background": {
             "color_1": "#FDF5E8",
             "color_2": "#FDF5E8"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "6",
@@ -700,7 +781,8 @@
           "background": {
             "color_1": "#FDF5E8",
             "color_2": "#FDF5E8"
-          }
+          },
+          "types": [""]
         }
       ]
     },
@@ -736,7 +818,8 @@
           "background": {
             "color_1": "#E6E6E6",
             "color_2": "#E6E6E6"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "2",
@@ -751,7 +834,8 @@
           "background": {
             "color_1": "#FDF5E8",
             "color_2": "#FDF5E8"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "3",
@@ -766,7 +850,8 @@
           "background": {
             "color_1": "#FCFEF1",
             "color_2": "#FCFEF1"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "4",
@@ -781,7 +866,8 @@
           "background": {
             "color_1": "#E7E7E7",
             "color_2": "#E7E7E7"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "5",
@@ -796,7 +882,8 @@
           "background": {
             "color_1": "#FBEFFD",
             "color_2": "#FBEFFD"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "6",
@@ -811,7 +898,8 @@
           "background": {
             "color_1": "#F2F1FC",
             "color_2": "#F2F1FC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "7",
@@ -826,7 +914,8 @@
           "background": {
             "color_1": "#FCFEF1",
             "color_2": "#FCFEF1"
-          }
+          },
+          "types": [""]
         }
       ]
     },
@@ -870,7 +959,8 @@
           "background": {
             "color_1": "#FAEEFC",
             "color_2": "#FAEEFC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "2",
@@ -901,7 +991,8 @@
           "background": {
             "color_1": "#F6FCE2",
             "color_2": "#F6FCE2"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "3",
@@ -924,7 +1015,8 @@
           "background": {
             "color_1": "#FBEFFD",
             "color_2": "#FBEFFD"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "4",
@@ -955,7 +1047,8 @@
           "background": {
             "color_1": "#E7E7E7",
             "color_2": "#E7E7E7"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "5",
@@ -974,7 +1067,8 @@
           "background": {
             "color_1": "#FEF6E9",
             "color_2": "#FEF6E9"
-          }
+          },
+          "types": [""]
         }
       ]
     },
@@ -1050,7 +1144,8 @@
           "background": {
             "color_1": "#F1F0FB",
             "color_2": "rgba(235, 233, 250, 0.30)"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "2",
@@ -1065,7 +1160,8 @@
           "background": {
             "color_1": "#F2FAD9",
             "color_2": "#FAFDF1"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "3",
@@ -1080,7 +1176,8 @@
           "background": {
             "color_1": "rgba(245, 218, 250, 0.44)",
             "color_2": "rgba(249, 230, 252, 0.30)"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "4",
@@ -1111,7 +1208,8 @@
           "background": {
             "color_1": "rgba(200, 200, 200, 0.44)",
             "color_2": "rgba(218, 218, 218, 0.30)"
-          }
+          },
+          "types": [""]
         }
 
       ]
@@ -1147,7 +1245,8 @@
           "background": {
             "color_1": "#FAEEFC",
             "color_2": "#FAEEFC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "2",
@@ -1162,7 +1261,8 @@
           "background": {
             "color_1": "#F6FCE2",
             "color_2": "#F6FCE2"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "3",
@@ -1177,7 +1277,8 @@
           "background": {
             "color_1": "#FAEEFC",
             "color_2": "#FAEEFC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "4",
@@ -1192,7 +1293,8 @@
           "background": {
             "color_1": "#E7E7E7",
             "color_2": "#E7E7E7"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "5",
@@ -1207,7 +1309,8 @@
           "background": {
             "color_1": "#EDECFA",
             "color_2": "#EDECFA"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "6",
@@ -1222,7 +1325,8 @@
           "background": {
             "color_1": "#FDF5E8",
             "color_2": "#FDF5E8"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "7",
@@ -1237,7 +1341,8 @@
           "background": {
             "color_1": "#F6FCE2",
             "color_2": "#F6FCE2"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "8",
@@ -1252,7 +1357,8 @@
           "background": {
             "color_1": "#FAEEFC",
             "color_2": "#FAEEFC"
-          }
+          },
+          "types": [""]
         },
         {
           "id": "9",
@@ -1267,7 +1373,8 @@
           "background": {
             "color_1": "#F6FCE2",
             "color_2": "#F6FCE2"
-          }
+          },
+          "types": [""]
         }
       ]
     }
