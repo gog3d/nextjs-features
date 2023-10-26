@@ -282,7 +282,8 @@
         "desctop": "catalog-paper-packaging-icon.svg"
       },
       "image": {
-        "mobile": "paper-packaging-catalog-image-mobile.png"
+        "mobile": "paper-packaging-catalog-image-mobile.png",
+        "desctop": "paper-packaging-catalog-image-desctop.png"
       },
       "description": {
         "title": "Все изделия могут быть произведены по вашим индивидуальным размерам.",
@@ -390,7 +391,8 @@
         "desctop": "catalog-lids-icon.svg"
       },
       "image": {
-        "mobile": "lids-catalog-image-mobile.png"
+        "mobile": "lids-catalog-image-mobile.png",
+        "desctop": "lids-catalog-image-desctop.png"
       },
       "description": {
         "title": "Пластиковые крышки с клапаном для бумажных стаканов",
@@ -464,7 +466,8 @@
         "desctop": "catalog-carton-packaging-icon.svg"
       },
       "image": {
-        "mobile": "carton-packaging-catalog-image-mobile.png"
+        "mobile": "carton-packaging-catalog-image-mobile.png",
+        "desctop": "carton-packaging-catalog-image-desctop.png"
       },
       "description": {
         "title": "Все изделия могут быть произведены по вашим индивидуальынм размерам.",

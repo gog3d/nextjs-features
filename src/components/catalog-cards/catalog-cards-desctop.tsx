@@ -10,6 +10,11 @@ import CatalogCard from '@/components/catalog-card/catalog-card';
 import CatalogCards from '@/components/catalog-cards/catalog-cards';
 import DescriptionCatalogCardCups from '@/components/description/description-catalog-card-cups';
 
+import DescriptionCatalogCardPaperPackaging from '@/components/description/description-catalog-card-paper-packaging';
+
+import DescriptionCatalogCardLids from '@/components/description/description-catalog-card-lids';
+
+import DescriptionCatalogCardCartonPackaging from '@/components/description/description-catalog-card-carton-packaging';
 
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
@@ -57,19 +62,41 @@ const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
         <CatalogCards.Discription type={'cups'}>
           <DescriptionCatalogCardCups catalog={catalog} />
         </CatalogCards.Discription>
-        <CatalogCards.Discription type={'paper-packaging'}>paper-packaging discription</CatalogCards.Discription>
-        <CatalogCards.Discription type={'lids'}>lids discription</CatalogCards.Discription>
+        
+        <CatalogCards.Discription type={'paper-packaging'}>
+          <DescriptionCatalogCardPaperPackaging catalog={catalog}/>
+        </CatalogCards.Discription>
+
+        <CatalogCards.Discription type={'lids'}>
+          <DescriptionCatalogCardLids catalog={catalog}/>
+        </CatalogCards.Discription>
+
       </div>
       <div className={`${styles['cards-row']} ${styles['cards-row-2']}`}>
-        <CatalogCards.Discription type={'carton-packaging'}>carton-packaging discription</CatalogCards.Discription>
-        <CatalogCards.Discription type={'plastic-box'}>plastic-box discription</CatalogCards.Discription>
-        <CatalogCards.Discription type={'uniform'}>uniform discription</CatalogCards.Discription>
+  
+        <CatalogCards.Discription type={'carton-packaging'}>
+          <DescriptionCatalogCardCartonPackaging catalog={catalog}/>
+        </CatalogCards.Discription>
+  
+        <CatalogCards.Discription type={'plastic-box'}>
+        
+        </CatalogCards.Discription>
+        <CatalogCards.Discription type={'uniform'}>
+        </CatalogCards.Discription>
       </div>
       <div className={`${styles['cards-row']} ${styles['cards-row-3']}`}>
-        <CatalogCards.Discription type={'mayonnaise-sauce'}>mayonnaise-sauce discription</CatalogCards.Discription>
-        <CatalogCards.Discription type={'space-decoration'}>space-decoration discription</CatalogCards.Discription>
-        <CatalogCards.Discription type={'consulting'}>consulting discription</CatalogCards.Discription>
-        <CatalogCards.Discription type={'design'}>design discription</CatalogCards.Discription>
+        <CatalogCards.Discription type={'mayonnaise-sauce'}>
+
+        </CatalogCards.Discription>
+        <CatalogCards.Discription type={'space-decoration'}>
+        
+        </CatalogCards.Discription>
+        <CatalogCards.Discription type={'consulting'}>
+        
+        </CatalogCards.Discription>
+        <CatalogCards.Discription type={'design'}>
+        
+        </CatalogCards.Discription>
       </div>
     </div>
       </CatalogCards>

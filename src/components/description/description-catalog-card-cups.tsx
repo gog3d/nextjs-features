@@ -58,17 +58,3 @@ const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catal
 };
 
 export default DescriptionCatalogCardCups;
-
-/*
-        {
-          catalogItem?.types.map((item, index) => 
-            <AccordionCupDesctop
-              type={item}
-              key={index}
-            />
-          )
-        }
-
-
-*/
-
