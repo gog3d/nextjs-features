@@ -1,14 +1,15 @@
 import { FC, ReactNode } from 'react';
-import styles from './accordion.module.css';
-import AccordionArrowIcon from '../icons/accordion-arrow-icon';
-import { TCup } from '../../../types/data-types';
+import styles from './accordion-cup-desctop.module.css';
+//import AccordionArrowIcon from '@/components/icons/accordion-arrow-icon';
+import DownChevronMobileIcon from '@/components/icons/down-chevron-mobile-icon';
+import { TCup } from '@/types/data-types';
 
-interface IAccordionProps {
-  children: ReactNode;
+interface IAccordionCupDesctopProps {
+//  children: ReactNode;
   type: TCup;
 }
 
-const Accordion: FC<IAccordionProps> = ({children, type}) => {
+const AccordionCupDesctop: FC<IAccordionCupDesctopProps> = ({type}) => {
 //  console.log(color);
   const color = type.name;
   const summaryColor = styles[`cup-type_summary-cup-${color}`];
@@ -23,7 +24,7 @@ const Accordion: FC<IAccordionProps> = ({children, type}) => {
                   {type.title}
                 </p>
                 <div className={styles['accordion__arrow']}>
-                  <AccordionArrowIcon />
+                  <DownChevronMobileIcon />
                 </div>
               </div>
               <div className={`${styles['accordion__summary_overlay']} ${descriptionColor}`}></div>
@@ -40,11 +41,10 @@ const Accordion: FC<IAccordionProps> = ({children, type}) => {
                     )})
                 }
               </div>
-              {children}
             </div>
           </details>
         </div>
   );
 };
 
-export default Accordion;
+export default AccordionCupDesctop;

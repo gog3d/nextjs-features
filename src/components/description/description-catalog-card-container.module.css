@@ -1,6 +1,6 @@
 .description {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 29px;
 
   border-radius: 24px;

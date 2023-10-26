@@ -1,23 +1,20 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import styles from './description-catalog-card-cups.module.css';
 
 import DescriptionCatalogCardContainer from '@/components/description/description-catalog-card-container';
 import PreviewDesctop from '@/components/preview/preview-desctop';
-import AccordionCatalogItemMobile from '@/components/accordion/accordion-catalog-item-mobile';
+import AccordionCupDesctop from '@/components/accordion/accordion-cup-desctop';
 
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes, TCup, TCupTypes } from '@/types/data-types';
-//import { TCup, TCupTypes } from '@/types/data-types';
 interface IDescriptionCatalogCardCupsProps {
-//  children: ReactNode;
   catalog: Array<TCatalogItemsTypes>;
 }
 
 const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catalog}) => {
-
   const items: TCatalogItemsTypes | undefined = catalog?.find((item) => item.type ==='cups');
-//  const catalogItemsTypes = items?.items.map((item) => item);
-//  console.log(catalogItemsTypes);
-  const catalogItem: TCupTypes | undefined = items?.items.find((item) => item.name === 'single-layer');
+//  const catalogItem: TCupTypes | undefined = items?.items.find((item) => item.name === 'single-layer');
+
+  const [cupType, setCupType] = useState('single-layer');
 
   return (
     <DescriptionCatalogCardContainer>
@@ -25,7 +22,11 @@ const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catal
         <div className={styles['menu']}>
         {
           items?.items.map((type, index) =>
-            <button key={index}className={`${styles['menu-item']} ${styles['menu-item__active']}`}>
+            <button key={index} 
+              className={cupType === type.name ? `${styles['menu-item']} ${styles['menu-item__active']}` : `${styles['menu-item']}`}
+              onClick = {()=> setCupType(type.name)}
+              >
+
               {type.title}
             </button>
           )
@@ -33,14 +34,13 @@ const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catal
         </div>
         <div className={styles['list']}>
         {
-          catalogItem?.types.map((item, index) => 
-            <AccordionCatalogItemMobile
-              title={item.title}
-              parameters={item.parameters}
-              background={item.background}
-              key={index}
-            />
-          )
+          items?.items.find((type) => type.name === cupType)
+            .types.map((item: TCup, index: number) => 
+              <AccordionCupDesctop
+                type={item}
+                key={`${index}_${cupType}`}
+              />
+            )
         }
         </div>
       </div>
@@ -58,3 +58,17 @@ const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catal
 };
 
 export default DescriptionCatalogCardCups;
+
+/*
+        {
+          catalogItem?.types.map((item, index) => 
+            <AccordionCupDesctop
+              type={item}
+              key={index}
+            />
+          )
+        }
+
+
+*/
+
