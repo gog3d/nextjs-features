@@ -13,7 +13,7 @@ interface IPreviewDesctopProps {
 }
 
 const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, imagePath, imageAlt='image', constructorHref=''}) => {
-//  console.log(imagePath);
+  console.log(`/media/${imagePath}`);
   return (
     <div className={styles['preview']}>
       <p className={styles['preview_text-top']}>{`Посмотритеб как будее выглядеть ${textTop}`}</p>

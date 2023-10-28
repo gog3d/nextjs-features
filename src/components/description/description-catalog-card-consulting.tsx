@@ -1,22 +1,22 @@
 import { FC, ReactNode, useState } from 'react';
-import styles from './description-catalog-card-lids.module.css';
+import styles from './description-catalog-card-consulting.module.css';
 
 import DescriptionCatalogCardContainer from '@/components/description/description-catalog-card-container';
 import PreviewDesctop from '@/components/preview/preview-desctop';
 
 import AccordionCupDesctop from '@/components/accordion/accordion-cup-desctop';
-import AccordionCatalogItemMobile from '@/components/accordion/accordion-catalog-item-mobile';
+import AccordionCatalogItemMarkedListMobile from '@/components/accordion/accordion-catalog-item-marked-list-mobile';
 
 import DescriptionItemDesctop from '@/components/description/description-item-desctop';
 
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes, TCup, TCupTypes } from '@/types/data-types';
 
-interface IDescriptionCatalogCardLidsProps {
+interface IDescriptionCatalogCardConsultingProps {
   catalog: Array<TCatalogItemsTypes>;
 }
 
-const DescriptionCatalogCardLids: FC<IDescriptionCatalogCardLidsProps> = ({catalog}) => {
-  const catalogItem = catalog.find(item => item.type === 'lids');
+const DescriptionCatalogCardConsulting: FC<IDescriptionCatalogCardConsultingProps> = ({catalog}) => {
+  const catalogItem = catalog.find(item => item.type === 'consulting');
 
   return (
     <DescriptionCatalogCardContainer>
@@ -28,7 +28,7 @@ const DescriptionCatalogCardLids: FC<IDescriptionCatalogCardLidsProps> = ({catal
         <div className={styles['list']}>
         {
           catalogItem?.items.map((item, index) => 
-            <AccordionCatalogItemMobile
+            <AccordionCatalogItemMarkedListMobile
               title={item.title}
               parameters={item.parameters}
               background={item.background}
@@ -52,4 +52,4 @@ const DescriptionCatalogCardLids: FC<IDescriptionCatalogCardLidsProps> = ({catal
   );
 };
 
-export default DescriptionCatalogCardLids;
+export default DescriptionCatalogCardConsulting;

@@ -12,8 +12,6 @@ interface IDescriptionCatalogCardCupsProps {
 
 const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catalog}) => {
   const items: TCatalogItemsTypes | undefined = catalog?.find((item) => item.type ==='cups');
-//  const catalogItem: TCupTypes | undefined = items?.items.find((item) => item.name === 'single-layer');
-
   const [cupType, setCupType] = useState('single-layer');
 
   return (

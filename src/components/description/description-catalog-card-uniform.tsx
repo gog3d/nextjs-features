@@ -1,22 +1,24 @@
 import { FC, ReactNode, useState } from 'react';
-import styles from './description-catalog-card-lids.module.css';
+import styles from './description-catalog-card-uniform.module.css';
 
 import DescriptionCatalogCardContainer from '@/components/description/description-catalog-card-container';
 import PreviewDesctop from '@/components/preview/preview-desctop';
 
 import AccordionCupDesctop from '@/components/accordion/accordion-cup-desctop';
+
+
 import AccordionCatalogItemMobile from '@/components/accordion/accordion-catalog-item-mobile';
 
 import DescriptionItemDesctop from '@/components/description/description-item-desctop';
 
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes, TCup, TCupTypes } from '@/types/data-types';
 
-interface IDescriptionCatalogCardLidsProps {
+interface IDescriptionCatalogCardUniformProps {
   catalog: Array<TCatalogItemsTypes>;
 }
 
-const DescriptionCatalogCardLids: FC<IDescriptionCatalogCardLidsProps> = ({catalog}) => {
-  const catalogItem = catalog.find(item => item.type === 'lids');
+const DescriptionCatalogCardUniform: FC<IDescriptionCatalogCardUniformProps> = ({catalog}) => {
+  const catalogItem = catalog.find(item => item.type === 'uniform');
 
   return (
     <DescriptionCatalogCardContainer>
@@ -39,17 +41,16 @@ const DescriptionCatalogCardLids: FC<IDescriptionCatalogCardLidsProps> = ({catal
         </div>
       </div>
       <div className={styles['preview']}>
-{ /*       <PreviewDesctop 
-          textTop={'Ваша новая подложка на поднос!'}
-          textBottom={'Вашей подложки на поднос.'}
+        <PreviewDesctop 
+          textTop={'Ваш фартук!'}
+          textBottom={'Вашего фартука.'}
           imagePath={catalogItem?.image.desctop}
           imageAlt={catalogItem?.type}
           constructorHref={'/catalog/cups-types/double-layer/constructor'}
         />
-*/}
       </div>
     </DescriptionCatalogCardContainer>
   );
 };
 
-export default DescriptionCatalogCardLids;
+export default DescriptionCatalogCardUniform;

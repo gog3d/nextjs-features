@@ -1,5 +1,5 @@
 import { FC, ReactNode, useState } from 'react';
-import styles from './description-catalog-card-lids.module.css';
+import styles from './description-catalog-card-mayonnaise-sauce.module.css';
 
 import DescriptionCatalogCardContainer from '@/components/description/description-catalog-card-container';
 import PreviewDesctop from '@/components/preview/preview-desctop';
@@ -11,12 +11,12 @@ import DescriptionItemDesctop from '@/components/description/description-item-de
 
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes, TCup, TCupTypes } from '@/types/data-types';
 
-interface IDescriptionCatalogCardLidsProps {
+interface IDescriptionCatalogCardMayonnaiseSauceProps {
   catalog: Array<TCatalogItemsTypes>;
 }
 
-const DescriptionCatalogCardLids: FC<IDescriptionCatalogCardLidsProps> = ({catalog}) => {
-  const catalogItem = catalog.find(item => item.type === 'lids');
+const DescriptionCatalogCardMayonnaiseSauce: FC<IDescriptionCatalogCardMayonnaiseSauceProps> = ({catalog}) => {
+  const catalogItem = catalog.find(item => item.type === 'mayonnaise-sauce');
 
   return (
     <DescriptionCatalogCardContainer>
@@ -26,12 +26,14 @@ const DescriptionCatalogCardLids: FC<IDescriptionCatalogCardLidsProps> = ({catal
           subtitles={catalogItem?.description.subtitles}
         />
         <div className={styles['list']}>
+          <div>Готовые вкусовые решения:</div>
         {
           catalogItem?.items.map((item, index) => 
             <AccordionCatalogItemMobile
               title={item.title}
               parameters={item.parameters}
               background={item.background}
+              chevron={false}
               key={index}
             />
           )
@@ -52,4 +54,4 @@ const DescriptionCatalogCardLids: FC<IDescriptionCatalogCardLidsProps> = ({catal
   );
 };
 
-export default DescriptionCatalogCardLids;
+export default DescriptionCatalogCardMayonnaiseSauce;

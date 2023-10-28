@@ -11,7 +11,7 @@
       },
       "image": {
         "mobile": "cup-catalog-image-mobile.png",
-        "desctop": "cup-catalog-image-desctop.png"
+        "desctop": "cup-catalog-image.png"
       },
       "description": {
         "title": "",
@@ -33,7 +33,7 @@
           "background": {
             "color_1": "",
             "color_2": ""
-          },          
+          },
           "types": [
             {
               "id": "1",
@@ -283,7 +283,7 @@
       },
       "image": {
         "mobile": "paper-packaging-catalog-image-mobile.png",
-        "desctop": "paper-packaging-catalog-image-desctop.png"
+        "desctop": "paper-packaging-catalog-image.png"
       },
       "description": {
         "title": "Все изделия могут быть произведены по вашим индивидуальным размерам.",
@@ -392,7 +392,7 @@
       },
       "image": {
         "mobile": "lids-catalog-image-mobile.png",
-        "desctop": "lids-catalog-image-desctop.png"
+        "desctop": "lids-catalog-image.png"
       },
       "description": {
         "title": "Пластиковые крышки с клапаном для бумажных стаканов",
@@ -467,7 +467,7 @@
       },
       "image": {
         "mobile": "carton-packaging-catalog-image-mobile.png",
-        "desctop": "carton-packaging-catalog-image-desctop.png"
+        "desctop": "carton-packaging-catalog-image.png"
       },
       "description": {
         "title": "Все изделия могут быть произведены по вашим индивидуальынм размерам.",
@@ -604,7 +604,9 @@
         "desctop": "catalog-plastic-box-icon.svg"
       },
       "image": {
-        "mobile": "plastic-box-catalog-image-mobile.png"
+        "mobile": "plastic-box-catalog-image-mobile.png",
+        "desctop": "plastic-box-catalog-image-mobile.png"
+
       },
       "description": {
         "title": "Произволится из полипропиленового материала, оптимально для горячей и холодной подачи",
@@ -653,6 +655,30 @@
             "color_2": "#F1F0FB"
           },
           "types": [""]
+        },
+        {
+          "id": "3",
+          "name": "wok-box",
+          "title": "Коробка под вок",
+          "parameters": [
+            {
+              "name": "Диаметр верх",
+              "value": "90х90"
+            },
+            {
+              "name": "Диаметр низ",
+              "value": "75х75"
+            },
+            {
+              "name": "Высота",
+              "value": "88"
+            }
+          ],
+          "background": {
+            "color_1": "#F2F1FC",
+            "color_2": "#F2F1FC"
+          },
+          "types": [""]
         }
       ]
     },
@@ -666,7 +692,8 @@
         "desctop": "catalog-uniform-icon.svg"
       },
       "image": {
-        "mobile": "uniform-catalog-image-mobile.png"
+        "mobile": "uniform-catalog-image-mobile.png",
+        "desctop": "uniform-catalog-image.png"
       },
       "description": {
         "title": "Материалы изготовления подбираются индивидально.",
@@ -678,15 +705,11 @@
         {
           "id": "1",
           "name": "polo-shirts",
-          "title": "футболки поло",
+          "title": "Футболки поло М/Ж",
           "parameters": [
             {
-              "name": "",
-              "value": "МЖ"
-            },
-            {
-              "name": "",
-              "value": "XS/S/M/L/Xl/XLL"
+              "name": "Размер:",
+              "value": "XS/S/M/L/XL/XLL"
             }
           ],
           "background": {
@@ -697,16 +720,12 @@
         },
         {
           "id": "2",
-          "name": "sweatshirts",
-          "title": "кофты",
+          "name": "baseball-caps",
+          "title": "Бейсболки универсальные",
           "parameters": [
             {
               "name": "",
-              "value": "МЖ"
-            },
-            {
-              "name": "",
-              "value": "XS/S/M/L/Xl/XLL"
+              "value": ""
             }
           ],
           "background": {
@@ -717,12 +736,12 @@
         },
         {
           "id": "3",
-          "name": "baseball-caps",
-          "title": "бейсболки",
+          "name": "aprons",
+          "title": "Фартуки",
           "parameters": [
             {
-              "name": "",
-              "value": "Универсальная "
+              "name": "Размер:",
+              "value": "80х75х24"
             }
           ],
           "background": {
@@ -731,14 +750,15 @@
           },
           "types": [""]
         },
+
         {
           "id": "4",
-          "name": "aprons",
-          "title": "фартуки",
+          "name": "sweatshirts",
+          "title": "Кофты М/Ж",
           "parameters": [
             {
-              "name": "",
-              "value": "80х75х24"
+              "name": "Размер:",
+              "value": "XS/S/M/L/XL/XLL"
             }
           ],
           "background": {
@@ -750,15 +770,11 @@
         {
           "id": "5",
           "name": "long-sleeve",
-          "title": "лонгслив",
+          "title": "Лонгслив М/Ж",
           "parameters": [
             {
-              "name": "",
-              "value": "МЖ"
-            },
-            {
-              "name": "",
-              "value": "XS/S/M/L/Xl/XLL"
+              "name": "Размер:",
+              "value": "XS/S/M/L/XL/XLL"
             }
           ],
           "background": {
@@ -770,15 +786,11 @@
         {
           "id": "6",
           "name": "shirts",
-          "title": "рубашки",
+          "title": "Рубашки М/Ж",
           "parameters": [
             {
-              "name": "",
-              "value": "МЖ"
-            },
-            {
-              "name": "",
-              "value": "XS/S/M/L/Xl/XLL"
+              "name": "Размер:",
+              "value": "XS/S/M/L/XL/XLL"
             }
           ],
           "background": {
@@ -799,7 +811,8 @@
         "desctop": "catalog-mayonnaise-sauce-icon.svg"
       },
       "image": {
-        "mobile": "mayonnaise-sauce-catalog-image-mobile.png"
+        "mobile": "mayonnaise-sauce-catalog-image-mobile.png",
+        "desctop": "mayonnaise-sauce-catalog-image.png"
       },
       "description": {
         "title": "Соуса для Horeca/FastFood/StreetFood. Сформируем соус по индивидуальной рецептуре",
@@ -932,7 +945,9 @@
         "desctop": "catalog-space-decoration-icon.svg"
       },
       "image": {
-        "mobile": "space-decoration-catalog-image-mobile.png"
+        "mobile": "space-decoration-catalog-image-mobile.png",
+        "desctop": "space-decoration-catalog-image.png"
+
       },
       "description": {
         "title": "Комлексное рекламное оформление",

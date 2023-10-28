@@ -1,0 +1,32 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 24px;
+}
+.menu-item {
+  color: #000000;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  padding: 10px 10px 0px 10px;
+  border-bottom: solid 2px #FFFFFF;
+}
+
+
+.menu-item__active {
+  border-bottom: solid 2px #000000;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+}
