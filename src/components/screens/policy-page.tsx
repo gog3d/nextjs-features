@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
 
-
 import Page from '@/components/page/page';
 import HeaderMain from '@/components/header/header-main';
 import FooterMain from '@/components/footer/footer-main';

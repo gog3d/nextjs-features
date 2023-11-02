@@ -21,6 +21,7 @@ interface IPaths {
   'contacts': IPathsItem;
   'cups-types': IPathsItem;
   'policy': IPathsItem;
+  'consent': IPathsItem;
 
 }
 
@@ -32,6 +33,8 @@ const paths: IPaths = {
   'contacts': {title: 'Контакты', link: '/contacts'},
   'cups-types': {title: 'Стаканы', link: '/cups-types'},
   'policy': {title: 'Политика конфиденциальности', link: '/policy'},
+  'consent': {title: 'Согласие на обработку персональных данных', link: '/consent'},
+
 //  'cups-types': {title: 'Стаканы', link: '/cups-types'},
 };
 
