@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 
-import SuccessPageMobile from "@/components/screens/success-page-mobile";
-import SuccessPage from "@/components/screens/success-page";
+import ConsentPageMobile from "@/components/screens/consent-page-mobile";
+import ConsentPage from "@/components/screens/consent-page";
 
 
 import dynamic from "next/dynamic"
@@ -10,19 +10,19 @@ const MediaQuery = dynamic(() => import("react-responsive"), {
   ssr: false
 })
 
-const  Success = () => {
+const  Consent = () => {
   return (
     <>
       <MediaQuery minWidth={800}>
         {
           (matches) => matches ? 
-            <SuccessPage />
+            <ConsentPage />
              :
-            <SuccessPageMobile />
+            <ConsentPageMobile />
         }
       </MediaQuery>
     </>
   )
 }
 
-export default Success;
+export default Consent;

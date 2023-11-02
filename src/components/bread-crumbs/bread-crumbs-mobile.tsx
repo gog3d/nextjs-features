@@ -20,6 +20,8 @@ interface IPaths {
   'catalog': IPathsItem;
   'contacts': IPathsItem;
   'cups-types': IPathsItem;
+  'policy': IPathsItem;
+
 }
 
 
@@ -29,6 +31,7 @@ const paths: IPaths = {
   'catalog': {title: 'Каталог', link: '/catalog'},
   'contacts': {title: 'Контакты', link: '/contacts'},
   'cups-types': {title: 'Стаканы', link: '/cups-types'},
+  'policy': {title: 'Политика конфиденциальности', link: '/policy'},
 //  'cups-types': {title: 'Стаканы', link: '/cups-types'},
 };
 

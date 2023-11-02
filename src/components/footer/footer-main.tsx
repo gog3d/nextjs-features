@@ -34,15 +34,23 @@ const FooterMainMobile: FC <IContactsProps> = ({ contacts }) => {
           </div>
           <div className={styles['communication-container']}>
             <div className={styles['communication']}>
-              <a href={`mailto:${contacts?.mail}`}>
+              <Link href={`mailto:${contacts?.mail}`}>
                 <MailMobileIcon />
-              </a>
+              </Link>
               <Link href={`https://wa.me/${contacts?.whatsapp}`}>
                 <WhatsAppMobileIcon />
               </Link>
-              <a href={`https://t.me/${contacts?.telegram}`}>
+              <Link href={`https://t.me/${contacts?.telegram}`}>
                 <TelegramMobileIcon />
-              </a>
+              </Link>
+            </div>
+            <div className={styles['links']}>
+              <Link href={'/consent'}>
+                Согласие на обработку персональных данных
+              </Link>
+              <Link href={'/policy'}>
+                Политика конфиденциальности
+              </Link>
             </div>
           </div>
         </div>
