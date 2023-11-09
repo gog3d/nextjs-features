@@ -1,0 +1,49 @@
+'use client';
+
+import React, { FC, ReactNode, useState, useContext, useCallback, useMemo } from 'react';
+import styles from './constructor.module.css';
+
+import {Modal, IModalProps} from './modal/modal';
+import {PreviewDesctop, IPreviewDesctopProps} from './preview/preview-desctop';
+
+import Viewer from './viewer/viewer';
+import Color from './color/color';
+import Background from './background/background';
+import Logo from './logo/logo';
+
+import StoreProvider from '@/redux/store-provider';
+
+interface IConstructorProps {
+  children: ReactNode;
+}
+
+interface IConstructor {
+  Modal: FC<IModalProps>;
+  PreviewDesctop: FC<IPreviewDesctopProps>;
+  Viewer: FC;
+  Color: FC;
+  Background: FC;
+  Logo: FC;
+}
+
+
+const Constructor: FC<IConstructorProps> & IConstructor = ({ children}) => {
+
+  return (
+      <StoreProvider>
+        {children}
+      </StoreProvider>
+  );
+};
+
+Constructor.Modal = Modal;
+Constructor.PreviewDesctop = PreviewDesctop;
+
+Constructor.Viewer = Viewer;
+Constructor.Color = Color;
+Constructor.Background = Background;
+Constructor.Logo = Logo;
+
+
+export { Constructor};
+

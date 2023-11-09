@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import CatalogCard from '@/components/catalog-card/catalog-card';
+//import CatalogCard from '@/components/catalog-card/catalog-card';
 import CatalogCards from '@/components/catalog-cards/catalog-cards';
 import DescriptionCatalogCardCups from '@/components/description/description-catalog-card-cups';
 import DescriptionCatalogCardPaperPackaging from '@/components/description/description-catalog-card-paper-packaging';
@@ -98,7 +98,7 @@ const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
         </CatalogCards.Discription>
       </div>
     </div>
-      </CatalogCards>
+    </CatalogCards>
   );
 };
 

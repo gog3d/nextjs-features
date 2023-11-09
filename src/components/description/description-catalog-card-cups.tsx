@@ -1,9 +1,17 @@
+'use client';
 import { FC, ReactNode, useState } from 'react';
 import styles from './description-catalog-card-cups.module.css';
 
 import DescriptionCatalogCardContainer from '@/components/description/description-catalog-card-container';
 import PreviewDesctop from '@/components/preview/preview-desctop';
 import AccordionCupDesctop from '@/components/accordion/accordion-cup-desctop';
+
+import { Constructor } from '@/components/constructor/cup-constructor/constructor';
+
+import dynamic from 'next/dynamic'
+const CupConstructorMobile = dynamic(() => import('@/components/screens/cup-constructor-mobile'), { ssr: false })
+
+//import CupConstructorMobile from '@/components/screens/cup-constructor-mobile';
 
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes, TCup, TCupTypes } from '@/types/data-types';
 interface IDescriptionCatalogCardCupsProps {
@@ -42,16 +50,26 @@ const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catal
         }
         </div>
       </div>
-      <div className={styles['preview']}>
-        <PreviewDesctop 
-          textTop={'Ваша новый стаканчик!'}
-          textBottom={'Вашего стаканчика.'}
-          imagePath={items?.image.desctop}
-          imageAlt={items?.type}
-          constructorHref={'/catalog/cups-types/double-layer/constructor'}
-        />
-      </div>
+      <Constructor>
+        <div className={styles['preview']}>
+          <Constructor.PreviewDesctop 
+            textTop={'Ваша новый стаканчик!'}
+            textBottom={'Вашего стаканчика.'}
+            imagePath={items?.image.desctop}
+            imageAlt={items?.type}
+          />
+        </div>
+        <Constructor.Modal>
+          <Constructor.Viewer />
+          <Constructor.Color />
+          <Constructor.Background />
+          <Constructor.Logo />
+
+
+        </Constructor.Modal>
+      </Constructor>
     </DescriptionCatalogCardContainer>
+    
   );
 };
 

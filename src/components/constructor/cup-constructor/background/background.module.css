@@ -1,0 +1,7 @@
+.viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #FFFFFF;
+}
+

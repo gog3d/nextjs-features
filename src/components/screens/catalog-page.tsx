@@ -63,21 +63,6 @@ const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts}) => {
             </div>
           </ContainerHorizontalScrolling>
           <CatalogCardsDesctop catalog={catalog} />
-{/*          <CatalogCards>
-            {
-              catalog.map((item, index) => 
-                <CatalogCard title={item.title} link={`${asPath}${item.link}`} type={item.type} key={index}>
-                  <Image 
-                    src={`media/${item.logo.desctop}`}
-                    alt='item-icon'
-                    width='226'
-                    height='126'
-                  />
-                </CatalogCard>
-              )
-            }
-          </CatalogCards>
-*/}
         </PageContentWrapperCatalog>
       </ContainerPage>
       <FooterMain contacts={contacts}/>
@@ -87,20 +72,3 @@ const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts}) => {
 
 export default CatalogPage;
 
-/*
-          <CatalogCards>
-            {
-              catalog.map((item, index) => 
-                <CatalogCard title={item.title} link={`${asPath}${item.link}`} type={item.type} key={index}>
-                  <Image 
-                    src={`media/${item.logo.desctop}`}
-                    alt='item-icon'
-                    width='226'
-                    height='126'
-                  />
-                </CatalogCard>
-              )
-            }
-          </CatalogCards>
-
-*/

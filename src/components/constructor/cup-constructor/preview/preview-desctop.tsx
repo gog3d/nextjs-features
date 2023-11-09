@@ -4,17 +4,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './preview-desctop.module.css';
 
-interface IPreviewDesctopProps {
+import { cupActions } from '@/redux/features/cup';
+
+import { useDispatch } from 'react-redux';
+
+export interface IPreviewDesctopProps {
   textTop: string | undefined;
   textBottom: string | undefined;
   imagePath: string | undefined;
   imageAlt: string | undefined;
-  constructorHref: string;
+//  constructorHref: string;
 //  children: ReactNode;
 }
 
-const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, imagePath, imageAlt='image', constructorHref=''}) => {
-//  console.log(`/media/${imagePath}`);
+export const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, imagePath, imageAlt='image'}) => {
+  const dispatch = useDispatch();
+
   return (
     <div className={styles['preview']}>
       <p className={styles['preview_text-top']}>{`Посмотритеб как будее выглядеть ${textTop}`}</p>
@@ -30,23 +35,15 @@ const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, imagePat
       <p className={styles['preview_text']}>Допустимые форматы: jpg, gif, png, ai, cdr, pdf.</p>
       <p className={styles['preview_text']}>Максимальный размер: 10 МБ.</p>
       <div className={styles['preview__button-container']}>
-        <Link href={constructorHref}>
-          <button className={styles['preview_button']}>
-            Попробовать
-          </button>
-        </Link>
+        <button 
+          className={styles['preview_button']}
+          onClick={() => dispatch(cupActions.modal(true))}
+        >
+          Попробовать
+        </button>
       </div>
     </div>
   );
 };
 
-export default PreviewDesctop;
-
-/*
-        <Link href={constructorHref}>
-          <button className={styles['preview_button']}>
-            Попробовать
-          </button>
-        </Link>
-
-*/
+//export default PreviewDesctop;
