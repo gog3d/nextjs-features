@@ -60,12 +60,10 @@ const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catal
           />
         </div>
         <Constructor.Modal>
-          <Constructor.Viewer />
-          <Constructor.Color />
-          <Constructor.Background />
-          <Constructor.Logo />
-
-
+           <Constructor.Viewer />
+           <Constructor.Color />
+           <Constructor.Background />
+           <Constructor.Logo />
         </Constructor.Modal>
       </Constructor>
     </DescriptionCatalogCardContainer>

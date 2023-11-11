@@ -1,37 +1,43 @@
+'use client';
 import { FC, ReactNode, useState } from 'react';
 import styles from './viewer.module.css';
 
 import CloseMobileIcon from '@/components/icons/close-mobile-icon';
 import PlusIcon from '@/components/icons/plus-icon';
 
-import { selectModalAmount } from '@/redux/features/cup/selectors';
+import { selectModalAmount, selectViewAmount } from '@/redux/features/cup/selectors';
 import { cupActions } from '@/redux/features/cup';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 
 const Viewer: FC = () => {
   const modal = useAppSelector((state) => selectModalAmount(state));
+  const viewSelector = useAppSelector((state) => selectViewAmount(state));
+  const view = viewSelector === 'viewer' ? true : false;
+
   const dispatch = useAppDispatch();
 
-  return (
+  return view ? 
     <div className={styles['page']}>
       <div className={styles['header']}>
         <button onClick={() => dispatch(cupActions.modal(false))}>
-
           <CloseMobileIcon />
         </button>
       </div>
       <div className={styles['page-content']}>
         <nav className={styles['nav-menu']}>
           <button className={styles['nav-menu_button']}
+            onClick={() => dispatch(cupActions.view('color'))}
           >
             <PlusIcon /><div>Цвет</div>
           </button>
           <button className={styles['nav-menu_button']}
+            onClick={() => dispatch(cupActions.view('background'))}
           >
             <PlusIcon /><div>Фон</div>
           </button>
           <button className={styles['nav-menu_button']}
+            onClick={() => dispatch(cupActions.view('logo'))}
           >
             <PlusIcon /><div>Лого</div>
           </button>
@@ -57,37 +63,8 @@ const Viewer: FC = () => {
         </div>
       </div>
     </div>
-  );
+     : 
+    null
 };
 
 export default Viewer;
-
-/*
-import { cupActions } from '@/redux/features/cup';
-
-import { useAppSelector, useAppDispatch } from '@/redux/hooks';
-
-
-export interface IModalProps {
-  children: ReactNode;
-}
-
-export const Modal: FC<IModalProps> = ({children}) => {
-
-  const modal = useAppSelector((state) => selectModalAmount(state));
-
-  const dispatch = useAppDispatch();
-  return (
-    <div 
-      className={
-        modal ? 
-        `${styles['modal']} ${styles['modal-visible']}` : 
-        `${styles['modal']} ${styles['modal-hidden']}`
-      }
-    >
-      <div className={styles['modal-window']}>
-        <div 
-          className={styles['modal-background']}
-          onClick={() => dispatch(cupActions.modal(false))}
-
-*/
