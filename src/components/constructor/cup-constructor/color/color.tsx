@@ -45,18 +45,17 @@ const Color: FC = () => {
         <div className={styles['colors_container']}>
          {
           colors.map((color, index) => 
-            <div key={index}
+            <button key={index}
               className={`${styles['colors_button-container']} 
                 ${color === selectColor && styles['colors_button-checked']}`}
                 onClick={() => dispatch(cupActions.color(color))}
                 >
-              <button 
-                
+              <div 
                 className={styles['colors_button']} 
                 style={{background: `${color}`}}
               >
-              </button>
-            </div>
+              </div>
+            </button>
          )}
         </div>
         <div className={styles['apply-button_container']}>

@@ -48,6 +48,9 @@
 
 
 .colors_button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
   border: 1px solid #F3F3F3;
   padding: 10px;
