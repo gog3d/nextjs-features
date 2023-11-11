@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '@/redux/store'
-
+//import type { RootState } from '@/redux/store';
+import { Point, Area } from "react-easy-crop/types";
 const colors = [
   '#222222',
   '#3603FF',
@@ -24,23 +24,101 @@ const colors = [
 
 type TView = string;
 
+
+interface IImage {
+    source: string;
+    crop: Point;
+    zoom: number;
+    rotation: number;
+    position: Point;
+    area:  Area;
+};
+
 interface CupState {
   modal: boolean;
   colors: Array<string>;
-  color: string;
   view: TView;
+  color: string;
+  rounded: boolean;
+  logo: IImage;
+  background: IImage;
   cup: {
     color: string;
+    logo: string;
+    background: string;
+    model: string;
   };
 }
+
+const resetImage = {
+  source: '',
+  crop: {
+    x: 0,
+    y: 0
+  },
+  zoom: 1,
+  rotation: 0,
+  position: {
+    x: 0,
+    y: 0
+  },
+  area: {
+    height: 0,
+    width: 0,
+    x: 0,
+    y: 0
+  },
+};
 
 const initialState: CupState = {
   modal: false,
   colors: colors,
   view: 'viewer',
   color: '#222222',
+  rounded: false,
+  logo: {
+    source: '',
+    crop: {
+      x: 0,
+      y: 0
+    },
+    zoom: 1,
+    rotation: 0,
+    position: {
+      x: 0,
+      y: 0
+    },
+    area: {
+      height: 0,
+      width: 0,
+      x: 0,
+      y: 0
+    },
+  },
+  background: {
+    source: '',
+    crop: {
+      x: 0,
+      y: 0
+    },
+    zoom: 1,
+    rotation: 0,
+    position: {
+      x: 0,
+      y: 0
+    },
+    area: {
+      height: 0,
+      width: 0,
+      x: 0,
+      y: 0
+    },
+  },
   cup: {
     color: '#FFFFFF',
+    logo: '',
+    background: '',
+    model: '',
   }
 };
 
@@ -59,6 +137,30 @@ const cupSlice = createSlice({
     },
     cupColor:  (state) => {
       state.cup.color = state.color;
+    },
+    backgroundSource: (state, action: PayloadAction<string>) => {
+      state.background.source = action.payload;
+    },
+    backgroundCrop: (state, action: PayloadAction<Point>) => {
+      state.background.crop = action.payload;
+    },
+    backgroundRotation: (state, action: PayloadAction<number>) => {
+      state.background.rotation = action.payload;
+    },
+    backgroundZoom: (state, action: PayloadAction<number>) => {
+      state.background.zoom = action.payload;
+    },
+    backgroundPosition: (state, action: PayloadAction<Point>) => {
+      state.background.position = action.payload;
+    },
+    backgroundArea: (state, action: PayloadAction<Area>) => {
+      state.background.area = action.payload;
+    },
+    cupBackround:  (state, action: PayloadAction<string>) => {
+      state.cup.background = action.payload;
+    },
+    backroundReset:  (state) => {
+      state.background = resetImage;
     },
   }
 });

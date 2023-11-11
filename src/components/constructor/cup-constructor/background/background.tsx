@@ -1,34 +1,92 @@
 'use client';
-import Rext, { FC, ReactNode, useState } from 'react';
+import Rext, { FC, ReactNode, useState, useCallback } from 'react';
 
 import styles from './background.module.css';
+
 import CloseMobileIcon from '@/components/icons/close-mobile-icon';
 import PlusIcon from '@/components/icons/plus-icon';
 import BackLinkMobileIcon from '@/components/icons/back-link-mobile-icon';
-
 import ClipIcon from '@/components/icons/clip-icon';
 import BasketIcon from '@/components/icons/basket-icon';
 import BigPlusIcon from '@/components/icons/big-plus-icon';
 import BigMinusIcon from '@/components/icons/big-minus-icon';
 
-import { selectColorsAmount, selectCupColorAmount, selectViewAmount } from '@/redux/features/cup/selectors';
+import { selectColorsAmount, selectCupColorAmount, selectViewAmount, selectBackgroundAmount } from '@/redux/features/cup/selectors';
 import { cupActions } from '@/redux/features/cup';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
+import getCroppedImg from '@/services/cropImage'
+
+import Cropper from 'react-easy-crop';
+import { Point, Area } from "react-easy-crop/types";
 
 const Background: FC = () => {
+
+  const viewSelector = useAppSelector((state) => selectViewAmount(state));
+  const view = viewSelector === 'background' ? true : false;
+  const background = useAppSelector((state) => selectBackgroundAmount(state));
+  
+
+  const dispatch = useAppDispatch();
+  const setSource = (source: string) => dispatch(cupActions.backgroundSource(source));
+
+  const setCrop = (crop: Point) => dispatch(cupActions.backgroundCrop(crop));
+  const setRotation = (rotation: number) => dispatch(cupActions.backgroundRotation(rotation));
+  const setZoom = (zoom: number) => dispatch(cupActions.backgroundZoom(zoom));
+  const setCroppedAreaPixels = (area: Area) => dispatch(cupActions.backgroundArea(area));
+  const setBackgroundImageXY = (position: Point) => dispatch(cupActions.backgroundPosition({...position}));
+  
+  
+  const setBackgroundImageCrop = (croppedImage: string) => dispatch(cupActions.cupBackround(croppedImage));
+
+
+  const deleteImage = () => {
+    console.log('file');
+    dispatch(cupActions.backroundReset());
+  /*  setZoom(1);
+    setCrop({x: 0, y: 0});
+    setBackgroundImageZoom(1);
+    setBackgroundImageXY({x: 0, y: 0});
+    setBackgroundImageSource('');
+    */
+  };
+  
 
   const onFileChange = async (e:  React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0]
-//      deleteImage();
-//      setSource(URL.createObjectURL(file))
+     // deleteImage();
+      setSource(URL.createObjectURL(file))
+      console.log(background.source);
     }
   }
 
-  const viewSelector = useAppSelector((state) => selectViewAmount(state));
-  const view = viewSelector === 'background' ? true : false;
-  const dispatch = useAppDispatch();
+  const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
+    setZoom(background.zoom);
+    setBackgroundImageXY({...background.position});
+    setCroppedAreaPixels(croppedAreaPixels);
+  }, [background.position, background.zoom]);
+
+  const apply = useCallback(async () => {
+    try {
+      if (background.source !== '') {
+        const croppedImage = await getCroppedImg(
+          background.source,
+          background.area,
+          background.rotation
+        )
+        setBackgroundImageCrop(croppedImage!);
+        dispatch(cupActions.view('viewer'));
+      } else {
+        setBackgroundImageCrop('');
+        dispatch(cupActions.backroundReset());
+        dispatch(cupActions.view('viewer'));
+
+      }
+    } catch (e) {
+      console.error(e)
+    }
+    }, [background.source, background.area, background.rotation]);
 
   return view ? 
     <div className={styles['page']}>
@@ -44,7 +102,6 @@ const Background: FC = () => {
       </div>
       <div className={styles['page-content']}>
         <p className={styles['title']}>Загрузить фон</p>
-
         <div className={styles['file__container']}>
           <div className={styles['file']}>
             <label className={styles['file__label']}>
@@ -61,29 +118,48 @@ const Background: FC = () => {
           </div>
           <button 
             className={styles['file_delete-button']}
+            onClick={() => dispatch(cupActions.backroundReset())}
           >
             <BasketIcon />
           </button>
         </div>
-
         <div className={styles['constructor__canvas-container']}>
           <div className={styles['constructor__canvas']}>
-            
+          <Cropper
+            image={background.source}
+            crop={background.crop}
+            rotation={background.rotation}
+            zoom={background.zoom}
+            minZoom={0.2}
+            maxZoom={5}
+            aspect={16 / 9}
+            objectFit={'horizontal-cover'}
+            onRotationChange={setRotation}
+            onCropChange={setCrop}
+            restrictPosition={false}
+            onZoomChange={setZoom}
+            zoomWithScroll={true}
+            onCropComplete ={onCropComplete}          
+          />
+
           </div>
           <button 
             className={`${styles['constructor__canvas-button']} ${styles['constructor__canvas-button_minus']}`}
+            onClick={() => dispatch(cupActions.backgroundZoom(background.zoom-+0.06))}
           >
             <BigMinusIcon/>
           </button>
           <button 
             className={`${styles['constructor__canvas-button']} ${styles['constructor__canvas-button_plus']}`}
+            onClick={() => dispatch(cupActions.backgroundZoom(background.zoom+0.06))}
           >
             <BigPlusIcon/>
           </button>
         </div>
         <div className={styles['apply-button_container']}>
           <button className={styles['apply-button']}
-          >
+            onClick={apply}
+          >       
             Применить
           </button>
         </div>

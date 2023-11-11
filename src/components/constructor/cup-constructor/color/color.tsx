@@ -15,7 +15,7 @@ import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 const Color: FC = () => {
   const colors = useAppSelector((state) => selectColorsAmount(state));
   const selectColor = useAppSelector((state) => selectColorAmount(state));
-  const cupColor = useAppSelector((state) => selectCupColorAmount(state));
+//  const cupColor = useAppSelector((state) => selectCupColorAmount(state));
 
   const viewSelector = useAppSelector((state) => selectViewAmount(state));
   const view = viewSelector === 'color' ? true : false;

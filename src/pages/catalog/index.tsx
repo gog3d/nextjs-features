@@ -1,12 +1,16 @@
 import { FC, ReactNode } from 'react';
 
+import dynamic from "next/dynamic";
+
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
 import CatalogPageMobile from "@/components/screens/catalog-page-mobile";
-import CatalogPage from "@/components/screens/catalog-page";
+//import CatalogPage from "@/components/screens/catalog-page";
 
-import dynamic from "next/dynamic"
+const CatalogPage = dynamic(() => import("@/components/screens/catalog-page"), {
+  ssr: false
+})
 
 const MediaQuery = dynamic(() => import("react-responsive"), {
   ssr: false
