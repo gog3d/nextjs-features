@@ -1,5 +1,5 @@
 'use client';
-import Rext, { FC, ReactNode, useState, useCallback } from 'react';
+import Rext, { FC, useCallback } from 'react';
 
 import styles from './background.module.css';
 
@@ -39,25 +39,10 @@ const Background: FC = () => {
   
   const setBackgroundImageCrop = (croppedImage: string) => dispatch(cupActions.cupBackround(croppedImage));
 
-
-  const deleteImage = () => {
-    console.log('file');
-    dispatch(cupActions.backroundReset());
-  /*  setZoom(1);
-    setCrop({x: 0, y: 0});
-    setBackgroundImageZoom(1);
-    setBackgroundImageXY({x: 0, y: 0});
-    setBackgroundImageSource('');
-    */
-  };
-  
-
   const onFileChange = async (e:  React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0]
-     // deleteImage();
       setSource(URL.createObjectURL(file))
-      console.log(background.source);
     }
   }
 
@@ -145,7 +130,7 @@ const Background: FC = () => {
           </div>
           <button 
             className={`${styles['constructor__canvas-button']} ${styles['constructor__canvas-button_minus']}`}
-            onClick={() => dispatch(cupActions.backgroundZoom(background.zoom-+0.06))}
+            onClick={() => dispatch(cupActions.backgroundZoom(background.zoom-0.06))}
           >
             <BigMinusIcon/>
           </button>

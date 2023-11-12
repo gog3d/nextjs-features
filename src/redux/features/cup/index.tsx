@@ -76,7 +76,7 @@ const initialState: CupState = {
   view: 'viewer',
   color: '#222222',
   rounded: false,
-  logo: {
+  background: {
     source: '',
     crop: {
       x: 0,
@@ -95,7 +95,7 @@ const initialState: CupState = {
       y: 0
     },
   },
-  background: {
+  logo: {
     source: '',
     crop: {
       x: 0,
@@ -135,6 +135,9 @@ const cupSlice = createSlice({
     color: (state, action: PayloadAction<string>) => {
       state.color = action.payload;
     },
+    rounded: (state, action: PayloadAction<boolean>) => {
+      state.rounded = action.payload;
+    },
     cupColor:  (state) => {
       state.cup.color = state.color;
     },
@@ -160,7 +163,31 @@ const cupSlice = createSlice({
       state.cup.background = action.payload;
     },
     backroundReset:  (state) => {
-      state.background = resetImage;
+      state.background = resetImage;  
+    },
+    logoSource: (state, action: PayloadAction<string>) => {
+      state.logo.source = action.payload;
+    },
+    logoCrop: (state, action: PayloadAction<Point>) => {
+      state.logo.crop = action.payload;
+    },
+    logoRotation: (state, action: PayloadAction<number>) => {
+      state.logo.rotation = action.payload;
+    },
+    logoZoom: (state, action: PayloadAction<number>) => {
+      state.logo.zoom = action.payload;
+    },
+    logoPosition: (state, action: PayloadAction<Point>) => {
+      state.logo.position = action.payload;
+    },
+    logoArea: (state, action: PayloadAction<Area>) => {
+      state.logo.area = action.payload;
+    },
+    cupLogo:  (state, action: PayloadAction<string>) => {
+      state.cup.logo = action.payload;
+    },
+    logoReset:  (state) => {
+      state.logo = resetImage;  
     },
   }
 });

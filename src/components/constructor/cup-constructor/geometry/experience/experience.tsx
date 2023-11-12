@@ -1,6 +1,6 @@
 'use client'
 import { FC, ReactNode } from 'react';
-
+import { PerspectiveCamera } from '@react-three/drei';
 import { 
       Stage, 
       OrbitControls, 
@@ -14,7 +14,7 @@ const Experience: FC<IExperienceProps> = ({ children }) => {
 
   return (
     <>
-      <Stage shadows={false}>
+      <Stage shadows={false} adjustCamera={1.2}>
         { children }
       </Stage>
       <OrbitControls
