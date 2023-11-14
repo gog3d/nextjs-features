@@ -95,24 +95,13 @@ const FormFeedback: FC<IFormFeedbackProps> = ({catalog, modalOn}) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ 'companyName': companyName, 'tel': tel, 'name': name, 'textArea': textArea, 'confirm': confirm })
+          body: JSON.stringify({ 'companyName': companyName, 'tel': tel, 'name': name, 'textArea': textArea, 'confirm': confirm, 'email': email })
         })
       } catch (error) {
         return
       }
-//      router.push('/success');
+
       setSuccess(true);
-    /*
-      console.log({
-        checkboxItems,
-        companyName,
-        tel,
-        name,
-        email,
-        textArea,
-        confirm
-      });
-  */
   }
 
   return (

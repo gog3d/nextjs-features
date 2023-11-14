@@ -1,6 +1,7 @@
 'use client';
 import { FC, ReactNode, useState } from 'react';
 import styles from './viewer.module.css';
+import { useRouter } from 'next/router';
 
 import { Canvas } from '@react-three/fiber';
 
@@ -18,9 +19,38 @@ import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 
 const Viewer: FC = () => {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+
+  const handleChangeEmail = (e:  React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const sendEmail = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`api/send-constructor`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 'email': email, 'color': 'red' })
+      })
+    } catch (error) {
+      return
+    }
+        router.push('/success');
+  }
+
+  
+  
+  
   const modal = useAppSelector((state) => selectModalAmount(state));
   const viewSelector = useAppSelector((state) => selectViewAmount(state));
   const view = viewSelector === 'viewer' ? true : false;
+
+
+
 
   const dispatch = useAppDispatch();
 
@@ -67,8 +97,11 @@ const Viewer: FC = () => {
               
               type={'email'}
               placeholder={'E-mail'}
+              onChange={handleChangeEmail}
+              value={email}
             />
             <button className={styles['send_button']}
+              onClick={sendEmail}
             >
               {'Отправить'} 
             </button>
