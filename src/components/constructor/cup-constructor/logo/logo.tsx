@@ -35,6 +35,8 @@ const Logo: FC = () => {
   const setRounded = (source: boolean) => dispatch(cupActions.rounded(source));
   const setSource = (source: string) => dispatch(cupActions.logoSource(source));
 
+  const setSource64 = (source: string | ArrayBuffer | null) => dispatch(cupActions.logoSource64(source));
+
   const setCrop = (crop: Point) => dispatch(cupActions.logoCrop(crop));
   const setRotation = (rotation: number) => dispatch(cupActions.logoRotation(rotation));
   const setZoom = (zoom: number) => dispatch(cupActions.logoZoom(zoom));
@@ -43,11 +45,25 @@ const Logo: FC = () => {
   
   
   const setLogoImageCrop = (croppedImage: string) => dispatch(cupActions.cupLogo(croppedImage));
+ 
 
   const onFileChange = async (e:  React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      const file = e.target.files[0]
-      setSource(URL.createObjectURL(file))
+      const file = e.target.files[0];
+      setSource(URL.createObjectURL(file));
+      
+      const blob = await new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+          fileReader.onload = () => {
+            //resolve(fileReader.result);
+            setSource64(fileReader.result);
+        };
+          fileReader.onerror = (error) => {
+       ///     reject(error);
+          setSource64('');
+        };
+    });
     }
   }
 
@@ -55,7 +71,7 @@ const Logo: FC = () => {
     setZoom(logo.zoom);
     setBackgroundImageXY({...logo.position});
     setCroppedAreaPixels(croppedAreaPixels);
-  }, [logo.position, logo.zoom]);
+      }, [logo.position, logo.zoom]);
 
   const apply = useCallback(async () => {
     try {
@@ -74,9 +90,9 @@ const Logo: FC = () => {
         dispatch(cupActions.view('viewer'));
       } else {
         setLogoImageCrop('');
-        dispatch(cupActions.backroundReset());
+        dispatch(cupActions.logoReset());
         dispatch(cupActions.view('viewer'));
-
+     
       }
     } catch (e) {
       console.error(e)

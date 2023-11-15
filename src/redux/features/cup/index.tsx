@@ -27,6 +27,7 @@ type TView = string;
 
 interface IImage {
     source: string;
+    source64: string | ArrayBuffer | null;
     crop: Point;
     zoom: number;
     rotation: number;
@@ -52,6 +53,7 @@ interface CupState {
 
 const resetImage = {
   source: '',
+  source64: '',
   crop: {
     x: 0,
     y: 0
@@ -78,6 +80,7 @@ const initialState: CupState = {
   rounded: false,
   background: {
     source: '',
+    source64: '',
     crop: {
       x: 0,
       y: 0
@@ -97,6 +100,7 @@ const initialState: CupState = {
   },
   logo: {
     source: '',
+    source64: '',
     crop: {
       x: 0,
       y: 0
@@ -144,6 +148,9 @@ const cupSlice = createSlice({
     backgroundSource: (state, action: PayloadAction<string>) => {
       state.background.source = action.payload;
     },
+    backgroundSource64: (state, action: PayloadAction<string | ArrayBuffer | null>) => {//64base
+      state.background.source64 = action.payload;
+    },
     backgroundCrop: (state, action: PayloadAction<Point>) => {
       state.background.crop = action.payload;
     },
@@ -167,6 +174,9 @@ const cupSlice = createSlice({
     },
     logoSource: (state, action: PayloadAction<string>) => {
       state.logo.source = action.payload;
+    },
+    logoSource64: (state, action: PayloadAction<string | ArrayBuffer | null>) => {//64base
+      state.logo.source64 = action.payload;
     },
     logoCrop: (state, action: PayloadAction<Point>) => {
       state.logo.crop = action.payload;

@@ -139,13 +139,12 @@ export default async function getCroppedImgLogo(
  //croppedCtx.globalCompositeOperation = "destination-in";
 
   // As Base64 string
-  // return croppedCanvas.toDataURL('image/jpeg');
+   return croppedCanvas.toDataURL('image/png');
 
   // As a blob
-  return new Promise<string | null>((resolve, reject) => {
+ /* return new Promise<string | null>((resolve, reject) => {
     croppedCanvas.toBlob((file) => {
-//    logoCoverCanvas.toBlob((file) => {
       resolve(URL.createObjectURL(file!))
     }, 'image/png')
-  })
+  })*/
 }

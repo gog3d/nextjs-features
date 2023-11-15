@@ -30,6 +30,8 @@ const Background: FC = () => {
   const dispatch = useAppDispatch();
   const setSource = (source: string) => dispatch(cupActions.backgroundSource(source));
 
+  const setSource64 = (source: string | ArrayBuffer | null) => dispatch(cupActions.backgroundSource64(source));
+
   const setCrop = (crop: Point) => dispatch(cupActions.backgroundCrop(crop));
   const setRotation = (rotation: number) => dispatch(cupActions.backgroundRotation(rotation));
   const setZoom = (zoom: number) => dispatch(cupActions.backgroundZoom(zoom));
@@ -41,8 +43,20 @@ const Background: FC = () => {
 
   const onFileChange = async (e:  React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      const file = e.target.files[0]
-      setSource(URL.createObjectURL(file))
+      const file = e.target.files[0];
+      setSource(URL.createObjectURL(file));
+      const blob = await new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+          fileReader.onload = () => {
+            //resolve(fileReader.result);
+            setSource64(fileReader.result);
+        };
+          fileReader.onerror = (error) => {
+       ///     reject(error);
+          setSource64('');
+        };
+    });
     }
   }
 
