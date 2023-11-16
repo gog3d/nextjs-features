@@ -1,13 +1,21 @@
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic'
 
-//const CupConstructorPageMobile = dynamic(() => import('@/components/screens/cup-constructor-page-mobile'), { ssr: false })
+import { useMediaQuery } from 'react-responsive';
+import { useEffect } from 'react';
+
 const CupConstructorMobile = dynamic(() => import('@/components/screens/cup-constructor-mobile'), { ssr: false })
 
 const CupConstructor = () => {
 
-  const {query} = useRouter();
+  const router = useRouter();
+  const isDesctop = useMediaQuery({
+    query: '(min-width: 800px)'
+  });
+
+  useEffect(()=>{
+    isDesctop ? router.push('/catalog') : ''
+  }, [isDesctop]);
 
   return (
     <CupConstructorMobile />
@@ -15,4 +23,3 @@ const CupConstructor = () => {
 };
 
 export default CupConstructor;
-

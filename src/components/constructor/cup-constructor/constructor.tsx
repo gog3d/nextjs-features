@@ -11,6 +11,11 @@ import Color from './color/color';
 import Background from './background/background';
 import Logo from './logo/logo';
 
+import ViewerMobile from './viewer/viewer-mobile';
+import ColorMobile from './color/color-mobile';
+import BackgroundMobile from './background/background-mobile';
+import LogoMobile from './logo/logo-mobile';
+
 import StoreProvider from '@/redux/store-provider';
 
 interface IConstructorProps {
@@ -24,6 +29,10 @@ interface IConstructor {
   Color: FC;
   Background: FC;
   Logo: FC;
+  ViewerMobile: FC;
+  ColorMobile: FC;
+  BackgroundMobile: FC;
+  LogoMobile: FC;
 }
 
 
@@ -43,7 +52,10 @@ Constructor.Viewer = Viewer;
 Constructor.Color = Color;
 Constructor.Background = Background;
 Constructor.Logo = Logo;
-
+Constructor.ViewerMobile = ViewerMobile;
+Constructor.ColorMobile = ColorMobile;
+Constructor.BackgroundMobile = BackgroundMobile;
+Constructor.LogoMobile = LogoMobile;
 
 export { Constructor};
 

@@ -1,10 +1,11 @@
 'use client';
 import { FC, ReactNode, useState } from 'react';
-import styles from './viewer.module.css';
+import styles from './viewer-mobile.module.css';
 import { useRouter } from 'next/router';
 
 import { Canvas } from '@react-three/fiber';
 
+import BackLinkMobileIcon from '@/components/icons/back-link-mobile-icon';
 import CloseMobileIcon from '@/components/icons/close-mobile-icon';
 import PlusIcon from '@/components/icons/plus-icon';
 
@@ -16,8 +17,7 @@ import { selectModalAmount, selectViewAmount, selectCupBackgroundAmount, selectB
 import { cupActions } from '@/redux/features/cup';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
-
-const Viewer: FC = () => {
+const ViewerMobile: FC = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
 
@@ -30,11 +30,13 @@ const Viewer: FC = () => {
   const handleChangeEmail = (e:  React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
-  
+
+  //const logoSource = convertBase64(logo.source);
+
   const sendEmail = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch(`api/send-cup-image`, {
+      const res = await fetch(`/api/send-cup-image`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +49,8 @@ const Viewer: FC = () => {
         router.push('/success');
   }
 
-  //const modal = useAppSelector((state) => selectModalAmount(state));
+  
+  const modal = useAppSelector((state) => selectModalAmount(state));
   const viewSelector = useAppSelector((state) => selectViewAmount(state));
   const view = viewSelector === 'viewer' ? true : false;
 
@@ -56,9 +59,15 @@ const Viewer: FC = () => {
   return view ? 
     <div className={styles['page']}>
       <div className={styles['header']}>
-        <button onClick={() => dispatch(cupActions.modal(false))}>
+        <button
+          onClick={() => router.back()}
+        >
+          <BackLinkMobileIcon />
+        </button>
+        {/*<button onClick={() => dispatch(cupActions.modal(false))}>
           <CloseMobileIcon />
         </button>
+        */}
       </div>
       <div className={styles['page-content']}>
         <nav className={styles['nav-menu']}>
@@ -93,7 +102,6 @@ const Viewer: FC = () => {
           <div className={styles['send-container']}>
             <input 
               className={styles['send_input-email']}
-              
               type={'email'}
               placeholder={'E-mail'}
               onChange={handleChangeEmail}
@@ -112,4 +120,4 @@ const Viewer: FC = () => {
     null
 };
 
-export default Viewer;
+export default ViewerMobile;

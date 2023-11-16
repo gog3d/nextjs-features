@@ -1,16 +1,10 @@
-import { FC, ReactNode } from 'react';
-
+import { FC, ReactNode, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useMediaQuery } from 'react-responsive';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { TDataTypes, TCatalogItemsTypes, TCupTypes, TContactsTypes } from '@/types/data-types';
 
 import CupsTypesPageMobile from '@/components/screens/cups-types-page-mobile';
-import CupsTypesPage from '@/components/screens/cups-types-page';
-
-import dynamic from "next/dynamic"
-
-const MediaQuery = dynamic(() => import("react-responsive"), {
-  ssr: false
-})
 
 interface ICupsTypesProps {
   cups: Array<TCupTypes> | null;
@@ -20,17 +14,17 @@ interface ICupsTypesProps {
 
 
 const CupsTypes: FC<ICupsTypesProps> = ({ cups, catalog, contacts }) => {
+  const router = useRouter();
+  const isDesctop = useMediaQuery({
+    query: '(min-width: 800px)'
+  });
+   
+  useEffect(()=>{
+    isDesctop ? router.push('/catalog') : ''
+  }, [isDesctop]);
+
   return (
-    <>
-      <MediaQuery minWidth={800}>
-        {
-          (matches) => matches ? 
-            <CupsTypesPage cups={cups} catalog={catalog} contacts={contacts}/>
-             :
-            <CupsTypesPageMobile cups={cups}/>
-        }
-      </MediaQuery>
-    </>
+    <CupsTypesPageMobile cups={cups}/>
   )
 };
 

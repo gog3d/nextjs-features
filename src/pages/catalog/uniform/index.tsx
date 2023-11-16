@@ -1,5 +1,6 @@
-import { FC, ReactNode } from 'react';
-
+import { FC, ReactNode, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useMediaQuery } from 'react-responsive';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 
@@ -10,6 +11,15 @@ interface IUniformProps {
 }
 
 const Uniform: FC <IUniformProps> = ({ catalog }) => {
+  const router = useRouter();
+  const isDesctop = useMediaQuery({
+    query: '(min-width: 800px)'
+  });
+   
+  useEffect(()=>{
+    isDesctop ? router.push('/catalog') : ''
+  }, [isDesctop]);
+  
     return <UniformPageMobile catalog={catalog}/>;
 }
 
