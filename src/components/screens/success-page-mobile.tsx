@@ -1,4 +1,4 @@
-import PageMobile from '../page/page-mobile';
+import PageMobile from '@/components/page/page-mobile';
 
 import SuccessPageContentMobile from '../page-content/success-page-content-mobile';
 

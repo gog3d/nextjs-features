@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import PageMobile from '../page/page-mobile';
+import PageMobile from '@/components/page/page-mobile';
 
 import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mobile';
 import PolicyPageContentMobile from '@/components/page-content/policy-page-content-mobile';

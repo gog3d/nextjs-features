@@ -9,9 +9,8 @@ import MapMobile from '@/components/map/map-mobile';
 import { useRouter } from 'next/router';
 
 import { TContactsTypes } from '@/types/data-types';
-import Error from '@/components/cups/error/error';
 
-import { YMaps, Map } from 'react-yandex-maps';
+//import { YMaps, Map } from 'react-yandex-maps';
 
 interface IContactsTypesPageMobileProps {
   contacts: TContactsTypes | null;

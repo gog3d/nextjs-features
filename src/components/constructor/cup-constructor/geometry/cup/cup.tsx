@@ -2,7 +2,6 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import { useCustomization } from '@/context/customization';
 
 import { selectColorsAmount, selectCupColorAmount, selectViewAmount, selectColorAmount } from '@/redux/features/cup/selectors';
 import { cupActions } from '@/redux/features/cup';

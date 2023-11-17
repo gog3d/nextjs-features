@@ -1,39 +1,46 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
 
-import CupPage from '../cups/cups-page/cups-page';
-import Header from '../cups/header/header';
-import CupTypes from '../cups/cup-types/cup-types';
-import SubMenu from '../cups/submenu/submenu';
-import Accordion from '../cups/accordion/accordion';
+import AccordionCup from '@/components/accordion/accordion-cup';
 
-import Preview from '../cups/preview/preview';
-import Error from '../cups/error/error';
-import { TCup, TCupTypes } from '../../types/data-types';
+import PreviewCup from '@/components/preview/preview-cup';
+
+import PageMobile from '@/components/page/page-mobile';
+import PageContentWrapperCatalogItemMobile from '@/components/page/page-content-wrapper-catalog-item-mobile';
+import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mobile';
+
+import IDescriptionCupMobileProps from '@/components/description/description-cup-mobile';
+
+import { TCatalogItemsTypes, TCupTypes } from '@/types/data-types';
+
 
 interface ICupTypesProps {
-  cupTypes: TCupTypes | null;
-};
+  catalog: Array<TCatalogItemsTypes>;
+}
 
-const CupTypesPageMobile: FC<ICupTypesProps> = ({cupTypes}) => {
-//  console.log(cupTypes);
+const CupTypesPageMobile: FC<ICupTypesProps> = ({catalog}) => {
   const { asPath } = useRouter();
+  const itemName = asPath.split('/').pop();
+  const cups: TCatalogItemsTypes | undefined = catalog.find(item => item.type === 'cups');
+  const catalogItem: TCupTypes  = cups?.items.find(item => item.name === itemName);
 
   return (
-    <CupPage>
-      <Header />
-      <CupTypes title={cupTypes ? cupTypes.title : ''}>
-        {
-          cupTypes ? cupTypes.types.map((type, index) => {
-            return (
-              <Accordion type={type} key={index}>
-                {/*<Preview link={`${asPath}/${type.name}`}/>*/}
-                <Preview link={`${asPath}/constructor`}/>
-              </Accordion>
-            )}) : <Error />
-        }
-      </CupTypes>
-    </CupPage>
+    <PageMobile>
+    <HeaderCatalogItemMobile title={catalogItem?.title}/>
+    <PageContentWrapperCatalogItemMobile>
+      <IDescriptionCupMobileProps
+        title={catalogItem?.title}
+      />
+      {
+        catalogItem?.types.map((item, index) => 
+          <AccordionCup type={item} key={index}>
+            <PreviewCup link={`${asPath}/constructor`}/>
+          </AccordionCup>
+        )
+      }
+
+    </PageContentWrapperCatalogItemMobile>
+  </PageMobile>
   )
 };
 

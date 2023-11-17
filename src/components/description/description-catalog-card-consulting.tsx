@@ -4,7 +4,6 @@ import styles from './description-catalog-card-consulting.module.css';
 import DescriptionCatalogCardContainer from '@/components/description/description-catalog-card-container';
 import PreviewDesctop from '@/components/preview/preview-desctop';
 
-import AccordionCupDesctop from '@/components/accordion/accordion-cup-desctop';
 import AccordionCatalogItemMarkedListMobile from '@/components/accordion/accordion-catalog-item-marked-list-mobile';
 
 import DescriptionItemDesctop from '@/components/description/description-item-desctop';

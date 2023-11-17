@@ -22,7 +22,7 @@ export const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, i
 
   return (
     <div className={styles['preview']}>
-      <p className={styles['preview_text-top']}>{`Посмотритеб как будее выглядеть ${textTop}`}</p>
+      <p className={styles['preview_text-top']}>{`Посмотрите как будее выглядеть ${textTop}`}</p>
       <div className={styles['preview__img-container']}>
         <Image
            src={`/media/${imagePath}`}

@@ -3,17 +3,17 @@ import { FC, ReactNode, useState } from 'react';
 import styles from './description-catalog-card-cups.module.css';
 
 import DescriptionCatalogCardContainer from '@/components/description/description-catalog-card-container';
-import PreviewDesctop from '@/components/preview/preview-desctop';
-import AccordionCupDesctop from '@/components/accordion/accordion-cup-desctop';
-
+//import PreviewDesctop from '@/components/preview/preview-desctop';
+//import AccordionCupDesctop from '@/components/accordion/accordion-cup-desctop';
+import AccordionCup from '@/components/accordion/accordion-cup';
 import { Constructor } from '@/components/constructor/cup-constructor/constructor';
 
-import dynamic from 'next/dynamic'
-const CupConstructorMobile = dynamic(() => import('@/components/screens/cup-constructor-mobile'), { ssr: false })
+//import dynamic from 'next/dynamic'
+//const CupConstructorMobile = dynamic(() => import('@/components/screens/cup-constructor-mobile'), { ssr: false })
 
 //import CupConstructorMobile from '@/components/screens/cup-constructor-mobile';
 
-import { TDataTypes, TCatalogItemsTypes, TContactsTypes, TCup, TCupTypes } from '@/types/data-types';
+import { TCatalogItemsTypes, TCup } from '@/types/data-types';
 interface IDescriptionCatalogCardCupsProps {
   catalog: Array<TCatalogItemsTypes>;
 }
@@ -42,7 +42,7 @@ const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catal
         {
           items?.items.find((type) => type.name === cupType)
             .types.map((item: TCup, index: number) => 
-              <AccordionCupDesctop
+              <AccordionCup
                 type={item}
                 key={`${index}_${cupType}`}
               />

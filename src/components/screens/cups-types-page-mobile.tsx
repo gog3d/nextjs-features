@@ -2,33 +2,40 @@ import { FC } from 'react';
 
 import { useRouter } from 'next/router';
 
-import CupPage from '../cups/cups-page/cups-page';
-import Header from '../cups/header/header';
-import Cups from '../cups/cups/cups';
-import SubMenu from '../cups/submenu/submenu';
-import { TCupTypes } from '../../types/data-types';
-import Error from '../cups/error/error';
+import PageMobile from '@/components/page/page-mobile';
+
+import PageContentWrapperCatalogItemMobile from '@/components/page/page-content-wrapper-catalog-item-mobile';
+import HeaderCatalogItemMobile from '@/components/header/header-catalog-item-mobile';
+import SubMenu from '@/components/submenu/submenu';
+import { TCatalogItemsTypes } from '@/types/data-types';
 
 interface ICupsTypesPageMobileProps {
-  cups: Array<TCupTypes> | null;
-};
+  catalog: Array<TCatalogItemsTypes>;
+}
 
-const CupsTypesPageMobile: FC<ICupsTypesPageMobileProps> = ({ cups }) => {
+const CupsTypesPageMobile: FC<ICupsTypesPageMobileProps> = ({ catalog }) => {
   const { asPath } = useRouter();
+  //const itemType = asPath.split('/').pop();
+  const itemType = 'cups';
+ // console.log({itemType})
+
+  const catalogItem = catalog.find(item => item.type === itemType);
+
   return (
-    <CupPage>
-      <Header />
-      <Cups>
+    <PageMobile>
+      <HeaderCatalogItemMobile title={catalogItem?.title}/>
+      <PageContentWrapperCatalogItemMobile>
       {
-        cups ? cups.map((cup, index) => 
-        <SubMenu 
-          key={index}
-          title={cup.title} 
-          link={`${asPath}/${cup.name}`}
-        />) : <Error />
+        catalogItem?.items.map((item, index) => 
+          <SubMenu 
+            key={index}
+            title={item.title} 
+            link={`${asPath}/${item.name}`}
+          />
+        )
       }
-      </Cups>
-    </CupPage>
+      </PageContentWrapperCatalogItemMobile>
+    </PageMobile>
   )
 };
 

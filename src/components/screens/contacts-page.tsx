@@ -16,9 +16,7 @@ import ContainerPage from '@/components/container/container-page';
 import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
 
 import { TContactsTypes } from '@/types/data-types';
-import Error from '@/components/cups/error/error';
-
-import { YMaps, Map } from 'react-yandex-maps';
+//import { YMaps, Map } from 'react-yandex-maps';
 
 interface IContactsTypesPageProps {
   contacts: TContactsTypes | null;

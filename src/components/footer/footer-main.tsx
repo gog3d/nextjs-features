@@ -58,7 +58,7 @@ const FooterMainMobile: FC <IContactsProps> = ({ contacts }) => {
       <div className={styles['creators']}>
         <ContainerPage>
           <div className={styles['creators-info']}>
-            <a href='https://www.wcde.studio'>
+            <a href='https://wcde.vercel.app'>
               <LogoWcdeMobileIcon />
             </a>
           </div>

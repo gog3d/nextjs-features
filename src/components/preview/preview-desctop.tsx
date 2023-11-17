@@ -17,7 +17,7 @@ const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, imagePat
 //  console.log(`/media/${imagePath}`);
   return (
     <div className={styles['preview']}>
-      <p className={styles['preview_text-top']}>{`Посмотритеб как будее выглядеть ${textTop}`}</p>
+      <p className={styles['preview_text-top']}>{`Посмотрите как будее выглядеть ${textTop}`}</p>
       <div className={styles['preview__img-container']}>
         <Image
            src={`/media/${imagePath}`}
@@ -30,11 +30,9 @@ const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, imagePat
       <p className={styles['preview_text']}>Допустимые форматы: jpg, gif, png, ai, cdr, pdf.</p>
       <p className={styles['preview_text']}>Максимальный размер: 10 МБ.</p>
       <div className={styles['preview__button-container']}>
-        <Link href={constructorHref}>
-          <button className={styles['preview_button']}>
+        <button className={styles['preview_button']}>
             Попробовать
-          </button>
-        </Link>
+        </button>
       </div>
     </div>
   );
