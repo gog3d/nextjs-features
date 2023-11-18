@@ -11,7 +11,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     await sendEmailImage({
  //     to: "gluhovog3d@gmail.com",
       to: `${email}`,
-      subject: "Welcome to NextAPI",
+      subject: "Perfavore",
       html: `
       <div>
         <div>цвет стакана: ${color}</div>

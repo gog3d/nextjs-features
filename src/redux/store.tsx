@@ -1,10 +1,11 @@
 'use client';
 import { configureStore } from '@reduxjs/toolkit';
-import { cupActions, cupReducer } from './features/cup';
-
+import { cupReducer } from './features/cup';
+import { formReducer, } from './features/form';
 export const store = configureStore({
   reducer: {
     cup: cupReducer,
+    form: formReducer,
   }
 });
 

@@ -39,9 +39,9 @@ interface IConstructor {
 const Constructor: FC<IConstructorProps> & IConstructor = ({ children}) => {
 
   return (
-      <StoreProvider>
-        {children}
-      </StoreProvider>
+    <StoreProvider>
+      {children}
+    </StoreProvider>
   );
 };
 
