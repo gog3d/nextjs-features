@@ -31,7 +31,7 @@ const MainPageContent: FC<IMainPageContentProps> = ({catalog}) => {
   return (
     <ContainerPage>
       <Modal modalOn={modalOn} modalClick={modalClose}>
-        <FormFeedback catalog={catalog} modalOn={modalOn}/>
+        <FormFeedback catalog={catalog}/>
       </Modal>
       <div className={styles['main-page-content']}>
         <div className={styles['card-1']}>

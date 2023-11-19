@@ -52,7 +52,7 @@ const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts}) => {
       <HeaderMain />
       <ContainerPage>
         <Modal modalOn={modalOn} modalClick={modalClose}>
-          <FormFeedback catalog={catalog} modalOn={modalOn}/>
+          <FormFeedback catalog={catalog}/>
         </Modal>
         <PageContentWrapperCatalog>
           <BreadCrumbsMobile routerPath={asPath}/>

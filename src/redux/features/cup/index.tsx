@@ -44,6 +44,7 @@ interface CupState {
   logo: IImage;
   background: IImage;
   cup: {
+    cupImage64: string;
     color: string;
     logo: string;
     background: string;
@@ -119,6 +120,7 @@ const initialState: CupState = {
     },
   },
   cup: {
+    cupImage64: '',
     color: '#FFFFFF',
     logo: '',
     background: '',
@@ -198,6 +200,9 @@ const cupSlice = createSlice({
     },
     logoReset:  (state) => {
       state.logo = resetImage;  
+    },
+    cupImage64:  (state, action: PayloadAction<string>) => {
+      state.cup.cupImage64 = action.payload;
     },
   }
 });

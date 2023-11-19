@@ -21,9 +21,9 @@ const FormFeedbackMobile: FC<IFormFeedbackProps> = ({catalog}) => {
       <Form.Email />
       <Form.CheckboxItems catalog={catalog} />
       <div className={styles['text-area']}>
-        <Form.TextArea />
+        <Form.TextAreaMobile />
       </div>
-      <Form.Confirm />
+      <Form.ConfirmMobile />
       </Form.WrapperMobile>
     </Form>
     );

@@ -14,4 +14,5 @@ export const selectLogoAmount = (state: RootState) => selectCupModule(state).log
 export const selectCupColorAmount = (state: RootState) => selectCupModule(state).cup.color;
 export const selectCupBackgroundAmount = (state: RootState) => selectCupModule(state).cup.background;
 export const selectCupLogoAmount = (state: RootState) => selectCupModule(state).cup.logo;
+export const selectCupImage64Amount = (state: RootState) => selectCupModule(state).cup.cupImage64;
 

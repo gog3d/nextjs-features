@@ -6,7 +6,7 @@ import { GLTF } from 'three-stdlib'
 import { selectColorsAmount, selectCupColorAmount, selectViewAmount, selectColorAmount } from '@/redux/features/cup/selectors';
 import { cupActions } from '@/redux/features/cup';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
-
+import { Canvas, extend, useThree } from '@react-three/fiber'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -20,6 +20,7 @@ type GLTFResult = GLTF & {
 }
 
 const Cup = (props: JSX.IntrinsicElements['group']) => {
+
 
   const cupColor = useAppSelector((state) => selectCupColorAmount(state));
 

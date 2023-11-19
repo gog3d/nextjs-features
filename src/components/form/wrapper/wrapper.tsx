@@ -1,9 +1,9 @@
 'use client';
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode, useState, useCallback } from 'react';
 import styles from './wrapper.module.css';
 import { useRouter } from 'next/router';
 
-import { selectSuccessAmount } from '@/redux/features/form/selectors';
+import { selectFormModule, selectSuccessAmount } from '@/redux/features/form/selectors';
 import { formActions } from '@/redux/features/form';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
@@ -13,40 +13,46 @@ export interface IWrapperProps {
   children: ReactNode;
 }
 
-
-
 export const Wrapper: FC<IWrapperProps> = ({children}) => {
   const router = useRouter();
-  
+
+  const form = useAppSelector((state) => selectFormModule(state));
   const success = useAppSelector((state) => selectSuccessAmount(state));
 
-  /*
-  const sendEmail = async (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    try {
-      const res = await fetch(`api/send-cup-image`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 'email': email, 'color': color, 'logo': logoImageCrop, 'logoSource': logo.source64, 'background': backgroundImageCrop, 'backgroundSource': background.source64,})
-      })
-    } catch (error) {
-      return
-    }
-        router.push('/success');
+
+const onSubmit = useCallback(async (e: React.SyntheticEvent) => {
+  e.preventDefault();
+if (form.confirm) {
+  try {
+  //  console.log(form);
+    const res = await fetch(`api/send-form`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({...form })
+    })
+  } catch (error) {
+    return
   }
-*/
+
+  //setSuccess(true);
+  router.push('/success');
+}
+}, [form])
 
   const dispatch = useAppDispatch();
 
   return success ?  <SuccessPageContent /> :
-    <form onSubmit={()=>{}} className={styles['form-wrapper']}>
+    <form onSubmit={onSubmit} className={styles['form-wrapper']}>
       {children}
-      <button className={styles['button-wrapper']}>
-        Заказать образец
-      </button>
+      <div className={styles['form-button_wrapper']}>
+        <button className={styles['form-button']}>
+          Заказать образец
+        </button>
+      </div>
     </form>   
 };
 
-//export default Wrapper;
+
+//export default WrapperMobile;

@@ -1,11 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { sendEmailImage } from "@/lib/email-image";
 
+export const config = {
+  api: {
+      bodyParser: {
+          sizeLimit: '5mb' // Set desired value here
+      }
+  }
+}
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { email, color, logo, logoSource, background,  backgroundSource} = req.body;
+  const { email, color, logo, logoSource, background,  backgroundSource, cupImage64} = req.body;
 
-  //console.log({logoSource, backgroundSource});
+  //console.log({cupImage64, logo});
   
   try {
     await sendEmailImage({
@@ -20,23 +27,28 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       `,
       attachments: [
         {
-          filename: 'logo.jpg',
+          filename: 'logo.png',
           content: logo.split("base64,")[1],
           encoding: 'base64',
         },
         {
-          filename: 'logoSource.jpg',
+          filename: 'logoSource.png',
           content: logoSource.split("base64,")[1],
           encoding: 'base64',
         },
         {
-          filename: 'background.jpg',
+          filename: 'background.png',
           content: background.split("base64,")[1],
           encoding: 'base64',
         },
         {
-          filename: 'backgroundSource.jpg',
+          filename: 'backgroundSource.png',
           content: backgroundSource.split("base64,")[1],
+          encoding: 'base64',
+        },
+        {
+          filename: 'cup.png',
+          content: cupImage64.split("base64,")[1],
           encoding: 'base64',
         }
       ],

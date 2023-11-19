@@ -30,7 +30,7 @@ const AboutUsPageContent: FC<IAboutUsPageContentProps> = ({catalog}) => {
   return (
     <div className={styles['about-us-page-content']}>
       <Modal modalOn={modalOn} modalClick={modalClose}>
-        <FormFeedback catalog={catalog} modalOn={modalOn}/>
+        <FormFeedback catalog={catalog}/>
       </Modal>
       <div className={styles['card-1']}>
         <b>PERFAVORE</b>

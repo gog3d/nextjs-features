@@ -1,4 +1,26 @@
 .form-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 19px;
+}
+.form-button {
+  color: #FFFFFF;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 150% */
+
+  border-radius: 8px;
+  background: #222222;
+  text-align: center;
+  padding: 13px 41px 13px 41px;
+
+
+  cursor: pointer;
+}
+
+.form-button_wrapper {
+  display: flex;
+  padding-top: 42px;
 }

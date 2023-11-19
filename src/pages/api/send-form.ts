@@ -3,6 +3,15 @@ import type { NextApiRequest, NextApiResponse } from "next";
 //import WelcomeTemplate from "../../emails/WelcomeTemplate";
 import { sendEmail } from "@/lib/email";
 
+export const config = {
+  api: {
+      bodyParser: {
+          sizeLimit: '5mb' // Set desired value here
+      }
+  }
+}
+
+
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { companyName, tel, name, email, checkboxItems, textArea } = req.body;
   const items = checkboxItems.filter((item: string) => item!='')
