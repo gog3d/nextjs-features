@@ -20,10 +20,11 @@ import {
 
 interface IExperienceProps {
   children: ReactNode;
+  rotate: Boolean;
 };
 
 
-const Experience: FC<IExperienceProps> = ({ children }) => {
+const Experience: FC<IExperienceProps> = ({ children, rotate=false }) => {
 
   
 
@@ -41,7 +42,7 @@ const Experience: FC<IExperienceProps> = ({ children }) => {
       </Stage>
       <OrbitControls
         makeDefault
-        autoRotate={true}
+        autoRotate={rotate}
         autoRotateSpeed={-3}
       />
     </>

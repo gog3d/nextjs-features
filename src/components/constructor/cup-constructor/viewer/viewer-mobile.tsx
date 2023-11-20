@@ -98,7 +98,7 @@ const ViewerMobile: FC = () => {
         </nav>
         <div className={styles['canvas-container']}>
         <Canvas gl={{ preserveDrawingBuffer: true }}>
-            <Experience>
+            <Experience rotate={false}>
               <Cup />
               <CupWrapper />
             </Experience>
