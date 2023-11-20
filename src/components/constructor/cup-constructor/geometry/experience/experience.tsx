@@ -9,10 +9,6 @@ import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 
 import { selectModalAmount, selectCupColorAmount, selectCupModule, selectViewAmount, selectCupBackgroundAmount, selectBackgroundAmount, selectCupLogoAmount, selectLogoAmount, selectColorAmount, selectCupImage64Amount } from '@/redux/features/cup/selectors';
-
-
-
-
 import { 
       Stage, 
       OrbitControls, 
@@ -20,7 +16,7 @@ import {
 
 interface IExperienceProps {
   children: ReactNode;
-  rotate: Boolean;
+  rotate: boolean | undefined;
 };
 
 
