@@ -27,7 +27,7 @@ const Cup = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF('/cups/models/cup_1.glb') as GLTFResult
 
   return (
-   <group dispose={null} position-y={-5.5} >
+   <group dispose={null} position-y={-5.8} >
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.1} >
         <mesh geometry={nodes.coffee_with_sugar_1.geometry} dispose={null}>
           <meshStandardMaterial

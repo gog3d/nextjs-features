@@ -20,46 +20,36 @@ const CupWrapper = () => {
   const cupImage64 = useAppSelector((state) => selectCupImage64Amount(state));
   const backgroundTexture = useTexture(backgroundImageCrop === '' ? '/cups/media/default.png' : backgroundImageCrop);
   const logoTexture = useTexture(logoImageCrop === '' ? '/cups/media/default.png' : logoImageCrop);
- // const logoCoverTexture = useTexture(logoCoverImageCrop === '' ? '/cups/media/default.png' : logoCoverImageCrop);
- //const cupColor = useAppSelector((state) => selectCupColorAmount(state));
   
- const { gl }  = useThree();
-
- // setTimeout(()=>{
-    dispatch(cupActions.cupImage64(gl.domElement.toDataURL('image/png')));
-    //console.log(gl.domElement.toDataURL('image/png'));
-    //console.log(cupImage64);
-
-  //}, 400);
+  const { gl }  = useThree();
+  dispatch(cupActions.cupImage64(gl.domElement.toDataURL('image/png')));
 
   return (
-    <group rotation={[0, Math.PI, 0]}>
-
-      <Cylinder 
-        args={[tR, bR, h, 50, 50, true, 0, 2*Math.PI]} 
-        visible={backgroundImageCrop === '' ? false : true}
-      >
-        <meshStandardMaterial 
-          map={backgroundTexture}
-          transparent
-          opacity={1}
-        />
-      </Cylinder>
-
-      <Cylinder 
-        args={[tR, bR, h, 50, 50, true, 0, 2*Math.PI]} 
-        visible={logoImageCrop === '' ? false : true}
-      >
-        <meshStandardMaterial 
-          map={logoTexture}
-          transparent
-          opacity={1}
-        />
-      </Cylinder>
-
+    <group dispose={null} position-y={-0.4} >
+      <group rotation={[0, Math.PI, 0]}>
+        <Cylinder 
+          args={[tR, bR, h, 50, 50, true, 0, 2*Math.PI]} 
+          visible={backgroundImageCrop === '' ? false : true}
+        >
+          <meshStandardMaterial 
+            map={backgroundTexture}
+            transparent
+            opacity={1}
+          />
+        </Cylinder>
+        <Cylinder 
+          args={[tR, bR, h, 50, 50, true, 0, 2*Math.PI]} 
+          visible={logoImageCrop === '' ? false : true}
+        >
+          <meshStandardMaterial 
+            map={logoTexture}
+            transparent
+            opacity={1}
+          />
+        </Cylinder>
+      </group>
     </group>
   );
 };
 
 export default CupWrapper;
-//        args={[tR, bR, h, 50, 50, true, 0, 2*Math.PI]} 

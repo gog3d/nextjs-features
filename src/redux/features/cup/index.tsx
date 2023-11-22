@@ -38,6 +38,7 @@ interface IImage {
 interface CupState {
   modal: boolean;
   colors: Array<string>;
+  email: string;
   view: TView;
   color: string;
   rounded: boolean;
@@ -76,6 +77,7 @@ const resetImage = {
 const initialState: CupState = {
   modal: false,
   colors: colors,
+  email: '',
   view: 'viewer',
   color: '#222222',
   rounded: false,
@@ -135,12 +137,16 @@ const cupSlice = createSlice({
     modal: (state, action: PayloadAction<boolean>) => {
       state.modal = action.payload;
     },
-    view: (state, action: PayloadAction<TView>) => {
-      state.view = action.payload;
-    },
     color: (state, action: PayloadAction<string>) => {
       state.color = action.payload;
     },
+    email: (state, action: PayloadAction<string>) => {
+      state.email = action.payload;
+    },
+    view: (state, action: PayloadAction<TView>) => {
+      state.view = action.payload;
+    },
+
     rounded: (state, action: PayloadAction<boolean>) => {
       state.rounded = action.payload;
     },

@@ -14,6 +14,32 @@ interface IPreviewMobileProps {
 const PreviewMobile: FC<IPreviewMobileProps> = ({textTop, textBottom, imagePath, imageAlt='image', constructorHref='/'}) => {
   return (
     <div className={styles['preview']}>
+      <p className={styles['preview_text-top']}></p>
+      <p className={styles['preview_text-top']}></p>
+      <div className={styles['preview__img-container']}>
+        <Image
+           src={`/media/${imagePath}`}
+           alt={imageAlt}
+           width={270}
+           height={210}
+        />
+      </div>
+      <p className={styles['preview_text']}></p>
+      <p className={styles['preview_text']}></p>
+      <p className={styles['preview_text']}></p>
+      <p className={styles['preview_text']}></p>
+      <div className={styles['preview__button-container']}>
+      </div>
+    </div>
+  );
+};
+
+export default PreviewMobile;
+
+
+/*
+  return (
+    <div className={styles['preview']}>
       <p className={styles['preview_text-top']}>{'Посмотритеб как будее выглядеть'}</p>
       <p className={styles['preview_text-top']}>{textTop}</p>
       <div className={styles['preview__img-container']}>
@@ -37,6 +63,4 @@ const PreviewMobile: FC<IPreviewMobileProps> = ({textTop, textBottom, imagePath,
       </div>
     </div>
   );
-};
-
-export default PreviewMobile;
+*/

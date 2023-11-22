@@ -29,9 +29,10 @@ import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-typ
 interface ICatalogPageProps {
   catalog: Array<TCatalogItemsTypes>;
   contacts: TContactsTypes | null;
+  initialType: string;
 }
 
-const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts}) => {
+const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts, initialType}) => {
   const { asPath } = useRouter();
   const scrollText = [
     'Произведем в любом размере', 'Дизайн нарисуем', 'Макет разработаем',
@@ -62,7 +63,7 @@ const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts}) => {
               <ButtonConnect link={''} text={'Связаться с нами'}/>
             </div>
           </ContainerHorizontalScrolling>
-          <CatalogCardsDesctop catalog={catalog} />
+          <CatalogCardsDesctop catalog={catalog} initialType={initialType}/>
         </PageContentWrapperCatalog>
       </ContainerPage>
       <FooterMain contacts={contacts}/>

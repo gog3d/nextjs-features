@@ -27,7 +27,7 @@ const  Catalog: FC <ICatalogProps> = ({ catalog, contacts }) => {
       <MediaQuery minWidth={800}>
         {
           (matches) => matches ? 
-            <CatalogPage catalog={catalog} contacts={contacts} />
+            <CatalogPage catalog={catalog} contacts={contacts}  initialType={''}/>
              :
             <CatalogPageMobile catalog={catalog} contacts={contacts} />
         }

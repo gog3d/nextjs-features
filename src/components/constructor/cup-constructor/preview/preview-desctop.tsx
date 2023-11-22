@@ -19,7 +19,6 @@ export interface IPreviewDesctopProps {
 
 export const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, imagePath, imageAlt='image'}) => {
   const dispatch = useDispatch();
-
   return (
     <div className={styles['preview']}>
       <p className={styles['preview_text-top']}>{`Посмотрите как будее выглядеть ${textTop}`}</p>
@@ -44,6 +43,11 @@ export const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, i
       </div>
     </div>
   );
+
 };
 
 //export default PreviewDesctop;
+/*
+
+
+*/

@@ -23,15 +23,16 @@ import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-typ
 
 interface ICatalogCardsDesctopProps {
   catalog: Array<TCatalogItemsTypes>;
+  initialType: string;
 }
 
-const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
+const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog, initialType}) => {
 //  console.log({catalog});
   const { asPath } = useRouter();
   const colors = catalog.map((item, index) => `${item.type}__color`);
-//  console.log(colors);
+  console.log(initialType);
   return (
-    <CatalogCards initialType={''}>
+    <CatalogCards initialType={initialType}>
       <div className={styles['cards']}>
       {
         catalog.map((item, index) => 
@@ -41,7 +42,7 @@ const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog}) => {
             >
               <CatalogCards.Card type={item.type}>
                 <Image 
-                  src={`media/${item.logo.desctop}`}
+                  src={`/media/${item.logo.desctop}`}
                   alt='item-icon'
                   width='226'
                   height='126'

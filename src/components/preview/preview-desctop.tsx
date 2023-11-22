@@ -14,7 +14,35 @@ interface IPreviewDesctopProps {
 }
 
 const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, imagePath, imageAlt='image', constructorHref=''}) => {
-//  console.log(`/media/${imagePath}`);
+  return (
+    <div className={styles['preview']}>
+      <p className={styles['preview_text-top']}></p>
+      <div className={styles['preview__img-container']}>
+        <Image
+           src={`/media/${imagePath}`}
+           alt={imageAlt}
+           width={568}
+           height={416}
+        />
+      </div>
+      <p className={styles['preview_text']}></p>
+      <p className={styles['preview_text']}></p>
+      <p className={styles['preview_text']}></p>
+      <div className={styles['preview__button-container']}>
+      </div>
+    </div>
+  );
+};
+
+export default PreviewDesctop;
+
+/*
+        <Link href={constructorHref}>
+          <button className={styles['preview_button']}>
+            Попробовать
+          </button>
+        </Link>
+
   return (
     <div className={styles['preview']}>
       <p className={styles['preview_text-top']}>{`Посмотрите как будее выглядеть ${textTop}`}</p>
@@ -36,15 +64,7 @@ const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, imagePat
       </div>
     </div>
   );
-};
 
-export default PreviewDesctop;
 
-/*
-        <Link href={constructorHref}>
-          <button className={styles['preview_button']}>
-            Попробовать
-          </button>
-        </Link>
 
 */

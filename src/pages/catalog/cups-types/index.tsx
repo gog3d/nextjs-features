@@ -2,26 +2,43 @@ import { FC, ReactNode, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useMediaQuery } from 'react-responsive';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
+import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
 import CupsTypesPageMobile from '@/components/screens/cups-types-page-mobile';
 
+import dynamic from "next/dynamic";
+
+const CatalogPage = dynamic(() => import("@/components/screens/catalog-page"), {
+  ssr: false
+});
+
+const MediaQuery = dynamic(() => import("react-responsive"), {
+  ssr: false
+});
+
+
 interface ICupsTypesProps {
   catalog: Array<TCatalogItemsTypes>;
+  contacts: TContactsTypes;
 }
 
-const CupsTypes: FC<ICupsTypesProps> = ({ catalog }) => {
+const CupsTypes: FC<ICupsTypesProps> = ({ catalog, contacts }) => {
   const router = useRouter();
   const isDesctop = useMediaQuery({
     query: '(min-width: 800px)'
   });
-   
-  useEffect(()=>{
-    isDesctop ? router.push('/catalog') : ''
-  }, [isDesctop]);
 
   return (
-    <CupsTypesPageMobile catalog={catalog}/>
+    <>
+      <MediaQuery minWidth={800}>
+        {
+          (matches) => matches ? 
+            <CatalogPage catalog={catalog} contacts={contacts}  initialType={'cups'}/>
+             :
+            <CupsTypesPageMobile catalog={catalog}/>
+        }
+      </MediaQuery>
+    </>
   )
 };
 
@@ -33,6 +50,7 @@ import path from 'path';
 
 interface Props {
   catalog: Array<TCatalogItemsTypes>;
+  contacts: TContactsTypes;
 };
 
 interface Errors {
@@ -47,6 +65,6 @@ export const getServerSideProps: GetServerSideProps<Props>  = async () => {
   const data: Buffer = await readFile(filePath);
   const jsonData: TDataTypes  = await JSON.parse(data.toString());
   const catalog: Array<TCatalogItemsTypes> = jsonData.catalog;
-
-  return { props: { catalog } };
+  const contacts: TContactsTypes = jsonData.contacts;
+  return { props: { catalog, contacts } };
 };

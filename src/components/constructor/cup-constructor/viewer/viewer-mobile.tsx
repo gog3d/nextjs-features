@@ -13,13 +13,13 @@ import Cup from '@/components/constructor/cup-constructor/geometry/cup/cup';
 import CupWrapper from '@/components/constructor/cup-constructor/geometry/cup-wrapper/cup-wrapper';
 import Experience from '@/components/constructor/cup-constructor/geometry/experience/experience';
 
-import { selectModalAmount, selectCupModule, selectViewAmount, selectCupBackgroundAmount, selectBackgroundAmount, selectCupLogoAmount, selectLogoAmount, selectColorAmount, selectCupImage64Amount } from '@/redux/features/cup/selectors';
+import { selectEmailAmount, selectModalAmount, selectCupModule, selectViewAmount, selectCupBackgroundAmount, selectBackgroundAmount, selectCupLogoAmount, selectLogoAmount, selectColorAmount, selectCupImage64Amount } from '@/redux/features/cup/selectors';
 import { cupActions } from '@/redux/features/cup';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 const ViewerMobile: FC = () => {
   const router = useRouter();
-  const [email, setEmail] = useState('');
+//  const [email, setEmail] = useState('');
 
   const backgroundImageCrop = useAppSelector((state) => selectCupBackgroundAmount(state));
   const background = useAppSelector((state) => selectBackgroundAmount(state));
@@ -28,11 +28,12 @@ const ViewerMobile: FC = () => {
   const color = useAppSelector((state) => selectColorAmount(state));
   const cupImage64 = useAppSelector((state) => selectCupImage64Amount(state));
 
-  const handleChangeEmail = (e:  React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
+  const email = useAppSelector((state) => selectEmailAmount(state));
 
-  //const logoSource = convertBase64(logo.source);
+  const handleChangeEmail = (e:  React.ChangeEvent<HTMLInputElement>) => {
+//    setEmail(e.target.value);
+    dispatch(cupActions.email(e.target.value));
+  };
 
   const sendEmail = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -56,7 +57,7 @@ const ViewerMobile: FC = () => {
     } catch (error) {
       return
     }
-        router.push('/success');
+      router.push('/success');
   }
   
   const modal = useAppSelector((state) => selectModalAmount(state));

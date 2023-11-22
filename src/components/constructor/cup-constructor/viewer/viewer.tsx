@@ -12,15 +12,16 @@ import Cup from '@/components/constructor/cup-constructor/geometry/cup/cup';
 import CupWrapper from '@/components/constructor/cup-constructor/geometry/cup-wrapper/cup-wrapper';
 import Experience from '@/components/constructor/cup-constructor/geometry/experience/experience';
 
-import { selectModalAmount, selectCupModule, selectViewAmount, selectCupBackgroundAmount, selectBackgroundAmount, selectCupLogoAmount, selectLogoAmount, selectColorAmount, selectCupImage64Amount } from '@/redux/features/cup/selectors';
+import { selectEmailAmount, selectModalAmount, selectCupModule, selectViewAmount, selectCupBackgroundAmount, selectBackgroundAmount, selectCupLogoAmount, selectLogoAmount, selectColorAmount, selectCupImage64Amount } from '@/redux/features/cup/selectors';
 import { cupActions } from '@/redux/features/cup';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 
 const Viewer: FC = () => {
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  
+//  const [email, setEmail] = useState('');
+  const dispatch = useAppDispatch();
+
  // const cup = useAppSelector((state) => selectCupModule(state));
   const backgroundImageCrop = useAppSelector((state) => selectCupBackgroundAmount(state));
   const background = useAppSelector((state) => selectBackgroundAmount(state));
@@ -28,15 +29,16 @@ const Viewer: FC = () => {
   const logo = useAppSelector((state) => selectLogoAmount(state));
   const color = useAppSelector((state) => selectColorAmount(state));
   const cupImage64 = useAppSelector((state) => selectCupImage64Amount(state));
+  const email = useAppSelector((state) => selectEmailAmount(state));
 
   const handleChangeEmail = (e:  React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+//    setEmail(e.target.value);
+    dispatch(cupActions.email(e.target.value));
   };
   
   const sendEmail = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
- //     console.log({cupImage64})
       const res = await fetch(`/api/send-cup-image`, {
         method: 'POST',
         headers: {
@@ -56,17 +58,12 @@ const Viewer: FC = () => {
       return
     }
         router.push('/success');
-  }
-
+        dispatch(cupActions.modal(false));
+  };
 
   //const modal = useAppSelector((state) => selectModalAmount(state));
   const viewSelector = useAppSelector((state) => selectViewAmount(state));
   const view = viewSelector === 'viewer' ? true : false;
-
-
- 
-  const dispatch = useAppDispatch();
-
 
 return view ? 
 <div className={styles['page']}>

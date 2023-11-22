@@ -3,12 +3,10 @@ import { FC, ReactNode, useEffect, useLayoutEffect } from 'react';
 import { PerspectiveCamera } from '@react-three/drei';
 import { Canvas, extend, useThree, useFrame } from '@react-three/fiber';
 
+//import { cupActions } from '@/redux/features/cup';
+//import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
-import { cupActions } from '@/redux/features/cup';
-import { useAppSelector, useAppDispatch } from '@/redux/hooks';
-
-
-import { selectModalAmount, selectCupColorAmount, selectCupModule, selectViewAmount, selectCupBackgroundAmount, selectBackgroundAmount, selectCupLogoAmount, selectLogoAmount, selectColorAmount, selectCupImage64Amount } from '@/redux/features/cup/selectors';
+//import { selectModalAmount, selectCupColorAmount, selectCupModule, selectViewAmount, selectCupBackgroundAmount, selectBackgroundAmount, selectCupLogoAmount, selectLogoAmount, selectColorAmount, selectCupImage64Amount } from '@/redux/features/cup/selectors';
 import { 
       Stage, 
       OrbitControls, 
@@ -22,20 +20,17 @@ interface IExperienceProps {
 
 const Experience: FC<IExperienceProps> = ({ children, rotate=false }) => {
 
-  
-
-   const cup = useAppSelector((state) => selectCupModule(state));
-   const cupImage64 = useAppSelector((state) => selectCupImage64Amount(state));
-   const backgroundImageCrop = useAppSelector((state) => selectCupBackgroundAmount(state));
-   const logoImageCrop = useAppSelector((state) => selectCupLogoAmount(state)); 
-   const cupColor = useAppSelector((state) => selectCupColorAmount(state));
-
- //dispatch(cupActions.cupImage64(gl.domElement.toDataURL()));
   return (
     <>
-      <Stage shadows={false} adjustCamera={1.2}>
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 10]} />
+      <PerspectiveCamera 
+        makeDefault
+        position={[11, 8, 20]}
+        fov={60}
+        zoom={1.9}
+      />
         { children }
-      </Stage>
       <OrbitControls
         makeDefault
         autoRotate={rotate}
@@ -46,3 +41,8 @@ const Experience: FC<IExperienceProps> = ({ children, rotate=false }) => {
 };
 
 export default Experience;
+/*
+      <Stage shadows={false} adjustCamera={1.2}>
+        { children }
+      </Stage>
+*/

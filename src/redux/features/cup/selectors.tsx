@@ -8,6 +8,7 @@ export const selectModalAmount = (state: RootState) => selectCupModule(state).mo
 export const selectViewAmount = (state: RootState) => selectCupModule(state).view;
 export const selectRoundedAmount = (state: RootState) => selectCupModule(state).rounded;
 export const selectColorAmount = (state: RootState) => selectCupModule(state).color;
+export const selectEmailAmount = (state: RootState) => selectCupModule(state).email;
 export const selectBackgroundAmount = (state: RootState) => selectCupModule(state).background;
 export const selectLogoAmount = (state: RootState) => selectCupModule(state).logo;
 
