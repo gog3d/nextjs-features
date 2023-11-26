@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useMediaQuery } from 'react-responsive';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
+import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
 import LidsPageMobile from "@/components/screens/lids-page-mobile";
 
@@ -44,7 +44,7 @@ export const getServerSideProps: GetServerSideProps<Props>  = async () => {
   const filePath = path.join(process.cwd(), 'public/data/data.json');
   const data: Buffer = await readFile(filePath);
   const jsonData: TDataTypes  = await JSON.parse(data.toString());
-  const catalog: Array<TCatalogItemsTypes> = jsonData.catalog;
+  const catalog: Array<TCatalogItemsTypes> = jsonData.catalog.items;
 
   return { props: { catalog } };
 };

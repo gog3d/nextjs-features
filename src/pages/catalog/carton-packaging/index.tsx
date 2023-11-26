@@ -42,7 +42,6 @@ const CartonPackaging: FC <ICartonPackagingProps> = ({ catalog, contacts }) => {
 
 export default CartonPackaging;
 
-
 import {readFile} from 'fs/promises';
 import path from 'path';
 
@@ -62,22 +61,7 @@ export const getServerSideProps: GetServerSideProps<Props>  = async () => {
   const filePath = path.join(process.cwd(), 'public/data/data.json');
   const data: Buffer = await readFile(filePath);
   const jsonData: TDataTypes  = await JSON.parse(data.toString());
-  const catalog: Array<TCatalogItemsTypes> = jsonData.catalog;
+  const catalog: Array<TCatalogItemsTypes> = jsonData.catalog.items;
   const contacts: TContactsTypes = jsonData.contacts;
   return { props: { catalog, contacts } };
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

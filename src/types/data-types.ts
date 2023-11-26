@@ -1,6 +1,11 @@
 import { Point, Area } from "react-easy-crop/types";
 import React, { SetStateAction } from 'react';
 
+export type TColor = {
+  color: string,
+  id: string
+};
+
 export type TParameters ={
   name: string,
   value: string
@@ -71,7 +76,18 @@ export type TCatalogItemsTypes = {
   items: Array<any>
 }
 
+export type TCatalogTypes = {
+  type: string,
+  title: string,
+  link: string,
+  items: Array<TCatalogItemsTypes>
+}
+
+
 export type TContactsTypes = {
+  type: string,
+  title: string,
+  link: string,
   adress: string,
   tel: Array<string>,
   mail: string,
@@ -79,10 +95,27 @@ export type TContactsTypes = {
   telegram: string
 }
 
-export type TDataTypes = {
-  catalog: Array<TCatalogItemsTypes>,
-  contacts: TContactsTypes
+export type TMainTypes = {
+  type: string,
+  title: string,
+  link: string,
+  items: Array<string>
 }
+
+export type TAboutTypes = {
+  type: string,
+  title: string,
+  link: string,
+  items: Array<string>
+}
+
+export type TDataTypes = {
+  "catalog": TCatalogTypes,
+  "contacts": TContactsTypes,
+  "main": TMainTypes,
+  "about-us": TAboutTypes, 
+}
+
 
 /*
 export type TData = {
@@ -91,11 +124,9 @@ export type TData = {
   caps: Array<any>
 };
 */
-export type TColor = {
-  color: string,
-  id: string
-};
 
+
+/*
 export type TCustomization = {
   colors: Array<TColor>,
   checkedColor: string,
@@ -139,3 +170,5 @@ export type TCustomization = {
   logoView: boolean,
   setLogoView: (arg0:boolean) => void
 };
+
+*/

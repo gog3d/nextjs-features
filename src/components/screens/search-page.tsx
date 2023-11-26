@@ -11,17 +11,11 @@ import InputTextMobile from '@/components/input/input-text-mobile';
 
 import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 
-import { Search } from '@/components/search/search';
-
 interface ISearchPageProps {
   catalog: Array<TCatalogItemsTypes>;
-  pagesData: TDataTypes;
 }
 
-const SearchPageMobile: FC<ISearchPageProps> = ({ catalog, pagesData }) => {
-
-  console.log({pagesData});
-
+const SearchPage: FC<ISearchPageProps> = ({ catalog }) => {
   const router = useRouter();
   const [searchText, setSearchText] = useState('Пока ничего не найдено');
 
@@ -31,22 +25,24 @@ const SearchPageMobile: FC<ISearchPageProps> = ({ catalog, pagesData }) => {
 
   return (
     <PageMobile>
-      <Search>
       <HeaderSearchWrapperMobile>
         <button onClick={()=> router.back()}>
           <BackLinkMobileIcon />
         </button>
-       <Search.Input />
+        <InputTextMobile 
+          type={'text'}
+          placeholder={'Стаканы'}
+          handleChange={handleChange}
+        />
       </HeaderSearchWrapperMobile>
       <PageContentWrapperMobile>
-        <div>
-          <Search.Result pagesData={pagesData}/>
+        <div style={{color: '#000000'}}>
+          {searchText}
         </div>
       </PageContentWrapperMobile>
-      </Search>
     </PageMobile>
   );
 };
 
-export default SearchPageMobile;
+export default SearchPage;
 

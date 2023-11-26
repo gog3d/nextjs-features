@@ -19,11 +19,21 @@ interface IPaths {
   'about-us': IPathsItem;
   'catalog': IPathsItem;
   'contacts': IPathsItem;
-  'cups-types': IPathsItem;
-  'carton-packaging': IPathsItem;
   'policy': IPathsItem;
   'consent': IPathsItem;
 
+  'cups-types': IPathsItem;
+  'paper-packaging': IPathsItem;
+  'lids': IPathsItem;
+
+  'carton-packaging': IPathsItem;
+  'plastic-box': IPathsItem;
+  'uniform': IPathsItem;
+
+  'mayonnaise-sauce': IPathsItem;
+  'space-decoration': IPathsItem;
+  'consulting': IPathsItem;
+  'design': IPathsItem;
 }
 
 
@@ -32,13 +42,22 @@ const paths: IPaths = {
   'about-us': {title: 'О нас', link: '/about-us'},
   'catalog': {title: 'Каталог', link: '/catalog'},
   'contacts': {title: 'Контакты', link: '/contacts'},
-  'cups-types': {title: 'Стаканы', link: '/cups-types'},
-  'carton-packaging': {title: 'Картонная упаковка', link: '/carton-packaging'},
-
   'policy': {title: 'Политика конфиденциальности', link: '/policy'},
   'consent': {title: 'Согласие на обработку персональных данных', link: '/consent'},
 
-//  'cups-types': {title: 'Стаканы', link: '/cups-types'},
+  'cups-types': {title: 'Стаканы', link: '/cups-types'},
+  'paper-packaging': {title: 'Бумажная упаковка', link: '/paper-packaging'},
+  'lids': {title: 'Крышки', link: '/lids'},
+
+  'carton-packaging': {title: 'Картонная упаковка', link: '/carton-packaging'},
+  'plastic-box': {title: 'Пластиковая упаковка', link: '/plastic-box'},
+  'uniform': {title: 'Униформа', link: '/uniform'},
+
+  'mayonnaise-sauce': {title: 'Майонезный соус', link: '/mayonnaise-sauce'},
+  'space-decoration': {title: 'Оформление простраства', link: '/space-decoration'},
+  'consulting': {title: 'Консалтинг', link: '/consulting'},
+  'design': {title: 'Дизайн', link: '/design'},
+
 };
 
 

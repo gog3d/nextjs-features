@@ -37,7 +37,7 @@ export const getServerSideProps: GetServerSideProps<Props>  = async () => {
   const filePath = path.join(process.cwd(), 'public/data/data.json');
   const data: Buffer = await readFile(filePath);
   const jsonData: TDataTypes  = await JSON.parse(data.toString());
-  const catalog: Array<TCatalogItemsTypes> = jsonData.catalog;
+  const catalog: Array<TCatalogItemsTypes> = jsonData.catalog.items;
 //  const cups: Array<TCupTypes> | null = cups_items ? cups_items.items : null;
   return { props: { catalog } };
 };

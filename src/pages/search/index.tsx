@@ -4,14 +4,16 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
 
 import SearchPageMobile from "@/components/screens/search-page-mobile";
+import SearchPage from "@/components/screens/search-page";
+
 
 interface ISearchProps {
   catalog: Array<TCatalogItemsTypes>;
+  pagesData: TDataTypes;
 }
 
-
-const  Search: FC<ISearchProps> = ({ catalog }) => {
-    return <SearchPageMobile catalog={catalog} />;
+const  Search: FC<ISearchProps> = ({ catalog, pagesData }) => {
+    return <SearchPageMobile catalog={catalog} pagesData={pagesData} />;
 }
 
 export default Search;
@@ -29,14 +31,14 @@ interface Errors {
   };
 };
 
-
 //export const getStaticProps: GetServerSideProps<{cups  = async ({params}) => {
 export const getServerSideProps: GetServerSideProps<Props>  = async () => {
-
   const filePath = path.join(process.cwd(), 'public/data/data.json');
   const data: Buffer = await readFile(filePath);
   const jsonData: TDataTypes  = await JSON.parse(data.toString());
-  const catalog: Array<TCatalogItemsTypes> = jsonData.catalog;
+  const pagesData = { ...jsonData };
+  const catalog: Array<TCatalogItemsTypes> = jsonData.catalog.items;
 //  const cups: Array<TCupTypes> | null = cups_items ? cups_items.items : null;
-  return { props: { catalog } };
+ // return { props: { catalog } };
+  return { props: { catalog, pagesData } };
 };

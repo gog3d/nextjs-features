@@ -1,19 +1,17 @@
 import { FC, ReactNode } from 'react';
-import styles from './email.module.css';
+import styles from './input.module.css';
 
-import { selectEmailAmount} from '@/redux/features/form/selectors';
-import { formActions } from '@/redux/features/form';
+import { selectInputAmount} from '@/redux/features/search/selectors';
+import { searchActions } from '@/redux/features/search';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 
-const Email: FC = () => {
-
-  const value = useAppSelector((state) => selectEmailAmount(state)); 
-  
+const Input: FC = () => {
+  const value = useAppSelector((state) => selectInputAmount(state)); 
   const dispatch = useAppDispatch();
 
   const handler = (e:  React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(formActions.email(e.target.value));
+    dispatch(searchActions.input(e.target.value));
   };
 
   return (
@@ -21,16 +19,16 @@ const Email: FC = () => {
       <input 
         value={value}
         className={styles['input']}
-        type={'email'}
+        type={'text'}
         required = {true} 
-        placeholder={'Email'}
+        placeholder={'Поиск'}
         onChange={handler}
       />
     </div>
   );
 }
 
-export default Email;
+export default Input;
 
 //    pattern={"[^@\s]+@[^@\s]+\.[^@\s]+"}
 //    size ={30}
