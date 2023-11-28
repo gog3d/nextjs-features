@@ -14,12 +14,14 @@ import { TCatalogItemsTypes, TDataTypes } from '@/types/data-types';
 
 export interface IResultProps {
 //  catalog: Array<TCatalogItemsTypes>;
-  pagesData: TDataTypes;
+//  pagesData: TDataTypes;
+    pagesData: Array<{link: string, value: string}>
 }
-
 
 export const Result: FC<IResultProps> = ({ pagesData }) => {
   const router = useRouter();
+
+//console.log({pagesData})
 
   const input = useAppSelector((state) => selectInputAmount(state));
   const result = useAppSelector((state) => selectResultAmount(state));
@@ -27,28 +29,25 @@ export const Result: FC<IResultProps> = ({ pagesData }) => {
 
   const dispatch = useAppDispatch();
 
-  const match = (key: string, input: string) => {
-    if(input !=='' && key.indexOf(input)>=0) {
-      dispatch(searchActions.result(key));
-    }
-  };
-
   useEffect(() => {
     dispatch(searchActions.resetResult());
     for (const [key, value] of Object.entries(pagesData)) {
-      match(key, input);
+//        console.log(value.value.indexOf(input));
+      if(value.value !=='' && input != '' && value.value.toLowerCase().indexOf(input.toLowerCase())>=0) {
+        dispatch(searchActions.result({link: value.link, value: value.value}));
+      }
     }
   }, [input]);
 
   return (
-    <div>
+    <div className={styles['links-container']}>
       {
-        result.map((item, index) => 
-          <div key={index}>
-            <Link href={`/${item}`}>
-              {item}
+        result.map((item, index) => item.value ?
+          <div key={index} className={styles['link']}>
+            <Link href={`${item.link}`}>
+              {item.value}
             </Link>
-          </div>
+          </div> : null
         )
       }
 

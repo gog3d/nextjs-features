@@ -30,7 +30,7 @@ const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog, initialTyp
 //  console.log({catalog});
   const { asPath } = useRouter();
   const colors = catalog.map((item, index) => `${item.type}__color`);
-  console.log(initialType);
+  //console.log(initialType);
   return (
     <CatalogCards initialType={initialType}>
       <div className={styles['cards']}>
@@ -64,7 +64,7 @@ const CatalogCardsDesctop: FC<ICatalogCardsDesctopProps> = ({catalog, initialTyp
       }
       <div className={`${styles['cards-row']} ${styles['cards-row-1']}`}>
         <CatalogCards.Discription type={'cups'}>
-          <DescriptionCatalogCardCups catalog={catalog} />
+          <DescriptionCatalogCardCups catalog={catalog}/>
         </CatalogCards.Discription>
         <CatalogCards.Discription type={'paper-packaging'}>
           <DescriptionCatalogCardPaperPackaging catalog={catalog} />

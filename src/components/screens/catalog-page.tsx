@@ -34,6 +34,7 @@ interface ICatalogPageProps {
 
 const CatalogPage: FC<ICatalogPageProps> = ({catalog, contacts, initialType}) => {
   const { asPath } = useRouter();
+  
   const scrollText = [
     'Произведем в любом размере', 'Дизайн нарисуем', 'Макет разработаем',
     'Решение подберем', 'Рекламу оформим', 'Процессы подскажем', 'Рецептуру придумаем'

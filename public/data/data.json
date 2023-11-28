@@ -28,6 +28,7 @@
           "id": "1",
           "name": "single-layer",
           "title": "Однослойные",
+          "link": "/single-layer",
           "parameters": [
             {
               "name": "",
@@ -180,6 +181,7 @@
           "id": "2",
           "name": "double-layer",
           "title": "Двуслойные",
+          "link": "/double-layer",
           "parameters": [
             {
               "name": "",

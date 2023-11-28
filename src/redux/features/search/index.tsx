@@ -3,17 +3,17 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface SearchState {
   input: string;
-  result: Array<string>;
+  result: Array<{link: string, value: string}>;
 }
 
 const resetSearch =   {
   input: '',
-  result: [''],
+  result: [{link: '', value: ''}],
 };
 
 const initialState: SearchState = {
   input: '',
-  result: [''],
+  result: [{link: '', value: ''}],
 };
 
 const searchSlice = createSlice({
@@ -23,11 +23,11 @@ const searchSlice = createSlice({
     input: (state, action: PayloadAction<string>) => {
       state.input = action.payload;
     },
-    result: (state, action: PayloadAction<string>) => {
+    result: (state, action: PayloadAction<{link: string, value: string}>) => {
       state.result = [...state.result, action.payload];
     },
     resetResult: (state) => {
-      state.result = [''];
+      state.result = [{link: '', value: ''}];
     },
   }
 });

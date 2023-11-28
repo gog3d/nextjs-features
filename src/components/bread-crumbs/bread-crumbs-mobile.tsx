@@ -34,6 +34,9 @@ interface IPaths {
   'space-decoration': IPathsItem;
   'consulting': IPathsItem;
   'design': IPathsItem;
+  'search': IPathsItem;
+  'single-layer': IPathsItem;
+  'double-layer': IPathsItem;
 }
 
 
@@ -57,7 +60,9 @@ const paths: IPaths = {
   'space-decoration': {title: 'Оформление простраства', link: '/space-decoration'},
   'consulting': {title: 'Консалтинг', link: '/consulting'},
   'design': {title: 'Дизайн', link: '/design'},
-
+  'search': {title: 'Поиск', link: '/search'},
+  'single-layer': {title: 'Однослойные', link: '/single-layer'},
+  'double-layer': {title: 'Двуслойные', link: '/double-layer'},
 };
 
 

@@ -1,7 +1,7 @@
 'use client';
 import { FC, ReactNode, useState } from 'react';
 import styles from './description-catalog-card-cups.module.css';
-
+import { useRouter } from 'next/router';
 import DescriptionCatalogCardContainer from '@/components/description/description-catalog-card-container';
 //import PreviewDesctop from '@/components/preview/preview-desctop';
 //import AccordionCupDesctop from '@/components/accordion/accordion-cup-desctop';
@@ -20,7 +20,15 @@ interface IDescriptionCatalogCardCupsProps {
 
 const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catalog}) => {
   const items: TCatalogItemsTypes | undefined = catalog?.find((item) => item.type ==='cups');
-  const [cupType, setCupType] = useState('single-layer');
+
+  const { asPath } = useRouter();
+  const links = asPath?.split('/');
+  if (links) links[0] = '/';
+  
+  const cupsType = links?.pop();
+  console.log(cupsType);
+
+  const [cupType, setCupType] = useState(cupsType);
 
   return (
     <DescriptionCatalogCardContainer>

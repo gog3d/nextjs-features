@@ -23,11 +23,6 @@ interface ICupsTypesProps {
 }
 
 const CupsTypes: FC<ICupsTypesProps> = ({ catalog, contacts }) => {
-  const router = useRouter();
-  const isDesctop = useMediaQuery({
-    query: '(min-width: 800px)'
-  });
-
   return (
     <>
       <MediaQuery minWidth={800}>

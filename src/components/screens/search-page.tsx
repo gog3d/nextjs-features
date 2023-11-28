@@ -1,46 +1,38 @@
 import React, { FC, useState } from 'react';
-import PageMobile from '../page/page-mobile';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import Page from '@/components/page/page';
+import HeaderMain from '@/components/header/header-main';
+import FooterMain from '@/components/footer/footer-main';
+import ContainerPage from '@/components/container/container-page';
+import PageContentWrapperAboutUs from '@/components/page/page-content-wrapper-about-us';
+import BreadCrumbsMobile from '@/components/bread-crumbs/bread-crumbs-mobile';
 
-import PageContentWrapperMobile from '@/components/page/page-content-wrapper-mobile';
-import HeaderSearchWrapperMobile from '@/components/header-wrapper/header-search-wrapper-mobile';
-import BackLinkMobileIcon from '@/components/icons/back-link-mobile-icon';
-import InputTextMobile from '@/components/input/input-text-mobile';
-
-import { TDataTypes, TCatalogItemsTypes } from '@/types/data-types';
+import { TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
+import { Search } from '@/components/search/search';
 
 interface ISearchPageProps {
   catalog: Array<TCatalogItemsTypes>;
+//  pagesData: TDataTypes;
+    pagesData: Array<{link: string, value: string}>
+    contacts: TContactsTypes;
 }
-
-const SearchPage: FC<ISearchPageProps> = ({ catalog }) => {
-  const router = useRouter();
-  const [searchText, setSearchText] = useState('Пока ничего не найдено');
-
-  const handleChange = (e:  React.ChangeEvent<HTMLInputElement>) => {
-    setSearchText(e.target.value);
-  };
-
+const SearchPage: FC<ISearchPageProps> = ({ catalog, pagesData, contacts }) => {
+  const { asPath } = useRouter();
   return (
-    <PageMobile>
-      <HeaderSearchWrapperMobile>
-        <button onClick={()=> router.back()}>
-          <BackLinkMobileIcon />
-        </button>
-        <InputTextMobile 
-          type={'text'}
-          placeholder={'Стаканы'}
-          handleChange={handleChange}
-        />
-      </HeaderSearchWrapperMobile>
-      <PageContentWrapperMobile>
-        <div style={{color: '#000000'}}>
-          {searchText}
-        </div>
-      </PageContentWrapperMobile>
-    </PageMobile>
+    <Page>
+      <HeaderMain />
+      <Search>
+      <ContainerPage>
+      <PageContentWrapperAboutUs>
+        <BreadCrumbsMobile routerPath={asPath}/>
+        <Search.Input />
+        <Search.Result pagesData={pagesData}/>
+        </PageContentWrapperAboutUs>
+      </ContainerPage>
+      </Search>
+      <FooterMain contacts={contacts}/>
+    </Page>
   );
 };
 
