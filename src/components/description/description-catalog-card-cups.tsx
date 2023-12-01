@@ -26,7 +26,7 @@ const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catal
   if (links) links[0] = '/';
   
   const cupsTypeLink = links?.pop();
-  const cupsType = cupsTypeLink === 'single-layer' | 
+  const cupsType = cupsTypeLink === 'single-layer' || 
     cupsTypeLink === 'double-layer' ? cupsTypeLink : 'single-layer';
 
 //  console.log(cupsType);
