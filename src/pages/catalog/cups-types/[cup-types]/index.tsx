@@ -22,14 +22,14 @@ interface ICupProps {
   contacts: TContactsTypes;
 }
 
-const CupTypes: FC<ICupProps> = ({catalog , contacts }) => {
+const CupTypes: FC<ICupProps> = ({catalog, contacts }) => {
 
   return (
     <>
       <MediaQuery minWidth={800}>
         {
           (matches) => matches ? 
-            <CatalogPage catalog={catalog} contacts={contacts}  initialType={'cups'}/>
+            <CatalogPage catalog={catalog} contacts={contacts} initialType={'cups'}/>
              :
             <CupTypesPageMobile catalog={catalog}/>
         }
