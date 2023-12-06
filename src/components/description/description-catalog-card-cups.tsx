@@ -64,7 +64,7 @@ const DescriptionCatalogCardCups: FC<IDescriptionCatalogCardCupsProps> = ({catal
       <Constructor>
         <div className={styles['preview']}>
           <Constructor.PreviewDesctop 
-            textTop={'Ваша новый стаканчик!'}
+            textTop={'Ваш новый стаканчик!'}
             textBottom={'Вашего стаканчика.'}
             imagePath={items?.image.desctop}
             imageAlt={items?.type}
