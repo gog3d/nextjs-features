@@ -1,4 +1,5 @@
 'use client';
+
 import { FC, ReactNode, useState, useLayoutEffect, useEffect } from 'react';
 import styles from './viewer.module.css';
 import { useRouter } from 'next/router';
@@ -19,7 +20,7 @@ import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 const Viewer: FC = () => {
   const router = useRouter();
-//  const [email, setEmail] = useState('');
+  const [send, setSend] = useState(false);
   const dispatch = useAppDispatch();
 
  // const cup = useAppSelector((state) => selectCupModule(state));
@@ -32,12 +33,12 @@ const Viewer: FC = () => {
   const email = useAppSelector((state) => selectEmailAmount(state));
 
   const handleChangeEmail = (e:  React.ChangeEvent<HTMLInputElement>) => {
-//    setEmail(e.target.value);
     dispatch(cupActions.email(e.target.value));
   };
   
   const sendEmail = async (e: React.SyntheticEvent) => {
     e.preventDefault();
+    setSend(true);
     try {
       const res = await fetch(`/api/send-cup-image`, {
         method: 'POST',
@@ -55,10 +56,12 @@ const Viewer: FC = () => {
         })
       })
     } catch (error) {
+      setSend(false);
       return
     }
-        router.push('/success');
-        dispatch(cupActions.modal(false));
+      router.push('/success');
+      dispatch(cupActions.modal(false));
+      setSend(false);
   };
 
   //const modal = useAppSelector((state) => selectModalAmount(state));
@@ -66,137 +69,73 @@ const Viewer: FC = () => {
   const view = viewSelector === 'viewer' ? true : false;
 
 return view ? 
-<div className={styles['page']}>
-  <div className={styles['header']}>
-    <button onClick={() => dispatch(cupActions.modal(false))}>
-      <CloseMobileIcon />
-    </button>
-  </div>
-  <div className={styles['page-content']}>
-    <nav className={styles['nav-menu']}>
-      <button className={styles['nav-menu_button']}
-        onClick={() => dispatch(cupActions.view('color'))}
-      >
-        <PlusIcon /><div>Цвет</div>
+  <div className={styles['page']}>
+    { send ? 
+      <div className={styles['modal']}>
+        <div 
+          className={styles['modal-background']}
+          onClick={() => dispatch(cupActions.modal(false))}
+          >
+        </div>
+        <div className={styles['modal-content']}>
+          Отправка сообщения
+        </div>
+      </div>
+        : 
+      null
+    }
+    <div className={styles['header']}>
+      <button onClick={() => dispatch(cupActions.modal(false))}>
+        <CloseMobileIcon />
       </button>
-      <button className={styles['nav-menu_button']}
-        onClick={() => dispatch(cupActions.view('background'))}
-      >
-        <PlusIcon /><div>Фон</div>
-      </button>
-      <button className={styles['nav-menu_button']}
-        onClick={() => dispatch(cupActions.view('logo'))}
-      >
-        <PlusIcon /><div>Лого</div>
-      </button>
-    </nav>
-    <div className={styles['canvas-container']}>
-      <Canvas gl={{ preserveDrawingBuffer: true }}>
-        <Experience rotate={true}>
-          <Cup />
-          <CupWrapper />
-        </Experience>
-      </Canvas>
     </div>
-    <div className={styles['send']}>
-      <p className={styles['send-title']}>
-        Отправить макет на е-mail
-      </p>
-      <div className={styles['send-container']}>
-        <input 
-          className={styles['send_input-email']}
-          
-          type={'email'}
-          placeholder={'E-mail'}
-          onChange={handleChangeEmail}
-          value={email}
-        />
-        <button className={styles['send_button']}
-          onClick={sendEmail}
+    <div className={styles['page-content']}>
+      <nav className={styles['nav-menu']}>
+        <button className={styles['nav-menu_button']}
+          onClick={() => dispatch(cupActions.view('color'))}
         >
-          {'Отправить'} 
+          <PlusIcon /><div>Цвет</div>
         </button>
+        <button className={styles['nav-menu_button']}
+          onClick={() => dispatch(cupActions.view('background'))}
+        >
+          <PlusIcon /><div>Фон</div>
+        </button>
+        <button className={styles['nav-menu_button']}
+          onClick={() => dispatch(cupActions.view('logo'))}
+        >
+          <PlusIcon /><div>Лого</div>
+        </button>
+      </nav>
+      <div className={styles['canvas-container']}>
+        <Canvas gl={{ preserveDrawingBuffer: true }}>
+          <Experience rotate={true}>
+            <Cup />
+            <CupWrapper />
+          </Experience>
+        </Canvas>
+      </div>
+      <div className={styles['send']}>
+        <p className={styles['send-title']}>
+          Отправить макет на е-mail
+        </p>
+        <form onSubmit={sendEmail} className={styles['send-container']}>
+          <input 
+            className={styles['send_input-email']}
+            type={'email'}
+            placeholder={'E-mail'}
+            onChange={handleChangeEmail}
+            value={email}
+          />
+          <button className={styles['send_button']}>
+            {'Отправить'} 
+          </button>
+        </form>
       </div>
     </div>
   </div>
-</div>
- : 
-null
+   : 
+  null
 };
 
 export default Viewer;
-//            dispatch(cupActions.cupImage64(state.gl.domElement.toDataURL('image/png')));
-/*
-            gl={{ preserveDrawingBuffer: true }} 
-            onCreated={(state)=> {
-              dispatch(cupActions.cupImage64(state.gl.domElement.toDataURL('image/png')));
-              console.log({cupImage64})
-            }}
-
-*/
-/**
- * 
- *   return view ? 
-    <div className={styles['page']}>
-      <div className={styles['header']}>
-        <button onClick={() => dispatch(cupActions.modal(false))}>
-          <CloseMobileIcon />
-        </button>
-      </div>
-      <div className={styles['page-content']}>
-        <nav className={styles['nav-menu']}>
-          <button className={styles['nav-menu_button']}
-            onClick={() => dispatch(cupActions.view('color'))}
-          >
-            <PlusIcon /><div>Цвет</div>
-          </button>
-          <button className={styles['nav-menu_button']}
-            onClick={() => dispatch(cupActions.view('background'))}
-          >
-            <PlusIcon /><div>Фон</div>
-          </button>
-          <button className={styles['nav-menu_button']}
-            onClick={() => dispatch(cupActions.view('logo'))}
-          >
-            <PlusIcon /><div>Лого</div>
-          </button>
-        </nav>
-        <div className={styles['canvas-container']}>
-          <Canvas 
-            gl={{ antialias: true, preserveDrawingBuffer: true }} 
-            onCreated={({gl})=> {
-              
-            }}
-          >
-            <Experience>
-              <Cup />
-              <CupWrapper />
-            </Experience>
-          </Canvas>
-        </div>
-        <div className={styles['send']}>
-          <p className={styles['send-title']}>
-            Отправить макет на е-mail
-          </p>
-          <div className={styles['send-container']}>
-            <input 
-              className={styles['send_input-email']}
-              
-              type={'email'}
-              placeholder={'E-mail'}
-              onChange={handleChangeEmail}
-              value={email}
-            />
-            <button className={styles['send_button']}
-              onClick={sendEmail}
-            >
-              {'Отправить'} 
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-     : 
-    null
-};
- */

@@ -19,7 +19,7 @@ import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 const ViewerMobile: FC = () => {
   const router = useRouter();
-//  const [email, setEmail] = useState('');
+  const [send, setSend] = useState(false);
 
   const backgroundImageCrop = useAppSelector((state) => selectCupBackgroundAmount(state));
   const background = useAppSelector((state) => selectBackgroundAmount(state));
@@ -39,6 +39,7 @@ const ViewerMobile: FC = () => {
     e.preventDefault();
     try {
  //     console.log({cupImage64})
+      setSend(true);
       const res = await fetch(`/api/send-cup-image`, {
         method: 'POST',
         headers: {
@@ -55,11 +56,13 @@ const ViewerMobile: FC = () => {
         })
       })
     } catch (error) {
+      setSend(false);
       return
     }
+      setSend(false);
       router.push('/success');
   }
-  
+
   const modal = useAppSelector((state) => selectModalAmount(state));
   const viewSelector = useAppSelector((state) => selectViewAmount(state));
   const view = viewSelector === 'viewer' ? true : false;
@@ -68,6 +71,20 @@ const ViewerMobile: FC = () => {
 
   return view ? 
     <div className={styles['page']}>
+      { send ? 
+        <div className={styles['modal']}>
+          <div 
+            className={styles['modal-background']}
+            onClick={() => dispatch(cupActions.modal(false))}
+            >
+          </div>
+          <div className={styles['modal-content']}>
+            Отправка сообщения
+          </div>
+        </div>
+          : 
+        null
+      }
       <div className={styles['header']}>
         <button
           onClick={() => router.back()}
