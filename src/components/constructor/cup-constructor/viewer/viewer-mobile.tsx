@@ -8,6 +8,7 @@ import { Canvas } from '@react-three/fiber';
 import BackLinkMobileIcon from '@/components/icons/back-link-mobile-icon';
 import CloseMobileIcon from '@/components/icons/close-mobile-icon';
 import PlusIcon from '@/components/icons/plus-icon';
+import LoadIcon from '@/components/icons/load-icon';
 
 import Cup from '@/components/constructor/cup-constructor/geometry/cup/cup';
 import CupWrapper from '@/components/constructor/cup-constructor/geometry/cup-wrapper/cup-wrapper';
@@ -73,13 +74,12 @@ const ViewerMobile: FC = () => {
     <div className={styles['page']}>
       { send ? 
         <div className={styles['modal']}>
-          <div 
-            className={styles['modal-background']}
-            onClick={() => dispatch(cupActions.modal(false))}
-            >
+          <div className={styles['modal-background']}>
           </div>
           <div className={styles['modal-content']}>
-            Отправка сообщения
+            <div className={styles['icon-wrapper']}>
+              <LoadIcon />
+            </div>
           </div>
         </div>
           : 

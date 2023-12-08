@@ -24,3 +24,39 @@
   display: flex;
   padding-top: 42px;
 }
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.modal-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(196, 196, 196, 0.7);
+}
+
+.modal-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+/*  border: 1px red solid;*/
+}
+
+@keyframes Rotate
+{from { transform: rotate(0deg) }
+ to { transform: rotate(360deg) } /**change to a higher value for more seamless loop*/
+}
+
+.icon-wrapper {
+  animation: Rotate 1s linear infinite;
+/*  border: 1px green solid;*/
+}

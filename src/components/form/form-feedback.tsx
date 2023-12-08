@@ -27,7 +27,7 @@ const FormFeedback: FC<IFormFeedbackProps> = ({catalog}) => {
           <div className={styles['text-area']}>
             <Form.TextArea />
           </div>
-          <Form.Confirm />   
+          <Form.Confirm />
         </Form.Wrapper>
       </Form>
     </div>

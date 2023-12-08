@@ -137,5 +137,15 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+/*  border: 1px red solid;*/
 }
 
+@keyframes Rotate
+{from { transform: rotate(0deg) }
+ to { transform: rotate(360deg) } /**change to a higher value for more seamless loop*/
+}
+
+.icon-wrapper {
+  animation: Rotate 1s linear infinite;
+/*  border: 1px green solid;*/
+}
