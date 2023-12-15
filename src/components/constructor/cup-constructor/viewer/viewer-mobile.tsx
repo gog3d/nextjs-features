@@ -32,16 +32,15 @@ const ViewerMobile: FC = () => {
   const email = useAppSelector((state) => selectEmailAmount(state));
 
   const handleChangeEmail = (e:  React.ChangeEvent<HTMLInputElement>) => {
-//    setEmail(e.target.value);
     dispatch(cupActions.email(e.target.value));
   };
 
   const sendEmail = async (e: React.SyntheticEvent) => {
     e.preventDefault();
+    setSend(true);
     try {
- //     console.log({cupImage64})
-      setSend(true);
-      const res = await fetch(`/api/send-cup-image`, {
+//      const res = await fetch(`/api/send-cup-image`, {
+      const res = await fetch(`http://83.147.246.17:80/api/send-cup-image`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +54,11 @@ const ViewerMobile: FC = () => {
           'backgroundSource': background.source64,
           'cupImage64': cupImage64,
         })
-      })
+      });
+      if (Number(res.status) !== 200) {
+        setSend(false);
+        return;
+      }
     } catch (error) {
       setSend(false);
       return
@@ -91,10 +94,6 @@ const ViewerMobile: FC = () => {
         >
           <BackLinkMobileIcon />
         </button>
-        {/*<button onClick={() => dispatch(cupActions.modal(false))}>
-          <CloseMobileIcon />
-        </button>
-        */}
       </div>
       <div className={styles['page-content']}>
         <nav className={styles['nav-menu']}>

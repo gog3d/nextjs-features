@@ -139,6 +139,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+/*  border: 1px red solid;*/
 }
 
 @keyframes Rotate
@@ -149,7 +150,6 @@
 .icon-wrapper {
   animation: Rotate 1s linear infinite;
 /*  border: 1px green solid;*/
-
 }
 
 

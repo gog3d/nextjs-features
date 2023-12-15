@@ -79,7 +79,7 @@ const initialState: CupState = {
   colors: colors,
   email: '',
   view: 'viewer',
-  color: '#222222',
+  color: '#FFFFFF',
   rounded: false,
   background: {
     source: '',

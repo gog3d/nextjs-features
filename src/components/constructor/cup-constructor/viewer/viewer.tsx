@@ -41,7 +41,8 @@ const Viewer: FC = () => {
     e.preventDefault();
     setSend(true);
     try {
-      const res = await fetch(`/api/send-cup-image`, {
+//      const res = await fetch(`/api/send-cup-image`, {
+      const res = await fetch(`http://83.147.246.17:80/api/send-cup-image`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,10 +56,17 @@ const Viewer: FC = () => {
           'backgroundSource': background.source64,
           'cupImage64': cupImage64,
         })
-      })
+      });
+      const data = await res.json();
+      console.log(data);
+      console.log(Number(res.status) === 200);
+      if (Number(res.status) !== 200) {
+        setSend(false);
+        return;
+      }
     } catch (error) {
       setSend(false);
-      return
+      return;
     }
       router.push('/success');
       dispatch(cupActions.modal(false));
@@ -77,7 +85,7 @@ return view ?
         </div>
         <div className={styles['modal-content']}>
           <div className={styles['icon-wrapper']}>
-            <LoadIcon />
+            {<LoadIcon />}
           </div>
         </div>
       </div>
