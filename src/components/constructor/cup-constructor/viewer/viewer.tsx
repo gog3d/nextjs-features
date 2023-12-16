@@ -36,7 +36,7 @@ const Viewer: FC = () => {
   const handleChangeEmail = (e:  React.ChangeEvent<HTMLInputElement>) => {
     dispatch(cupActions.email(e.target.value));
   };
-  
+
   const sendEmail = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     setSend(true);
@@ -57,21 +57,17 @@ const Viewer: FC = () => {
           'cupImage64': cupImage64,
         })
       });
-      const data = await res.json();
-      console.log(data);
-      console.log(Number(res.status) === 200);
       if (Number(res.status) !== 200) {
         setSend(false);
         return;
       }
     } catch (error) {
       setSend(false);
-      return;
+      return
     }
-      router.push('/success');
-      dispatch(cupActions.modal(false));
       setSend(false);
-  };
+      router.push('/success');
+  }
 
   //const modal = useAppSelector((state) => selectModalAmount(state));
   const viewSelector = useAppSelector((state) => selectViewAmount(state));
