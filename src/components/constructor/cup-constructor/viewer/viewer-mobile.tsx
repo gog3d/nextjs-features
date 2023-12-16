@@ -43,6 +43,7 @@ const ViewerMobile: FC = () => {
       const res = await fetch(`https://83.147.246.17:443/api/send-cup-image`, {
         method: 'POST',
         headers: {
+          'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
