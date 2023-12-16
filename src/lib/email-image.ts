@@ -18,7 +18,7 @@ const smtpOptions = {
   secure: false,
   auth: {
     user: "gog3dservices@gmail.com",
-    pass: "zljdizxyyonnkpee",
+    pass: "dgcxnrskspdxkcws",
   },
 };
 
