@@ -48,6 +48,7 @@ const Viewer: FC = () => {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': 'post',
           'Access-Control-Allow-Origin': 'https://83.147.246.17:443',
+          'Access-Control-Allow-Origin': 'https://localhost:3000',
         },
         body: JSON.stringify({ 
           'email': email, 
