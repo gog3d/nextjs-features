@@ -44,9 +44,7 @@ const ViewerMobile: FC = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'post',
-          'Access-Control-Allow-Origin': 'https://83.147.246.17:443',
-          'Access-Control-Allow-Origin': 'https://localhost:3000',
+          'Access-Control-Allow-Origin': 'no-cors',
         },
         body: JSON.stringify({ 
           'email': email, 
