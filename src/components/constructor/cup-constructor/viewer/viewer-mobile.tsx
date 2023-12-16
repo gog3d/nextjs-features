@@ -42,7 +42,7 @@ const ViewerMobile: FC = () => {
 //      const res = await fetch(`/api/send-cup-image`, {
       const res = await fetch(`https://83.147.246.17:443/api/send-cup-image`, {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
           'Content-Type': 'application/json',
         },
