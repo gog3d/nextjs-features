@@ -45,8 +45,9 @@ const Viewer: FC = () => {
       const res = await fetch(`https://83.147.246.17:443/api/send-cup-image`, {
         method: 'POST',
         headers: {
-          'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'post',
+          'Access-Control-Allow-Origin': 'https://83.147.246.17:443',
         },
         body: JSON.stringify({ 
           'email': email, 
