@@ -40,7 +40,7 @@ const ViewerMobile: FC = () => {
     setSend(true);
     try {
 //      const res = await fetch(`/api/send-cup-image`, {
-      const res = await fetch(`http://83.147.246.17:80/api/send-cup-image`, {
+      const res = await fetch(`https://83.147.246.17:443/api/send-cup-image`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
