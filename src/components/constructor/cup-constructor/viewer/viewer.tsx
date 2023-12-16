@@ -42,8 +42,8 @@ const Viewer: FC = () => {
     setSend(true);
     try {
 //      const res = await fetch(`/api/send-cup-image`, {
-//      const res = await fetch(`https://83.147.246.17:443/api/send-cup-image`, {
-      const res = await fetch(`https://83.147.246.17:3000/api/send-cup-image`, {
+      const res = await fetch(`https://83.147.246.17:443/api/send-cup-image`, {
+//      const res = await fetch(`https://83.147.246.17:3000/api/send-cup-image`, {
 
         method: 'POST',
         mode: 'cors',
