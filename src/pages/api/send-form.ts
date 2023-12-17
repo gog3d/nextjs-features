@@ -26,7 +26,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         <h1>Телефон: ${tel}</h1>
         <h1>Имя: ${name}</h1>
         <h1>Адрес электронной почты: ${email}</h1>
-        <h1>Интересуемые категрии товаров:</h1>
+        <h1>Интересуемые категории товаров:</h1>
         <h2> ${items.join(', ')}</h2>
         <h1>Текст сообщения:</h1>
         <h2>${textArea}</h2>

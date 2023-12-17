@@ -1,7 +1,14 @@
 import { FC, ReactNode } from 'react';
 import styles from './policy-page-content-mobile.module.css';
+import { TContactsTypes } from '@/types/data-types';
 
-const PolicyPageContentMobile = () => {
+import Link from 'next/link';
+
+interface IPolicyPageContentProps {
+  contacts: TContactsTypes | null;
+}
+
+const PolicyPageContentMobile: FC<IPolicyPageContentProps> = ({contacts}) => {
   return (
     <div className={styles['main-page-content']}>
       <div className={styles['title']}>
@@ -21,7 +28,9 @@ const PolicyPageContentMobile = () => {
       </div>
       <div className={styles['text']}>
         1.3. Настоящий документ определяет политику ИП Реут П.А. в области обработки и защиты персональных данных и размещен по адресу  
-        <span className={styles['text-link']}><a href={'https://правильнаяссылка.ru'}> https://правильнаяссылка .ru </a></span>
+          <span className={styles['text']}>
+            <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
+          </span>;
         Также ИП Реут П.А. предоставляет неограниченный доступ к Политике любому лицу, лично обратившемуся к ИП Реут П.А..
       </div>
       <div className={styles['text']}>
@@ -61,8 +70,6 @@ const PolicyPageContentMobile = () => {
           <li>проведения исследований любых категорий.</li>
         </ul>
       </div>
-
-
       <div className={styles['sub-title']}>
           3. Перечень обрабатываемых персональных данных
       </div>
@@ -156,7 +163,6 @@ const PolicyPageContentMobile = () => {
         <div className={styles['text']}>
           5.4. Уничтожение персональных данных.
           ИП Реут П.А. уничтожает персональные данные в следующих случаях:
-
         </div>
         <ul className={styles['list-text']}>
           <li>наличие угрозы безопасности Сервисов;</li>
@@ -211,9 +217,9 @@ const PolicyPageContentMobile = () => {
         <div className={styles['text']}>
           8.1. Все предоставляемые вами персональные данные конфиденциальны по умолчанию. Защита персональных данных, обрабатываемых ИП Реут П.А. обеспечивается реализацией правовых, организационных и технических мер, необходимых и достаточных для обеспечения требований законодательства Российской Федерации в области защиты персональных данных. Однако, мы всегда стараемся максимально защитить ваши данные и применяем большее число мер по защите персональных данных, чем это предусмотрено законодательством. Вот некоторые из реализуемых ИП Реут П.А. мер по защите персональных данных:
         </div>
-        <ul className={styles['list-text']}>
-          <li>8.2.2. отказ от любых способов обработки персональных данных, не соответствующих целям, заранее предопределенным ИП Реут П.А.</li>
-        </ul>
+        <div className={styles['text']}>
+          8.2. отказ от любых способов обработки персональных данных, не соответствующих целям, заранее предопределенным ИП Реут П.А.
+        </div>
       </div>
       <div className={styles['text-block-list']}>
         <div className={styles['text']}>
@@ -222,7 +228,9 @@ const PolicyPageContentMobile = () => {
         <ul className={styles['list-text']}>
           <li>
             8.3.1. назначение лица, ответственного за организацию обработки персональных данных. Вы можете контактировать с таким лицом, используя следующий адрес электронной почты:
-            <span className={styles['text-link']}><a href={'https://правильнаяссылка.ru'}> https://правильнаяссылка .ru </a></span>;
+            <span className={styles['text']}>
+              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
+            </span>;
           </li>
           <li>8.3.2. ограничение состава работников ИП Реут П.А., имеющих доступ к персональным данным, и организацию разрешительной системы доступа к ним;</li>
           <li>8.3.3. периодическая оценка рисков, касающихся процесса обработки персональных данных;</li>
@@ -243,7 +251,7 @@ const PolicyPageContentMobile = () => {
         9.1. Трансграничная передача персональных данных не осуществляется.
       </div>
       <div className={styles['sub-title']}>
-        11. Ограничение действия Политики
+        10. Ограничение действия Политики
       </div>
       <div className={styles['text']}>
         10.1. Вы также обязаны разумно и ответственно подходить к размещению в открытом доступе собственных персональных данных, в том числе на Сервисах в случае оставления отзывов и комментариев.
@@ -252,17 +260,19 @@ const PolicyPageContentMobile = () => {
         10.2. ИП Реут П.А. не несет ответственности за действия третьих лиц, получивших доступ к вашим персональным данным по вашей вине последнего.
       </div>
       <div className={styles['sub-title']}>
-        12. Обращения Субъекта персональных данных
+        11. Обращения Субъекта персональных данных
       </div>
       <div className={styles['text-block-list']}>
         <div className={styles['text']}>
           11.1. Вы вправе направлять ИП Реут П.А. свои запросы, в том числе запросы относительно использования ваших персональных данных:
         </div>
         <ul className={styles['list-text']}>
-          <li className={styles['text-link']}>11.1.1. в письменной форме по  адресу: 188692 г. Кудрово, улица Пражская, дом 13;</li>
+          <li className={styles['text']}>11.1.1. в письменной форме по  адресу: 188692 г. Кудрово, улица Пражская, дом 13;</li>
           <li>
             11.1.2. в форме электронного документа по адресу электронной почты: 
-            <span className={styles['text-link']}><a href={'https://правильнаяссылка.ru'}> https://правильнаяссылка .ru </a></span>;
+            <span className={styles['text']}>
+              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
+            </span>;
           </li>
         </ul>
       </div>
@@ -284,11 +294,13 @@ const PolicyPageContentMobile = () => {
         11.4. Вся корреспонденция, полученная ИП Реут П.А., (обращения в письменной или электронной форме), относится к информации ограниченного доступа и не разглашается без вашего письменного согласия.
       </div>
       <div className={styles['sub-title']}>
-        13. Контактная информация и реквизиты ИП Реут П.А.:
+        12. Контактная информация и реквизиты ИП Реут П.А.:
       </div>
       <div className={styles['text']}>
         ИП Реут Павел Алексеевич ОГРНИП: 322470400087356  адрес: 188692 г. Кудрово, улица Пражская, дом 13 ИНН: 781143783880 
-        <span className={styles['text-link']}> Email: a@правильная ссылка.ru</span>
+          <span className={styles['text']}>
+            <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
+          </span>;
       </div>
     </div>
   );

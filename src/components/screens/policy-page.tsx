@@ -20,14 +20,15 @@ interface IPolicyPageProps {
 }
 
 const PolicyPage: FC<IPolicyPageProps> = ({catalog, contacts}) => {
+
   const { asPath } = useRouter();
   return (
     <Page>
       <HeaderMain />
       <ContainerPage>
         <PageContentWrapperPolicy>
-          <BreadCrumbsMobile routerPath={asPath}/>
-          <PolicyPageContent />
+          <BreadCrumbsMobile routerPath={asPath} />
+          <PolicyPageContent contacts={contacts} />
         </PageContentWrapperPolicy>
       </ContainerPage>
       <FooterMain contacts={contacts}/>

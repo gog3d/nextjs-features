@@ -16,7 +16,7 @@ const PolicyPageMobile: FC<IPolicyPageProps> = ({catalog, contacts}) => {
   return (
     <PageMobile>
       <HeaderCatalogItemMobile title={''}/>
-      <PolicyPageContentMobile />
+      <PolicyPageContentMobile contacts={contacts}/>
       <FooterMainMobile contacts={contacts} />
     </PageMobile>
   );

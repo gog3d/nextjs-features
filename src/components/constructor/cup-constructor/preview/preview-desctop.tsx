@@ -31,7 +31,7 @@ export const PreviewDesctop: FC<IPreviewDesctopProps> = ({textTop, textBottom, i
         />
       </div>
       <p className={styles['preview_text']}>{`Выберите файл изображения дизайна ${textBottom}`}</p>
-      <p className={styles['preview_text']}>Допустимые форматы: jpg, gif, png, ai, cdr, pdf.</p>
+      <p className={styles['preview_text']}>Допустимые форматы: jpg, gif, png, ai, cdr.</p>
       <p className={styles['preview_text']}>Максимальный размер: 10 МБ.</p>
       <div className={styles['preview__button-container']}>
         <button 

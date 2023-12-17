@@ -140,7 +140,7 @@ const MainPageContent: FC<IMainPageContentProps> = ({catalog}) => {
                  <span className={styles['card-10__color']}>Ес</span>ли после прочитанного вам ничего не понятно, но очень интересно
               </div>
               <div className={styles['card-10__text-2']} style={{color: 'red'}}>
-                (гипер ссылка на вкладку как мы работаем в подробностях)
+                {/*(гипер ссылка на вкладку как мы работаем в подробностях)*/}
               </div>
               <ButtonLink link={'/catalog'}>
                 <div className={styles['card-10__button-connect']}>
