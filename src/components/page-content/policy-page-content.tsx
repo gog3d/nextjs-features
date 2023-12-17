@@ -234,8 +234,8 @@ const PolicyPageContent: FC<IPolicyPageContentProps> = ({contacts}) => {
           <li>
             8.3.1. назначение лица, ответственного за организацию обработки персональных данных. Вы можете контактировать с таким лицом, используя следующий адрес электронной почты:
             <span className={styles['text']}>
-              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
-            </span>;
+              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
+            </span>
           </li>
           <li>8.3.2. ограничение состава работников ИП Реут П.А., имеющих доступ к персональным данным, и организацию разрешительной системы доступа к ним;</li>
           <li>8.3.3. периодическая оценка рисков, касающихся процесса обработки персональных данных;</li>
@@ -276,8 +276,8 @@ const PolicyPageContent: FC<IPolicyPageContentProps> = ({contacts}) => {
           <li>
             11.1.2. в форме электронного документа по адресу электронной почты: 
             <span className={styles['text']}>
-              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
-            </span>;
+              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
+            </span>
           </li>
         </ul>
       </div>
@@ -304,8 +304,8 @@ const PolicyPageContent: FC<IPolicyPageContentProps> = ({contacts}) => {
       <div className={styles['text']}>
         ИП Реут Павел Алексеевич ОГРНИП: 322470400087356  адрес: 188692 г. Кудрово, улица Пражская, дом 13 ИНН: 781143783880 
         <span className={styles['text']}>
-          <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
-        </span>;
+          <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
+        </span>
       </div>
     </div>
   );

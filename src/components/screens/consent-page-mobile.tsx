@@ -17,8 +17,8 @@ interface IConsentPageProps {
 const ConsentPageMobile: FC<IConsentPageProps> = ({catalog, contacts}) => {
   return (
     <PageMobile>
-      <HeaderCatalogItemMobile title={''}/>
-      <ConsentPageContentMobile />
+      <HeaderCatalogItemMobile title={''} />
+      <ConsentPageContentMobile contacts={contacts} />
       <FooterMainMobile contacts={contacts} />
     </PageMobile>
   );

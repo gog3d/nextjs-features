@@ -1,8 +1,9 @@
 import { FC, ReactNode } from 'react';
 import styles from './policy-page-content-mobile.module.css';
-import { TContactsTypes } from '@/types/data-types';
 
 import Link from 'next/link';
+
+import { TContactsTypes } from '@/types/data-types';
 
 interface IPolicyPageContentProps {
   contacts: TContactsTypes | null;
@@ -29,8 +30,8 @@ const PolicyPageContentMobile: FC<IPolicyPageContentProps> = ({contacts}) => {
       <div className={styles['text']}>
         1.3. Настоящий документ определяет политику ИП Реут П.А. в области обработки и защиты персональных данных и размещен по адресу  
           <span className={styles['text']}>
-            <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
-          </span>;
+            <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
+          </span>
         Также ИП Реут П.А. предоставляет неограниченный доступ к Политике любому лицу, лично обратившемуся к ИП Реут П.А..
       </div>
       <div className={styles['text']}>
@@ -229,8 +230,8 @@ const PolicyPageContentMobile: FC<IPolicyPageContentProps> = ({contacts}) => {
           <li>
             8.3.1. назначение лица, ответственного за организацию обработки персональных данных. Вы можете контактировать с таким лицом, используя следующий адрес электронной почты:
             <span className={styles['text']}>
-              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
-            </span>;
+              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
+            </span>
           </li>
           <li>8.3.2. ограничение состава работников ИП Реут П.А., имеющих доступ к персональным данным, и организацию разрешительной системы доступа к ним;</li>
           <li>8.3.3. периодическая оценка рисков, касающихся процесса обработки персональных данных;</li>
@@ -271,8 +272,8 @@ const PolicyPageContentMobile: FC<IPolicyPageContentProps> = ({contacts}) => {
           <li>
             11.1.2. в форме электронного документа по адресу электронной почты: 
             <span className={styles['text']}>
-              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
-            </span>;
+              <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
+            </span>
           </li>
         </ul>
       </div>
@@ -299,8 +300,8 @@ const PolicyPageContentMobile: FC<IPolicyPageContentProps> = ({contacts}) => {
       <div className={styles['text']}>
         ИП Реут Павел Алексеевич ОГРНИП: 322470400087356  адрес: 188692 г. Кудрово, улица Пражская, дом 13 ИНН: 781143783880 
           <span className={styles['text']}>
-            <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}`}</Link>
-          </span>;
+            <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
+          </span>
       </div>
     </div>
   );

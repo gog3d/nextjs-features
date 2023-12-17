@@ -1,7 +1,15 @@
 import { FC, ReactNode } from 'react';
 import styles from './policy-page-content-mobile.module.css';
+import Link from 'next/link';
 
-const PolicyPageContentMobile = () => {
+import { TContactsTypes } from '@/types/data-types';
+
+interface IConsentPageContentProps {
+  contacts: TContactsTypes | null;
+}
+
+const ConsentPageMobileContent: FC<IConsentPageContentProps> = ({contacts}) => {
+
   return (
     <div className={styles['main-page-content']}>
       <div className={styles['title']}>
@@ -10,9 +18,9 @@ const PolicyPageContentMobile = () => {
       <div className={styles['text']}>
         Заполняя веб-форму и отправляя указанные в ней персональные данные, я даю свое согласие ИП Реут Павел Алексеевич 
         (ОГРНИП 322470400087356, адрес: 188692 г. Кудрово, улица Пражская, дом 13, далее ИП Реут П. А. ) на обработку моих 
-        персональных данных в соответствии с политикой конфиденциальности 
-        <span className={styles['text-link']}>
-          <a href={'https://правильнаяссылка.ru'}> (https://ссылка на страницу) </a>
+        персональных данных в соответствии с 
+        <span className={styles['text']}>
+          <Link href={'/policy'}>{' политикой конфиденциальности '}</Link>
         </span>
          с использованием средств автоматизации или без использования таких средств любыми способами, включая, но не ограничиваясь, 
          сбор, запись, систематизацию, накопление, хранение, уточнение, обновление, изменение, электронное копирование, извлечение, использование, 
@@ -37,10 +45,9 @@ const PolicyPageContentMobile = () => {
         <ul className={styles['list-text']}>
           <li>надлежащего оказания услуг, принятия и обработки заказов на оказание таких услуг;</li>
           <li>регистрации на Сервисах, идентификации пользователя Сервиса, восстановления пароля от Сервисов, а также в любых других случаях, связанных с такими действиями;</li>
-          <li>рассылки сообщений, связанных с предоставлением доступа к сайту 
-            <span className={styles['text-link']}>
-              <a href={'https://правильнаяссылка.ru'}> https://правильнаяссылка .ru
-              </a>
+          <li>рассылки сообщений, связанных с предоставлением доступа  
+            <span className={styles['text']}>
+              <Link href={'/policy'}>{' к сайту;'}</Link>
             </span>
           </li>
         </ul>
@@ -71,4 +78,4 @@ const PolicyPageContentMobile = () => {
   );
 };
 
-export default PolicyPageContentMobile;
+export default ConsentPageMobileContent;

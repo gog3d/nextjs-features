@@ -26,11 +26,11 @@ const ConsentPage: FC<IConsentPageProps> = ({catalog, contacts}) => {
       <HeaderMain />
       <ContainerPage>
         <PageContentWrapperPolicy>
-          <BreadCrumbsMobile routerPath={asPath}/>
-          <ConsentPageContent />
+          <BreadCrumbsMobile routerPath={asPath} />
+          <ConsentPageContent contacts={contacts} />
         </PageContentWrapperPolicy>
       </ContainerPage>
-      <FooterMain contacts={contacts}/>
+      <FooterMain contacts={contacts} />
     </Page>
   );
 };
