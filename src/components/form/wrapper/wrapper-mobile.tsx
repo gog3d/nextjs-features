@@ -25,10 +25,11 @@ export const WrapperMobile: FC<IWrapperMobileProps> = ({children}) => {
 
   const onSubmit = useCallback(async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    setSend(true);
+
     if (form.confirm) {
       try {
       //  console.log(form);
+        setSend(true);
         const res = await fetch(`api/send-form`, {
           method: 'POST',
           headers: {
@@ -36,6 +37,10 @@ export const WrapperMobile: FC<IWrapperMobileProps> = ({children}) => {
           },
           body: JSON.stringify({...form })
         })
+        if (Number(res.status) !== 200) {
+          setSend(false);
+          return;
+        }
       } catch (error) {
         setSend(false);
         return;

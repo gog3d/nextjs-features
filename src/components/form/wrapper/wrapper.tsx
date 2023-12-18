@@ -25,17 +25,21 @@ export const Wrapper: FC<IWrapperProps> = ({children}) => {
 
   const onSubmit = useCallback(async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    setSend(true);
+  
     if (form.confirm) {
       try {
-      //  console.log(form);
-        const res = await fetch(`api/send-form`, {
+      setSend(true);  
+      const res = await fetch(`api/send-form`, {
           method: 'POST',
           headers: {
            'Content-Type': 'application/json',
           },
           body: JSON.stringify({...form })
-        })
+        });
+        if (Number(res.status) !== 200) {
+          setSend(false);
+          return;
+        }
       } catch (error) {
         setSend(false);
         return;
