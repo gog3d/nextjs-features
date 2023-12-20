@@ -24,10 +24,16 @@ const Tel: FC = () => {
         className={styles['input']}
         type={'number'}
         placeholder={'Телефон'}
+        pattern={'[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}'}
         onChange={handler}
       />
+      <span className={styles['form__error']}>
+        {'Это поле должно содержать телефон в формате +71234567890'}
+      </span>
     </div>
   );
 }
 
 export default Tel;
+//        pattern={'[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}'}
+//        {'Это поле должно содержать телефон в формате +7 (123) 456-78-90'}

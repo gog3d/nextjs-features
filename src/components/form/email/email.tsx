@@ -26,6 +26,9 @@ const Email: FC = () => {
         placeholder={'Email'}
         onChange={handler}
       />
+      <div className={styles['form__error']}>
+        {'Это поле должно содержать E-Mail в формате example@site.com'}
+      </div>
     </div>
   );
 }
@@ -34,3 +37,4 @@ export default Email;
 
 //    pattern={"[^@\s]+@[^@\s]+\.[^@\s]+"}
 //    size ={30}
+

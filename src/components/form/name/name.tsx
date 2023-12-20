@@ -22,6 +22,7 @@ const Name: FC = () => {
       <input 
         value={value}
         className={styles['input']}
+        required = {true} 
         type={'text'}
         placeholder={'Имя'}
         onChange={handler}

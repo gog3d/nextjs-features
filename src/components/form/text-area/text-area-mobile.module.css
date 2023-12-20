@@ -45,3 +45,9 @@
   line-height: 22px; /* 157.143% */
 }
 
+.textarea:focus {
+  border-radius: 8px 8px 0px 0px;
+  border: 1px solid #C5E1FF;
+  border-bottom: 2px solid #C5E1FF;
+  background: #FDFDFD; 
+}

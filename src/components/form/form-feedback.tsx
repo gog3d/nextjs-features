@@ -16,21 +16,21 @@ const FormFeedback: FC<IFormFeedbackProps> = ({catalog}) => {
     <div className={styles['form-wrapper']}>
       <p className={styles['form-title']}>Связаться с нами</p>
       <Form catalog={catalog}>
-      <div className={styles['form-container']}>
-        <Form.Wrapper>
-          <Form.CompanyName />
-          <Form.Tel />
-          <div className={styles['name-email-wrapper']}>
+        <div className={styles['form-container']}>
+          <Form.Wrapper>
+            <Form.CompanyName />
+            <Form.Tel />
+            <div className={styles['name-email-wrapper']}>
               <Form.Name />
               <Form.Email />
-          </div>
-          <Form.CheckboxItems catalog={catalog} />
-          <div className={styles['text-area']}>
-            <Form.TextArea />
-          </div>
-          <Form.Confirm />
-        </Form.Wrapper>
-      </div>
+            </div>
+            <Form.CheckboxItems catalog={catalog} />
+            <div className={styles['text-area']}>
+              <Form.TextArea />
+            </div>
+            <Form.Confirm />
+          </Form.Wrapper>
+        </div>
       </Form>
     </div>
   );
