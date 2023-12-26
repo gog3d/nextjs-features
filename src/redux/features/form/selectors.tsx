@@ -10,3 +10,4 @@ export const selectCheckboxItemsAmount = (state: RootState) => selectFormModule(
 export const selectTextAreaAmount = (state: RootState) => selectFormModule(state).textArea;
 export const selectConfirmAmount = (state: RootState) => selectFormModule(state).confirm;
 export const selectSuccessAmount = (state: RootState) => selectFormModule(state).success;
+export const selectSubmitAmount = (state: RootState) => selectFormModule(state).submit;

@@ -10,6 +10,7 @@ interface FormState {
     textArea: string;
     confirm: Boolean;
     success: Boolean;
+    submit: Boolean;
 }
 
 const resetForm =   {
@@ -21,6 +22,7 @@ const resetForm =   {
   textArea: '',
   confirm: false,
   success: false,
+  submit: false,
 };
 
 const initialState: FormState = {
@@ -32,6 +34,7 @@ const initialState: FormState = {
   textArea: '',
   confirm: false,
   success: false,
+  submit: false,
 };
 
 
@@ -64,8 +67,13 @@ const formSlice = createSlice({
     success:  (state, action: PayloadAction<Boolean>) => {
       state.success = action.payload;
     },
-    reset:  (state) => {
-      state = resetForm;
+    submit:  (state, action: PayloadAction<Boolean>) => {
+      state.submit = action.payload;
+    },
+    reset:  (state, action: PayloadAction<string>) => {
+      console.log({state});
+      state = {...state, email: '', tel: ''};
+      console.log({state});
     },
   }
 });

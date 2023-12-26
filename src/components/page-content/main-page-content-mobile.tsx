@@ -1,9 +1,10 @@
 import { FC, ReactNode } from 'react';
 import styles from './main-page-content-mobile.module.css';
 
-import ButtonMobile from '../button/button-mobile';
-//import ButtonLinkMobile from '../button/button-link-mobile';
-import ButtonConnectMobile from '../button/button-connect-mobile';
+import ButtonMobile from '@/components/button/button-mobile';
+import ButtonLink from '@/components/button/button-link';
+
+import ButtonConnectMobile from '@/components/button/button-connect-mobile';
 
 const MainPageContentMobile = () => {
 
@@ -87,6 +88,11 @@ const MainPageContentMobile = () => {
         <div>
          <span className={styles['card-10__color']}>Ес</span>ли после прочитанного вам ничего не понятно, но очень интересно
         </div>
+        <ButtonLink link={'/catalog'}>
+          <div className={styles['card-10__button-connect']}>
+            {'Попробовать конструктор'}
+          </div>
+        </ButtonLink>
         <div>
           {/*(гипер ссылка на вкладку как мы работаем в подробностях)*/}
         </div>

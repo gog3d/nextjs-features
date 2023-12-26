@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useMemo } from 'react';
 import styles from './email.module.css';
 
 import { selectEmailAmount} from '@/redux/features/form/selectors';
@@ -9,6 +9,8 @@ import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 const Email: FC = () => {
 
   const value = useAppSelector((state) => selectEmailAmount(state)); 
+//  console.log({value});
+//  }, [state]);
   
   const dispatch = useAppDispatch();
 

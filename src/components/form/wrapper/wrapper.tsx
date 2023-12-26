@@ -3,7 +3,7 @@ import { FC, ReactNode, useState, useCallback } from 'react';
 import styles from './wrapper.module.css';
 import { useRouter } from 'next/router';
 
-import { selectFormModule, selectSuccessAmount } from '@/redux/features/form/selectors';
+import { selectFormModule, selectSuccessAmount, selectSubmitAmount } from '@/redux/features/form/selectors';
 import { formActions } from '@/redux/features/form';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
@@ -21,11 +21,13 @@ export const Wrapper: FC<IWrapperProps> = ({children}) => {
 
   const router = useRouter();
   const form = useAppSelector((state) => selectFormModule(state));
-//  const success = useAppSelector((state) => selectSuccessAmount(state));
+  const submit = useAppSelector((state) => selectSubmitAmount(state));
+
+  const dispatch = useAppDispatch();
 
   const onSubmit = useCallback(async (e: React.SyntheticEvent) => {
     e.preventDefault();
-  
+    dispatch(formActions.submit(true));
     if (form.confirm) {
       try {
       setSend(true);  
@@ -47,10 +49,12 @@ export const Wrapper: FC<IWrapperProps> = ({children}) => {
       //setSuccess(true);
       router.push('/success');
       setSend(false);
+      dispatch(formActions.reset('ddd'));
+//      console.log({form});
     }
   }, [form])
 
-//  const dispatch = useAppDispatch();
+
 
   return (
     <form onSubmit={onSubmit} className={styles['form-wrapper']}>

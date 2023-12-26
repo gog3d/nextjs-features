@@ -29,7 +29,7 @@ const PolicyPageContentMobile: FC<IPolicyPageContentProps> = ({contacts}) => {
       </div>
       <div className={styles['text']}>
         1.3. Настоящий документ определяет политику ИП Реут П.А. в области обработки и защиты персональных данных и размещен по адресу  
-          <span className={styles['text']}>
+          <span className={styles['text-link']}>
             <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
           </span>
         Также ИП Реут П.А. предоставляет неограниченный доступ к Политике любому лицу, лично обратившемуся к ИП Реут П.А..
@@ -229,7 +229,7 @@ const PolicyPageContentMobile: FC<IPolicyPageContentProps> = ({contacts}) => {
         <ul className={styles['list-text']}>
           <li>
             8.3.1. назначение лица, ответственного за организацию обработки персональных данных. Вы можете контактировать с таким лицом, используя следующий адрес электронной почты:
-            <span className={styles['text']}>
+            <span className={styles['text-link']}>
               <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
             </span>
           </li>
@@ -271,7 +271,7 @@ const PolicyPageContentMobile: FC<IPolicyPageContentProps> = ({contacts}) => {
           <li className={styles['text']}>11.1.1. в письменной форме по  адресу: 188692 г. Кудрово, улица Пражская, дом 13;</li>
           <li>
             11.1.2. в форме электронного документа по адресу электронной почты: 
-            <span className={styles['text']}>
+            <span className={styles['text-link']}>
               <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
             </span>
           </li>
@@ -299,7 +299,7 @@ const PolicyPageContentMobile: FC<IPolicyPageContentProps> = ({contacts}) => {
       </div>
       <div className={styles['text']}>
         ИП Реут Павел Алексеевич ОГРНИП: 322470400087356  адрес: 188692 г. Кудрово, улица Пражская, дом 13 ИНН: 781143783880 
-          <span className={styles['text']}>
+          <span className={styles['text-link']}>
             <Link href={`mailto:${contacts?.mail}`}>{` ${contacts?.mail}.`}</Link>
           </span>
       </div>
