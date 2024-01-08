@@ -17,7 +17,7 @@ interface IContactsProps {
   contacts: TContactsTypes | null;
 }
 
-const FooterMainMobile: FC <IContactsProps> = ({ contacts }) => {
+const FooterMain: FC <IContactsProps> = ({ contacts }) => {
 
   return (
     <footer className={styles['footer']}>
@@ -68,4 +68,4 @@ const FooterMainMobile: FC <IContactsProps> = ({ contacts }) => {
   );
 };
 
-export default FooterMainMobile;
+export default FooterMain;

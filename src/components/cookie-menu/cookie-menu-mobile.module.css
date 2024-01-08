@@ -1,0 +1,49 @@
+.menu {
+  z-index: 20;
+  position: sticky;
+  bottom: 0;
+  background: #B1E37E;
+/*  height: 128px*/
+}
+
+.menu-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: rows;
+  justify-content: sapce-between;
+  align-items: center;
+  gap: 19px;
+  padding: 16px 16px;
+/*  max-width: 1380px;*/
+}
+
+.menu-text {
+  color: #000000;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.menu-button {
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 184.615% */
+
+  border-radius: 4px;
+  opacity: 0.8;
+  background: #2B1BE3;
+
+  padding: 12px 23px;
+  margin: 0px;
+}
+
