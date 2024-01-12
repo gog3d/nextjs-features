@@ -1,18 +1,29 @@
-import { FC, ReactNode, useMemo } from 'react';
+'use client';
+import { FC, ReactNode, useState, useEffect } from 'react';
 import styles from './email.module.css';
 
-import { selectEmailAmount} from '@/redux/features/form/selectors';
+import { selectEmailAmount, selectSubmitAmount} from '@/redux/features/form/selectors';
 import { formActions } from '@/redux/features/form';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 
 const Email: FC = () => {
 
+  const [valid, setValid] = useState(true);
   const value = useAppSelector((state) => selectEmailAmount(state)); 
-//  console.log({value});
-//  }, [state]);
-  
+  const submit = useAppSelector((state) => selectSubmitAmount(state));
+
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+//    console.log({value, submit});
+    if (submit && value === '') {
+      setValid(false);
+    } else {
+      setValid(true);
+    };
+  }, [value, submit]);
+
 
   const handler = (e:  React.ChangeEvent<HTMLInputElement>) => {
     dispatch(formActions.email(e.target.value));
@@ -22,9 +33,9 @@ const Email: FC = () => {
     <div  className={styles['input-wrapper']}>
       <input 
         value={value}
-        className={styles['input']}
+        className={valid ? styles['input'] : `${styles['input']} ${styles['input_invalid']}`}
         type={'email'}
-        required = {true} 
+        required = {false} 
         placeholder={'Email'}
         onChange={handler}
       />

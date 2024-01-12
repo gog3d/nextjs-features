@@ -210,6 +210,7 @@ const cupSlice = createSlice({
     cupImage64:  (state, action: PayloadAction<string>) => {
       state.cup.cupImage64 = action.payload;
     },
+    reset: () => initialState,
   }
 });
 

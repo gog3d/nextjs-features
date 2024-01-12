@@ -47,7 +47,6 @@
 }
 
 
-
 .checkbox {
   display: flex;
   gap: 16px;
@@ -60,37 +59,91 @@
 .checkbox__input {
   position: absolute;
   clip: rect(0, 0, 0, 0);
+
 }
 
 .checkbox__state {
   position: relative;
+/*  border: 1px solid red;*/
 }
 
 .checkbox__control {
-  height: 16px;
-  width: 16px;
-  background: #F3F3F3;
-/*  border-radius: 50%;*/
+  height: 18px;
+  width: 18px;
+
+/*  background: #F3F3F3;*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.icon-false {
+  position: absolute;
+}
+
+.icon-focus {
+  display: none;
+  position: absolute;
+
+}
+
+.icon-true_shape {
+  display: none;
+  position: absolute;
+
+}
+
+.icon-true_tick {
+  display: none;
+  position: absolute;
+
+}
+
+.checkbox__input:focus ~ .checkbox__state .icon-focus {
+  display: inline-block;
+}
+
+.checkbox__input:focus ~ .checkbox__state .icon-false {
+  display: none;
+}
+
+.checkbox__input:checked ~ .checkbox__state .icon-true_shape {
+  display: inline-block;
+}
+
+.checkbox__input:checked ~ .checkbox__state .icon-true_tick {
+  display: inline-block;
+}
+
+
+.checkbox__input:checked ~ .checkbox__state .icon-false {
+  display: none;
+}
+
+.checkbox__input:checked ~ .checkbox__state .icon-focus {
+  display: none;
+}
+
+
+
+
+/*
 .checkbox__icon {
   display: none;
-/*  height: 8px;
-  width: 8px;
-  background: #222222;
-  border-radius: 50%;*/
 }
 .checkbox__title {
 }
 
+.checkbox__input:focus ~ .checkbox__control {
+
+}
+
 .checkbox__input:checked ~ .checkbox__state .checkbox__control {
-/*  border: 4px solid #FFF500;*/
+
 }
 
 .checkbox__input:checked ~ .checkbox__state .checkbox__icon {
   display: inline-block;
 }
 
+*/

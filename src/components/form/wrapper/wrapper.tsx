@@ -21,17 +21,18 @@ export const Wrapper: FC<IWrapperProps> = ({children}) => {
 
   const router = useRouter();
   const form = useAppSelector((state) => selectFormModule(state));
-  const submit = useAppSelector((state) => selectSubmitAmount(state));
+//  const submit = useAppSelector((state) => selectSubmitAmount(state));
 
   const dispatch = useAppDispatch();
 
   const onSubmit = useCallback(async (e: React.SyntheticEvent) => {
     e.preventDefault();
     dispatch(formActions.submit(true));
-    if (form.confirm) {
+//    console.log({form});
+    if (form.confirm && form.name && form.email) {
       try {
-      setSend(true);  
-      const res = await fetch(`api/send-form`, {
+        setSend(true);  
+        const res = await fetch(`api/send-form`, {
           method: 'POST',
           headers: {
            'Content-Type': 'application/json',
@@ -49,7 +50,7 @@ export const Wrapper: FC<IWrapperProps> = ({children}) => {
       //setSuccess(true);
       router.push('/success');
       setSend(false);
-      dispatch(formActions.reset('ddd'));
+      dispatch(formActions.reset());
 //      console.log({form});
     }
   }, [form])

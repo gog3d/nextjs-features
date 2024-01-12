@@ -15,15 +15,15 @@ const FormFeedbackMobile: FC<IFormFeedbackProps> = ({catalog}) => {
   return (
     <Form catalog={catalog}>
       <Form.WrapperMobile>
-      <Form.CompanyName />
-      <Form.Tel />
-      <Form.Name />
-      <Form.Email />
-      <Form.CheckboxItems catalog={catalog} />
-      <div className={styles['text-area']}>
-        <Form.TextAreaMobile />
-      </div>
-      <Form.ConfirmMobile />
+        <Form.CompanyName />
+        <Form.Tel />
+        <Form.Name />
+        <Form.Email />
+        <Form.CheckboxItems catalog={catalog} />
+        <div className={styles['text-area']}>
+          <Form.TextAreaMobile />
+        </div>
+        <Form.ConfirmMobile />
       </Form.WrapperMobile>
     </Form>
     );

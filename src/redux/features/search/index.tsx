@@ -26,9 +26,11 @@ const searchSlice = createSlice({
     result: (state, action: PayloadAction<{link: string, value: string}>) => {
       state.result = [...state.result, action.payload];
     },
+
     resetResult: (state) => {
       state.result = [{link: '', value: ''}];
     },
+//    resetResult: () => initialState,
   }
 });
 

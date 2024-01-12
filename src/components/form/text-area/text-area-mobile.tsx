@@ -1,3 +1,4 @@
+'use client';
 import { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import styles from './text-area-mobile.module.css';
 

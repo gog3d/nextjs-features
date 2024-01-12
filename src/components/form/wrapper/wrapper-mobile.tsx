@@ -20,15 +20,13 @@ export const WrapperMobile: FC<IWrapperMobileProps> = ({children}) => {
 
   const router = useRouter();
   const form = useAppSelector((state) => selectFormModule(state));
-  const success = useAppSelector((state) => selectSuccessAmount(state));
-
+//  const submit = useAppSelector((state) => selectSubmitAmount(state));
 
   const onSubmit = useCallback(async (e: React.SyntheticEvent) => {
     e.preventDefault();
-
-    if (form.confirm) {
+    dispatch(formActions.submit(true));
+    if (form.confirm && form.name && form.email) {
       try {
-      //  console.log(form);
         setSend(true);
         const res = await fetch(`api/send-form`, {
           method: 'POST',
@@ -45,7 +43,6 @@ export const WrapperMobile: FC<IWrapperMobileProps> = ({children}) => {
         setSend(false);
         return;
       }
-      //setSuccess(true);
       router.push('/success');
       setSend(false);
     }

@@ -20,9 +20,7 @@ const cookieSlice = createSlice({
     cookie: (state, action: PayloadAction<boolean>) => {
       state.cookie = action.payload;
     },
-    resetResult: (state) => {
-      state.cookie = true;
-    },
+    reset: () => initialState,
   }
 });
 

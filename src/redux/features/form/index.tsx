@@ -37,8 +37,6 @@ const initialState: FormState = {
   submit: false,
 };
 
-
-
 const formSlice = createSlice({
   name: 'form',
   initialState,
@@ -70,11 +68,7 @@ const formSlice = createSlice({
     submit:  (state, action: PayloadAction<Boolean>) => {
       state.submit = action.payload;
     },
-    reset:  (state, action: PayloadAction<string>) => {
-      console.log({state});
-      state = {...state, email: '', tel: ''};
-      console.log({state});
-    },
+    reset:  () => initialState,
   }
 });
 
