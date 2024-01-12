@@ -18,9 +18,22 @@ const CookieMenu: FC<ICookieMenuProps> = ({children}) => {
 const CookieMenuMobile = () => {
   const cookie = useAppSelector((state) => selectCookieAmount(state));
   const dispatch = useAppDispatch();
-//  console.log(cookie);
+
+  useEffect(() => {
+    const perfavoreData = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("perfavore"))
+      ?.split("=")[1];
+
+    if (perfavoreData) {
+      dispatch(cookieActions.cookie(false));
+    }
+  }, []);
+
+  const maxAge = 300;
 
   const submitCookie = () => {
+    document.cookie = `perfavore=isFirstViewCookiePolicy; max-age=${maxAge}; SameSite=None; Secure`;
     dispatch(cookieActions.cookie(false));
   };
 
