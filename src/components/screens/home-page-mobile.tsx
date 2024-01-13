@@ -14,6 +14,7 @@ import MainPageContentMobile from '../page-content/main-page-content-mobile';
 import { TDataTypes, TCatalogItemsTypes, TContactsTypes } from '@/types/data-types';
 
 import CookieMenuMobile from '@/components/cookie-menu/cookie-menu-mobile';
+import CookieMenu from '@/components/cookie-menu/cookie-menu';
 import CookieMenuProvider from '@/components/cookie-menu/cookie-menu-provider';
 
 

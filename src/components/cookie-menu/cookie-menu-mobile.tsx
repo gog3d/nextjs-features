@@ -3,20 +3,15 @@ import { FC, ReactNode, useState, useEffect, useCallback } from 'react';
 import styles from './cookie-menu-mobile.module.css';
 
 import ContainerPage from '@/components/container/container-page';
+import AttentionIcon from '@/components/icons/attention-icon';
+
 import { selectCookieAmount } from '@/redux/features/cookie/selectors';
 import { cookieActions } from '@/redux/features/cookie';
 import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
-/*
-interface ICookieMenuProps {
-  children: ReactNode;
-};
-
-const CookieMenu: FC<ICookieMenuProps> = ({children}) => {
-*/
-
 const CookieMenuMobile = () => {
   const cookie = useAppSelector((state) => selectCookieAmount(state));
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -24,13 +19,12 @@ const CookieMenuMobile = () => {
       .split("; ")
       .find((row) => row.startsWith("perfavore"))
       ?.split("=")[1];
-
     if (perfavoreData) {
       dispatch(cookieActions.cookie(false));
     }
   }, []);
 
-  const maxAge = 300;
+  const maxAge = 1800;
 
   const submitCookie = () => {
     document.cookie = `perfavore=isFirstViewCookiePolicy; max-age=${maxAge}; SameSite=None; Secure`;

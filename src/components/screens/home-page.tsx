@@ -29,4 +29,11 @@ const HomePage: FC<IHomePageProps> = ({catalog, contacts}) => {
 };
 
 export default HomePage;
+/*
+import CookieMenu from '@/components/cookie-menu/cookie-menu';
+import CookieMenuProvider from '@/components/cookie-menu/cookie-menu-provider';
 
+      <CookieMenuProvider>
+        <CookieMenu />
+      </CookieMenuProvider>
+*/

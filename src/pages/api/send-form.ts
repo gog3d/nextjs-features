@@ -5,12 +5,11 @@ import { sendEmail } from "@/lib/email";
 
 export const config = {
   api: {
-      bodyParser: {
-          sizeLimit: '5mb' // Set desired value here
-      }
+    bodyParser: {
+      sizeLimit: '5mb' // Set desired value here
+    }
   }
 }
-
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { companyName, tel, name, email, checkboxItems, textArea } = req.body;
@@ -18,7 +17,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await sendEmail({
  //     to: "gluhovog3d@gmail.com",
-      to: `${email}`,
+      to: [`${email}`, "gluhovog3d@gmail.com"],
       subject: "Perfavore",
       html: `
       <div>

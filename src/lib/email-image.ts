@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 type EmailPayload = {
-  to: string
+  to: Array<string>
   subject: string
   html: string
   attachments: Array<{
