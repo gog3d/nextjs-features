@@ -5,14 +5,16 @@ import styles from './cookie-menu-mobile.module.css';
 import ContainerPage from '@/components/container/container-page';
 import AttentionIcon from '@/components/icons/attention-icon';
 
-import { selectCookieAmount } from '@/redux/features/cookie/selectors';
-import { cookieActions } from '@/redux/features/cookie';
-import { useAppSelector, useAppDispatch } from '@/redux/hooks';
+//import { selectCookieAmount } from '@/redux/features/cookie/selectors';
+//import { cookieActions } from '@/redux/features/cookie';
+//import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 
 const CookieMenuMobile = () => {
-  const cookie = useAppSelector((state) => selectCookieAmount(state));
+  const [cookie, setCookie] = useState(true);
 
-  const dispatch = useAppDispatch();
+//  const cookie = useAppSelector((state) => selectCookieAmount(state));
+
+//  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const perfavoreData = document.cookie
@@ -20,7 +22,8 @@ const CookieMenuMobile = () => {
       .find((row) => row.startsWith("perfavore"))
       ?.split("=")[1];
     if (perfavoreData) {
-      dispatch(cookieActions.cookie(false));
+//      dispatch(cookieActions.cookie(false));
+      setCookie(false);
     }
   }, []);
 
@@ -28,7 +31,8 @@ const CookieMenuMobile = () => {
 
   const submitCookie = () => {
     document.cookie = `perfavore=isFirstViewCookiePolicy; max-age=${maxAge}; SameSite=None; Secure`;
-    dispatch(cookieActions.cookie(false));
+//    dispatch(cookieActions.cookie(false));
+      setCookie(false);
   };
 
   return cookie ? 
