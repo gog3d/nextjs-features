@@ -11,9 +11,7 @@ export const config = {
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email, color, logo, logoSource, background,  backgroundSource, cupImage64} = req.body;
-
   //console.log({cupImage64, logo});
-  
   try {
     await sendEmailImage({
  //     to: "gluhovog3d@gmail.com",

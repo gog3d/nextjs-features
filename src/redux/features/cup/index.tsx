@@ -33,6 +33,7 @@ interface IImage {
     rotation: number;
     position: Point;
     area:  Area;
+
 };
 
 interface CupState {
@@ -51,6 +52,7 @@ interface CupState {
     background: string;
     model: string;
   };
+  submit: Boolean;
 }
 
 const resetImage = {
@@ -127,7 +129,8 @@ const initialState: CupState = {
     logo: '',
     background: '',
     model: '',
-  }
+  },
+  submit: false,
 };
 
 const cupSlice = createSlice({
@@ -209,6 +212,9 @@ const cupSlice = createSlice({
     },
     cupImage64:  (state, action: PayloadAction<string>) => {
       state.cup.cupImage64 = action.payload;
+    },
+    submit:  (state, action: PayloadAction<Boolean>) => {
+      state.submit = action.payload;
     },
     reset: () => initialState,
   }

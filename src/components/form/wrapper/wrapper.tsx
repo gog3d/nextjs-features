@@ -28,7 +28,6 @@ export const Wrapper: FC<IWrapperProps> = ({children}) => {
   const onSubmit = useCallback(async (e: React.SyntheticEvent) => {
     e.preventDefault();
     dispatch(formActions.submit(true));
-//    console.log({form});
     if (form.confirm && form.name && form.email) {
       try {
         setSend(true);  
@@ -47,11 +46,9 @@ export const Wrapper: FC<IWrapperProps> = ({children}) => {
         setSend(false);
         return;
       }
-      //setSuccess(true);
       router.push('/success');
       setSend(false);
       dispatch(formActions.reset());
-//      console.log({form});
     }
   }, [form])
 

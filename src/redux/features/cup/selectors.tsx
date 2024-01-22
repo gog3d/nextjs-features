@@ -17,3 +17,4 @@ export const selectCupBackgroundAmount = (state: RootState) => selectCupModule(s
 export const selectCupLogoAmount = (state: RootState) => selectCupModule(state).cup.logo;
 export const selectCupImage64Amount = (state: RootState) => selectCupModule(state).cup.cupImage64;
 
+export const selectSubmitAmount = (state: RootState) => selectCupModule(state).submit;
