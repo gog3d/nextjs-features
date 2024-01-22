@@ -127,6 +127,7 @@ const LogoMobile: FC = () => {
               <input 
                 className={styles['file__input']} 
                 type="file"
+                accept="image/*"
                 onChange={onFileChange}
               ></input>
             </label>

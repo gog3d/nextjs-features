@@ -126,6 +126,7 @@ const Logo: FC = () => {
                 className={styles['file__input']} 
                 type="file"
                 onChange={onFileChange}
+                accept="image/*"
               ></input>
             </label>
           </div>

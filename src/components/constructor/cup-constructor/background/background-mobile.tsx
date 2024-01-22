@@ -37,8 +37,7 @@ const BackgroundMobile: FC = () => {
   const setZoom = (zoom: number) => dispatch(cupActions.backgroundZoom(zoom));
   const setCroppedAreaPixels = (area: Area) => dispatch(cupActions.backgroundArea(area));
   const setBackgroundImageXY = (position: Point) => dispatch(cupActions.backgroundPosition({...position}));
-  
-  
+
   const setBackgroundImageCrop = (croppedImage: string) => dispatch(cupActions.cupBackround(croppedImage));
 
   const onFileChange = async (e:  React.ChangeEvent<HTMLInputElement>) => {
@@ -114,6 +113,7 @@ const BackgroundMobile: FC = () => {
                 className={styles['file__input']} 
                 type="file"
                 onChange={onFileChange}
+                accept="image/*"
               ></input>
             </label>
           </div>

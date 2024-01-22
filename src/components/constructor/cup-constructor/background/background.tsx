@@ -112,6 +112,7 @@ const Background: FC = () => {
                 className={styles['file__input']} 
                 type="file"
                 onChange={onFileChange}
+                accept="image/*"
               ></input>
             </label>
           </div>
@@ -138,7 +139,7 @@ const Background: FC = () => {
             restrictPosition={false}
             onZoomChange={setZoom}
             zoomWithScroll={true}
-            onCropComplete ={onCropComplete}          
+            onCropComplete ={onCropComplete}
           />
 
           </div>
